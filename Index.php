@@ -5,8 +5,8 @@
     <title>$Title$</title>
 </head>
 <body>
-<?php include "Resources/Header.html"?>
+<?php include "Shared/Header.html"?>
 
-
+<?php include "Shared/Footer.html"?>
 </body>
 </html>
