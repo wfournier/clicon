@@ -1,16 +1,42 @@
 <header>
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+    <nav id="topNav" class="navbar">
+        <div id="topNavLeft">
+            <a href="Index.php" class="menu-items">
+                <span class="glyphicon glyphicon-home"></span>
+            </a>
+            <a href="#" class="menu-items">
+                About
+            </a>
+            <div class="dropdown show menu-items" >
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Partners/Exhibitors
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action1</a><br>
+                    <a class="dropdown-item" href="#">Action2</a><br>
+                    <a class="dropdown-item" href="#">Action3</a>
+                </div>
             </div>
         </div>
-    </div>
+        <div id="topNavRight">
+            <div class="dropdown show menu-items">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    FR
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action1</a><br>
+                    <a class="dropdown-item" href="#">Action2</a><br>
+                    <a class="dropdown-item" href="#">Action3</a>
+                </div>
+                <a href="#" class="menu-items">
+                    Login/Signup
+                </a>
+                <a href="#" class="menu-items">
+                    GET TICKET
+                </a>
+            </div>
+        </div>
+    </nav>
 </header>
