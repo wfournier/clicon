@@ -5,7 +5,8 @@
     <title>$Title$</title>
 </head>
 <body>
-<?php
-?>
+<?php include "Resources/Header.html"?>
+
+
 </body>
 </html>
