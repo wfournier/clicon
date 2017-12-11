@@ -8,3 +8,7 @@
 .navbar-inverse .navbar-nav>li>a {
     color: black;
 }
+
+.col-xs-6 {
+	padding-left: 0
+}
