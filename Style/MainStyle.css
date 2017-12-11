@@ -10,7 +10,7 @@
 }
 #bannerSec {
     height: 200px;
-    background-image: url("Resources/mainBanner.jpg");
+    background-image: url("../Resources/mainBanner.jpg");
     background-size: cover;
 
 }
