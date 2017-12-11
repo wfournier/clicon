@@ -8,7 +8,18 @@
 .navbar-inverse .navbar-nav>li>a {
     color: black;
 }
+<<<<<<< HEAD
 
 .col-xs-6 {
 	padding-left: 0
+=======
+#bannerSec {
+    height: 200px;
+    background-image: url("../Resources/mainBanner.jpg");
+    background-size: cover;
+
+}
+.navbar {
+    margin-bottom: 0;
+>>>>>>> 1b06c5e90486b7bea1ea01b8c3fae67de4ef6420
 }
