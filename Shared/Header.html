@@ -1,42 +1,28 @@
 <header>
-    <nav id="topNav" class="navbar">
-        <div id="topNavLeft">
-            <a href="Index.php" class="menu-items">
-                <span class="glyphicon glyphicon-home"></span>
-            </a>
-            <a href="#" class="menu-items">
-                About
-            </a>
-            <div class="dropdown show menu-items" >
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Partners/Exhibitors
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action1</a><br>
-                    <a class="dropdown-item" href="#">Action2</a><br>
-                    <a class="dropdown-item" href="#">Action3</a>
-                </div>
-            </div>
-        </div>
-        <div id="topNavRight">
-            <div class="dropdown show menu-items">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    FR
-                </a>
-
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action1</a><br>
-                    <a class="dropdown-item" href="#">Action2</a><br>
-                    <a class="dropdown-item" href="#">Action3</a>
-                </div>
-                <a href="#" class="menu-items">
-                    Login/Signup
-                </a>
-                <a href="#" class="menu-items">
-                    GET TICKET
-                </a>
-            </div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!--Left Side-->
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
+                        Partners/Sponsors
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Page 1-1</a></li>
+                        <li><a href="#">Page 1-2</a></li>
+                        <li><a href="#">Page 1-3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Exhibitors</a></li>
+            </ul>
+            <!--Right Side-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">FR</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up / Login</a></li>
+                <li><a href="#">GET TICKET</a></li>
+            </ul>
         </div>
     </nav>
 </header>

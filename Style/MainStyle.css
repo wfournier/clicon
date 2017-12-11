@@ -1,34 +1,10 @@
-#topNav {
-    padding: 20px;
-    font-size: medium;
-}
-#topNav a {
-    color: black;
-}
-#topNavLeft {
-    float: left;
-}
-#topNavRight {
-    text-align: right;
-}
-.dropdown {
-    float: right;
-}
-.btn {
-    display: unset;
-    font-size: unset;
-    padding: unset;
-}
-.dropdown-menu .dropdown-item {
-    padding: 5px;
-}
-.dropdown-menu {
-    font-size: unset;
-}
-.menu-items {
-    padding-left: 20px;
-    padding-right: 20px;
-}
 #footer {
     text-align: center;
+}
+.navbar-inverse {
+    background-color: rgba(70,70,70,0.5);
+    border-color: rgba(70,70,70,0.5);
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: black;
 }
