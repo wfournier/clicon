@@ -5,8 +5,10 @@
     <title>$Title$</title>
 </head>
 <body>
-<?php include "Shared/Header.html"?>
+<?php include "Shared/Header.html" ?>
 
-<?php include "Shared/Footer.html"?>
+<p>Test</p>
+
+<?php include "Shared/Footer.html" ?>
 </body>
 </html>
