@@ -1,61 +1,61 @@
 <?php
 $email = $fname = $lname = $pass = $confirmPass = $dob = $phone = $country = $state = $city = $address = $zip = "";
-$emailErr = $fnameErr = $lnameErr = $passErr = $confirmPassErr = $dobErr = $phoneErr = $countryErr = $stateErr = $cityErr = $addressErr = $zipErr = "";
+$emailErr = $fnameErr = $lnameErr = $passErr = $confirmPassErr = $dobErr = $phoneErr = $countryErr = $stateErr = $cityErr = $addressErr = $zipErr = false;
 $errorMsg = "";
 $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if(empty($_POST["email"])){
-		$emailErr = "Email is required";
+		$emailErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["fname"])){
-		$fnameErr = "First Name is required";
+		$fnameErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["lname"])){
-		$lnameErr = "Last Name is required";
+		$lnameErr = true;
 		$error = true;
 	} else{
 
 	}
 	
 	if(empty($_POST["pass"])){
-		$passErr = "Password is required";
+		$passErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["dob"])){
-		$dobErr = "Date of Birth is required";
+		$dobErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["phone"])){
-		$phoneErr = "Phone Number is required";
+		$phoneErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["country"])){
-		$countryErr = "Country is required";
+		$countryErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["state"])){
-		$stateErr = "State/Province is required";
+		$stateErr = true;
 		$error = true;
 	} else{
 
@@ -69,22 +69,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 
 	if(empty($_POST["address"])){
-		$addressErr = "Address is required";
+		$addressErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if(empty($_POST["zip"])){
-		$zipErr = "Zip Code is required";
+		$zipErr = true;
 		$error = true;
 	} else{
 
 	}
 
 	if($error){
-		$errorMsg = "* Please fill out all fields correctly\n
-					(Tip: Hover your mouse over a field to get help)";
+		$errorMsg = nl2br("* Please fill out all fields correctly \n
+					(Tip: Hover your mouse over a field to get help)");
 	}
 }
 
