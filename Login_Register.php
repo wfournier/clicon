@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<?php include "Shared/Head.html" ?>
-	<title>$Title$</title>
+	<title>GameCon_Login</title>
 </head>
 <body>
 	<?php include "Shared/Header.html" ?>

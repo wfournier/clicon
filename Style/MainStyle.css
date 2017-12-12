@@ -46,6 +46,18 @@ html {
 .error {
     color: red;
 }
+#carousel {
+    text-align: center;
+}
+#carousel h3 {
+    color: red;
+    font-weight: bold;
+    font-family: "Courier New";
+}
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
 @media only screen and (max-width: 1024px) and (min-width: 769px){
     .mainNavBarText, .navBarText {
         font-size: medium;
