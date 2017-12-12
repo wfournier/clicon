@@ -27,39 +27,39 @@
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="fname" class="<?php echo $fnameErr ? 'error' : '' ?>">First Name</label>
-					<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>">
+					<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First Name" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>" data-toggle="tooltip" title="First Name must only contain letters">
 				</div>
 				<div class="form-group col-xs-6">
 					<label for="lname" class="<?php echo $lnameErr ? 'error' : '' ?>">Last Name</label>
-					<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>">
+					<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last Name" value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>" data-toggle="tooltip" title="Last Name must only contain letters">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="pass" class="<?php echo $passErr ? 'error' : '' ?>">Password</label>
-					<input type="Password" class="form-control" id="pass" name="pass" placeholder="Enter Password">
+					<input type="Password" class="form-control" id="pass" name="pass" placeholder="Enter Password" data-toggle="tooltip" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
 				</div>
 				<div class="form-group col-xs-6">
 					<label for="confirmPass" class="<?php echo $confirmPassErr ? 'error' : '' ?>">Confirm Password</label>
-					<input type="password" class="form-control" id="confirmPass" name="confirmPass" placeholder="Enter Password Again">
+					<input type="password" class="form-control" id="confirmPass" name="confirmPass" placeholder="Enter Password Again" data-toggle="tooltip" title="Both passwords must match">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="dob" class="<?php echo $dobErr ? 'error' : '' ?>">Date of Birth</label>
-					<input type="date" class="form-control" id="dob" name="dob" value="<?php echo isset($_POST['dob']) ? $_POST['dob'] : '' ?>">
+					<input type="date" class="form-control" id="dob" name="dob" value="<?php echo isset($_POST['dob']) ? $_POST['dob'] : '' ?>" data-toggle="tooltip" title="Date of birth must be valid">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="phone" class="<?php echo $phoneErr ? 'error' : '' ?>">Phone Number</label>
-					<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>">
+					<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip" title="Phone number must be valid (i.e. (999) 999-9999)">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="country" class="<?php echo $countryErr ? 'error' : '' ?>">Country</label>
-					<select class="form-control" id="country" name="country" placeholder="Select Country">
+					<select class="form-control" id="country" name="country" placeholder="Select Country" data-toggle="tooltip" title="">
 						<?php
 						$get_countries_sql="SELECT * FROM COUNTRIES";
 						$get_countries_res=$con->query($get_countries_sql) or die("get_countries_res: " .$con->error);
@@ -88,23 +88,23 @@
 				</div>
 				<div class="form-group col-xs-6">
 					<label for="state" class="<?php echo $stateErr ? 'error' : '' ?>">State/Province</label>
-					<input type="text" class="form-control" id="state" name="state" placeholder="Enter State/Province Code" minlength="2" maxlength="2" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>">
+					<input type="text" class="form-control" id="state" name="state" placeholder="Enter State/Province Code" minlength="2" maxlength="2" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>" data-toggle="tooltip" title="State code must be 2 characters long">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="city" class="<?php echo $cityErr ? 'error' : '' ?>">City</label>
-					<input type="text" class="form-control" id="city" name="city" placeholder="Enter City" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>">
+					<input type="text" class="form-control" id="city" name="city" placeholder="Enter City" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip" title="City must only contain letters">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="address" class="<?php echo $addressErr ? 'error' : '' ?>">Address</label>
-					<input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>">
+					<input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>" data-toggle="tooltip" title="Address must be valid">
 				</div>
 				<div class="form-group col-xs-6">
 					<label for="zip" class="<?php echo $zipErr ? 'error' : '' ?>">Zip Code</label>
-					<input type="text" class="form-control" id="zip" name="zip" placeholder="Enter Zip Code" value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>">
+					<input type="text" class="form-control" id="zip" name="zip" placeholder="Enter Zip Code" value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip" title="Zip code must be valid (i.e. A1B 2C3)">
 				</div>
 			</div>
 			<div class="row">
