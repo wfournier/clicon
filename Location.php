@@ -1,9 +1,7 @@
-<?php include "Shared/connection.php" ?>
-<?php include "Processes/registerProcess.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GameCon_Admission</title>
+    <title>GameCon_General Info</title>
     <?php include "Shared/Head.html";?>
 </head>
 <body>

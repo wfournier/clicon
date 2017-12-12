@@ -1,84 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include "Shared/Head.html" ?>
-    <title>$Title$</title>
+    <?php include "Shared/Head.html"; ?>
+    <title>GameCon_Home</title>
 </head>
 <body>
-<?php include "Shared/Header.html" ?>
-<nav class="navbar navbar-inverse navbar-static-top mainNav">
-    <div class="container-fluid mainNavBarText">
-        <div class="navbar-header">
-            <a class="navbar-brand" id="menuTitle">Main Menu</a>
-        </div>
-        <div class="collapse navbar-collapse in">
-            <ul class="nav navbar-nav" style="text-align: center">
-                <li><a class="mainNavBtn" href="#">Home</a></li>
-                <li><a class="mainNavBtn" href="#">Admission</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle mainNavBtn" data-toggle="dropdown" href="#" id="navButtons">
-                        General Info
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle mainNavBtn" data-toggle="dropdown" href="#" id="navButtons">
-                        Guests
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle mainNavBtn" data-toggle="dropdown" href="#" id="navButtons">
-                        Events
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle mainNavBtn" data-toggle="dropdown" href="#" id="navButtons">
-                        Programming
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle mainNavBtn" data-toggle="dropdown" href="#" id="navButtons">
-                        Exhibition
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle mainNavBtn" data-toggle="dropdown" href="#" id="navButtons">
-                        Services
-                        <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<?php include "Shared/Header.html"; ?>
+<?php include "Shared/MainNavigation.html"; ?>
 <main style="background-color: lightgray">
     <style>
         .row {
@@ -100,17 +28,32 @@
                         </ol>
 
                         <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" id="carousel">
                             <div class="item active">
-                                <img src="Resources/carousel1.png" alt="Los Angeles">
+                                <a href="About.php">
+                                    <img src="Resources/carousel1.png" alt="Los Angeles">
+                                    <div class="carousel-caption">
+                                        <h3>About</h3>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="item">
-                                <img src="Resources/carousel2.jpg" alt="Chicago">
+                                <a href="Admission.php">
+                                    <img src="Resources/carousel2.jpg" alt="Chicago">
+                                    <div class="carousel-caption">
+                                        <h3>Admission</h3>
+                                    </div>
+                                </a>
                             </div>
 
                             <div class="item">
-                                <img src="Resources/carousel3.png" alt="New York">
+                                <a href="Schedule.php">
+                                    <img src="Resources/carousel3.png" alt="New York">
+                                    <div class="carousel-caption">
+                                        <h3>Schedule</h3>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
@@ -230,6 +173,6 @@
     </div>
 </main>
 
-<?php include "Shared/Footer.html" ?>
+<?php include "Shared/Footer.html"; ?>
 </body>
 </html>
