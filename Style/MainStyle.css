@@ -1,5 +1,9 @@
 #footer {
     text-align: center;
+    background-color: #42a9ff;
+}
+html {
+    background-color: #42a9ff;
 }
 .navbar-inverse {
     background-color: rgba(70,70,70,0.5);
@@ -17,8 +21,10 @@
     height: 200px;
     background-image: url("../Resources/mainBanner.jpg");
     background-size: cover;
-
 }
 .navbar {
     margin-bottom: 0;
+}
+.mainNavBtn {
+    margin-left: 10px;
 }
