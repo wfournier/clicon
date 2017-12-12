@@ -14,7 +14,7 @@ html {
 }
 
 .col-xs-6 {
-	padding-left: 0;
+    padding-left: 0;
 }
 
 #bannerSec {
@@ -24,11 +24,41 @@ html {
 }
 .navbar {
     margin-bottom: 0;
+    position: relative;
 }
 .mainNavBtn {
     margin-left: 10px;
 }
+#indexContent {
+    padding: 0;
+    background-color: white;
+}
+#carouselCol {
+    padding: 0;
+}
+#menuTitle{
+    display: none;
+    color: black;
+}
+.mainNavBarText {
+    font-size: x-large;
+}
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+    .mainNavBarText, .navBarText {
+        font-size: medium;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 427px) {
+    .mainNavBarText, .navBarText {
+        font-size: x-small;
+    }
+}
 
-.error {
-    color: red;
+@media only screen and (max-width: 426px) {
+    #menuTitle {
+        display: unset;
+    }
+    #bannerSec {
+        height: unset;
+    }
 }
