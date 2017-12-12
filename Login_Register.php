@@ -53,13 +53,13 @@
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="phone" class="<?php echo $phoneErr ? 'error' : '' ?>">Phone Number</label>
-					<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip" title="Phone number must be valid (i.e. (999) 999-9999)">
+					<input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip" title="Phone number must be valid (i.e. 000-000-0000)">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
-					<label for="country" class="<?php echo $countryErr ? 'error' : '' ?>">Country</label>
-					<select class="form-control" id="country" name="country" placeholder="Select Country" data-toggle="tooltip" title="">
+					<label for="countryId" class="<?php echo $countryIdErr ? 'error' : '' ?>">Country</label>
+					<select class="form-control" id="countryId" name="countryId" placeholder="Select Country" data-toggle="tooltip" title="">
 						<?php
 						$get_countries_sql="SELECT * FROM COUNTRIES";
 						$get_countries_res=$con->query($get_countries_sql) or die("get_countries_res: " .$con->error);
@@ -72,8 +72,8 @@
 								$countryCode=$country["COUNTRY_CODE"];
 								$name=$country["COUNTRY_NAME"];
 								$selected="";
-								if(isset($_POST["country"])){
-									if($_POST["country"] == $id){
+								if(isset($_POST["countryId"])){
+									if($_POST["countryId"] == $id){
 										$selected="selected";
 									}
 								}
@@ -88,7 +88,7 @@
 				</div>
 				<div class="form-group col-xs-6">
 					<label for="state" class="<?php echo $stateErr ? 'error' : '' ?>">State/Province</label>
-					<input type="text" class="form-control" id="state" name="state" placeholder="Enter State/Province Code" minlength="2" maxlength="2" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>" data-toggle="tooltip" title="State code must be 2 characters long">
+					<input type="text" class="form-control" id="state" name="state" placeholder="Enter State/Province Code" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>" data-toggle="tooltip" title="State code must be 2 characters long">
 				</div>
 			</div>
 			<div class="row">
@@ -114,7 +114,11 @@
 			<div class="row" style="height: 80px; padding: 10px;">
 				<p><span class="error"><?php echo($errorMsg); ?></span></p>
 			</div>
+			<input type="hidden" name="process" value="register">
 		</form>
+	</div>
+	<div class="col-sm-3">
+		<p><span class="success"><?php echo($output); ?></span></p>
 	</div>
 </div>
 <?php include "Shared/Footer.html" ?>

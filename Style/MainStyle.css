@@ -46,6 +46,9 @@ html {
 .error {
     color: red;
 }
+.success {
+    color: green;
+}
 #carousel {
     text-align: center;
 }
