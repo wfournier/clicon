@@ -4,12 +4,13 @@ body {
 
 .sidenav {
     height: 100%;
-    width: 200px;
+    width: 20%;
     position: fixed;
     z-index: 1;
     background-color: #000f29;
     overflow-x: hidden;
     padding-top: 20px;
+    transition: 0.3s;
 }
 
 .sidenav a {
@@ -24,15 +25,63 @@ body {
     color: #f1f1f1;
 }
 
+.sidenav .closebtn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.mobileMain {
+    font-size: 30px;
+    cursor: pointer
+}
+
+.navMobileBtn {
+    display: none;
+}
+
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
 }
+
 #Purchase {
     background-color: yellow;
     margin-top: 20px;
 }
 
+@media screen and (max-width: 768px) and (min-width: 426px) {
+    .sidenav a {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .sidenav a {
+        font-size: large;
+    }
+
+    .sidenav .closebtn {
+        display: unset;
+    }
+
+    .navMobileBtn {
+        display: unset;
+    }
+
+    .sidenav {
+        width: 0%;
+    }
+}
+
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
