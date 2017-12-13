@@ -2,12 +2,6 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-main {
-    position: relative;
-    min-height: 500px;
-    background-color: lightgrey;
-}
-
 .sidenav {
     height: 100%;
     width: 20%;

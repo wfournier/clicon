@@ -11,6 +11,12 @@
     margin-left: 0;
 }
 
+main {
+    position: relative;
+    min-height: 500px;
+    background-color: lightgrey;
+}
+
 body {
     background: transparent;
 }
