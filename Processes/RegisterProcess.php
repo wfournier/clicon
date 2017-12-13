@@ -4,19 +4,29 @@ $p = $_POST;
 $email = $fname = $lname = $pass = $dob = $dobDay = $dobMonth = $dobYear = $isAdult = $phone = $country = $countryId = $stateCode = $stateId = $city = $address = $zip = "";
 $emailErr = $fnameErr = $lnameErr = $passErr = $confirmPassErr = $dobErr = $phoneErr = $countryIdErr = $stateErr = $cityErr = $addressErr = $zipErr = false;
 
-$errorMsg = $output = "";
+$errorMsg = $output = $emailExists = "";
 $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if($p["process"] == "register"){
-		if(empty($p["email"])){
+		if(empty($p["emailRegister"])){
 			$emailErr = $error = true;
 		} else{
-			if((bool)preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i", clean($p["email"]))){
-				$email = clean($p["email"]);
+			$get_emails_sql="SELECT * FROM ACCOUNT WHERE EMAIL = '" .clean($p["emailRegister"]) ."'";
+			$get_emails_res=$con->query($get_emails_sql) or die("get_emails_res: " .$con->error);
+
+			if($get_emails_res->num_rows < 1){
+				if((bool)preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i", clean($p["emailRegister"]))){
+					$email = clean($p["emailRegister"]);
+				} else{
+					$emailErr = $error = true;
+				}
 			} else{
 				$emailErr = $error = true;
+				$emailExists = "Email is already in use";
 			}
+			$get_emails_res->free();
+			
 		}
 
 		if(empty($p["fname"])){
@@ -56,12 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(empty($p["dobDay"]) || empty($p["dobMonth"]) || empty($p["dobYear"])){
 			$dobErr = $error = true;
 		} else{
-			if(ctype_digit($p["dobDay"]) && ctype_digit($p["dobMonth"]) && ctype_digit($p["dobYear"]) && checkdate($p["dobMonth"], $p["dobDay"], $p["dobYear"])){
-				$dobDay = clean($p["dobDay"]);
-				$dobMonth = clean($p["dobMonth"]);
-				$dobYear = clean($p["dobYear"]);
+			if(checkdate($p["dobMonth"], $p["dobDay"], $p["dobYear"])){
+				$dobDay = $p["dobDay"];
+				$dobMonth = $p["dobMonth"];
+				$dobYear = $p["dobYear"];
 
-				$dob = mktime(0, 0, 0, $dobMonth, $dobDay, $dobYear);
+				$dob = date('Y-m-d', mktime(0, 0, 0, $dobMonth, $dobDay, $dobYear));
 				$major = strtotime("-18 years");
 
 				if($dob < $major){
@@ -77,8 +87,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(empty($p["phone"])){
 			$phoneErr = $error = true;
 		} else{
-			if((bool)preg_match('/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/', gut($p["phone"]))){
-				$phone = clean($p["phone"]);
+			if((bool)preg_match('/^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/', clean($p["phone"]))){
+				$phone = gut($p["phone"]);
+			} else{
+				$phoneErr = $error = true;
 			}
 		}
 
@@ -142,10 +154,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$errorMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
-			$sql = "INSERT INTO ACCOUNT (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES (NULL, '" .ucwords(strtolower($lname), " ") ."', '" .ucwords(strtolower($fname), " ") ."', '" .$email ."', '" .password_hash($password, PASSWORD_BCRYPT) ."', '" .date('Y-m-d', strtotime(str_replace('-', '/', $dob))) ."', '" .str_replace('-', $phone) ."', '" .ucwords(strtolower($address), " ") ."', '" .ucwords(strtolower($city), " ") ."', '" .strtoupper(str_replace(' ', '', $zip)) ."', " .$countryId .", " .$stateId .", '" .$isAdult ."')";
+			$sql = "INSERT INTO ACCOUNT (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES (NULL, '" .ucwords(strtolower($lname), " ") ."', '" .ucwords(strtolower($fname), " ") ."', '" .$email ."', '" .password_hash($password, PASSWORD_BCRYPT) ."', '" .date('Y-m-d', strtotime(str_replace('-', '/', $dob))) ."', '" .str_replace('-', '/', $phone) ."', '" .ucwords(strtolower($address), " ") ."', '" .ucwords(strtolower($city), " ") ."', '" .strtoupper(str_replace(' ', '', $zip)) ."', " .$countryId .", " .$stateId .", '" .$isAdult ."')";
 
 			if ($con->query($sql) === TRUE) {
 				$output = "Registered Successfully!";
+				$output.= " " .$dob;
 			} else {
 				$errorMsg = "Error: " . $sql . "<br>" . $con->error;
 			}

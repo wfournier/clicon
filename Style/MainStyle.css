@@ -40,6 +40,10 @@ html {
     padding-left: 0;
 }
 
+#login .col-xs-10 {
+    padding-left: 0;
+}
+
 #bannerSec {
     height: 200px;
     background-image: url("../Resources/mainBanner.jpg");
@@ -74,7 +78,6 @@ html {
 }
 #dob div {
     padding-left: 0;
-    padding-right: 0;
 }
 #carousel {
     text-align: center;
