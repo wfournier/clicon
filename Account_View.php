@@ -1,3 +1,10 @@
+<?php include "Shared/connection.php" ?>
+<?php include "Processes/CheckLogin.php" ?>
+<?php
+if(!func::checkLogin($con)){
+    header("Location: Login_register.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +18,7 @@
     </style>
 </head>
 <body>
-<?php include "Shared/Header.html";?>
+<?php include "Shared/Header.php";?>
 
 <main>
     <?php include "Shared/AccountNavigation.html";?>

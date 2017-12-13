@@ -1,5 +1,4 @@
 <?php include "Shared/connection.php" ?>
-<?php include "Processes/RegisterProcess.php" ?>
 <?php
 if (!isset($_COOKIE["accountID"])) {
     header("######");
@@ -25,7 +24,7 @@ if (!isset($_COOKIE["accountID"])) {
             </style>
         </head>
         <body>
-        <?php include "Shared/Header.html"; ?>
+        <?php include "Shared/Header.php"; ?>
         <main>
             <?php include "Shared/AccountNavigation.html"; ?>
             <?php

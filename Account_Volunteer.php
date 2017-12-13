@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-<?php include "Shared/Header.html";?>
+<?php include "Shared/Header.php";?>
 
 <main>
     <?php include "Shared/AccountNavigation.html";?>
