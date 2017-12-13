@@ -7,7 +7,7 @@
 	<title>GameCon_Login</title>
 </head>
 <body>
-	<?php include "Shared/Header.html" ?>
+	<?php include "Shared/Header.php" ?>
 	<style type="text/css">
 	.row {
 		margin-left: 0px;

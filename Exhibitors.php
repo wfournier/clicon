@@ -5,7 +5,7 @@
     <?php include "Shared/Head.html";?>
 </head>
 <body>
-<?php include "Shared/Header.html";?>
+<?php include "Shared/Header.php";?>
 <?php include "Shared/MainNavigation.html";?>
 <main>
 

@@ -30,7 +30,14 @@
                     <!--Right Side-->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">FR</a></li>
-                        <li><a href="Login_Register.php"><span class="glyphicon glyphicon-user"></span> Sign Up / Login</a></li>
+                        <?php
+                        if(!func::checkLogin($con)){
+                            echo "<li><a href='Login_Register.php'><span class='glyphicon glyphicon-user'></span> Sign Up / Login</a></li>";
+                        } else {
+                            echo "<li><a href='Account_View.php'><span class='glyphicon glyphicon-user'></span> View Account </a></li>";
+                        }
+                        ?>
+
                         <li><a style="margin-right: 30px" href="Admission.php">GET TICKET</a></li>
                     </ul>
                 </div>

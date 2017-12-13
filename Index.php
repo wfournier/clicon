@@ -5,7 +5,7 @@
     <title>GameCon_Home</title>
 </head>
 <body>
-<?php include "Shared/Header.html"; ?>
+<?php include "Shared/Header.php"; ?>
 <?php include "Shared/MainNavigation.html"; ?>
 <main style="background-color: lightgray">
     <style>
