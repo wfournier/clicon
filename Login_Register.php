@@ -1,5 +1,5 @@
 <?php include "Shared/connection.php" ?>
-<?php include "Processes/registerProcess.php" ?>
+<?php include "Processes/RegisterProcess.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

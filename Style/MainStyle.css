@@ -1,9 +1,26 @@
 #footer {
     text-align: center;
-    background-color: #42a9ff;
+    background-color: transparent;
+}
+#footer p {
+    background: transparent;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+body {
+    background: transparent;
+}
+header {
+    background: white;
 }
 html {
-    background-color: #42a9ff;
+    /*background-color: #3370b6;*/
+    background-image: url("../Resources/mainBanner.jpg");
+    background-repeat: repeat-y;
 }
 .navbar-inverse {
     background-color: rgba(70,70,70,0.5);
@@ -82,5 +99,8 @@ html {
     }
     #bannerSec {
         height: unset;
+    }
+    #myNavbar {
+        padding-left: 40px;
     }
 }
