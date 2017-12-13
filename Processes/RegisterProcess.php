@@ -65,9 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$major = strtotime("-18 years");
 
 				if($dob < $major){
-					$isAdult = true;
+					$isAdult = "TRUE";
 				} else{
-					$isAdult = false;
+					$isAdult = "FALSE";
 				}
 			} else{
 				$dobErr = $error = true;
@@ -142,7 +142,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$errorMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
-			$output = "Success!";
+			$sql = "INSERT INTO ACCOUNT (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES (NULL, '" .ucwords(strtolower($lname), " ") ."', '" .ucwords(strtolower($fname), " ") ."', '" .$email ."', '" .password_hash($password, PASSWORD_BCRYPT) ."', '" .date('Y-m-d', strtotime(str_replace('-', '/', $dob))) ."', '" .str_replace('-', $phone) ."', '" .ucwords(strtolower($address), " ") ."', '" .ucwords(strtolower($city), " ") ."', '" .strtoupper(str_replace(' ', '', $zip)) ."', " .$countryId .", " .$stateId .", '" .$isAdult ."')";
+
+			if ($con->query($sql) === TRUE) {
+				$output = "Registered Successfully!";
+			} else {
+				$errorMsg = "Error: " . $sql . "<br>" . $con->error;
+			}
 		}
 	}
 }
