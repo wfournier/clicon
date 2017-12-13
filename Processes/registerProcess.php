@@ -1,7 +1,7 @@
 <?php
 $p = $_POST;
 
-$email = $fname = $lname = $pass = $dob = $phone = $countryId = $state = $city = $address = $zip = "";
+$email = $fname = $lname = $pass = $dob = $dobDay = $dobMonth = $dobYear = $isAdult = $phone = $country = $countryId = $stateCode = $stateId = $city = $address = $zip = "";
 $emailErr = $fnameErr = $lnameErr = $passErr = $confirmPassErr = $dobErr = $phoneErr = $countryIdErr = $stateErr = $cityErr = $addressErr = $zipErr = false;
 
 $errorMsg = $output = "";
@@ -43,22 +43,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$passErr = $error = true;
 		} else{
 			if(strlen($p["pass"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["pass"]) && !ctype_alpha($p["pass"]) && !ctype_digit($p["pass"]) && !strpos($p["pass"], " ")){
-				$pass = clean($clean($p["pass"]));
+				$pass = clean($p["pass"]);
 			} else{
 				$passErr = $error = true;
 			}
 		}
 
 		if(empty($p["confirmPass"]) || $p["pass"] != $p["confirmPass"]){
-			$passErr = $error = true;
+			$confirmPassErr = $error = true;
 		}
 
-		if(empty($p["dob"])){
+		if(empty($p["dobDay"]) || empty($p["dobMonth"]) || empty($p["dobYear"])){
 			$dobErr = $error = true;
 		} else{
-			$time = strtotime($p["dob"]);
-			if($time != false){
-				$dob = date('Y-m-d', $time);
+			if(ctype_digit($p["dobDay"]) && ctype_digit($p["dobMonth"]) && ctype_digit($p["dobYear"]) && checkdate($p["dobMonth"], $p["dobDay"], $p["dobYear"])){
+				$dobDay = clean($p["dobDay"]);
+				$dobMonth = clean($p["dobMonth"]);
+				$dobYear = clean($p["dobYear"]);
+
+				$dob = mktime(0, 0, 0, $dobMonth, $dobDay, $dobYear);
+				$major = strtotime("-18 years");
+
+				if($dob < $major){
+					$isAdult = true;
+				} else{
+					$isAdult = false;
+				}
 			} else{
 				$dobErr = $error = true;
 			}
@@ -67,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(empty($p["phone"])){
 			$phoneErr = $error = true;
 		} else{
-			if((bool)preg_match('/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/', $p["phone"])){
+			if((bool)preg_match('/^[0-9]{3}-[0-9]{4}-[0-9]{4}$/', gut($p["phone"]))){
 				$phone = clean($p["phone"]);
 			}
 		}
@@ -78,11 +88,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$countryId = $p["countryId"];
 		}
 
-		if(empty($p["state"])){
+		if(empty($p["stateCode"])){
 			$stateErr = $error = true;
 		} else{
-			if(strlen($p["state"]) == 2 && gut(ctype_alpha($p["state"]))){
-				$state = clean($p["state"]);
+			if(strlen($p["stateCode"]) == 2 && ctype_alpha(gut($p["stateCode"]))){
+				$get_states_sql="SELECT * FROM STATES WHERE COUNTRY_ID = " .$countryId ." AND STATE_CODE = '" .strtoupper($p["stateCode"]) ."'";
+				$get_states_res=$con->query($get_states_sql) or die("get_states_res: " .$con->error);
+
+				if($get_states_res->num_rows < 1){
+					$stateErr = $error = true;
+				} else{
+					while($states = $get_states_res->fetch_array()){
+						$stateId = $states["STATE_ID"];
+						$stateCode = $states["STATE_CODE"];
+					}
+				}
 			} else{
 				$stateErr = $error = true;
 			}
@@ -101,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(empty($p["address"])){
 			$addressErr = $error = true;
 		} else{
-			if((bool)preg_match('\d{1,5}\s\w.\s(\b\w*\b\s){1,2}\w*\.', $p["address"])){
+			if((bool)preg_match("~[0-9]~", $p["address"] && (bool)preg_match("/[a-z]/i", $p["address"]) && strpos($p["address"], " "))){
 				$address = clean($p["address"]);
 			} else{
 				$addressErr = $error = true;
@@ -111,7 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(empty($p["zip"])){
 			$zipErr = $error = true;
 		} else{
-			if((bool)preg_match('(^\d{5}(-\d{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Z]{1} *\d{1}[A-Z]{1}\d{1}$)', $p["zip"])){
+			if((bool)preg_match("/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/", str_replace(' ', '', strtolower(clean($p["zip"]))))){
 				$zip = clean($p["zip"]);
 			} else{
 				$zipErr = $error = true;

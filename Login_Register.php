@@ -45,9 +45,19 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-xs-6">
-					<label for="dob" class="<?php echo $dobErr ? 'error' : '' ?>">Date of Birth</label>
-					<input type="date" class="form-control" id="dob" name="dob" value="<?php echo isset($_POST['dob']) ? $_POST['dob'] : '' ?>" data-toggle="tooltip" title="Date of birth must be valid">
+				<label class="<?php echo $dobErr ? 'error' : '' ?>">Date of Birth</label>
+			</div>
+			<div class="row">
+				<div id="dob" class="form-group col-xs-6">
+					<div class="form-group col-xs-3">
+						<input type="text" class="form-control" id="dobDay" name="dobDay" placeholder="DD" maxlength="2" value="<?php echo isset($_POST['dobDay']) ? $_POST['dobDay'] : '' ?>" data-toggle="tooltip" title="Day must be between 1 and 31 inclusively">
+					</div>
+					<div class="form-group col-xs-3">
+						<input type="text" class="form-control" id="dobMonth" name="dobMonth" placeholder="MM" maxlength="2" value="<?php echo isset($_POST['dobMonth']) ? $_POST['dobMonth'] : '' ?>" data-toggle="tooltip" title="Month must be between 1 and 12 inclusively">
+					</div>
+					<div class="form-group col-xs-6">
+						<input type="text" class="form-control" id="dobYear" name="dobYear" placeholder="YYYY" minlength="4" maxlength="4" value="<?php echo isset($_POST['dobYear']) ? $_POST['dobYear'] : '' ?>" data-toggle="tooltip" title="Year must be valid">
+					</div>
 				</div>
 			</div>
 			<div class="row">
@@ -67,10 +77,9 @@
 						if($get_countries_res->num_rows < 1){
 							echo("<p><i>Invalid selection</i></p>");
 						} else{
-							while($country = $get_countries_res->fetch_array()){
-								$id=$country["COUNTRY_ID"];
-								$countryCode=$country["COUNTRY_CODE"];
-								$name=$country["COUNTRY_NAME"];
+							while($countries = $get_countries_res->fetch_array()){
+								$id=$countries["COUNTRY_ID"];
+								$name=$countries["COUNTRY_NAME"];
 								$selected="";
 								if(isset($_POST["countryId"])){
 									if($_POST["countryId"] == $id){
@@ -87,20 +96,20 @@
 					</select>
 				</div>
 				<div class="form-group col-xs-6">
-					<label for="state" class="<?php echo $stateErr ? 'error' : '' ?>">State/Province</label>
-					<input type="text" class="form-control" id="state" name="state" placeholder="Enter State/Province Code" value="<?php echo isset($_POST['state']) ? $_POST['state'] : '' ?>" data-toggle="tooltip" title="State code must be 2 characters long">
+					<label for="stateCode" class="<?php echo $stateErr ? 'error' : '' ?>">State/Province</label>
+					<input type="text" class="form-control" id="stateCode" name="stateCode" placeholder="Enter State/Province Code" maxlength="2" value="<?php echo isset($_POST['stateCode']) ? strtoupper($_POST['stateCode']) : '' ?>" data-toggle="tooltip" title="State code must be 2 characters long (i.e. FL)">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="city" class="<?php echo $cityErr ? 'error' : '' ?>">City</label>
-					<input type="text" class="form-control" id="city" name="city" placeholder="Enter City" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip" title="City must only contain letters">
+					<input type="text" class="form-control" id="city" name="city" placeholder="Enter City" value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip" title="City must only contain letters (i.e. Anytown)">
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-xs-6">
 					<label for="address" class="<?php echo $addressErr ? 'error' : '' ?>">Address</label>
-					<input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>" data-toggle="tooltip" title="Address must be valid">
+					<input type="text" class="form-control" id="address" name="address" placeholder="Enter Address" value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>" data-toggle="tooltip" title="Address must be valid (i.e. 123 Main Street)">
 				</div>
 				<div class="form-group col-xs-6">
 					<label for="zip" class="<?php echo $zipErr ? 'error' : '' ?>">Zip Code</label>

@@ -49,6 +49,10 @@ html {
 .success {
     color: green;
 }
+#dob div {
+    padding-left: 0;
+    padding-right: 0;
+}
 #carousel {
     text-align: center;
 }
