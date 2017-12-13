@@ -12,9 +12,9 @@
 </head>
 <body>
 <?php include "Shared/Header.html";?>
-<?php include "Shared/AccountNavigation.html";?>
-<main>
 
+<main>
+    <?php include "Shared/AccountNavigation.html";?>
 </main>
 <?php include "Shared/Footer.html";?>
 </body>

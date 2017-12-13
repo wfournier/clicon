@@ -2,10 +2,16 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+main {
+    position: relative;
+    min-height: 500px;
+    background-color: lightgrey;
+}
+
 .sidenav {
     height: 100%;
     width: 20%;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     background-color: #000f29;
     overflow-x: hidden;
@@ -18,6 +24,9 @@ body {
     text-decoration: none;
     font-size: 25px;
     color: #818181;
+}
+
+.navBtn {
     display: block;
 }
 
@@ -25,8 +34,11 @@ body {
     color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+.closebtn {
     display: none;
+}
+
+.sidenav .closebtn {
     position: absolute;
     top: 0;
     right: 25px;
@@ -41,10 +53,16 @@ body {
 
 .navMobileBtn {
     display: none;
+    color: white;
 }
 
 .main {
     margin-left: 200px; /* Same as the width of the sidenav */
+}
+
+.content {
+    background-color: lightgrey;
+    padding-top: 30px;
 }
 
 #Purchase {

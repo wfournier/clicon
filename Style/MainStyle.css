@@ -5,6 +5,12 @@
 #footer p {
     background: transparent;
 }
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 body {
     background: transparent;
 }
