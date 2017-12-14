@@ -49,17 +49,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 		}
 
-		if(empty($p["pass"])){
+		if(empty($p["passRegister"])){
 			$passErr = $error = true;
 		} else{
-			if(strlen($p["pass"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["pass"]) && !ctype_alpha($p["pass"]) && !ctype_digit($p["pass"]) && !strpos($p["pass"], " ")){
-				$pass = clean($p["pass"]);
+			if(strlen($p["passRegister"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["passRegister"]) && !ctype_alpha($p["passRegister"]) && !ctype_digit($p["passRegister"]) && !strpos($p["passRegister"], " ")){
+				$pass = clean($p["passRegister"]);
 			} else{
 				$passErr = $error = true;
 			}
 		}
 
-		if(empty($p["confirmPass"]) || $p["pass"] != $p["confirmPass"]){
+		if(empty($p["confirmPass"]) || $p["passRegister"] != $p["confirmPass"]){
 			$confirmPassErr = $error = true;
 		}
 
