@@ -16,18 +16,18 @@
 </style>
 <main>
 	<div class="content row">
-		<div class="col-sm-1"></div>
+		<div class="col-sm-2"></div>
 		<div id="login" class="col-sm-3">
 			<h2 class="page-header">LOGIN</h2><br>
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="form">
 				<div class="row">
-					<div class="form-group col-xs-10">
+					<div class="form-group col-xs-12">
 						<label for="emailLogin">Email</label>
 						<input type="text" class="form-control" id="emailLogin" name="emailLogin" value="<?php echo isset($_POST['emailLogin']) ? $_POST['emailLogin'] : '' ?>">
 					</div>
 				</div>
 				<div class="row">
-					<div class="form-group col-xs-10">
+					<div class="form-group col-xs-12">
 						<label for="passLogin">Password</label>
 						<input type="text" class="form-control" id="fname" name="fname">
 					</div>
@@ -37,7 +37,7 @@
 				</div>
 			</form>
 		</div>
-		<div class="col-sm-3"></div>
+		<div class="col-sm-2"></div>
 		<div id="register" class="col-sm-4">
 			<h2 class="page-header">REGISTER</h2><br>
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="form">
