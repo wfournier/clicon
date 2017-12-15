@@ -1,5 +1,7 @@
 <?php include "Shared/connection.php" ?>
+<?php include "Functions/CleanData.php"; ?>
 <?php include "Processes/RegisterProcess.php" ?>
+<?php include "Processes/LoginProcess.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,12 +31,17 @@
 				<div class="row">
 					<div class="form-group col-xs-12">
 						<label for="passLogin">Password</label>
-						<input type="text" class="form-control" id="fname" name="fname">
+						<input type="password" class="form-control" id="passLogin" name="passLogin">
 					</div>
 				</div>
 				<div class="row">
 					<button type="submit" class="btn btn-success btn-lg">Login</button>
 				</div>
+				<div class="row" style="height: 80px; padding: 10px;">
+					<p><span class="success"><?php echo($loginOutput); ?></span></p>
+					<p><span class="error"><?php echo($loginErrMsg); ?></span></p>
+				</div>
+				<input type="hidden" name="process" value="login">
 			</form>
 		</div>
 		<div class="col-sm-2"></div>
@@ -179,7 +186,7 @@
 					<button type="reset" class="btn btn-warning btn-lg">Reset</button>
 				</div>
 				<div class="row" style="height: 80px; padding: 10px;">
-					<p><span class="error"><?php echo($errorMsg); ?></span></p>
+					<p><span class="error"><?php echo($registerErrMsg); ?></span></p>
 				</div>
 				<input type="hidden" name="process" value="register">
 			</form>

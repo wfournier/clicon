@@ -4,7 +4,7 @@ $p = $_POST;
 $email = $fname = $lname = $pass = $dob = $dobDay = $dobMonth = $dobYear = $isAdult = $phone = $country = $countryId = $stateCode = $stateId = $city = $address = $zip = "";
 $emailErr = $fnameErr = $lnameErr = $passErr = $confirmPassErr = $dobErr = $phoneErr = $countryIdErr = $stateErr = $cityErr = $addressErr = $zipErr = false;
 
-$errorMsg = $output = $emailExists = "";
+$registerErrMsg = $registerOutput = $emailExists = "";
 $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -151,34 +151,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 
 		if($error){
-			$errorMsg = nl2br("*Please fill out all fields correctly \n
+			$registerErrMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
-			$sql = "INSERT INTO ACCOUNT (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES (NULL, '" .ucwords(strtolower($lname), " ") ."', '" .ucwords(strtolower($fname), " ") ."', '" .$email ."', '" .password_hash($password, PASSWORD_BCRYPT) ."', '" .date('Y-m-d', strtotime(str_replace('-', '/', $dob))) ."', '" .str_replace('-', '/', $phone) ."', '" .ucwords(strtolower($address), " ") ."', '" .ucwords(strtolower($city), " ") ."', '" .strtoupper(str_replace(' ', '', $zip)) ."', " .$countryId .", " .$stateId .", '" .$isAdult ."')";
+			$insertSql = "INSERT INTO ACCOUNT (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES (NULL, '" .ucwords(strtolower($lname), " ") ."', '" .ucwords(strtolower($fname), " ") ."', '" .$email ."', '" .password_hash($password, PASSWORD_BCRYPT) ."', '" .date('Y-m-d', strtotime(str_replace('-', '/', $dob))) ."', '" .str_replace('-', '/', $phone) ."', '" .ucwords(strtolower($address), " ") ."', '" .ucwords(strtolower($city), " ") ."', '" .strtoupper(str_replace(' ', '', $zip)) ."', " .$countryId .", " .$stateId .", '" .$isAdult ."')";
 
-			if ($con->query($sql) === TRUE) {
-				$output = "Registered Successfully!";
-				$output.= " " .$dob;
+			if ($con->query($insertSql) === TRUE) {
+				$registerOutput = "Registered Successfully!";
+				$registerOutput.= " " .$dob;
 			} else {
-				$errorMsg = "Error: " . $sql . "<br>" . $con->error;
+				$registerErrMsg = "Error: " . $insertSql . "<br>" . $con->error;
 			}
 		}
 	}
-}
-
-function clean($data){
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-
-	return $data;
-}
-
-function gut($string){
-	$string = str_replace('-', '', $string);
-	$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string);
-
-	return $string;
 }
 
 ?>

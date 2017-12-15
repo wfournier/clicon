@@ -6,7 +6,7 @@ class func {
             session_start();
         if (isset($_COOKIE['id']) && isset($_COOKIE['token']) && isset($_COOKIE['serial'])) {
             $query = "SELECT * FROM sessions WHERE session_userid = :userid AND session_token = :token 
-                        AND session_serial = :serial;";
+            AND session_serial = :serial;";
             $userid = $_COOKIE['userid'];
             $token = $_COOKIE['token'];
             $serial = $_COOKIE['serial'];
@@ -25,11 +25,11 @@ class func {
                         $row['session_token'] == $_SESSION['token'] &&
                         $row['session_serial'] == $_SESSION['serial']){
                         return true;
-                    }
                 }
             }
         }
     }
+}
 }
 
 ?>
