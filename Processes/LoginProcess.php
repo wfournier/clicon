@@ -26,13 +26,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     while ($account = $get_account_res->fetch_array()) {
                         if (password_verify($password, $account["PASS_HASH"])) {
-                            $token = random_bytes(11);
+                            $token = random_bytes(25);
                             setcookie("token", $token, (time() + (89400 * 365)), "/");
                             setcookie("account_id", $account['ACCOUNT_ID'], (time() + (89400 * 365)), "/");
                             $set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
                                 $account['ACCOUNT_ID'] . ", '" . $token . "');";
                             $con->query($set_sess) or die("set session failed" . $con->error);
-                            header("Location: ../Index.php");
+                            header("Location: Index.php");
                         } else {
                             $loginErrMsg = "Invalid Password";
                         }
