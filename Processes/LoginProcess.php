@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			} else{
 				if(empty($p["passLogin"])){
 					$loginPassErr = $error = true;
-					$loginErrMsg = "Invalid Password 1";
+					$loginErrMsg = "Invalid Password";
 				} else{
 					$password = $p["passLogin"];
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						if(password_verify($password, $account["PASS_HASH"])){
 							$loginOutput = "Login Successful!";
 						} else{
-							$loginErrMsg = "Invalid Password 2";
+							$loginErrMsg = "Invalid Password";
 						}
 					}
 				}

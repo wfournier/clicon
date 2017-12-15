@@ -84,6 +84,7 @@
 				<div id="dob" class="row">
 					<div class="form-group col-xs-3">
 						<!-- <input type="text" class="form-control" id="dobDay" name="dobDay" maxlength="2" value="<?php echo isset($_POST['dobDay']) ? $_POST['dobDay'] : '' ?>" data-toggle="tooltip" title="Day must be between 1 and 31 inclusively"> -->
+						<p>Day</p>
 						<select class="form-control" id="dobDay" name="dobDay">
 							<?php
 							for($i = 1; $i <= 31; $i++){
@@ -98,6 +99,7 @@
 					</div>
 					<div class="form-group col-xs-3">
 						<!-- <input type="text" class="form-control" id="dobMonth" name="dobMonth" maxlength="2" value="<?php echo isset($_POST['dobMonth']) ? $_POST['dobMonth'] : '' ?>" data-toggle="tooltip" title="Month must be between 1 and 12 inclusively"> -->
+						<p>Month</p>
 						<select class="form-control" id="dobMonth" name="dobMonth">
 							<?php
 							for($i = 1; $i <= 12; $i++){
@@ -112,6 +114,7 @@
 					</div>
 					<div class="form-group col-xs-6">
 						<!-- <input type="text" class="form-control" id="dobYear" name="dobYear" minlength="4" maxlength="4" value="<?php echo isset($_POST['dobYear']) ? $_POST['dobYear'] : '' ?>" data-toggle="tooltip" title="Year must be valid"> -->
+						<p>Year</p>
 						<select class="form-control" id="dobYear" name="dobYear">
 							<?php
 							for($i = date("Y"); $i >= 1900; $i--){
