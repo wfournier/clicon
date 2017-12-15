@@ -1,7 +1,13 @@
-<?php include "Shared/connection.php" ?>
-<?php include "Functions/CleanData.php"; ?>
-<?php include "Processes/RegisterProcess.php" ?>
-<?php include "Processes/LoginProcess.php" ?>
+<?php
+include "Shared/connection.php";
+include "Functions/FilterData.php";
+include "Processes/RegisterProcess.php";
+include "Processes/LoginProcess.php";
+
+if(func::checkLogin($con)){
+	header("Location: Account_View.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

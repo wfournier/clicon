@@ -17,19 +17,14 @@ class func {
             $row = $statement->fetch(PDO::FETCH_ASSOC);
 
             if($row['session_userid'] > 0){
-                if($row['session_userid'] == $_COOKIE['userid'] &&
-                    $row['session_token'] == $_COOKIE['token'] &&
-                    $row['session_serial'] == $_COOKIE['serial']){
-
-                    if($row['session_userid'] == $_SESSION['userid'] &&
-                        $row['session_token'] == $_SESSION['token'] &&
-                        $row['session_serial'] == $_SESSION['serial']){
+                if($row['session_userid'] == $_COOKIE['userid'] && $row['session_token'] == $_COOKIE['token'] && $row['session_serial'] == $_COOKIE['serial']){
+                    if($row['session_userid'] == $_SESSION['userid'] && $row['session_token'] == $_SESSION['token'] && $row['session_serial'] == $_SESSION['serial']){
                         return true;
+                    }
                 }
             }
         }
     }
-}
 }
 
 ?>
