@@ -1,30 +1,28 @@
 <?php
-
-class func {
-    public static function checkLogin($conn){
-        if(!isset($_SESSION['id']) || !isset($_COOKIE['PHPSESSID']))
+class func
+{
+    public static function checkLogin($conn)
+    {
+        if (!isset($_COOKIE['account_id']))
             session_start();
-        if (isset($_COOKIE['id']) && isset($_COOKIE['token']) && isset($_COOKIE['serial'])) {
-            $query = "SELECT * FROM sessions WHERE session_userid = :userid AND session_token = :token 
-            AND session_serial = :serial;";
-            $userid = $_COOKIE['userid'];
+        if (isset($_COOKIE['account_id']) && isset($_COOKIE['token'])) {
+
+            $account_id = $_COOKIE['account_id'];
             $token = $_COOKIE['token'];
-            $serial = $_COOKIE['serial'];
 
-            $statement = $conn->prepare($query);
-            $statement->execute(array(':userid' => $userid, ':token' => $token, ':serial' => $serial));
+            $query23 = "SELECT * FROM sessions WHERE session_accountid = " . $account_id . " AND session_token = '" . $token . "';";
+            $results = $conn->query($query23) or die ("HELP " . $conn->error);
 
-            $row = $statement->fetch(PDO::FETCH_ASSOC);
-
-            if($row['session_userid'] > 0){
-                if($row['session_userid'] == $_COOKIE['userid'] && $row['session_token'] == $_COOKIE['token'] && $row['session_serial'] == $_COOKIE['serial']){
-                    if($row['session_userid'] == $_SESSION['userid'] && $row['session_token'] == $_SESSION['token'] && $row['session_serial'] == $_SESSION['serial']){
+            if ($results->num_rows > 0) {
+                while ($result = $results->fetch_array()) {
+                    if ($result['session_accountid'] == $_COOKIE['account_id'] &&
+                        $result['session_token'] == $_COOKIE['token']) {
                         return true;
                     }
                 }
+            } else {
+                echo "no rows";
             }
         }
     }
-}
-
-?>
+} ?>
