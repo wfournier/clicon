@@ -23,10 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					$loginErrMsg = "Invalid Password 1";
 				} else{
 					$password = $p["passLogin"];
-					$hash = password_hash($password, PASSWORD_BCRYPT);
 
 					while($account = $get_account_res->fetch_array()){
-						if(password_verify($password, $hash)){
+						if(password_verify($password, $account["PASS_HASH"])){
 							$loginOutput = "Login Successful!";
 						} else{
 							$loginErrMsg = "Invalid Password 2";
