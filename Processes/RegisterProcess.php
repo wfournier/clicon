@@ -158,7 +158,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 			if ($con->query($insertSql) === TRUE) {
 				$registerOutput = "Registered Successfully!";
-				$registerOutput.= " " .$dob;
 			} else {
 				$registerErrMsg = "Error: " . $insertSql . "<br>" . $con->error;
 			}

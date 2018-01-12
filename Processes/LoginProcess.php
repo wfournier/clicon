@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             setcookie("account_id", $account['ACCOUNT_ID'], (time() + (89400 * 365)), "/");
                             $set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
                                 $account['ACCOUNT_ID'] . ", '" . $token . "');";
-                            $con->query($set_sess) or die("set session failed" . $con->error);
+                            $con->query($set_sess) or die("set session failed " . $con->error);
                             header("Location: Index.php");
                         } else {
                             $loginErrMsg = "Invalid Password";

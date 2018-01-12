@@ -1,5 +1,5 @@
 <?php include "Shared/connection.php" ?>
-<?php include "Processes/RegisterProcess.php" ?>
+<?php include "Functions/FilterData.php"; ?>
 <?php include "Processes/ModifyProcess.php" ?>
 <?php include "Processes/CheckLogin.php" ?>
 <?php
@@ -78,8 +78,8 @@ if (!func::checkLogin($con)) {
                             </select>
                         </div>
                         <div class="form-group col-xs-6">
-                            <label for="stateIdMod" class="<?php echo $stateIdModErr ? 'error' : '' ?>">State/Province</label>
-                            <input type="text" class="form-control" id="stateIdMod" name="stateIdMod" value="<?php echo $stateIdMod ?>" data-toggle="tooltip" title="State code must be 2 characters long">
+                            <label for="stateCodeMod" class="<?php echo $stateCodeModErr ? 'error' : '' ?>">State/Province</label>
+                            <input type="text" class="form-control" id="stateCodeMod" name="stateCodeMod" value="<?php echo $stateCodeMod ?>" data-toggle="tooltip" title="State code must be 2 characters long">
                         </div>
                     </div>
                     <div class="row">
@@ -103,22 +103,32 @@ if (!func::checkLogin($con)) {
                     <hr>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="passMod" class="<?php echo $passModErr ? 'error' : '' ?>">Confirm Password</label>
+                            <label for="passMod" class="<?php echo $passModErr ? 'error' : '' ?>">Current Password</label>
                             <input type="Password" class="form-control" id="passMod" name="passMod" data-toggle="tooltip"
                             title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
+                        </div>
+                        <div class="col-xs-6"><br>
+                            <a href="Change_Password.php" class="btn btn-warning">Change Password</a>
                         </div>
                     </div>
                     <div class="row">
                         <button type="submit" class="btn btn-success btn-lg">Save</button>
                     </div>
                     <div class="row" style="height: 80px; padding: 10px;">
-                        <p><span class="error"><?php echo($registerErrMsg); ?></span></p>
+                        <p><span class="success"><?php echo($modOutput); ?></span></p>
+                        <?php
+                        if(isset($_GET["passChanged"])){
+                            ?>
+                            <p><span class="success"><?php echo("Password Changed Successfully!"); ?></span></p>
+                            <?php
+                        }
+                        ?>
+                        <p><span class="error"><?php echo($modErrMsg); ?></span></p>
                     </div>
                     <input type="hidden" name="process" value="modify">
                 </form>
             </div>
             <div class="col-sm-3">
-                <p><span class="success"><?php echo($registerOutput); ?></span></p>
             </div>
         </div>
     </main>
