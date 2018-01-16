@@ -40,7 +40,7 @@ html {
     padding-left: 0;
 }
 
-#login .col-xs-12 {
+#login .col-xs-12, #forgotPassForm .col-xs-12, #resetPassForm .col-xs-12 {
     padding-left: 0;
 }
 

@@ -1,5 +1,4 @@
 <?php
-$p = $_POST;
 
 $badgeName = $emergContact = "";
 
@@ -15,6 +14,7 @@ while($account = $get_account_info_res->fetch_array()){
 }
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+	$p = $_POST;
 	if($p["process"] == "pref"){
 		if(!empty($p["badgeName"])){
 			if((bool)preg_match('/[\'^£$%&*()}{@#~?><>,|=_+¬-]/', $p["badgeName"]) != true && strpos($p["badgeName"], "/") != true){

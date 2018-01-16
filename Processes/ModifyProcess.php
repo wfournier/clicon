@@ -1,5 +1,4 @@
 <?php
-$p = $_POST;
 
 $fnameMod = $lnameMod = $phoneMod = $countryIdMod = $stateCodeMod = $stateIdMod = $cityMod = $addressMod = $zipMod = $passMod = $passHash = "";
 $fnameModErr = $lnameModErr = $phoneModErr = $countryIdModErr = $stateCodeModErr = $cityModErr = $addressModErr = $zipModErr = $passModErr = false;
@@ -27,6 +26,7 @@ while($account = $get_account_info_res->fetch_array()){
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$p = $_POST;
 	if ($p["process"] == "modify") {
 		if(empty($p["fnameMod"])){
 			$fnameModErr = $error = true;

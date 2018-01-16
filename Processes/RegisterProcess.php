@@ -1,5 +1,4 @@
 <?php
-$p = $_POST;
 
 $email = $fname = $lname = $pass = $dob = $dobDay = $dobMonth = $dobYear = $isAdult = $phone = $country = $countryId = $stateCode = $stateId = $city = $address = $zip = "";
 $emailErr = $fnameErr = $lnameErr = $passErr = $confirmPassErr = $dobErr = $phoneErr = $countryIdErr = $stateErr = $cityErr = $addressErr = $zipErr = false;
@@ -8,6 +7,7 @@ $registerErrMsg = $registerOutput = $emailExists = "";
 $error = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	$p = $_POST;
 	if($p["process"] == "register"){
 		if(empty($p["emailRegister"])){
 			$emailErr = $error = true;
