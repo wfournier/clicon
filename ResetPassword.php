@@ -21,7 +21,7 @@
 		<div class="col-sm-2"></div>
 		<div id="resetPassForm" class="col-sm-3">
 			<?php
-			if(isset($_GET["token"])){
+			if(isset($_GET["token"]) && $invalidToken != true){
 				$token = $_GET["token"];
 				?>
 				<h2 class="page-header">RESET PASSWORD</h2><br>

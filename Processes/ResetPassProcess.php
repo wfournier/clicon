@@ -7,26 +7,42 @@ $newPassErr = $confirmNewPassErr = false;
 $resetPassErrMsg = $resetPassOutput = "";
 $error = false;
 
+if(isset($_GET["token"])){
+	$find_token_sql = "SELECT * FROM ACCOUNT WHERE PASS_RESET_TOKEN = '" .$_GET["token"] ."'";
+	$find_token_res = $con->query($find_token_sql) or die("find_token_res:" .$con->error);
+
+	if($find_token_res->num_rows < 1){
+		$invalidToken = true;
+	}
+
+	$tokenExpiryDate = $find_token_res->fetch_array()["TOKEN_EXPIRY"];
+
+	if($tokenExpiryDate < time()){
+		$invalidToken = true;
+	}
+}
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$p=$_POST;
 	if($p["process"] == "resetPass"){
 		$resetToken = $_POST["token"];
+
 		if(empty($p["newPass"])){
-			$newPassErr = $changePassErr = true;
+			$newPassErr = $newPassErr = true;
 		} else{
 			if(strlen($p["newPass"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["newPass"]) && !ctype_alpha($p["newPass"]) && !ctype_digit($p["newPass"]) && !strpos($p["newPass"], " ")){
 				$newPass = clean($p["newPass"]);
 			} else{
-				$newPassErr = $changePassErr = true;
+				$newPassErr = $newPassErr = true;
 			}
 		}
 
 		if(empty($p["confirmNewPass"]) || $p["newPass"] != $p["confirmNewPass"]){
-			$confirmNewPassErr = $changePassErr = true;
+			$confirmNewPassErr = $newPassErr = true;
 		}
 
-		if($changePassErr){
-			$changePassErrMsg = nl2br("*Please fill out all fields correctly \n
+		if($newPassErr){
+			$newPassErrMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
 			$update_pass_sql = "UPDATE ACCOUNT SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
@@ -37,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 				$account = $get_id_res->fetch_array();
 
-				$remove_token_sql = "UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
+				$remove_token_sql = "UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
 				$con->query($remove_token_sql) or die("remove_token_sql:" .$con->error);
 
 				$loginToken = random_bytes(25);
@@ -50,7 +66,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			} else {
 				$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
 			}
-
 		}
 	}
 }
