@@ -1,3 +1,4 @@
+<?php include "Processes/CheckLogin.php" ?>
 <?php include "Shared/connection.php" ?>
 <?php include "Processes/RegisterProcess.php" ?>
 <!DOCTYPE html>

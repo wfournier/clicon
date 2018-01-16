@@ -1,7 +1,8 @@
 <?php include "Shared/connection.php" ?>
-<?php include "Functions/CleanData.php"; ?>
+<?php include "Functions/FilterData.php"; ?>
 <?php include "Processes/RegisterProcess.php" ?>
 <?php include "Processes/LoginProcess.php" ?>
+<?php include "Processes/CheckLogin.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,14 +35,19 @@
 						<input type="password" class="form-control" id="passLogin" name="passLogin">
 					</div>
 				</div>
+				<input type="hidden" name="process" value="login">
 				<div class="row">
-					<button type="submit" class="btn btn-success btn-lg">Login</button>
+					<div class="col-xs-6">
+						<button type="submit" class="btn btn-success btn-lg">Login</button>
+					</div>
+					<div class="col-xs-6" style="text-align: right">
+						<a href="Forgot_Password.php">Forgot Password?</a>
+					</div>
 				</div>
 				<div class="row" style="height: 80px; padding: 10px;">
 					<p><span class="success"><?php echo($loginOutput); ?></span></p>
 					<p><span class="error"><?php echo($loginErrMsg); ?></span></p>
 				</div>
-				<input type="hidden" name="process" value="login">
 			</form>
 		</div>
 		<div class="col-sm-2"></div>
@@ -123,7 +129,7 @@
 								} else{
 									echo("<option value=\"" .$i ."\">" .$i ."</option>");
 								}
-							}								
+							}
 							?>
 						</select>
 					</div>
@@ -184,6 +190,7 @@
 						<input type="text" class="form-control" id="zip" name="zip" value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip" title="Zip code must be valid (i.e. A1B 2C3)">
 					</div>
 				</div>
+				<input type="hidden" name="process" value="register">
 				<div class="row">
 					<button type="submit" class="btn btn-success btn-lg">Register</button>
 					<button type="reset" class="btn btn-warning btn-lg">Reset</button>
@@ -191,7 +198,6 @@
 				<div class="row" style="height: 80px; padding: 10px;">
 					<p><span class="error"><?php echo($registerErrMsg); ?></span></p>
 				</div>
-				<input type="hidden" name="process" value="register">
 			</form>
 		</div>
 		<div class="col-sm-1"></div>
