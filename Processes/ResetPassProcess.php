@@ -17,8 +17,11 @@ if(isset($_GET["token"])){
 
 	$tokenExpiryDate = $find_token_res->fetch_array()["TOKEN_EXPIRY"];
 
-	if($tokenExpiryDate < time()){
+	if(strtotime($tokenExpiryDate) < time()){
 		$invalidToken = true;
+
+		$delete_token_sql ="UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$_GET["token"] ."'";
+		$con->query($delete_token_sql) or die("delete_token:" .$con->error);
 	}
 }
 
@@ -53,8 +56,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 				$account = $get_id_res->fetch_array();
 
-				$remove_token_sql = "UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
-				$con->query($remove_token_sql) or die("remove_token_sql:" .$con->error);
+				$delete_token_sql = "UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
+				$con->query($delete_token_sql) or die("delete_token_sql:" .$con->error);
 
 				$loginToken = random_bytes(25);
 				setcookie("token", $loginToken, (time() + (89400 * 365)), "/");
