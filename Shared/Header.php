@@ -47,7 +47,7 @@
                         </li>";
                         }
                         ?>
-                        <li><a style="margin-right: 30px" href="Admission.php">GET TICKET</a></li>
+                        <li><a style="margin-right: 30px" href="Purchase_SelectTicket.php">GET TICKET</a></li>
                     </ul>
                 </div>
             </div>

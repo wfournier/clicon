@@ -11,17 +11,11 @@ if($_POST == null){
 } else {
     $_SESSION["Error_Ticket"] = null;
     if(isset($_POST["friday"]))
-        $_SESSION["friday"] = $_POST["friday"];
-    else
-        $_SESSION["friday"] = null;
+        $_SESSION["friday"] = "something";
     if(isset($_POST["saturday"]))
-        $_SESSION["saturday"] = $_POST["saturday"];
-    else
-        $_SESSION["saturday"] = null;
+        $_SESSION["saturday"] = "something";
     if(isset($_POST["sunday"]))
-        $_SESSION["sunday"] = $_POST["sunday"];
-    else
-        $_SESSION["sunday"] = null;
+        $_SESSION["sunday"] = "something";
 }
 
 ?>
@@ -41,15 +35,21 @@ if($_POST == null){
 <?php include "Shared/Header.php";?>
 <main>
     <div class="row">
-        <div class="col-xs-4"></div>
-        <div class="col-xs-4">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="row" style="height: 400px">
+
             <h1>Select extras for your ticket:</h1>
             <p><i>Selecting all 3 days get you a 15$ off.</i></p>
             <form method="post" action="Purchase_Confirm.php">
                 <label>Concert: </label><input type="checkbox" name="concert"><br><br>
                 <label>Special Panel: </label><input type="checkbox" name="panel"><br><br>
-                <label>VIP Guest Autograph: </label><input type="checkbox" name="guest"><br><br>
-                <button><a href="Purchase_SelectTicket.php">Back</a></button><input type="submit" value="Next" id="next">
+                <label>VIP Guest Autograph: </label><input type="checkbox" name="guest">
+            </div>
+            <div class="row">
+                <a class="btn btn-warning" href="Purchase_SelectTicket.php">Back</a>
+                <input class="btn btn-warning" type="submit" value="Next" id="next">
+            </div>
             </form>
         </div>
     </div>
