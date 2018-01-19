@@ -105,7 +105,7 @@ if (!func::checkLogin($con)) {
                         <div class="form-group col-xs-6">
                             <label for="passMod" class="<?php echo $passModErr ? 'error' : '' ?>">Current Password</label>
                             <input type="Password" class="form-control" id="passMod" name="passMod" data-toggle="tooltip"
-                            title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
+                            title="Enter your current password to save changes">
                         </div>
                         <div class="col-xs-6"><br>
                             <a href="Change_Password.php" class="btn btn-warning">Change Password</a>
