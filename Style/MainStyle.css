@@ -91,6 +91,17 @@ html {
     top: 0;
     bottom: auto;
 }
+
+#timer-msg {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#guidebook {
+    position: relative;
+    margin: 0 5em;
+}
+
 @media only screen and (max-width: 1024px) and (min-width: 769px){
     .mainNavBarText, .navBarText {
         font-size: medium;
