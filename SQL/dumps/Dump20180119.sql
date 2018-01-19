@@ -38,8 +38,9 @@ CREATE TABLE `account` (
   `ZIP` varchar(7) NOT NULL,
   `COUNTRY_ID` int(11) NOT NULL,
   `STATE_ID` int(11) NOT NULL,
-  `EMERGENCY_CONTACT` varchar(20) DEFAULT NULL,
   `IS_ADULT` varchar(5) NOT NULL,
+  `EMERGENCY_CONTACT_PHONE` varchar(20) DEFAULT NULL,
+  `EMERGENCY_CONTACT_NAME` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ACCOUNT_ID`),
   UNIQUE KEY `EMAIL_UNIQUE` (`EMAIL`),
   KEY `ACCOUNT_FK_COUNTRY_ID_idx` (`COUNTRY_ID`),
@@ -55,7 +56,7 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (9,'Fournier','William','bepis420','wfournier2710@gmail.com','$2y$10$Pb2KlQwNG1Zl0yvD10JqYuqyTxtX.1/UfFC7y3RzNCB98auvWzVv.',NULL,NULL,'1997-10-27','5146229378','7515 Trudeau','Brossard','J4W2N5',38,11,'5144335525','TRUE'),(10,'Doe','John',NULL,'john@doe.com','$2y$10$3..NEq6kTiraeFjgnl3TEOjUmYov6/q3h1WxK/3b.j4X8nNH.YjoK',NULL,NULL,'1970-01-01','0000000000','123 Main St','Anytown','A1B2C3',38,11,NULL,'TRUE');
+INSERT INTO `account` VALUES (9,'Fournier','William','bepis420','wfournier2710@gmail.com','$2y$10$Pb2KlQwNG1Zl0yvD10JqYuqyTxtX.1/UfFC7y3RzNCB98auvWzVv.',NULL,NULL,'1997-10-27','5146229378','7515 Trudeau','Brossard','J4W2N5',38,11,'TRUE','5144335525','Claudette Valois'),(10,'Doe','John',NULL,'john@doe.com','$2y$10$3..NEq6kTiraeFjgnl3TEOjUmYov6/q3h1WxK/3b.j4X8nNH.YjoK',NULL,NULL,'1970-01-01','0000000000','123 Main St','Anytown','A1B2C3',38,11,'TRUE',NULL,NULL);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +202,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`session_id`),
   KEY `FK_ACCOUNTID_idx` (`session_accountid`),
   CONSTRAINT `SESSIONS_FK_ACCOUNT_ID` FOREIGN KEY (`session_accountid`) REFERENCES `account` (`ACCOUNT_ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -210,6 +211,7 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
+INSERT INTO `sessions` VALUES (22,9,'ðÎ˜˜63Û)so«i)Ðëðã`›8?',NULL,NULL);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -310,4 +312,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-19 11:05:29
+-- Dump completed on 2018-01-19 12:22:40
