@@ -39,8 +39,12 @@ if (!func::checkLogin($con)) {
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="emergContact" class="<?php echo $emergContactErr ? 'error' : '' ?>">Emergency Contact</label>
-                            <input type="tel" class="form-control" id="emergContact" name="emergContact" value="<?php echo $emergContact ?>" data-toggle="tooltip" title="Phone # to be called in case of emergency">
+                            <label for="emergContact" class="<?php echo $emergContactErr ? 'error' : '' ?>">Emergency Contact Phone #</label>
+                            <input type="tel" class="form-control" id="emergContact" name="emergContact" value="<?php echo $emergContact ?>" data-toggle="tooltip" title="Phone # to be called in case of emergency (i.e. 000-000-0000)">
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <label for="emergContactName" class="<?php echo $emergContactNameErr ? 'error' : '' ?>">Emergency Contact Full Name</label>
+                            <input type="tel" class="form-control" id="emergContactName" name="emergContactName" value="<?php echo $emergContactName ?>" data-toggle="tooltip" title="Full name of the person to be called in case of emergency (This should be filled if an Emergency Contact Phone # is entered)">
                         </div>
                     </div>
                     <div class="row">
