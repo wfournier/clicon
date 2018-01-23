@@ -3,12 +3,12 @@
 <?php include $_SERVER['DOCUMENT_ROOT']."/gamecon/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: Login_register.php");
+    header("Location: /gamecon/Login_register.php");
 }
 session_start();
 if ($_POST == null && $_SESSION["qty"] == null) {
     $_SESSION["Error_Quantity"] = "You must at least purchase one ticket";
-    header("Location: Purchase_SelectQty.php");
+    header("Location: /gamecon/Purchase/Purchase_SelectQty.php");
 } else {
     $_SESSION["Error_Quantity"] = null;
     if (isset($_POST["qty"])) {

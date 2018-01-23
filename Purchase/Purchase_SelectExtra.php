@@ -2,12 +2,12 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
 <?php
 if(!func::checkLogin($con)){
-    header("Location: Login_register.php");
+    header("Location: /gamecon/Login_register.php");
 }
 session_start();
 if($_POST == null){
     $_SESSION["Error_Ticket"] = "Please make sure you select a ticket";
-    header("Location: Purchase_SelectTicket.php");
+    header("Location: /gamecon/Purchase/Purchase_SelectTicket.php");
 } else {
     $_SESSION["Error_Ticket"] = null;
     if(isset($_POST["friday"]))

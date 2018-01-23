@@ -2,12 +2,12 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
 <?php
 if(!func::checkLogin($con)){
-    header("Location: Login_register.php");
+    header("Location: /gamecon/Login_register.php");
 }
 session_start();
 if($_GET["id"] == null){
     $_SESSION["Error_Quantity"] = "An error occured please try again";
-    header("Location: Purchase_SetTickets.php");
+    header("Location: /gamecon/Purchase/Purchase_SetTickets.php");
 } else {
     $_SESSION["Error_Quantity"] = null;
 }

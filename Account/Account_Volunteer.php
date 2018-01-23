@@ -2,7 +2,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: Login_register.php");
+    header("Location: /gamecon/Login_register.php");
 }
 ?>
 <!DOCTYPE html>
