@@ -47,7 +47,7 @@ CREATE TABLE `account` (
   KEY `ACCOUNT_FK_STATE_ID_idx` (`STATE_ID`),
   CONSTRAINT `ACCOUNT_FK_COUNTRY_ID` FOREIGN KEY (`COUNTRY_ID`) REFERENCES `countries` (`COUNTRY_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ACCOUNT_FK_STATE_ID` FOREIGN KEY (`STATE_ID`) REFERENCES `states` (`STATE_ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
-INSERT INTO `account` VALUES (9,'Fournier','William','bepis420','wfournier2710@gmail.com','$2y$10$Pb2KlQwNG1Zl0yvD10JqYuqyTxtX.1/UfFC7y3RzNCB98auvWzVv.',NULL,NULL,'1997-10-27','5146229378','7515 Trudeau','Brossard','J4W2N5',38,11,'TRUE','5144335525','Claudette Valois'),(10,'Doe','John',NULL,'john@doe.com','$2y$10$3..NEq6kTiraeFjgnl3TEOjUmYov6/q3h1WxK/3b.j4X8nNH.YjoK',NULL,NULL,'1970-01-01','0000000000','123 Main St','Anytown','A1B2C3',38,11,'TRUE',NULL,NULL);
+INSERT INTO `account` VALUES (9,'Fournier','William','bepis420','wfournier2710@gmail.com','$2y$10$Pb2KlQwNG1Zl0yvD10JqYuqyTxtX.1/UfFC7y3RzNCB98auvWzVv.',NULL,NULL,'1997-10-27','5146229378','7515 Trudeau','Brossard','J4W2N5',38,11,'TRUE','5144335525','Claudette Valois'),(10,'Doe','John',NULL,'john@doe.com','$2y$10$3..NEq6kTiraeFjgnl3TEOjUmYov6/q3h1WxK/3b.j4X8nNH.YjoK',NULL,NULL,'1970-01-01','0000000000','123 Main St','Anytown','A1B2C3',38,11,'TRUE',NULL,NULL),(11,'Martel','Remi',NULL,'luxor37@gmail.com','$2y$10$br.3nKtu9/DOGbJLj8KF5OF9k2p1YD.ceDZG0laRfoWI5M7uTW/Ay',NULL,NULL,'1998-01-01','4506473481','1800 Basset','Longueuil','J4M1W5',38,11,'TRUE',NULL,NULL);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,7 +211,6 @@ CREATE TABLE `sessions` (
 
 LOCK TABLES `sessions` WRITE;
 /*!40000 ALTER TABLE `sessions` DISABLE KEYS */;
-INSERT INTO `sessions` VALUES (1,9,'Ò±€}RÄ)RÕœfÞîcd[µ˜5Í',NULL,NULL);
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -314,4 +313,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-23 14:46:50
+-- Dump completed on 2018-01-23 15:58:52
