@@ -7,7 +7,7 @@ if(!func::checkLogin($con)){
 session_start();
 if($_POST == null){
     $_SESSION["Error_Ticket"] = "Please make sure you select a ticket";
-    header("Location: /gamecon/Purchase/Purchase_SelectTicket.php");
+    header("Location: /gamecon/Purchase/SelectTicket.php");
 } else {
     $_SESSION["Error_Ticket"] = null;
     if(isset($_POST["friday"]))
@@ -41,13 +41,13 @@ if($_POST == null){
 
             <h1>Select extras for your ticket:</h1>
             <p><i>Selecting all 3 days get you a 15$ off.</i></p>
-            <form method="post" action="Purchase_Confirm.php">
+            <form method="post" action="Confirm.php">
                 <label>Concert: </label><input type="checkbox" name="concert"><br><br>
                 <label>Special Panel: </label><input type="checkbox" name="panel"><br><br>
                 <label>VIP Guest Autograph: </label><input type="checkbox" name="guest">
             </div>
             <div class="row">
-                <a class="btn btn-warning" href="Purchase_SelectTicket.php">Back</a>
+                <a class="btn btn-warning" href="SelectTicket.php">Back</a>
                 <input class="btn btn-warning" type="submit" value="Next" id="next">
             </div>
             </form>

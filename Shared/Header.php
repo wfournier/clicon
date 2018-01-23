@@ -41,13 +41,13 @@
                                 View Account
                             <span class=\"caret\" ></span ></a>
                             <ul class=\"dropdown-menu\" >
-                                <li ><a href = \"/gamecon/Account/Account_View.php\" > View Info </a ></li >
+                                <li ><a href = \"/gamecon/Account/Overview.php\" > View Info </a ></li >
                                 <li ><a href = \"/gamecon/Processes/Logout.php\" > Logout</a ></li >
                             </ul >
                         </li >";
                         }
                         ?>
-                        <li><a style="margin-right: 30px" href="/gamecon/Purchase/Purchase_SelectTicket.php">GET TICKET</a></li>
+                        <li><a style="margin-right: 30px" href="/gamecon/Purchase/SelectTicket.php">GET TICKET</a></li>
                     </ul>
                 </div>
             </div>

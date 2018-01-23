@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$update_pass_sql = "UPDATE ACCOUNT SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
 				if ($con->query($update_pass_sql) === TRUE) {
-					header("Location: Account_ModifyInfo.php?passChanged=true");
+					header("Location: ModifyInfo.php?passChanged=true");
 				} else {
 					$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
 				}

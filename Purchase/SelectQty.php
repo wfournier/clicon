@@ -26,7 +26,7 @@ session_start();
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form method="post" action="Purchase_SetTickets.php">
+            <form method="post" action="SetTickets.php">
             <div class="row" style="min-height: 400px">
                 <h1>Select quantity of tickets.</h1>
                 <p><i>Children under 13 years old don't need a ticket.<br>
@@ -42,7 +42,7 @@ session_start();
                     <input type="number" value="<?php echo $y ?>" name="qty" min="1" max="50" required> Ticket(s)
             </div>
             <div class="row">
-                <a class="btn btn-warning" href="../Account/Account_View.php">Cancel</a>
+                <a class="btn btn-warning" href="../Account/Overview.php">Cancel</a>
                 <input class="btn btn-warning" type="submit" value="Next" id="next">
             </div>
             </form>

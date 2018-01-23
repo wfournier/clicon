@@ -7,7 +7,7 @@ if(!func::checkLogin($con)){
 session_start();
 if($_GET["id"] == null){
     $_SESSION["Error_Quantity"] = "An error occured please try again";
-    header("Location: /gamecon/Purchase/Purchase_SetTickets.php");
+    header("Location: /gamecon/Purchase/SetTickets.php");
 } else {
     $_SESSION["Error_Quantity"] = null;
 }
@@ -33,7 +33,7 @@ if($_GET["id"] == null){
             <div class="row" style="height: 400px">
             <h1>Select dates for your ticket:</h1>
             <p><i>Selecting all 3 days get you a 15$ off.</i></p>
-            <form method="post" action="Purchase_ProcessingSelectTicket.php">
+            <form method="post" action="ProcessingSelectTicket.php">
                     <input type="hidden" name="id" value="<?php echo $_GET["id"]?>">
                     <label>Friday: </label><input type="checkbox" name="friday"
                         <?php if($_SESSION["friday"] != null){ echo "checked"; }?>
@@ -46,7 +46,7 @@ if($_GET["id"] == null){
                     >
                 </div>
                 <div class="row">
-                    <a class="btn btn-warning" href="Purchase_SetTickets.php">Cancel</a>
+                    <a class="btn btn-warning" href="SetTickets.php">Cancel</a>
                     <input class="btn btn-warning" type="submit" value="Next" id="next">
                 </div>
             </form>
