@@ -50,8 +50,14 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form method="post" action="SelectTicket.php">
+            <form method="post" action="Validate_ProceedToPayment.php">
                 <div class="row" style="min-height: 400px">
+                    <?php
+                    if (isset($_SESSION["Error_Edit"])) {
+                        echo "<p><i style='color: red'>" . $_SESSION["Error_Edit"] . "</i></p>";
+                        $_SESSION["Error_Edit"] = null;
+                    }
+                    ?>
                     <h1>Set your tickets.</h1>
                     <p><i>Admission for children under 13 years old is free.<br>
                             A ticket is not required</i></p>
@@ -60,7 +66,7 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                     $tickets = array();
                     $tickets = $_SESSION["tickets"];
                     foreach ($tickets as $ticket) {
-                        $c++
+                        $c++;
                         ?>
                         <div class="row">
                             <hr>
@@ -119,14 +125,8 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                 </div>
                 <div class="row" style="margin: 20px 0 20px 0">
                     <a class="btn btn-warning" href="SelectQty.php">Back</a>
-                    <input class="btn btn-warning" type="submit" value="Next" id="next">
+                    <input class="btn btn-warning" type="submit" value="Proceed to Payment" id="proceed">
                 </div>
-                <?php
-                if (isset($_SESSION["Error_Edit"])) {
-                    echo "<p><i style='color: red'>" . $_SESSION["Error_Ticket"] . "</i></p>";
-                    $_SESSION["Error_Edit"] = null;
-                }
-                ?>
             </form>
         </div>
     </div>

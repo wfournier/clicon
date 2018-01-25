@@ -11,7 +11,7 @@ class Ticket
     var $extra2 = false;
     var $extra3 = false;
 
-    var $badgeName;
+    var $badgeName = "";
     var $ageClass;
     var $price;
 
@@ -178,6 +178,7 @@ class Ticket
     public function getDBBadge(): string
     {
         //GET BADGE NAME FROM DATABASE AND RETURN IT
+        $this->setBadgeName("something");
         return "something";
     }
 }

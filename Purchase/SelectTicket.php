@@ -5,16 +5,17 @@ if (!func::checkLogin($con)) {
     header("Location: /gamecon/Login_register.php");
 }
 session_start();
-if(!isset($_SESSION["friday"]))
-    $_SESSION["friday"] = null;
-if(!isset($_SESSION["saturday"]))
-    $_SESSION["saturday"] = null;
-if(!isset($_SESSION["sunday"]))
-    $_SESSION["sunday"] = null;
 if ($_GET["id"] == null) {
     $_SESSION["Error_Edit"] = "An error occurred please try again";
     header("Location: /gamecon/Purchase/SetTickets.php");
 } else {
+    $id = $_GET["id"];
+    if(!isset($_SESSION["friday$id"]))
+        $_SESSION["friday$id"] = null;
+    if(!isset($_SESSION["saturday$id"]))
+        $_SESSION["saturday$id"] = null;
+    if(!isset($_SESSION["sunday$id"]))
+        $_SESSION["sunday$id"] = null;
     $_SESSION["Error_Edit"] = null;
 }
 ?>
@@ -27,8 +28,6 @@ if ($_GET["id"] == null) {
         label {
             width: 100px;
             margin-left: 30px;
-        }
-
         }
     </style>
 </head>
@@ -46,19 +45,21 @@ if ($_GET["id"] == null) {
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
                     <label for="friday">Friday: </label>
                     <input id="friday" type="checkbox" name="friday"
-                        <?php if ($_SESSION["friday"] == "something") {
+                        <?php
+                        $id = $_GET["id"];
+                        if ($_SESSION["friday$id"] == "something") {
                             echo "checked";
                         } ?>
                     ><br><br>
                     <label for="saturday">Saturday: </label>
                     <input id="saturday" type="checkbox" name="saturday"
-                        <?php if ($_SESSION["saturday"] == "something") {
+                        <?php if ($_SESSION["saturday$id"] == "something") {
                             echo "checked";
                         } ?>
                     ><br><br>
                     <label for="sunday">Sunday: </label>
                     <input id="sunday" type="checkbox" name="sunday"
-                        <?php if ($_SESSION["sunday"] == "something") {
+                        <?php if ($_SESSION["sunday$id"] == "something") {
                             echo "checked";
                         } ?>
                     >

@@ -1,34 +1,36 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT']."/gamecon/Classes/Ticket.php" ?>
 <?php
+if (!func::checkLogin($con)) {
+    header("Location: /gamecon/Login_register.php");
+}
 session_start();
-//Add selection to object and then update session array ticket
-//redirect to select badge name
 if ($_POST["id"] != null) {
     $tickets = $_SESSION["tickets"];
     $id = $_POST["id"];
     $ticket = $tickets["$id"];
 
     if(isset($_POST["concert"]) && $_POST["concert"] == true) {
-        $_SESSION["concert"] = "something";
+        $_SESSION["concert$id"] = "something";
         echo "concert";
         $ticket->setExtra1(true);
     }else
         $ticket->setExtra1(false);
     if(isset($_POST["panel"]) && $_POST["panel"] == true) {
-        $_SESSION["panel"] = "something";
+        $_SESSION["panel$id"] = "something";
         echo "panel";
         $ticket->setExtra2(true);
     }else
         $ticket->setExtra2(false);
     if(isset($_POST["guest"]) && $_POST["guest"] == true) {
-        $_SESSION["guest"] = "something";
+        $_SESSION["guest$id"] = "something";
         echo "guest";
         $ticket->setExtra3(true);
     } else
         $ticket->setExtra3(false);
 
-    //header("Location: /gamecon/Purchase/SelectExtra.php?id=$id");
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /gamecon/Purchase/SetBadgeName.php?id=$id");
 } else {
     if($_POST["id"]!=null){
         $id=$_POST["id"];

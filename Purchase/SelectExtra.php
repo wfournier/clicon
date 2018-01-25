@@ -5,17 +5,19 @@ if (!func::checkLogin($con)) {
     header("Location: /gamecon/Login_register.php");
 }
 session_start();
-if(!isset($_SESSION["concert"]))
-    $_SESSION["concert"] = null;
-if(!isset($_SESSION["panel"]))
-    $_SESSION["panel"] = null;
-if(!isset($_SESSION["guest"]))
-    $_SESSION["guest"] = null;
+
 if ($_GET["id"] == null) {
     $_SESSION["Error_Edit"] = "An error occurred while processing extra. Please try again.";
     header("Location: /gamecon/Purchase/SetTickets.php");
 } else
-    $_SESSION["Error_Ticket"] = null;
+    $id = $_GET["id"];
+    if (!isset($_SESSION["concert$id"]))
+        $_SESSION["concert$id"] = null;
+if (!isset($_SESSION["panel$id"]))
+    $_SESSION["panel$id"] = null;
+if (!isset($_SESSION["guest$id"]))
+    $_SESSION["guest$id"] = null;
+$_SESSION["Error_Ticket$id"] = null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,23 +44,25 @@ if ($_GET["id"] == null) {
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
                     <label for="concert">Concert: </label><input id="concert" type="checkbox" name="concert"
-                        <?php if ($_SESSION["concert"] == "something") {
+                        <?php
+                        $id = $_GET["id"];
+                        if ($_SESSION["concert$id"] == "something") {
                             echo "checked";
                         } ?>
                     ><br><br>
                     <label for="panel">Special Panel: </label><input id="panel" type="checkbox" name="panel"
-                        <?php if ($_SESSION["panel"] == "something") {
+                        <?php if ($_SESSION["panel$id"] == "something") {
                             echo "checked";
                         } ?>
                     ><br><br>
                     <label for="guest">VIP Guest Autograph: </label><input id="guest" type="checkbox" name="guest"
-                        <?php if ($_SESSION["guest"] == "something") {
+                        <?php if ($_SESSION["guest$id"] == "something") {
                             echo "checked";
                         } ?>
                     >
                 </div>
                 <div class="row">
-                    <a class="btn btn-warning" href="SelectTicket.php">Back</a>
+                    <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["id"] ?>">Back</a>
                     <input class="btn btn-warning" type="submit" value="Next" id="next">
                 </div>
                 <?php

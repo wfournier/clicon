@@ -1,8 +1,11 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT']."/gamecon/Classes/Ticket.php" ?>
 <?php
+if (!func::checkLogin($con)) {
+    header("Location: /gamecon/Login_register.php");
+}
 session_start();
-//Add selection to object and then update session array ticket
-//redirect to select extra
 if ($_POST["id"] != null) {
     $tickets = $_SESSION["tickets"];
     $id = $_POST["id"];
@@ -10,21 +13,21 @@ if ($_POST["id"] != null) {
     $atLeastOne = false;
 
     if(isset($_POST["friday"]) && $_POST["friday"] == true) {
-        $_SESSION["friday"] = "something";
+        $_SESSION["friday$id"] = "something";
         echo "fr";
         $ticket->setFriday(true);
         $atLeastOne = true;
     }else
         $ticket->setFriday(false);
     if(isset($_POST["saturday"]) && $_POST["saturday"] == true) {
-        $_SESSION["saturday"] = "something";
+        $_SESSION["saturday$id"] = "something";
         echo "sa";
         $ticket->setSaturday(true);
         $atLeastOne = true;
     }else
         $ticket->setSaturday(false);
     if(isset($_POST["sunday"]) && $_POST["sunday"] == true) {
-        $_SESSION["sunday"] = "something";
+        $_SESSION["sunday$id"] = "something";
         echo "su";
         $ticket->setSunday(true);
         $atLeastOne = true;
