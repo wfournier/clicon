@@ -33,7 +33,7 @@ if (!func::checkLogin($con)) {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="badgeName" class="<?php echo $badgeNameErr ? 'error' : '' ?>">Badge Name</label>
+                            <label for="badgeName" class="<?php echo $badgeNameErr ? 'error' : '' ?>">Preferred Badge Name</label>
                             <input type="text" class="form-control" id="badgeName" name="badgeName" value="<?php echo $badgeName ?>" maxlength="20" data-toggle="tooltip" title="Your badge name will appear on your ticket (No special characters allowed)">
                         </div>
                     </div>

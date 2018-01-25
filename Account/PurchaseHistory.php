@@ -27,27 +27,30 @@ if (!func::checkLogin($con)) {
             <div class="col-sm-6">
                 <table class="table table-hover" border="2">
                     <tr>
-                        <th>Ticket ID</th><th>Ticket Type</th><th>Description</th><th>Extras</th><th>Purchase Date</th><th>Price</th>
+                        <th>Transaction ID</th><th>Purchase Date</th><th>Number of Tickets</th><th>Total Price</th>
                     </tr>
                     <?php
-                    $get_tickets_sql = "SELECT * FROM TICKET WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
-                    $get_tickets_res = $con->query($get_tickets_sql) or die("get_tickets_res: " .$con->error);
+                    $get_transactions = "SELECT * FROM TRANSACTION WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
+                    $get_transactions_res = $con->query($get_transactions) or die("get_transactions_res: " .$con->error);
 
-                    if($get_tickets_res->num_rows < 1){
-                        while($ticket = $get_tickets_res->fetch_array()){
-                            echo("<tr>");
-                            echo("<td>" .$ticket['TICKET_ID'] ."</td>");
-                            echo("<td>" .$ticket['TICKET_TYPE'] ."</td>");
-                            echo("<td>" .$ticket['TICKET_DESC'] ."</td>");
-                            echo("<td>" .$ticket['EXTRAS'] ."</td>");
-                            echo("<td>" .$ticket['PURCHASE_DATE'] ."</td>");
-                            echo("<td>" .$ticket['PRICE'] ."</td>");
-                            echo("</tr>");
-                        }
-                    } else{
+                    if($get_transactions_res->num_rows < 1){
                         echo("<tr>");
                         echo("<td colspan=\"6\">No recent purchases</td>");
                         echo("</tr>");
+                    } else{
+                        while($transaction = $get_transactions_res->fetch_array()){
+                            echo("<tr>");
+                            echo("<td>" .$transaction['TRANSACTION_ID'] ."</td>");
+                            echo("<td>" .$transaction['PURCHASE_DATE'] ."</td>");
+
+                            $get_ticket_count_res = $con->query("SELECT count(*) AS TICKET_COUNT FROM TICKET WHERE TRANSACTION_ID = " .$transaction["TRANSACTION_ID"]) or die("ticket_count: " .$con->error);
+                            
+                            $ticketCount = $get_ticket_count_res->fetch_array()["TICKET_COUNT"];
+
+                            echo("<td>" .$ticketCount ."</td>");
+                            echo("<td>$" .$transaction['PRICE_TOTAL'] ."</td>");
+                            echo("</tr>");
+                        }
                     }
                     ?>
                 </table>
