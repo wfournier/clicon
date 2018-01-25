@@ -1,6 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT']."/gamecon/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
     header("Location: /gamecon/Login_register.php");
@@ -67,30 +67,31 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                             <div class="col-xs-6">
                                 <h4>Ticket #<?php echo $c ?></h4>
                                 Badge Name: <?php echo $ticket->badgeName ?><br>
-                                Days: <?php if ($ticket->friday == true) {
+                                Days: <?php
+                                if ($ticket->isFriday() == true) {
                                     echo "F ";
                                 } else {
                                     echo "- ";
                                 }
-                                if ($ticket->saturday == true) {
+                                if ($ticket->isSaturday() == true) {
                                     echo "S ";
                                 } else {
                                     echo "- ";
                                 }
-                                if ($ticket->sunday == true) {
+                                if ($ticket->isSunday() == true) {
                                     echo "S ";
                                 } else {
                                     echo "- ";
                                 } ?>
                                 <br>
                                 Extras: <?php if ($ticket->extra1 == true) {
-                                    echo "<p>Concert</p>";
+                                    echo "<p> - Concert</p>";
                                 }
                                 if ($ticket->extra2 == true) {
-                                    echo "<p>Extra Panel</p>";
+                                    echo "<p> - Extra Panel</p>";
                                 }
                                 if ($ticket->extra3 == true) {
-                                    echo "<p>Special Guest Autograph</p>";
+                                    echo "<p> - Special Guest Autograph</p>";
                                 }
                                 if ($ticket->extra1 == false && $ticket->extra2 == false && $ticket->extra3 == false) {
                                     echo "none";
@@ -99,7 +100,7 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                             </div>
                             <div class="col-xs-6" style="text-align: right;">
                                 <a class="btn btn-warning ticketBtn"
-                                   href="SelectTicket.php?id=<?php echo $ticket->tempID?>">
+                                   href="SelectTicket.php?id=<?php echo $ticket->tempID ?>">
                                     Edit
                                 </a>
                                 <br>
@@ -120,6 +121,12 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                     <a class="btn btn-warning" href="SelectQty.php">Back</a>
                     <input class="btn btn-warning" type="submit" value="Next" id="next">
                 </div>
+                <?php
+                if (isset($_SESSION["Error_Edit"])) {
+                    echo "<p><i style='color: red'>" . $_SESSION["Error_Ticket"] . "</i></p>";
+                    $_SESSION["Error_Edit"] = null;
+                }
+                ?>
             </form>
         </div>
     </div>

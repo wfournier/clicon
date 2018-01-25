@@ -47,7 +47,7 @@
                         </li >";
                         }
                         ?>
-                        <li><a style="margin-right: 30px" href="/gamecon/Purchase/SelectTicket.php">GET TICKET</a></li>
+                        <li><a style="margin-right: 30px" href="/gamecon/Purchase/SetTickets.php">GET TICKET</a></li>
                     </ul>
                 </div>
             </div>

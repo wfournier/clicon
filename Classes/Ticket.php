@@ -3,13 +3,13 @@
 class Ticket
 {
     var $tempID;
-    var $friday;
-    var $saturday;
-    var $sunday;
+    var $friday = false;
+    var $saturday = false;
+    var $sunday = false;
 
-    var $extra1;
-    var $extra2;
-    var $extra3;
+    var $extra1 = false;
+    var $extra2 = false;
+    var $extra3 = false;
 
     var $badgeName;
     var $ageClass;
