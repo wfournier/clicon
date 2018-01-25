@@ -39,7 +39,10 @@ $_SESSION["Error_Ticket$id"] = null;
         <div class="col-md-4">
             <form method="post" action="ProcessingSelectExtra.php">
                 <div class="row" style="height: 400px">
-                    <h1>Select extras for your ticket:</h1>
+                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets.php">Set Tickets </a>></div>
+                    <div class="lowerbreadcrumbs"><a href="/gamecon/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
+                        <a href="/gamecon/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>></div>
+                    <h1 style="margin-top: 0">Select extras for your ticket:</h1>
                     <p><i>Selecting all 3 days get you a 15$ off.</i></p>
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">

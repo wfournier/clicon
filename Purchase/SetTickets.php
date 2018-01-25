@@ -58,7 +58,8 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                         $_SESSION["Error_Edit"] = null;
                     }
                     ?>
-                    <h1>Set your tickets.</h1>
+                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets/php">Set Tickets </a>></div>
+                    <h1 style="margin-top: 0">Set your tickets.</h1>
                     <p><i>Admission for children under 13 years old is free.<br>
                             A ticket is not required</i></p>
                     <?php
@@ -124,8 +125,8 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                     ?>
                 </div>
                 <div class="row" style="margin: 20px 0 20px 0">
-                    <a class="btn btn-warning" href="SelectQty.php">Back</a>
-                    <input class="btn btn-warning" type="submit" value="Proceed to Payment" id="proceed">
+                    <a class="btn btn-warning" href="SelectQty.php">Cancel</a>
+                    <input class="btn btn-warning" type="submit" value="Proceed to Next Step" id="proceed">
                 </div>
             </form>
         </div>

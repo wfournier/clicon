@@ -40,7 +40,11 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
         <div class="col-md-4">
             <form method="post" action="ProcessingBadgeName.php">
                 <div class="row" style="height: 400px">
-                    <h1>Select your badge name:</h1>
+                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets.php">Set Tickets </a>></div>
+                    <div class="lowerbreadcrumbs"><a href="/gamecon/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
+                        <a href="/gamecon/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>>
+                        <a href="/gamecon/Purchase/SetBadgeName.php?id=<?php echo $id?>">Set Badge Name </a></div>
+                    <h1 style="margin-top: 0">Select your badge name:</h1>
                     <p><i style="color: red">Please avoid any inappropriate name as it will be checked and modified if
                             needed at pickup.</i></p>
 
