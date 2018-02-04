@@ -7,7 +7,6 @@
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/MainNavigation.html"; ?>
 <main>
 
 </main>
