@@ -75,7 +75,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div id="timer-box">
-                                <p id="timer-msg" class="guidebook" style="width: 200px">Get the official Otakuthon
+                                <p id="timer-msg" class="guidebook" style="width: 200px">Get the official Gamecon
                                     Mobile Schedule!</p>
                                 <img id="guidebook"
                                      src="http://otakuthon.com/2017/images/2014/guidebook-devices.png"><br><br>
