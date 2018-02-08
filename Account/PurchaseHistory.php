@@ -34,20 +34,22 @@ if (!func::checkLogin($con)) {
                     $get_transactions_res = $con->query($get_transactions) or die("get_transactions_res: " .$con->error);
 
                     if($get_transactions_res->num_rows < 1){
-                        echo("<tr>");
-                        echo("<td colspan=\"6\">No recent purchases</td>");
-                        echo("</tr>");
+                        ?>
+                        <tr>
+                            <td colspan="6">No recent purchases</td>
+                        </tr>
+                        <?php
                     } else{
                         while($transaction = $get_transactions_res->fetch_array()){
                             echo("<tr>");
                             echo("<td>" .$transaction['TRANSACTION_ID'] ."</td>");
-                            echo("<td>" .$transaction['PURCHASE_DATE'] ."</td>");
+                            echo("<td>" .date("d-m-Y", strtotime($transaction['PURCHASE_DATE'])) ."</td>");
 
                             $get_ticket_count_res = $con->query("SELECT count(*) AS TICKET_COUNT FROM TICKET WHERE TRANSACTION_ID = " .$transaction["TRANSACTION_ID"]) or die("ticket_count: " .$con->error);
                             
                             $ticketCount = $get_ticket_count_res->fetch_array()["TICKET_COUNT"];
 
-                            echo("<td>" .$ticketCount ."</td>");
+                            echo("<td>" .$ticketCount ."&nbsp;<a href=\"TransactionDetail.php?transaction_id=" .$transaction['TRANSACTION_ID'] ."\">View Tickets</a></td>");
                             echo("<td>$" .$transaction['PRICE_TOTAL'] ."</td>");
                             echo("</tr>");
                         }
