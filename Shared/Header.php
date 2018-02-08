@@ -1,8 +1,11 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
 <header>
     <div class="row" id="bannerSec">
+        <a href="/gamecon/Index.php">
+            <img id="logoMain" src="/gamecon/Resources/logoMain.png" alt="logo">
+        </a>
     </div>
-    <nav id="sticky" class="sticky navbar navbar-inverse ">
+    <nav id="sticky" class="sticky navbar navbar-inverse navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button class="navbar-toggle" data-toggle="collapse"
@@ -11,14 +14,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a style="padding-left: 30px" class="navbar-brand" data-toggle="collapse"
-                   href="/gamecon/Index.php">GameCon</a>
             </div>
             <!--Left Side-->
             <div class="collapse navbar-collapse navBarText" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="/gamecon/Index.php">Home</a></li>
-                    <li><a href="/gamecon/About.php">About</a></li>
+                    <li><a href="/gamecon/Information.php">Information</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
                             Partners/Sponsors

@@ -1,50 +1,127 @@
+main {
+    position: relative;
+    min-height: 500px;
+}
+
+nav {
+    font-family: "Trebuchet MS";
+}
+
+body {
+    background: transparent;
+}
+
 #footer {
     text-align: center;
     background-color: transparent;
 }
+
 #footer p {
     background: transparent;
 }
 
-.item{
+#logoMain {
+    width: auto;
+    height: 100%;
+}
+
+.item {
     width: 100%;
     height: 100%;
 }
 
-#carousel1{
+/*CAROUSEL------------------------------------------------------------------------------------------------------------*/
+
+#carousel1 {
     background-image: url("../Resources/carousel1.jpg");
 }
-#carousel2{
+
+#carousel2 {
     background-image: url("../Resources/carousel2.jpg");
 }
-#carousel3{
+
+#carousel3 {
     background-image: url("../Resources/carousel3.jpg");
 }
-.carousel-caption{
+
+.carousel-caption {
     width: 100%;
     height: 100%;
     left: 0;
 }
 
-#carousel1, #carousel2, #carousel3{
+#carousel1, #carousel2, #carousel3 {
     background-size: cover;
     background-position: center center;
 }
 
+.carousel {
+    height: 500px;
+}
+
+.carousel-inner {
+    height: 500px;
+}
+
+#carousel {
+    text-align: center;
+}
+
+#carousel h3 {
+    color: lawngreen;
+    font-weight: bold;
+    font-family: "Trebuchet MS";
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
+.carousel-indicators li {
+    border-color: lawngreen;
+}
+.carousel-indicators .active {
+    background-color: lawngreen;
+}
+
+/*NavBar--------------------------------------------------------------------------------------------------------------*/
+
+.navbar-inverse {
+    border-color: white;
+    background-color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: black;
+}
+
+.navbar {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.mainNavBarText {
+    font-size: x-large;
+}
+
+.mainNavBtn {
+    margin-left: 10px;
+}
+
+.glyphicon-chevron-right:before, .glyphicon-chevron-left:before {
+    color: lawngreen;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
 .breadcrumbs {
     margin: 10px 0 0 0;
 }
+
 .lowerbreadcrumbs {
     margin: 10px 0 0 30px;
     font-size: x-small;
-}
-
-.carousel{
-    height: 500px;
-}
-
-.carousel-inner{
-    height: 500px;
 }
 
 .row {
@@ -52,34 +129,10 @@
     margin-left: 0;
     margin-bottom: 0;
 }
-.ticketBtn{
+
+.ticketBtn {
     margin: 10px;
     width: 80px;
-}
-
-main {
-    position: relative;
-    min-height: 500px;
-    background-color: lightgrey;
-}
-
-body {
-    background: transparent;
-}
-header {
-    background: white;
-}
-html {
-    /*background-color: #3370b6;*/
-    background-image: url("../Resources/mainBanner.jpg");
-    background-repeat: repeat-y;
-}
-.navbar-inverse {
-    background-color: rgba(70,70,70,0.5);
-    border-color: rgba(70,70,70,0.5);
-}
-.navbar-inverse .navbar-nav>li>a {
-    color: black;
 }
 
 .col-xs-6 {
@@ -92,50 +145,32 @@ html {
 
 #bannerSec {
     height: 200px;
-    background-image: url("../Resources/mainBanner.jpg");
-    background-size: cover;
+    background-color: black;
 }
-.navbar {
-    margin-bottom: 0;
-    position: relative;
-}
-.mainNavBtn {
-    margin-left: 10px;
-}
+
 #indexContent {
     padding: 0;
-    background-color: white;
 }
+
 #carouselCol {
     padding: 0;
 }
-#menuTitle{
+
+#menuTitle {
     display: none;
     color: black;
 }
-.mainNavBarText {
-    font-size: x-large;
-}
+
 .error {
     color: red;
 }
+
 .success {
     color: green;
 }
+
 #dob div {
     padding-left: 0;
-}
-#carousel {
-    text-align: center;
-}
-#carousel h3 {
-    color: red;
-    font-weight: bold;
-    font-family: "Courier New";
-}
-.carousel-caption {
-    top: 0;
-    bottom: auto;
 }
 
 #timer-msg {
@@ -148,30 +183,41 @@ html {
     margin: 0 5em;
 }
 
-.sticky{
+.sticky {
     width: 100%;
-    background-color: lightgray;
+    border: solid black 1px;
 }
 
-
-@media only screen and (max-width: 1024px) and (min-width: 769px){
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
     .mainNavBarText, .navBarText {
         font-size: medium;
     }
 }
+
 @media only screen and (max-width: 768px) and (min-width: 427px) {
     .mainNavBarText, .navBarText {
         font-size: x-small;
     }
+
+    #bannerSec {
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 426px) {
+    #logoMain {
+        height: 100px;
+    }
+
     #menuTitle {
         display: unset;
     }
+
     #bannerSec {
+        text-align: center;
         height: unset;
     }
+
     #myNavbar {
         padding-left: 40px;
     }
