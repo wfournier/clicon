@@ -6,6 +6,31 @@
     background: transparent;
 }
 
+.item{
+    width: 100%;
+    height: 100%;
+}
+
+#carousel1{
+    background-image: url("../Resources/carousel1.jpg");
+}
+#carousel2{
+    background-image: url("../Resources/carousel2.jpg");
+}
+#carousel3{
+    background-image: url("../Resources/carousel3.jpg");
+}
+.carousel-caption{
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#carousel1, #carousel2, #carousel3{
+    background-size: cover;
+    background-position: center center;
+}
+
 .breadcrumbs {
     margin: 10px 0 0 0;
 }
@@ -25,6 +50,7 @@
 .row {
     margin-right: 0;
     margin-left: 0;
+    margin-bottom: 0;
 }
 .ticketBtn{
     margin: 10px;
@@ -121,6 +147,12 @@ html {
     position: relative;
     margin: 0 5em;
 }
+
+.sticky{
+    width: 100%;
+    background-color: lightgray;
+}
+
 
 @media only screen and (max-width: 1024px) and (min-width: 769px){
     .mainNavBarText, .navBarText {

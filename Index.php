@@ -4,17 +4,18 @@
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.html"; ?>
     <title>GameCon_Home</title>
-</head>
-<body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
-
-<main style="background-color: lightgray">
     <style>
         .row {
             margin-right: 0;
             margin-left: 0;
         }
     </style>
+</head>
+<body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
+
+<main style="background-color: lightgray">
+
 
     <div class="row">
         <div class="col-xs-12" id="carouselCol">
@@ -28,27 +29,24 @@
 
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" id="carousel">
-                    <div class="item active">
+                    <div id="carousel1" class="item active">
                         <a href="About.php">
-                            <img src="Resources/carousel1.png" alt="Los Angeles">
                             <div class="carousel-caption">
                                 <h3>About</h3>
                             </div>
                         </a>
                     </div>
 
-                    <div class="item">
+                    <div id="carousel2" class="item">
                         <a href="Admission.php">
-                            <img src="Resources/carousel2.jpg" alt="Chicago">
                             <div class="carousel-caption">
                                 <h3>Admission</h3>
                             </div>
                         </a>
                     </div>
 
-                    <div class="item">
+                    <div id="carousel3" class="item">
                         <a href="Schedule.php">
-                            <img src="Resources/carousel3.png" alt="New York">
                             <div class="carousel-caption">
                                 <h3>Schedule</h3>
                             </div>
