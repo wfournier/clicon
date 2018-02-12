@@ -12,6 +12,15 @@
     </style>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
 
 <main>
@@ -67,7 +76,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6" style="padding: 30px">
+        <div class="col-md-7" style="padding: 30px">
             <div class="row">
                 <div class="col-xs-12">
                     <div id="timer-box">
@@ -156,22 +165,12 @@
             </div>
         </div>
 
-        <div class="col-md-6" style="padding: 30px">
-            <div id="fb-root"></div>
-            <script>(function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0];
-                    if (d.getElementById(id)) return;
-                    js = d.createElement(s);
-                    js.id = id;
-                    js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
-                    fjs.parentNode.insertBefore(js, fjs);
-                }(document, 'script', 'facebook-jssdk'));</script>
+        <div class="col-md-5" style="padding: 30px">
             <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"
-                 data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
                  data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/HexagonalStudio/"
-                            class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>
+                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a
+                            href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>
             </div>
         </div>
     </div>

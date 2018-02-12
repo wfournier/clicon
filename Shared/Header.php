@@ -5,7 +5,7 @@
             <img id="logoMain" src="/gamecon/Resources/logoMain.png" alt="logo">
         </a>
     </div>
-    <nav id="sticky" class="sticky navbar navbar-inverse navbar-static-top">
+    <nav id="sticky" class="sticky navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button class="navbar-toggle" data-toggle="collapse"
