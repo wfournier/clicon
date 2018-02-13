@@ -19,17 +19,30 @@
             <div class="collapse navbar-collapse navBarText" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li><a href="/gamecon/Index.php">Home</a></li>
-                    <li><a href="/gamecon/Information.php">Information</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
-                            Partners/Sponsors
+                            Information
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/gamecon/Partners.php">Partners</a></li>
-                            <li><a href="/gamecon/Sponsors.php">Sponsors</a></li>
+                            <li><a href="/gamecon/Information.php#location">Location</a></li>
+                            <li><a href="/gamecon/Sponsors.php#other">Other</a></li>
                         </ul>
                     </li>
-                    <li><a href="/gamecon/Exhibitors.php">Exhibitors</a></li>
+                    <li><a href="/gamecon/Admission.php">Admission</a></li>
+                    <li><a href="/gamecon/Guests.php">Guests</a></li>
+                    <li><a href="/gamecon/Events.php">Events</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
+                            Exhibitions
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/gamecon/Exhibitions.php#retro">Retro Section</a></li>
+                            <li><a href="/gamecon/Exhibitions.php#arcade">Arcade Game</a></li>
+                            <li><a href="/gamecon/Exhibitions.php#lan">LAN Party</a></li>
+                            <li><a href="/gamecon/Exhibitions.php#aaa">AAA Studios</a></li>
+                            <li><a href="/gamecon/Exhibitions.php#indie">Indie studios</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <!--Right Side-->
                 <ul class="nav navbar-nav navbar-right">
