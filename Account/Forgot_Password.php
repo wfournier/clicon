@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php" ?>
     <title>Forgot Password</title>
 </head>
 <body>

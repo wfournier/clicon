@@ -24,7 +24,7 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
 <html lang="en">
 <head>
     <title>Payment_SetBadgeName</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.html"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
     <style>
         label {
             width: 100px;

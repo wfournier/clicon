@@ -11,7 +11,7 @@ session_start();
 <html lang="en">
 <head>
     <title>Payment_ConfirmSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.html"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>

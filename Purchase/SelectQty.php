@@ -10,7 +10,7 @@ session_start();
 <html lang="en">
 <head>
     <title>Payment_TicketSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.html"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
     <style>
         label {
             width: 100px;
