@@ -2,12 +2,17 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+main{
+    background: lightgrey;
+}
+
 .sidenav {
     height: 100%;
     width: 20%;
     position: absolute;
     z-index: 1;
-    background-color: #000f29;
+    background-color: steelblue;
+    border: solid black 1px;
     overflow-x: hidden;
     padding-top: 20px;
     transition: 0.3s;
@@ -17,7 +22,7 @@ body {
     padding: 6px 6px 6px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: black;
 }
 
 .navBtn {
@@ -60,7 +65,7 @@ body {
 }
 
 #Purchase {
-    background-color: yellow;
+    background-color: lawngreen;
     margin-top: 20px;
 }
 
