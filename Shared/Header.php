@@ -1,5 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
 <header>
+    <div class="lang"><a>FR</a></div>
     <div class="row" id="bannerSec">
         <a href="/gamecon/Index.php">
             <img id="logoMain" src="/gamecon/Resources/logoMain.png" alt="logo">
@@ -46,7 +47,6 @@
                 </ul>
                 <!--Right Side-->
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">FR</a></li>
                     <?php
                     if (!(func::checkLogin($con))) {
                         echo "<li><a href='/gamecon/Login_Register.php'><span class='glyphicon glyphicon-user'></span> Sign Up / Login</a></li>";
