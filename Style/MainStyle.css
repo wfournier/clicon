@@ -3,10 +3,6 @@ main {
     min-height: 500px;
 }
 
-html{
-    background: black;
-}
-
 nav {
     font-family: "Trebuchet MS";
 }
@@ -104,6 +100,10 @@ body {
 .navbar {
     margin-bottom: 0;
     position: relative;
+}
+
+#myNavbar a:hover {
+    color: lawngreen;
 }
 
 .mainNavBarText {
