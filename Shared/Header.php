@@ -19,22 +19,26 @@
             <!--Left Side-->
             <div class="collapse navbar-collapse navBarText" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="/gamecon/Index.php">Home</a></li>
+                    <li><a href="/gamecon/Index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
-                            Information
+                            <span class="glyphicon glyphicon-info-sign"></span> Information
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="/gamecon/Information.php#hours">Opening Hours</a></li>
                             <li><a href="/gamecon/Information.php#location">Location</a></li>
-                            <li><a href="/gamecon/Sponsors.php#other">Other</a></li>
+                            <li><a href="/gamecon/Information.php#rules">Convention Rules</a></li>
+                            <li><a href="/gamecon/Information.php#registration">Registration Policies</a></li>
+                            <li><a href="/gamecon/Information.php#weapon">Weapon Policy</a></li>
+                            <li><a href="/gamecon/Information.php#autograph">Autograph Policy</a></li>
                         </ul>
                     </li>
-                    <li><a href="/gamecon/Admission.php">Admission</a></li>
-                    <li><a href="/gamecon/Guests.php">Guests</a></li>
-                    <li><a href="/gamecon/Events.php">Events</a></li>
+                    <li><a href="/gamecon/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> Admission</a></li>
+                    <li><a href="/gamecon/Guests.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
+                    <li><a href="/gamecon/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> Events</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
-                            Exhibitions
+                            <span class="glyphicon glyphicon-flag"></span> Exhibitions
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="/gamecon/Exhibitions.php#retro">Retro Section</a></li>

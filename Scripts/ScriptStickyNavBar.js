@@ -7,13 +7,13 @@ $(window).scroll(function () {
             $elem.css("position", "fixed");
             $elem.css("z-index", "1");
             $elem.css("top", "0");
-            $("main").css("margin-top", "50px");
+            $("header").css("padding-bottom", "50px");
         }
         else {
             $elem.css("position", "unset");
             $elem.css("z-index", "unset");
             $elem.css("top", "unset");
-            $("main").css("margin-top", "0");
+            $("header").css("padding-bottom", "0");
         }
 
 });

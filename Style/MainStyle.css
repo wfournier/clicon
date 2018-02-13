@@ -11,6 +11,10 @@ body {
     background: transparent;
 }
 
+header{
+    background: black;
+}
+
 #footer {
     text-align: center;
     background-color: black;
@@ -97,8 +101,7 @@ body {
 /*NavBar--------------------------------------------------------------------------------------------------------------*/
 
 .navbar-inverse {
-    border-color: rgba(157, 189, 255, 0.5);
-    background-color: rgba(157, 189, 242, 0.5);
+    background-color: rgba(96, 156, 255, 0.5);
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -199,6 +202,18 @@ body {
 .sticky {
     width: 100%;
     border: solid black 1px;
+    border-radius: 0;
+}
+
+#sticky a{
+    color: white;
+}
+
+#sticky li a:hover {
+    background: black;
+}
+#sticky li ul{
+    background: black;
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
