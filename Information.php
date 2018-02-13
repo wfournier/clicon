@@ -32,7 +32,25 @@
             <h3>Opening Hours</h3>
             <table>
                 <tr>
-                    <th></th><th>Friday</th><th>Saturday</th><Sunday></Sunday>
+                    <th></th><th>Friday</th><th>Saturday</th><th>Sunday</th>
+                </tr>
+                <tr>
+                    <th>Registration</th><td>8 am</td><td></td><td></td>
+                </tr>
+                <tr>
+                    <th>Convention Hours</th><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <th>Retro Corner</th><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <th>Arcade Games</th><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <th>LAN Party</th><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <th>Studios' Hall</th><td></td><td></td><td></td>
                 </tr>
             </table>
         </div>

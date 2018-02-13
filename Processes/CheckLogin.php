@@ -3,8 +3,6 @@ class func
 {
     public static function checkLogin($conn)
     {
-        if (!isset($_COOKIE['account_id']))
-            session_start();
         if (isset($_COOKIE['account_id']) && isset($_COOKIE['token'])) {
 
             $account_id = $_COOKIE['account_id'];
@@ -21,7 +19,7 @@ class func
                     }
                 }
             } else {
-                echo "no rows";
+                print("<script>console.log('. json_encode( \"no cookie for connection\" ) .')</script>");
             }
         }
     }
