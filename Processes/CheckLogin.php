@@ -16,6 +16,7 @@ class func
                 while ($result = $results->fetch_array()) {
                     if ($result['session_accountid'] == $_COOKIE['account_id'] &&
                         $result['session_token'] == $_COOKIE['token']) {
+                        print("<script>console.log('. json_encode( \"true\" ) .')</script>");
                         return true;
                     }
                 }
