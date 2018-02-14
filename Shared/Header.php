@@ -2,9 +2,7 @@
 <header>
     <div class="lang"><a>FR</a></div>
     <div class="row" id="bannerSec">
-        <a href="/gamecon/Index.php">
-            <img id="logoMain" src="/gamecon/Resources/logoMain.png" alt="logo">
-        </a>
+
     </div>
     <nav id="sticky" class="sticky navbar navbar-inverse">
         <div class="container-fluid">

@@ -25,10 +25,7 @@ header{
     background: transparent;
 }
 
-#logoMain {
-    width: auto;
-    height: 100%;
-}
+
 
 .item {
     width: 100%;
@@ -161,7 +158,9 @@ header{
 
 #bannerSec {
     height: 200px;
-    background-color: black;
+    background-image: url("../Resources/bannerConcept.png");
+    background-size: cover;
+    background-position: center center;
 }
 
 #indexContent {
@@ -251,9 +250,6 @@ header{
 }
 
 @media only screen and (max-width: 426px) {
-    #logoMain {
-        height: 100px;
-    }
 
     #menuTitle {
         display: unset;
