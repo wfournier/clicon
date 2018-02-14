@@ -8,7 +8,7 @@ $resetPassErrMsg = $resetPassOutput = "";
 $error = false;
 
 if(isset($_GET["token"])){
-	$find_token_sql = "SELECT * FROM ACCOUNT WHERE PASS_RESET_TOKEN = '" .$_GET["token"] ."'";
+	$find_token_sql = "SELECT * FROM account WHERE PASS_RESET_TOKEN = '" .$_GET["token"] ."'";
 	$find_token_res = $con->query($find_token_sql) or die("find_token_res:" .$con->error);
 
 	if($find_token_res->num_rows < 1){
@@ -20,7 +20,7 @@ if(isset($_GET["token"])){
 	if(strtotime($tokenExpiryDate) < time()){
 		$invalidToken = true;
 
-		$delete_token_sql ="UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$_GET["token"] ."'";
+		$delete_token_sql ="UPDATE account SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$_GET["token"] ."'";
 		$con->query($delete_token_sql) or die("delete_token:" .$con->error);
 	}
 }
@@ -48,15 +48,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$newPassErrMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
-			$update_pass_sql = "UPDATE ACCOUNT SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
+			$update_pass_sql = "UPDATE account SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
 
 			if ($con->query($update_pass_sql) === TRUE) {
-				$get_id_sql = "SELECT ACCOUNT_ID FROM ACCOUNT WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
+				$get_id_sql = "SELECT ACCOUNT_ID FROM account WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
 				$get_id_res = $con->query($get_id_sql) or die("get_id_res:" .$con->error);
 
 				$account = $get_id_res->fetch_array();
 
-				$delete_token_sql = "UPDATE ACCOUNT SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
+				$delete_token_sql = "UPDATE account SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
 				$con->query($delete_token_sql) or die("delete_token_sql:" .$con->error);
 
 				$loginToken = random_bytes(25);

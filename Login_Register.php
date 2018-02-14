@@ -19,8 +19,8 @@
 </style>
 <main>
     <div class="content row">
-        <div class="col-sm-2"></div>
-        <div id="login" class="col-sm-3">
+        <div class="col-sm-1"></div>
+        <div id="login" class="col-sm-4">
             <h2 class="page-header">LOGIN</h2><br>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                 <div class="row">
@@ -158,7 +158,7 @@
                         <label for="countryId" class="<?php echo $countryIdErr ? 'error' : '' ?>">Country</label>
                         <select class="form-control" id="countryId" name="countryId">
                             <?php
-                            $get_countries_sql = "SELECT * FROM COUNTRIES";
+                            $get_countries_sql = "SELECT * FROM countries";
                             $get_countries_res = $con->query($get_countries_sql) or die("get_countries_res: " . $con->error);
 
                             if ($get_countries_res->num_rows < 1) {
@@ -221,7 +221,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-sm-1"></div>
+        <div class="col-sm-2"></div>
     </div>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html" ?>

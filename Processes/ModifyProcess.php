@@ -10,7 +10,7 @@ $modPassErr = $changePassErr = false;
 $modErrMsg = $modOutput = $changePassErrMsg = "";
 $error = false;
 
-$get_account_info_sql = "SELECT a.FIRST_NAME, a.LAST_NAME, a.PHONE, a.COUNTRY_ID, s.STATE_CODE, a.CITY, a.ADDRESS, a.ZIP, a.PASS_HASH FROM ACCOUNT a, STATES s WHERE a.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND s.STATE_ID = a.STATE_ID";
+$get_account_info_sql = "SELECT a.FIRST_NAME, a.LAST_NAME, a.PHONE, a.COUNTRY_ID, s.STATE_CODE, a.CITY, a.ADDRESS, a.ZIP, a.PASS_HASH FROM account a, states s WHERE a.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND s.STATE_ID = a.STATE_ID";
 $get_account_info_res = $con->query($get_account_info_sql) or die("get_account_info_res: " .$con->error);
 
 while($account = $get_account_info_res->fetch_array()){
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$stateCodeModErr = $error = true;
 		} else{
 			if(strlen($p["stateCodeMod"]) == 2 && ctype_alpha(gut($p["stateCodeMod"]))){
-				$get_states_sql="SELECT * FROM STATES WHERE COUNTRY_ID = " .$countryIdMod ." AND STATE_CODE = '" .strtoupper($p["stateCodeMod"]) ."'";
+				$get_states_sql="SELECT * FROM states WHERE COUNTRY_ID = " .$countryIdMod ." AND STATE_CODE = '" .strtoupper($p["stateCodeMod"]) ."'";
 				$get_states_res=$con->query($get_states_sql) or die("get_states_res: " .$con->error);
 
 				if($get_states_res->num_rows < 1){
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		} else{
 			$passMod = $p["passMod"];
 			if(password_verify($passMod, $passHash)){
-				$updateSql = "UPDATE ACCOUNT SET LAST_NAME = '" .ucwords(strtolower($lnameMod), " ") ."', FIRST_NAME = '" .ucwords(strtolower($fnameMod), " ") ."', PHONE = '" .str_replace('-', '/', $phoneMod) ."', ADDRESS = '" .ucwords(strtolower($addressMod), " ") ."', CITY = '" .ucwords(strtolower($cityMod), " ") ."', ZIP = '" .strtoupper(str_replace(' ', '', $zipMod)) ."', COUNTRY_ID = " .$countryIdMod .", STATE_ID = " .$stateIdMod ." WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
+				$updateSql = "UPDATE account SET LAST_NAME = '" .ucwords(strtolower($lnameMod), " ") ."', FIRST_NAME = '" .ucwords(strtolower($fnameMod), " ") ."', PHONE = '" .str_replace('-', '/', $phoneMod) ."', ADDRESS = '" .ucwords(strtolower($addressMod), " ") ."', CITY = '" .ucwords(strtolower($cityMod), " ") ."', ZIP = '" .strtoupper(str_replace(' ', '', $zipMod)) ."', COUNTRY_ID = " .$countryIdMod .", STATE_ID = " .$stateIdMod ." WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
 				if ($con->query($updateSql) === TRUE) {
 					$modOutput = "Changes Saved!";
@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				$changePassErrMsg = nl2br("*Please fill out all fields correctly \n
 					(Tip: Hover your mouse over a field to get help)");
 			} else{
-				$update_pass_sql = "UPDATE ACCOUNT SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
+				$update_pass_sql = "UPDATE account SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
 				if ($con->query($update_pass_sql) === TRUE) {
 					header("Location: ModifyInfo.php?passChanged=true");

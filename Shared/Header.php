@@ -34,7 +34,7 @@
                         </ul>
                     </li>
                     <li><a href="/gamecon/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> Admission</a></li>
-                    <li><a href="/gamecon/Guests.php"><span class="glyphicon glyphicon-user"></span> Guests</a></li>
+                    <li><a href="/gamecon/Guests.php"><span class="glyphicon glyphicon-star"></span> Guests</a></li>
                     <li><a href="/gamecon/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> Events</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">

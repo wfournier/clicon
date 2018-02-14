@@ -5,7 +5,7 @@ $badgeName = $emergContact = $emergContactName = "";
 $error = $badgeNameErr = $emergContactErr = $emergContactNameErr = false;
 $prefOutput = $prefErrMsg = "";
 
-$get_pref_sql = "SELECT PREF_BADGE_NAME, EMERGENCY_CONTACT_PHONE, EMERGENCY_CONTACT_NAME FROM ACCOUNT WHERE ACCOUNT_ID = " .$_COOKIE["account_id"];
+$get_pref_sql = "SELECT PREF_BADGE_NAME, EMERGENCY_CONTACT_PHONE, EMERGENCY_CONTACT_NAME FROM account WHERE ACCOUNT_ID = " .$_COOKIE["account_id"];
 $get_account_info_res = $con->query($get_pref_sql) or die("get_account_info_res: " .$con->error);
 
 while($account = $get_account_info_res->fetch_array()){
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$prefErrMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
-			$update_pref_sql = "UPDATE ACCOUNT SET PREF_BADGE_NAME = '" .$badgeName ."', EMERGENCY_CONTACT_PHONE = '" .str_replace('-', '/', $emergContact) ."', EMERGENCY_CONTACT_NAME = '" .ucwords(strtolower($emergContactName), " ") ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
+			$update_pref_sql = "UPDATE account SET PREF_BADGE_NAME = '" .$badgeName ."', EMERGENCY_CONTACT_PHONE = '" .str_replace('-', '/', $emergContact) ."', EMERGENCY_CONTACT_NAME = '" .ucwords(strtolower($emergContactName), " ") ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
 			if ($con->query($update_pref_sql) === TRUE) {
 				$prefOutput = "Preferences Saved!";
