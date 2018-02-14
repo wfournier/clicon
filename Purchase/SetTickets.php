@@ -3,7 +3,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_register.php");
+    header("Location: /gamecon/Login_Register.php");
 }
 session_start();
 if ($_POST == null && $_SESSION["qty"] == null) {
