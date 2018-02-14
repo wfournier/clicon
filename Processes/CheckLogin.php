@@ -23,7 +23,7 @@ class func
                     }
                 }
             } else {
-                print("<script>console.log('. json_encode( \"no cookie for connection, $account_id, $token\" ) .')</script>");
+                print("<script>console.log('. json_encode( \"no result from query\" ) .')</script>");
             }
         }
     }
