@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					while ($account = $get_account_res->fetch_array()) {
 						if (password_verify($password, $account["PASS_HASH"])) {
 							$token = random_bytes(25);
+                            var_dump(bin2hex($token));
 							setcookie("token", $token, (time() + (89400 * 365)), "/");
 							setcookie("account_id", $account['ACCOUNT_ID'], (time() + (89400 * 365)), "/");
 							$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
