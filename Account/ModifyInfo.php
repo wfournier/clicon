@@ -54,7 +54,7 @@ if (!func::checkLogin($con)) {
                             class="<?php echo $countryIdModErr ? 'error' : '' ?>">Country</label>
                             <select class="form-control" id="countryIdMod" name="countryIdMod" data-toggle="tooltip" title="">
                                 <?php
-                                $get_countries_sql = "SELECT * FROM COUNTRIES";
+                                $get_countries_sql = "SELECT * FROM countries";
                                 $get_countries_res = $con->query($get_countries_sql) or die("get_countries_res: " . $con->error);
 
                                 if ($get_countries_res->num_rows < 1) {
