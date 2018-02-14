@@ -10,7 +10,6 @@ main{
     height: 100%;
     width: 20%;
     position: absolute;
-    z-index: 1;
     background-color: #2d2d2d;
     border: solid black 1px;
     overflow-x: hidden;
@@ -95,7 +94,7 @@ main{
     }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 767px) {
     .sidenav a {
         font-size: large;
     }
@@ -110,6 +109,12 @@ main{
 
     .sidenav {
         width: 0%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .sidenav{
+        z-index: 1;
     }
 }
 
