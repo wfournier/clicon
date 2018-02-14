@@ -60,7 +60,7 @@
                                 View Account
                             <span class=\"caret\" ></span ></a>
                             <ul class=\"dropdown-menu\" >
-                                <li ><a href = \"/gamecon/Account/Overview.php\" > View Info </a ></li >
+                                <li ><a href = \"/gamecon/Account/ModifyInfo.php\" > View Info </a ></li >
                                 <li ><a href = \"/gamecon/Processes/Logout.php\" > Logout</a ></li >
                             </ul >
                         </li >";
