@@ -3,6 +3,7 @@ var stickySidebar = $elem.offset().top;
 
 $(window).scroll(function () {
     if($(window).width() < 426){
+        console.log($(window).width())
         $elem.css("position", "unset");
         $elem.css("z-index", "unset");
         $elem.css("top", "unset");
