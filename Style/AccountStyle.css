@@ -11,7 +11,7 @@ main{
     width: 20%;
     position: absolute;
     z-index: 1;
-    background-color: steelblue;
+    background-color: #2d2d2d;
     border: solid black 1px;
     overflow-x: hidden;
     padding-top: 20px;
@@ -60,13 +60,33 @@ main{
 }
 
 .content {
-    background-color: lightgrey;
+    background-color: #8c8c8c;
     padding-top: 30px;
 }
 
+.content.row label{
+    color: lawngreen;
+}
+
+#mySidenav a {
+    color: white;
+}
+
 #Purchase {
-    background-color: lawngreen;
+    background-color: black;
+    color: white;
     margin-top: 20px;
+}
+
+.btn-warning{
+    background-color: steelblue;
+    border-color: steelblue;
+}
+
+.btn-success{
+    color: black;
+    background-color: lawngreen;
+    border-color: lawngreen;
 }
 
 @media screen and (max-width: 768px) and (min-width: 426px) {

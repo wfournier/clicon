@@ -26,6 +26,7 @@ if (!func::checkLogin($con)) {
         <div class="content row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
+                <h1>Personal Information</h1>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                     <div class="row">
                         <div class="form-group col-xs-6">
