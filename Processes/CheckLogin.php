@@ -18,8 +18,8 @@ class func
                 print("<script>console.log('. json_encode( \"query not empty\" ) .')</script>");
 
                 while ($result = $results->fetch_assoc()) {
-                    $te = $result['session_accountid'];
-                    print("<script>console.log('$te')</script>");
+                    $te = $result['session_token'];
+                    print("<script>console.log('$te || $token')</script>");
                     if ($result['session_accountid'] == $account_id &&
                         $result['session_token'] == $token) {
                         print("<script>console.log('true')</script>");
