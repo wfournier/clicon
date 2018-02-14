@@ -17,7 +17,9 @@ class func
             if ($results->num_rows > 0) {
                 print("<script>console.log('. json_encode( \"query not empty\" ) .')</script>");
 
-                while ($result = $results->fetch_array()) {
+                while ($result = $results->fetch_assoc()) {
+                    $te = $result['session_accountid'];
+                    print("<script>console.log('$te')</script>");
                     if ($result['session_accountid'] == $account_id &&
                         $result['session_token'] == $token) {
                         print("<script>console.log('true')</script>");
