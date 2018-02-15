@@ -65,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
 				$account['ACCOUNT_ID'] . ", '" . $loginToken . "');";
 				$con->query($set_sess) or die("set session failed " . $con->error);
-				header("Location: " .$_SERVER['DOCUMENT_ROOT'] ."/gamecon/Index.php");
+				header("Location: " .$_SERVER['DOCUMENT_ROOT'] ."/Index.php");
 			} else {
 				$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
 			}

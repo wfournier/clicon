@@ -1,15 +1,15 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Functions/FilterData.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/ForgotPassProcess.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/ForgotPassProcess.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php" ?>
     <title>Forgot Password</title>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>
 <style type="text/css">
     .row {
         margin-left: 0px;
@@ -42,6 +42,6 @@
             </form>
         </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html" ?>
 </body>
 </html>

@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 session_start();
 ?>
@@ -11,10 +11,10 @@ session_start();
 <html lang="en">
 <head>
     <title>Payment_ConfirmSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 
 <main>
     <div class="row">
@@ -22,8 +22,8 @@ session_start();
         <div class="col-md-4">
             <form method="post" action="Validate_ProceedToPayment.php">
                 <div class="row" style="min-height: 400px">
-                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets.php">Set Tickets </a>>
-                        <a href="/gamecon/Purchase/Confirm.php">Confirm </a>></div>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>>
+                        <a href="/Purchase/Confirm.php">Confirm </a>></div>
                     <?php
                     if (isset($_SESSION["Error_Edit"])) {
                         echo "<p><i style='color: red'>" . $_SESSION["Error_Edit"] . "</i></p>";
@@ -95,6 +95,6 @@ session_start();
         </div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
 </html>

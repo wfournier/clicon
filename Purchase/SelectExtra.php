@@ -1,14 +1,14 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 session_start();
 
 if ($_GET["id"] == null) {
     $_SESSION["Error_Edit"] = "An error occurred while processing extra. Please try again.";
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /Purchase/SetTickets.php");
 } else
     $id = $_GET["id"];
     if (!isset($_SESSION["concert$id"]))
@@ -23,7 +23,7 @@ $_SESSION["Error_Ticket$id"] = null;
 <html lang="en">
 <head>
     <title>Payment_ExtraSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <style>
         label {
             width: 100px;
@@ -32,16 +32,16 @@ $_SESSION["Error_Ticket$id"] = null;
     </style>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 <main>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <form method="post" action="ProcessingSelectExtra.php">
                 <div class="row" style="height: 400px">
-                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets.php">Set Tickets </a>></div>
-                    <div class="lowerbreadcrumbs"><a href="/gamecon/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
-                        <a href="/gamecon/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>></div>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>></div>
+                    <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
+                        <a href="/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>></div>
                     <h1 style="margin-top: 0">Select extras for your ticket:</h1>
                     <p><i>Selecting all 3 days get you a 15$ off.</i></p>
 
@@ -65,7 +65,7 @@ $_SESSION["Error_Ticket$id"] = null;
                     >
                 </div>
                 <div class="row">
-                    <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET[">Back</a>
+                    <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["$id"] ?>Back</a>
                     <input class="btn btn-warning" type="submit" value="Next" id="next">
                 </div>
                 <?php
@@ -78,6 +78,6 @@ $_SESSION["Error_Ticket$id"] = null;
         </div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
 </html>

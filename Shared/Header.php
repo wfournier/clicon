@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <header>
     <div class="lang"><a>FR</a></div>
     <div class="row" id="bannerSec">
@@ -17,33 +17,33 @@
             <!--Left Side-->
             <div class="collapse navbar-collapse navBarText" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="/gamecon/Index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li><a href="/Index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
                             <span class="glyphicon glyphicon-info-sign"></span> Information
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/gamecon/Information.php#hours">Opening Hours</a></li>
-                            <li><a href="/gamecon/Information.php#location">Location</a></li>
-                            <li><a href="/gamecon/Information.php#rules">Convention Rules</a></li>
-                            <li><a href="/gamecon/Information.php#registration">Registration Policies</a></li>
-                            <li><a href="/gamecon/Information.php#weapon">Weapon Policy</a></li>
-                            <li><a href="/gamecon/Information.php#autograph">Autograph Policy</a></li>
+                            <li><a href="/Information.php#hours">Opening Hours</a></li>
+                            <li><a href="/Information.php#location">Location</a></li>
+                            <li><a href="/Information.php#rules">Convention Rules</a></li>
+                            <li><a href="/Information.php#registration">Registration Policies</a></li>
+                            <li><a href="/Information.php#weapon">Weapon Policy</a></li>
+                            <li><a href="/Information.php#autograph">Autograph Policy</a></li>
                         </ul>
                     </li>
-                    <li><a href="/gamecon/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> Admission</a></li>
-                    <li><a href="/gamecon/Guests.php"><span class="glyphicon glyphicon-star"></span> Guests</a></li>
-                    <li><a href="/gamecon/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> Events</a></li>
+                    <li><a href="/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> Admission</a></li>
+                    <li><a href="/Guests.php"><span class="glyphicon glyphicon-star"></span> Guests</a></li>
+                    <li><a href="/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> Events</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
                             <span class="glyphicon glyphicon-flag"></span> Exhibitions
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/gamecon/Exhibitions.php#retro">Retro Section</a></li>
-                            <li><a href="/gamecon/Exhibitions.php#arcade">Arcade Game</a></li>
-                            <li><a href="/gamecon/Exhibitions.php#lan">LAN Party</a></li>
-                            <li><a href="/gamecon/Exhibitions.php#aaa">AAA Studios</a></li>
-                            <li><a href="/gamecon/Exhibitions.php#indie">Indie studios</a></li>
+                            <li><a href="/Exhibitions.php#retro">Retro Section</a></li>
+                            <li><a href="/Exhibitions.php#arcade">Arcade Game</a></li>
+                            <li><a href="/Exhibitions.php#lan">LAN Party</a></li>
+                            <li><a href="/Exhibitions.php#aaa">AAA Studios</a></li>
+                            <li><a href="/Exhibitions.php#indie">Indie studios</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -51,23 +51,23 @@
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                     if (!(func::checkLogin($con))) {
-                        echo "<li><a href='/gamecon/Login_Register.php'><span class='glyphicon glyphicon-user'></span> Sign Up / Login</a></li>";
+                        echo "<li><a href='/Login_Register.php'><span class='glyphicon glyphicon-user'></span> Sign Up / Login</a></li>";
                     } else {
                         echo "<li class=\"dropdown\">
                             <a class=\"dropdown - toggle\" data-toggle=\"dropdown\" href=\"#\" id=\"navButtons\">
                                 View Account
                             <span class=\"caret\" ></span ></a>
                             <ul class=\"dropdown-menu\" >
-                                <li ><a href = \"/gamecon/Account/ModifyInfo.php\" > View Info </a ></li >
-                                <li ><a href = \"/gamecon/Processes/Logout.php\" > Logout</a ></li >
+                                <li ><a href = \"/Account/ModifyInfo.php\" > View Info </a ></li >
+                                <li ><a href = \"/Processes/Logout.php\" > Logout</a ></li >
                             </ul >
                         </li >";
                     }
                     ?>
-                    <li><a style="margin-right: 30px" href="/gamecon/Purchase/SetTickets.php">GET TICKET</a></li>
+                    <li><a style="margin-right: 30px" href="/Purchase/SetTickets.php">GET TICKET</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <script src="/gamecon/Scripts/ScriptStickyNavBar.js"></script>
+    <script src="/Scripts/ScriptStickyNavBar.js"></script>
 </header>

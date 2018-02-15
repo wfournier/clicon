@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 session_start();
 if ($_POST["id"] != null) {
@@ -20,9 +20,9 @@ if ($_POST["id"] != null) {
 
     //ADD METHOD VALIDATE BADGE NAME WITH DATABASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /Purchase/SetTickets.php");
 } else {
     $_SESSION["Error_Extra"] = "An error occurred while processing extra. Please try again.";
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /Purchase/SetTickets.php");
 }
 ?>

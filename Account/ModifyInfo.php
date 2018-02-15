@@ -1,17 +1,17 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Functions/FilterData.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/ModifyProcess.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/ModifyProcess.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>GameCon_Account_ModifyInfo</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <link rel="stylesheet" type="text/css" href="../Style/AccountStyle.css">
     <style>
     #AM {
@@ -20,9 +20,9 @@ if (!func::checkLogin($con)) {
 </style>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/AccountNavigation.html"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.html"; ?>
         <div class="content row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
@@ -133,7 +133,7 @@ if (!func::checkLogin($con)) {
             </div>
         </div>
     </main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
 </html>
 

@@ -1,14 +1,14 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 session_start();
 if ($_POST == null && $_SESSION["qty"] == null) {
     $_SESSION["Error_Quantity"] = "You must at least purchase one ticket";
-    header("Location: /gamecon/Purchase/SelectQty.php");
+    header("Location: /Purchase/SelectQty.php");
 } else {
     $_SESSION["Error_Quantity"] = null;
     if (isset($_POST["qty"])) {
@@ -36,7 +36,7 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
 <html lang="en">
 <head>
     <title>Payment_TicketSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <style>
         label {
             width: 100px;
@@ -45,7 +45,7 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
     </style>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 <main>
     <div class="row">
         <div class="col-md-4"></div>
@@ -58,7 +58,7 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                         $_SESSION["Error_Edit"] = null;
                     }
                     ?>
-                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets/php">Set Tickets </a>></div>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets/php">Set Tickets </a>></div>
                     <h1 style="margin-top: 0">Set your tickets.</h1>
                     <p><i>Admission for children under 13 years old is free.<br>
                             A ticket is not required</i></p>
@@ -132,6 +132,6 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
         </div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
 </html>

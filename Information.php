@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php"; ?>
-    <link rel="stylesheet" href="/gamecon/Style/InformationStyle.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
+    <link rel="stylesheet" href="/Style/InformationStyle.css">
     <title>GameCon_Home</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 
 <main>
     <div style="text-align: center">
@@ -297,7 +297,7 @@
             to being admitted to event areas. The Weapons Master will label and/or peace bond the weapons, if
             necessary.
 
-            Please see the official <a href="/gamecon/Information.php#weapon">Weapons And Large Props Policy</a> on the
+            Please see the official <a href="/Information.php#weapon">Weapons And Large Props Policy</a> on the
             Clicon website for more details.
 
             You are responsible for your conduct and handling of props. Clicon and the venue will not be held
@@ -343,7 +343,7 @@
             <p>Single-day badges can only be purchased on the same day on the convention site (ex: a Saturday-only badge
                 can only be purchased on that Saturday).</p>
             <h3>3. Badge Pickup</h3>
-            <p>Badges must be picked up during <a href="/gamecon/Information.php#hours">Otakuthon 2017 registration
+            <p>Badges must be picked up during <a href="/Information.php#hours">Otakuthon 2017 registration
                     hours</a> at
                 the Palais des congrès in the registration area. Badges will&nbsp;<strong>not</strong>&nbsp;be mailed or
                 issued otherwise.</p>
@@ -579,6 +579,6 @@
 
 </main>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
 </html>

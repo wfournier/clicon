@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT']."/gamecon/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 session_start();
 if ($_POST["id"] != null) {
@@ -35,20 +35,20 @@ if ($_POST["id"] != null) {
         $ticket->setSunday(false);
 
     if($atLeastOne)
-        header("Location: /gamecon/Purchase/SelectExtra.php?id=$id");
+        header("Location: /Purchase/SelectExtra.php?id=$id");
     else {
         $id=$_POST["id"];
         $_SESSION["Error_Ticket"] = "Please make sure you select at least one day.";
-        header("Location: /gamecon/Purchase/SelectTicket.php?id=$id");
+        header("Location: /Purchase/SelectTicket.php?id=$id");
     }
 } else {
     if($_POST["id"]!=null){
         $id=$_POST["id"];
         $_SESSION["Error_Ticket"] = "Please make sure you select at least one day.";
-        header("Location: /gamecon/Purchase/SelectTicket.php?id=$id");
+        header("Location: /Purchase/SelectTicket.php?id=$id");
     } else {
         $_SESSION["Error_Edit"] = "An error occurred while processing ticket. Please try again.";
-        header("Location: /gamecon/Purchase/SetTickets.php");
+        header("Location: /Purchase/SetTickets.php");
     }
 }
 ?>

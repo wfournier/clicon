@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 function sendResetToken($account, $token){
 	$fname = $account["FIRST_NAME"];
-	$url = "localhost/gamecon/Account/ResetPassword.php?token=" .$token;
+	$url = "localhost/Account/ResetPassword.php?token=" .$token;
 
 	$to = $account["EMAIL"];
 	$subject = "gamecon Password Recovery";

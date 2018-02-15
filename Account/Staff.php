@@ -1,15 +1,15 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
 <?php
 if (!func::checkLogin($con)) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /Login_Register.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>GameCon_Account</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Head.php";?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php";?>
     <link rel="stylesheet" type="text/css" href="../Style/AccountStyle.css">
     <style>
         #AS {
@@ -18,11 +18,11 @@ if (!func::checkLogin($con)) {
     </style>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Header.php";?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php";?>
 
 <main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/AccountNavigation.html";?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.html";?>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon/Shared/Footer.html";?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html";?>
 </body>
 </html>
