@@ -27,7 +27,7 @@ class LangQuery{
 			die("LANGQUERY : No language file in /$this->language_folder/ directory. Please add at least default language $this->default.ini");
 		}
 		if($auto){
-			if($this->is_valid($_GET[$this->get_parameter])){
+			if(isset($_GET["lang"]) && $this->is_valid($_GET[$this->get_parameter])){
 				$this->load($_GET[$this->get_parameter]);
 			}else{
 				if($this->is_valid($_COOKIE[$this->cookie_name])){

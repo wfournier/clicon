@@ -6,3 +6,15 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="/Scripts/MainScript.js"></script>
 <link rel="stylesheet" href="/Style/MainStyle.css">
+<?php include($_SERVER["DOCUMENT_ROOT"] ."/langquery/langquery.php");
+	$lang = new LangQuery();
+
+	if(!isset($_COOKIE["current_language"])){
+		$lang->load("en");
+	}
+
+	if(isset($_GET["lang"])){
+		$lang->load($_GET["lang"]);
+		header("Location: " .htmlspecialchars($_SERVER['PHP_SELF']));
+	}
+?>
