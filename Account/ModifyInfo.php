@@ -14,7 +14,7 @@ if (!func::checkLogin($con)) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <link rel="stylesheet" type="text/css" href="../Style/AccountStyle.css">
     <style>
-    #AM {
+    #Avi {
         background-color: lawngreen;
     }
 </style>
