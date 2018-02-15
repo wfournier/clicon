@@ -25,7 +25,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 
 <main>
-    <!--CAROUSEL-------------------->
+    <!-- CAROUSEL -->
     <div class="row">
         <div class="col-xs-12" id="carouselCol">
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <!--CONTENT--------------------->
+    <!-- CONTENT -->
     <div class="row">
         <div class="col-md-8" id="countdown">
             <div class="boxIndex" style="height: 290px;">
@@ -125,14 +125,13 @@
 
             </div>
         </div>
-        <!--        <div class="col-md-5" style="padding: 30px">-->
-        <!--            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"-->
-        <!--                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"-->
-        <!--                 data-show-facepile="true">-->
-        <!--                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a-->
-        <!--                            href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>-->
-        <!--            </div>-->
-        <!--        </div>-->
+        <!-- <div class="col-md-5" style="padding: 30px">
+            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"
+                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
+                 data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>
+            </div>
+        </div> -->
     </div>
 
 </main>
