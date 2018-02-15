@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
-    <title>GameCon_Home</title>
+    <link rel="stylesheet" href="/Style/IndexStyle.css">
+    <title>Clicon_Home</title>
     <style>
         .row {
             margin-right: 0;
@@ -24,7 +25,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 
 <main>
-<!--CAROUSEL-------------------->
+    <!--CAROUSEL-------------------->
     <div class="row">
         <div class="col-xs-12" id="carouselCol">
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
@@ -54,9 +55,9 @@
                     </div>
 
                     <div id="carousel3" class="item">
-                        <a href="Schedule.php">
+                        <a href="Information.php">
                             <div class="carousel-caption">
-                                <h3>Schedule</h3>
+                                <h3>Information</h3>
                             </div>
                         </a>
                     </div>
@@ -74,40 +75,64 @@
             </div>
         </div>
     </div>
-<!--CONTENT--------------------->
+    <!--CONTENT--------------------->
     <div class="row">
-        <div class="col-xs-4" style="padding: 20px">
-            <div id="timer-box">
-                <div id="guidebook">
-                    <h3>Get the official Otakuthon
-                        Mobile Schedule!</h3>
-                    <p><img
-                         src="http://otakuthon.com/2017/images/2014/guidebook-devices.png"></p><br>
-                    <p>
-                        <a href='https://play.google.com/store/apps/details?id=com.guidebook.android&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-                           target="_blank">
-                            <img width="45%" height="auto" alt='Get it on Google Play'
-                                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/2000px-Get_it_on_Google_play.svg.png'/>
-                        </a>
-                        <a href="https://itunes.apple.com/us/app/guidebook/id428713847?mt=8" target="_blank">
-                            <img width="45%" height="auto"
-                                 src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg">
-                        </a>
-                        </a>
-                    </p>
-                </div>
+        <div class="col-md-8" id="countdown">
+            <div class="boxIndex" style="height: 290px;">
+                <h1 id="countdownTitle">Clicon, Montreal</h1>
+                <p>Coming Soon - Pre Order Opens in
+                <h2 id="countdownclock"></h2></p>
+                <h2>The biggest video game convention in Quebec</h2>
+            </div>
+        </div>
+        <div class="col-md-4" id="app">
+            <div class="boxIndex" style="height: 290px;">
+                <h3>Get the official Otakuthon
+                    Mobile Schedule!</h3>
+                <p><img
+                            src="http://otakuthon.com/2017/images/2014/guidebook-devices.png"></p><br>
+                <p>
+                    <a href='https://play.google.com/store/apps/details?id=com.guidebook.android&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                       target="_blank">
+                        <img width="45%" height="auto" alt='Get it on Google Play'
+                             src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/2000px-Get_it_on_Google_play.svg.png'/>
+                    </a>
+                    <a href="https://itunes.apple.com/us/app/guidebook/id428713847?mt=8" target="_blank">
+                        <img width="45%" height="auto"
+                             src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg">
+                    </a>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-5" style="padding: 30px">
-            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"
-                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
-                 data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a
-                            href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>
+        <div class="col-md-6" id="arcadeBox">
+            <div class="boxIndex" style="color: lawngreen; height: 350px;background-size: cover;
+            background-image: url('http://www.entertainmentbuddha.com/blog/wp-content/uploads/2014/11/NewRetroArcadeHD_1.jpg')">
+
+                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy the
+                    Retro and Arcade Sections!</h3>
+
             </div>
         </div>
+        <div class="col-md-6" id="aaaBox">
+            <div class="boxIndex" style="color: black; height: 350px;background-size: cover;
+            background-image: url('http://www.bdcwire.com/wp-content/uploads/2014/04/2013-03-23T190257Z_01_BOS110_RTRMDNP_3_USA1.jpg')">
+
+                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet
+                        you favorite developper from Indie and AAA studios!</b></h3>
+
+            </div>
+        </div>
+        <!--        <div class="col-md-5" style="padding: 30px">-->
+        <!--            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"-->
+        <!--                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"-->
+        <!--                 data-show-facepile="true">-->
+        <!--                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a-->
+        <!--                            href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
 
 </main>

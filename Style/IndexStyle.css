@@ -1,0 +1,119 @@
+#countdownclock {
+    color: lawngreen;
+}
+
+#countdown {
+    padding: 20px 10px 20px 20px
+}
+
+#app {
+    padding: 20px 20px 20px 10px
+}
+
+#arcadeBox {
+    padding: 0 10px 20px 20px
+}
+
+#aaaBox {
+    padding: 0 20px 20px 10px
+}
+
+#countdownTitle {
+    margin: 20px 0 10px 0;
+    color: steelblue
+}
+
+.boxIndex {
+    border: black solid 1px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background: #1d1d1d
+}
+
+/*CAROUSEL------------------------------------------------------------------------------------------------------------*/
+
+#carouselCol {
+    padding: 0;
+}
+
+#carousel1 {
+    background-image: url("../Resources/carousel1.jpg");
+}
+
+#carousel2 {
+    background-image: url("../Resources/carousel2.jpg");
+}
+
+#carousel3 {
+    background-image: url("../Resources/carousel3.jpg");
+}
+
+.carousel-caption {
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+#carousel1, #carousel2, #carousel3 {
+    background-size: cover;
+    background-position: center center;
+}
+
+.carousel {
+    height: 500px;
+}
+
+.carousel-inner {
+    height: 500px;
+}
+
+#carousel {
+    text-align: center;
+}
+
+#carousel h3 {
+    color: lawngreen;
+    font-weight: bold;
+    font-family: "Trebuchet MS";
+}
+
+.carousel-caption {
+    top: 0;
+    bottom: auto;
+}
+
+.carousel-indicators li {
+    border-color: lawngreen;
+}
+
+.carousel-indicators .active {
+    background-color: lawngreen;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+
+    #countdown {
+        padding: 20px
+    }
+
+    #app {
+        padding: 0 20px 20px 20px
+    }
+
+    #arcadeBox {
+        padding: 0 20px 20px 20px
+    }
+
+    #aaaBox {
+        padding: 0 20px 20px 20px
+    }
+
+    @media only screen and (max-width: 426px) {
+        #countdownTitle {
+            margin: 0;
+        }
+    }
+}

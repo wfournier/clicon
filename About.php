@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GameCon_About</title>
+    <title>Clicon_About</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php";?>
 </head>
 <body>
