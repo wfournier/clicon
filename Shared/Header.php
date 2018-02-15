@@ -55,7 +55,7 @@
                     } else {
                         echo "<li class=\"dropdown\">
                             <a class=\"dropdown - toggle\" data-toggle=\"dropdown\" href=\"#\" id=\"navButtons\">
-                                View Account
+                                My Account
                             <span class=\"caret\" ></span ></a>
                             <ul class=\"dropdown-menu\" >
                                 <li ><a href = \"/Account/ModifyInfo.php\" > View Info </a ></li >

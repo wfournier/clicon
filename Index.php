@@ -24,8 +24,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 
 <main>
-
-
+<!--CAROUSEL-------------------->
     <div class="row">
         <div class="col-xs-12" id="carouselCol">
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="hover">
@@ -75,96 +74,32 @@
             </div>
         </div>
     </div>
+<!--CONTENT--------------------->
     <div class="row">
-        <div class="col-md-7" style="padding: 30px">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div id="timer-box">
-                        <p id="timer-msg" class="guidebook" style="width: 200px">Get the official Otakuthon
-                            Mobile Schedule!</p>
-                        <img id="guidebook"
-                             src="http://otakuthon.com/2017/images/2014/guidebook-devices.png"><br><br>
-                        <p id="timer-button" class="en">
-                            <a href='https://play.google.com/store/apps/details?id=com.guidebook.android&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-                               target="_blank"><img
-                                        width="45%" height="auto" alt='Get it on Google Play'
-                                        src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/2000px-Get_it_on_Google_play.svg.png'/></a>
-                            <a href="https://itunes.apple.com/us/app/guidebook/id428713847?mt=8"
-                               target="_blank"><img width="45%"
-                                                    height="auto"
-                                                    src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg"></a>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="padding: 30px 10px 20px 10px">
-                <div class="col-xs-12">
-                    <div id="News" class="panel panel-primary">
-                        <div class="panel-body" style="max-height: 450px;overflow-y: scroll;">
-                            <h3>News</h3>
-                            <ul>
-                                <li>
-                                    <p>Here the Gamecon can put different news with the date to inform people
-                                        about
-                                        ongoing
-                                        things on the event</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                                <li>
-                                    <p>They will be able to do this in many bullet point</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="col-xs-4" style="padding: 20px">
+            <div id="timer-box">
+                <div id="guidebook">
+                    <h3>Get the official Otakuthon
+                        Mobile Schedule!</h3>
+                    <p><img
+                         src="http://otakuthon.com/2017/images/2014/guidebook-devices.png"></p><br>
+                    <p>
+                        <a href='https://play.google.com/store/apps/details?id=com.guidebook.android&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                           target="_blank">
+                            <img width="45%" height="auto" alt='Get it on Google Play'
+                                 src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Get_it_on_Google_play.svg/2000px-Get_it_on_Google_play.svg.png'/>
+                        </a>
+                        <a href="https://itunes.apple.com/us/app/guidebook/id428713847?mt=8" target="_blank">
+                            <img width="45%" height="auto"
+                                 src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg">
+                        </a>
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="row">
         <div class="col-md-5" style="padding: 30px">
             <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"
                  data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
@@ -174,7 +109,6 @@
             </div>
         </div>
     </div>
-
 
 </main>
 
