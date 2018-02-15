@@ -4,7 +4,7 @@
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <link rel="stylesheet" href="/Style/IndexStyle.css">
-    <title>GameCon_Home</title>
+    <title>Clicon_Home</title>
     <style>
         .row {
             margin-right: 0;
@@ -55,9 +55,9 @@
                     </div>
 
                     <div id="carousel3" class="item">
-                        <a href="Schedule.php">
+                        <a href="Information.php">
                             <div class="carousel-caption">
-                                <h3>Schedule</h3>
+                                <h3>Information</h3>
                             </div>
                         </a>
                     </div>

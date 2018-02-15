@@ -4,7 +4,7 @@
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <link rel="stylesheet" href="/Style/InformationStyle.css">
-    <title>GameCon_Home</title>
+    <title>GameCon_Information</title>
 </head>
 <body>
 <div id="fb-root"></div>

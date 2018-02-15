@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php" ?>
-    <title>GameCon_Login</title>
+    <title>Clicon_Login</title>
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>

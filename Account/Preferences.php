@@ -10,7 +10,7 @@ if (!func::checkLogin($con)) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>GameCon_Account</title>
+    <title>Clicon_Account</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php";?>
     <link rel="stylesheet" type="text/css" href="../Style/AccountStyle.css">
     <style>
