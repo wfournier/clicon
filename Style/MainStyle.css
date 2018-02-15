@@ -13,17 +13,8 @@ body {
     background: transparent;
 }
 
-header{
+header {
     background: black;
-}
-
-#countdownclock{
-    color: lawngreen;
-}
-
-#countdownTitle{
-    margin: 20px 0 10px 0;
-    color: steelblue
 }
 
 #footer {
@@ -36,74 +27,17 @@ header{
     background: transparent;
 }
 
-
-
 .item {
     width: 100%;
     height: 100%;
 }
 
-.lang{
+.lang {
     border-radius: 0 0 5px 5px;
     float: right;
     background-color: white;
     padding: 2px 10px 2px 10px;
     margin-right: 10%;
-}
-
-/*CAROUSEL------------------------------------------------------------------------------------------------------------*/
-
-#carousel1 {
-    background-image: url("../Resources/carousel1.jpg");
-}
-
-#carousel2 {
-    background-image: url("../Resources/carousel2.jpg");
-}
-
-#carousel3 {
-    background-image: url("../Resources/carousel3.jpg");
-}
-
-.carousel-caption {
-    width: 100%;
-    height: 100%;
-    left: 0;
-}
-
-#carousel1, #carousel2, #carousel3 {
-    background-size: cover;
-    background-position: center center;
-}
-
-.carousel {
-    height: 500px;
-}
-
-.carousel-inner {
-    height: 500px;
-}
-
-#carousel {
-    text-align: center;
-}
-
-#carousel h3 {
-    color: lawngreen;
-    font-weight: bold;
-    font-family: "Trebuchet MS";
-}
-
-.carousel-caption {
-    top: 0;
-    bottom: auto;
-}
-
-.carousel-indicators li {
-    border-color: lawngreen;
-}
-.carousel-indicators .active {
-    background-color: lawngreen;
 }
 
 /*NavBar--------------------------------------------------------------------------------------------------------------*/
@@ -178,24 +112,13 @@ header{
     padding: 0;
 }
 
-#carouselCol {
-    padding: 0;
+#priceChart {
+    text-align: center;
 }
 
-#countdown{
-    padding: 20px 10px 20px 20px
-}
-
-#app{
-    padding: 20px 20px 20px 10px
-}
-
-#arcadeBox{
-    padding: 0 10px 20px 20px
-}
-
-#aaaBox{
-    padding: 0 20px 20px 10px
+#priceChart td, #priceChart th {
+    border: solid white 1px;
+    padding: 3px;
 }
 
 #menuTitle {
@@ -220,32 +143,25 @@ header{
     font-weight: bold;
 }
 
-.boxIndex {
-    border: black solid 1px;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    background: #1d1d1d
-}
-
 .sticky {
     width: 100%;
     border: solid black 1px;
     border-radius: 0;
 }
 
-#sticky a{
+#sticky a {
     color: white;
 }
 
 #sticky li a:hover {
     background: black;
 }
-#sticky li ul{
+
+#sticky li ul {
     background: black;
 }
 
-.container-fluid{
+.container-fluid {
     padding-left: 0;
     padding-right: 0;
 }
@@ -256,30 +172,16 @@ header{
     }
 }
 
-@media only screen and (max-width: 1006px) and (min-width: 769px){
+@media only screen and (max-width: 1006px) and (min-width: 769px) {
     .mainNavBarText, .navBarText {
         font-size: x-small;
     }
 }
 
-@media only screen and (max-width: 768px){
-    #myNavbar{
+@media only screen and (max-width: 768px) {
+    #myNavbar {
         margin-right: -15px;
         margin-left: -15px;
-    }
-
-    #countdown{
-        padding: 20px
-    }
-
-    #app{
-        padding: 0 20px 20px 20px
-    }
-    #arcadeBox{
-        padding: 0 20px 20px 20px
-    }
-    #aaaBox{
-        padding: 0 20px 20px 20px
     }
 }
 
@@ -297,10 +199,6 @@ header{
 
     #menuTitle {
         display: unset;
-    }
-
-    #countdownTitle{
-        margin: 0;
     }
 
     #bannerSec {

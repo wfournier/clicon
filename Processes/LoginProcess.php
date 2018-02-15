@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
 							$account['ACCOUNT_ID'] . ", '" . $token . "');";
 							$con->query($set_sess) or die("set session failed " . $con->error);
-							header("Location: Index.php");
+							header("Location: /Account/ModifyInfo.php");
 						} else {
 							$loginErrMsg = "Invalid Password";
 						}

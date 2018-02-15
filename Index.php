@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
+    <link rel="stylesheet" href="/Style/IndexStyle.css">
     <title>GameCon_Home</title>
     <style>
         .row {
@@ -79,7 +80,8 @@
         <div class="col-md-8" id="countdown">
             <div class="boxIndex" style="height: 290px;">
                 <h1 id="countdownTitle">Clicon, Montreal</h1>
-                <p>Coming Soon - Pre Order Opens in <h2 id="countdownclock"></h2></p>
+                <p>Coming Soon - Pre Order Opens in
+                <h2 id="countdownclock"></h2></p>
                 <h2>The biggest video game convention in Quebec</h2>
             </div>
         </div>
@@ -109,7 +111,8 @@
             <div class="boxIndex" style="color: lawngreen; height: 350px;background-size: cover;
             background-image: url('http://www.entertainmentbuddha.com/blog/wp-content/uploads/2014/11/NewRetroArcadeHD_1.jpg')">
 
-                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy the Retro and Arcade Sections!</h3>
+                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy the
+                    Retro and Arcade Sections!</h3>
 
             </div>
         </div>
@@ -117,18 +120,19 @@
             <div class="boxIndex" style="color: black; height: 350px;background-size: cover;
             background-image: url('http://www.bdcwire.com/wp-content/uploads/2014/04/2013-03-23T190257Z_01_BOS110_RTRMDNP_3_USA1.jpg')">
 
-                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet you favorite developper from Indie and AAA studios!</b></h3>
+                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet
+                        you favorite developper from Indie and AAA studios!</b></h3>
 
             </div>
         </div>
-<!--        <div class="col-md-5" style="padding: 30px">-->
-<!--            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"-->
-<!--                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"-->
-<!--                 data-show-facepile="true">-->
-<!--                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a-->
-<!--                            href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="col-md-5" style="padding: 30px">-->
+        <!--            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"-->
+        <!--                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"-->
+        <!--                 data-show-facepile="true">-->
+        <!--                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a-->
+        <!--                            href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
 
 </main>
