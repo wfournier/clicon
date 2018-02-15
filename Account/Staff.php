@@ -13,7 +13,7 @@ if (!func::checkLogin($con)) {
     <link rel="stylesheet" type="text/css" href="../Style/AccountStyle.css">
     <style>
         #AS {
-            background-color: aliceblue;
+            background-color: lawngreen;
         }
     </style>
 </head>
