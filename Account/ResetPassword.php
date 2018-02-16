@@ -25,7 +25,7 @@
 				$token = $_GET["token"];
 				?>
 				<h2 class="page-header">RESET PASSWORD</h2><br>
-				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="form">
+				<form action="<?php echo(htmlspecialchars($_SERVER["PHP_SELF"]) ."?token=$token"); ?>" method="post" class="form">
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<label for="newPass">New Password</label>
