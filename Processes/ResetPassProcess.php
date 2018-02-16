@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$delete_token_sql = "UPDATE account SET PASS_RESET_TOKEN = NULL, TOKEN_EXPIRY = NULL WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
 				$con->query($delete_token_sql) or die("delete_token_sql:" .$con->error);
 
-				$loginToken = random_bytes(25);
+				$loginToken = bin2hex(random_bytes(64/2));
 				setcookie("token", $loginToken, (time() + (89400 * 365)), "/");
 				setcookie("account_id", $account["ACCOUNT_ID"], (time() + (89400 * 365)), "/");
 				$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .$account['ACCOUNT_ID'] . ", '" . $loginToken . "');";

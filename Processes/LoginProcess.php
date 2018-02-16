@@ -29,10 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							$token = bin2hex(random_bytes(64/2));
 							setcookie("token", $token, (time() + (89400 * 365)), "/");
 							setcookie("account_id", $account['ACCOUNT_ID'], (time() + (89400 * 365)), "/");
-							$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
-							$account['ACCOUNT_ID'] . ", '" . $token . "');";
+							$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .$account['ACCOUNT_ID'] . ", '" . $token . "');";
 							$con->query($set_sess) or die("set session failed " . $con->error);
-							header("Location: Account/ModifyInfo.php");
+							header("Location:" .$_SERVER['DOCUMENT_ROOT'] ."/Account/ModifyInfo.php");
 						} else {
 							$loginErrMsg = "Invalid Password";
 						}
