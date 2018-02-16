@@ -31,12 +31,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$resetToken = $_POST["token"];
 
 		if(empty($p["newPass"])){
-			$newPassErr = $newPassErr = true;
+			$newPassErr = $error = true;
 		} else{
 			if(strlen($p["newPass"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["newPass"]) && !ctype_alpha($p["newPass"]) && !ctype_digit($p["newPass"]) && !strpos($p["newPass"], " ")){
 				$newPass = clean($p["newPass"]);
 			} else{
-				$newPassErr = $newPassErr = true;
+				$newPassErr = $error = true;
 			}
 		}
 
@@ -45,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		}
 
 		if($newPassErr){
-			$newPassErrMsg = nl2br("*Please fill out all fields correctly \n
+			$resetPassErrMsg = nl2br("*Please fill out all fields correctly \n
 				(Tip: Hover your mouse over a field to get help)");
 		} else{
 			$update_pass_sql = "UPDATE account SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE PASS_RESET_TOKEN = '" .$resetToken ."'";
@@ -62,12 +62,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$loginToken = random_bytes(25);
 				setcookie("token", $loginToken, (time() + (89400 * 365)), "/");
 				setcookie("account_id", $account["ACCOUNT_ID"], (time() + (89400 * 365)), "/");
-				$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .
-				$account['ACCOUNT_ID'] . ", '" . $loginToken . "');";
+				$set_sess = "INSERT INTO sessions (session_accountid, session_token) VALUES (" .$account['ACCOUNT_ID'] . ", '" . $loginToken . "');";
 				$con->query($set_sess) or die("set session failed " . $con->error);
-				header("Location: " .$_SERVER['DOCUMENT_ROOT'] ."/Index.php");
+				header("Location: " .$_SERVER['DOCUMENT_ROOT'] ."/Account/ModifyInfo.php");
 			} else {
-				$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
+				$resetPassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
 			}
 		}
 	}
