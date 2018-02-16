@@ -11,6 +11,7 @@
             margin-left: 0;
         }
     </style>
+    <script src="/Scripts/Countdown.js"></script>
 </head>
 <body>
 <div id="fb-root"></div>
