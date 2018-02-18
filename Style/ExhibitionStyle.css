@@ -1,0 +1,70 @@
+#retro {
+    margin: 20px 10px 20px 20px;
+    color: red;
+    background-image: url('/Resources/retrogaming.jpg');
+    /*http://www.discoverfrome.co.uk/wp-content/uploads/2017/04/illustration-cover-retrogaming.jpg*/
+}
+
+#aaa {
+    margin: 20px 20px 20px 10px;
+    color: yellow;
+    background-image: url('https://www.galis.fr/wp-content/gallery/ambiance/01-conception-stand-ubisoft.jpg');
+}
+
+#lan {
+    margin: 0 20px 20px 20px;
+    color: lawngreen;
+    background-image: url('http://www.extremetech.com/wp-content/uploads/2011/11/dreamhack-night-shot.jpg');
+}
+
+#arcade {
+    margin: 0 10px 20px 20px;
+    color: blueviolet;
+    background-image: url('http://www.entertainmentbuddha.com/blog/wp-content/uploads/2014/11/NewRetroArcadeHD_1.jpg');
+}
+
+#indie {
+    margin: 0 20px 20px 10px;
+    color: steelblue;
+    background-image: url('https://i.imgur.com/WcOtg1C.jpg');
+}
+
+h3 {
+    border-radius: 10px;
+    background-color: rgba(104, 104, 104, 0.8);
+    margin-top: 250px;
+}
+
+@media only screen and (max-width: 1024px) {
+    #retro {
+        margin: 20px 20px 20px 20px;
+    }
+
+    #aaa {
+        margin: 0 20px 20px 20px;
+    }
+
+    #lan {
+        margin: 0 20px 20px 20px;
+    }
+
+    #arcade {
+        margin: 0 20px 20px 20px;
+    }
+
+    #indie {
+        margin: 0 20px 20px 20px;
+    }
+}
+@media only screen and (max-width: 426px) {
+    #retro {
+        background-position: center center;
+    }
+
+    #aaa {
+        background-position: center right;
+    }
+    h3{
+        margin-top: 225px;
+    }
+}

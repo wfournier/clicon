@@ -14,15 +14,6 @@
     <script src="/Scripts/Countdown.js"></script>
 </head>
 <body>
-<div id="fb-root"></div>
-<script>(function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
 
 <main>
@@ -108,31 +99,18 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6" id="arcadeBox">
-            <div class="boxIndex" style="color: lawngreen; height: 350px;background-size: cover;
-            background-image: url('http://www.entertainmentbuddha.com/blog/wp-content/uploads/2014/11/NewRetroArcadeHD_1.jpg')">
-
+        <div class="col-md-6" style="padding: 0">
+            <div id="arcadeBox" class="boxIndex">
                 <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy the
                     Retro and Arcade Sections!</h3>
-
             </div>
         </div>
-        <div class="col-md-6" id="aaaBox">
-            <div class="boxIndex" style="color: black; height: 350px;background-size: cover;
-            background-image: url('http://www.bdcwire.com/wp-content/uploads/2014/04/2013-03-23T190257Z_01_BOS110_RTRMDNP_3_USA1.jpg')">
-
+        <div class="col-md-6" style="padding: 0">
+            <div id="aaaBox" class="boxIndex">
                 <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet
-                        you favorite developper from Indie and AAA studios!</b></h3>
-
+                        your favorite developper from Indie and AAA studios!</b></h3>
             </div>
         </div>
-        <!-- <div class="col-md-5" style="padding: 30px">
-            <div class="fb-page" data-href="https://www.facebook.com/HexagonalStudio/" data-tabs="timeline"
-                 data-height="700px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false"
-                 data-show-facepile="true">
-                <blockquote cite="https://www.facebook.com/HexagonalStudio/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/HexagonalStudio/">HexaGonal Studio</a></blockquote>
-            </div>
-        </div> -->
     </div>
 
 </main>

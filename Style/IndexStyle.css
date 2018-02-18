@@ -11,24 +11,20 @@
 }
 
 #arcadeBox {
-    padding: 0 10px 20px 20px
+    margin: 0 10px 20px 20px;
+    color: lawngreen;
+    background-image: url('http://www.entertainmentbuddha.com/blog/wp-content/uploads/2014/11/NewRetroArcadeHD_1.jpg');
 }
 
 #aaaBox {
-    padding: 0 20px 20px 10px
+    margin: 0 20px 20px 10px;
+    color: black;
+    background-image: url('http://www.bdcwire.com/wp-content/uploads/2014/04/2013-03-23T190257Z_01_BOS110_RTRMDNP_3_USA1.jpg');
 }
 
 #countdownTitle {
     margin: 20px 0 10px 0;
     color: steelblue
-}
-
-.boxIndex {
-    border: black solid 1px;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    background: #1d1d1d
 }
 
 /*CAROUSEL------------------------------------------------------------------------------------------------------------*/
@@ -104,11 +100,11 @@
     }
 
     #arcadeBox {
-        padding: 0 20px 20px 20px
+        margin: 0 20px 20px 20px
     }
 
     #aaaBox {
-        padding: 0 20px 20px 20px
+        margin: 0 20px 20px 20px
     }
 
     @media only screen and (max-width: 426px) {

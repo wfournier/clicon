@@ -17,6 +17,16 @@ header {
     background: black;
 }
 
+.boxIndex {
+    border: black solid 1px;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    background: #1d1d1d;
+    height: 350px;
+    background-size: cover;
+}
+
 #footer {
     text-align: center;
     background-color: black;
@@ -180,8 +190,8 @@ header {
 
 @media only screen and (max-width: 768px) {
     #myNavbar {
-        margin-right: -15px;
-        margin-left: -15px;
+        margin-right: 0;
+        margin-left: 0;
     }
 }
 
