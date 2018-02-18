@@ -115,15 +115,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 
 		if($error){
-			$modErrMsg = nl2br("*Please fill out all fields correctly \n
-				(Tip: Hover your mouse over a field to get help)");
+			$modErrMsg = nl2br($lang("err_msg"));
 		} else{
 			$passMod = $p["passMod"];
 			if(password_verify($passMod, $passHash)){
 				$updateSql = "UPDATE account SET LAST_NAME = '" .ucwords(strtolower($lnameMod), " ") ."', FIRST_NAME = '" .ucwords(strtolower($fnameMod), " ") ."', PHONE = '" .str_replace('-', '/', $phoneMod) ."', ADDRESS = '" .ucwords(strtolower($addressMod), " ") ."', CITY = '" .ucwords(strtolower($cityMod), " ") ."', ZIP = '" .strtoupper(str_replace(' ', '', $zipMod)) ."', COUNTRY_ID = " .$countryIdMod .", STATE_ID = " .$stateIdMod ." WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
 				if ($con->query($updateSql) === TRUE) {
-					$modOutput = "Changes Saved!";
+					$modOutput = $lang("changes_saved");
 				} else {
 					$modErrMsg = "Error: " . $updateSql . "<br>" . $con->error;
 				}
@@ -150,8 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 
 			if($changePassErr){
-				$changePassErrMsg = nl2br("*Please fill out all fields correctly \n
-					(Tip: Hover your mouse over a field to get help)");
+				$changePassErrMsg = nl2br($lang("err_msg"));
 			} else{
 				$update_pass_sql = "UPDATE account SET PASS_HASH = '" .password_hash($newPass, PASSWORD_BCRYPT) ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
@@ -164,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 		} else{
 			$currPassErr = true;
-			$changePassErrMsg = "Current Password is Incorrect";
+			$changePassErrMsg = $lang("incorrect_curr_pass");
 		}
 	}
 }

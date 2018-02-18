@@ -70,11 +70,11 @@
                         } else {
                             echo "<li class=\"dropdown\">
                             <a class=\"dropdown - toggle\" data-toggle=\"dropdown\" href=\"#\" id=\"navButtons\">
-                            My Account
+                            " .$lang('my_account') ."
                             <span class=\"caret\" ></span ></a>
                             <ul class=\"dropdown-menu\" >
-                            <li ><a href = \"/Account/ModifyInfo.php\" > View Info </a ></li >
-                            <li ><a href = \"/Processes/Logout.php\" > Logout</a ></li >
+                            <li ><a href = \"/Account/ModifyInfo.php\" > " .$lang('view_info') ."</a ></li >
+                            <li ><a href = \"/Processes/Logout.php\" > " .$lang('logout') ."</a></li >
                             </ul >
                             </li >";
                         }

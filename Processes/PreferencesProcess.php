@@ -45,13 +45,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		}
 
 		if($error){
-			$prefErrMsg = nl2br("*Please fill out all fields correctly \n
-				(Tip: Hover your mouse over a field to get help)");
+			$prefErrMsg = nl2br($lang("err_msg"));
 		} else{
 			$update_pref_sql = "UPDATE account SET PREF_BADGE_NAME = '" .$badgeName ."', EMERGENCY_CONTACT_PHONE = '" .str_replace('-', '/', $emergContact) ."', EMERGENCY_CONTACT_NAME = '" .ucwords(strtolower($emergContactName), " ") ."' WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];
 
 			if ($con->query($update_pref_sql) === TRUE) {
-				$prefOutput = "Preferences Saved!";
+				$prefOutput = $lang("preferences_saved");
 			} else {
 				$prefErrMsg = "Error: " . $update_pref_sql . "<br>" . $con->error;
 			}
