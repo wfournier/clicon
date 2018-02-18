@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php
-if (!func::checkLogin($con)) {
+if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
 session_start();

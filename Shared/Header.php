@@ -65,7 +65,7 @@
                     <!--Right Side-->
                     <ul class="nav navbar-nav navbar-right">
                         <?php
-                        if (!(func::checkLogin($con))) {
+                        if (!(func::checkLogin())) {
                             echo "<li><a href='/Login_Register.php'><span class='glyphicon glyphicon-user'></span> " .$lang("signup_login") ."</a></li>";
                         } else {
                             echo "<li class=\"dropdown\">
