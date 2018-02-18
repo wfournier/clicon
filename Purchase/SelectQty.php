@@ -39,7 +39,7 @@ session_start();
                         $y = 1;
                     }
                     ?>
-                    <input type="number" value="<?php echo $y ?>" name="qty" min="1" max="50" required> Ticket(s)
+                    <input style="color: black" type="number" value="<?php echo $y ?>" name="qty" min="1" max="50" required> Ticket(s)
             </div>
             <div class="row">
                 <a class="btn btn-warning" href="../Account/ModifyInfo.php">Cancel</a>

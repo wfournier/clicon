@@ -49,7 +49,7 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
                             needed at pickup.</i></p>
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
-                    <label for="badge">Badge Name: </label><input id="badge" type="text" name="badge"
+                    <label for="badge">Badge Name: </label><input style="color: black" id="badge" type="text" name="badge"
                         <?php
                         $id = $_GET["id"];
                         if ($_SESSION["badge$id"] != null && $_SESSION["badge$id"] != "") {
@@ -58,7 +58,7 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
                     > This option is optional*
                 </div>
                 <div class="row">
-                    <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["$id"] ?>Back</a>
+                    <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["id"] ?>">Back</a>
                     <input class="btn btn-warning" type="submit" value="Finish" id="next">
                 </div>
                 <?php

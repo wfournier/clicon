@@ -65,7 +65,7 @@ $_SESSION["Error_Ticket$id"] = null;
                     >
                 </div>
                 <div class="row">
-                    <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["$id"] ?>Back</a>
+                    <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["id"] ?>">Back</a>
                     <input class="btn btn-warning" type="submit" value="Next" id="next">
                 </div>
                 <?php
