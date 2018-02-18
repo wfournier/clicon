@@ -41,7 +41,7 @@
                     <div id="carousel2" class="item">
                         <a href="Admission.php">
                             <div class="carousel-caption">
-                                <h3><?php echo($lang("admission")); ?></h3>
+                                <h3><?php echo($lang("index_admission")); ?></h3>
                             </div>
                         </a>
                     </div>

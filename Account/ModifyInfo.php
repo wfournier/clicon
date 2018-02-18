@@ -30,29 +30,29 @@ if (!func::checkLogin($con)) {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="fnameMod" class="<?php echo $fnameModErr ? 'error' : '' ?>">First Name</label>
+                            <label for="fnameMod" class="<?php echo $fnameModErr ? 'error' : '' ?>"><?php echo($lang("first_name")); ?></label>
                             <input type="text" class="form-control" id="fnameMod" name="fnameMod"
-                            value="<?php echo $fnameMod ?>" data-toggle="tooltip" title="First Name must only contain letters">
+                            value="<?php echo $fnameMod ?>" data-toggle="tooltip" title="<?php echo($lang('tip_first_name')); ?>">
                         </div>
                         <div class="form-group col-xs-6">
-                            <label for="lnameMod" class="<?php echo $lnameModErr ? 'error' : '' ?>">Last Name</label>
+                            <label for="lnameMod" class="<?php echo $lnameModErr ? 'error' : '' ?>"><?php echo($lang("last_name")); ?></label>
                             <input type="text" class="form-control" id="lnameMod" name="lnameMod"
                             value="<?php echo $lnameMod ?>"
-                            data-toggle="tooltip" title="Last Name must only contain letters">
+                            data-toggle="tooltip" title="<?php echo($lang('tip_last_name')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="phoneMod" class="<?php echo $phoneModErr ? 'error' : '' ?>">Phone Number</label>
+                            <label for="phoneMod" class="<?php echo $phoneModErr ? 'error' : '' ?>"><?php echo($lang("phone")); ?></label>
                             <input type="tel" class="form-control" id="phoneMod" name="phoneMod"
                             value="<?php echo $phoneMod ?>"
-                            data-toggle="tooltip" title="Phone number must be valid (i.e. 000-000-0000)">
+                            data-toggle="tooltip" title="<?php echo($lang('tip_phone')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="countryIdMod"
-                            class="<?php echo $countryIdModErr ? 'error' : '' ?>">Country</label>
+                            class="<?php echo $countryIdModErr ? 'error' : '' ?>"><?php echo($lang("country")); ?></label>
                             <select class="form-control" id="countryIdMod" name="countryIdMod" data-toggle="tooltip" title="">
                                 <?php
                                 $get_countries_sql = "SELECT * FROM countries";
@@ -79,48 +79,48 @@ if (!func::checkLogin($con)) {
                             </select>
                         </div>
                         <div class="form-group col-xs-6">
-                            <label for="stateCodeMod" class="<?php echo $stateCodeModErr ? 'error' : '' ?>">State/Province</label>
-                            <input type="text" class="form-control" id="stateCodeMod" name="stateCodeMod" value="<?php echo $stateCodeMod ?>" data-toggle="tooltip" title="State code must be 2 characters long">
+                            <label for="stateCodeMod" class="<?php echo $stateCodeModErr ? 'error' : '' ?>"><?php echo($lang("state")); ?></label>
+                            <input type="text" class="form-control" id="stateCodeMod" name="stateCodeMod" value="<?php echo $stateCodeMod ?>" data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="cityMod" class="<?php echo $cityModErr ? 'error' : '' ?>">City</label>
+                            <label for="cityMod" class="<?php echo $cityModErr ? 'error' : '' ?>"><?php echo($lang("city")); ?></label>
                             <input type="text" class="form-control" id="cityMod" name="cityMod" value="<?php echo $cityMod ?>"
-                            data-toggle="tooltip" title="City must only contain letters">
+                            data-toggle="tooltip" title="<?php echo($lang('tip_city')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="addressMod" class="<?php echo $addressModErr ? 'error' : '' ?>">Address</label>
-                            <input type="text" class="form-control" id="addressMod" name="addressMod" value="<?php echo $addressMod ?>" data-toggle="tooltip" title="Address must be valid">
+                            <label for="addressMod" class="<?php echo $addressModErr ? 'error' : '' ?>"><?php echo($lang("address")); ?></label>
+                            <input type="text" class="form-control" id="addressMod" name="addressMod" value="<?php echo $addressMod ?>" data-toggle="tooltip" title="<?php echo($lang('tip_address')); ?>">
                         </div>
                         <div class="form-group col-xs-6">
-                            <label for="zipMod" class="<?php echo $zipModErr ? 'error' : '' ?>">Zip Code</label>
+                            <label for="zipMod" class="<?php echo $zipModErr ? 'error' : '' ?>"><?php echo($lang("zip")); ?></label>
                             <input type="text" class="form-control" id="zipMod" name="zipMod" value="<?php echo $zipMod ?>"
-                            data-toggle="tooltip" title="Zip code must be valid (i.e. A1B 2C3)">
+                            data-toggle="tooltip" title="<?php echo($lang('tip_zip')); ?>">
                         </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="form-group col-xs-6">
-                            <label for="passMod" class="<?php echo $passModErr ? 'error' : '' ?>">Current Password</label>
+                            <label for="passMod" class="<?php echo $passModErr ? 'error' : '' ?>"><?php echo($lang("current_pass")); ?></label>
                             <input type="Password" class="form-control" id="passMod" name="passMod" data-toggle="tooltip"
-                            title="Enter your current password to save changes">
+                            title="<?php echo($lang('tip_validate_pass')); ?>">
                         </div>
                         <div class="col-xs-6"><br>
-                            <a href="Change_Password.php" class="btn btn-warning">Change Password</a>
+                            <a href="Change_Password.php" class="btn btn-warning"><?php echo($lang('change_pass')); ?></a>
                         </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="btn btn-success btn-lg">Save</button>
+                        <button type="submit" class="btn btn-success btn-lg"><?php echo($lang('save')); ?></button>
                     </div>
                     <div class="row" style="height: 80px; padding: 10px;">
                         <p><span class="success"><?php echo($modOutput); ?></span></p>
                         <?php
                         if(isset($_GET["passChanged"])){
                             ?>
-                            <p><span class="success"><?php echo("Password Changed Successfully!"); ?></span></p>
+                            <p><span class="success"><?php echo($lang('pass_changed_success')); ?></span></p>
                             <?php
                         }
                         ?>

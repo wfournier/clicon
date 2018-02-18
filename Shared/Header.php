@@ -46,7 +46,7 @@
                             <li><a href="/Information.php#autograph"><?php echo($lang("autograph")); ?></a></li>
                         </ul>
                     </li>
-                    <li><a href="/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> <?php echo($lang("admission")); ?></a></li>
+                    <li><a href="/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> <?php echo($lang("header_admission")); ?></a></li>
                     <li><a href="/Guests.php"><span class="glyphicon glyphicon-star"></span> <?php echo($lang("guests")); ?></a></li>
                     <li><a href="/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> <?php echo($lang("events")); ?></a></li>
                     <li class="dropdown">

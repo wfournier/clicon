@@ -61,7 +61,7 @@
                         <label for="emailRegister" class="<?php echo $emailErr ? 'error' : '' ?>"><?php echo($lang("email")); ?></label>
                         <input type="text" class="form-control" id="emailRegister" name="emailRegister"
                         value="<?php echo isset($_POST['emailRegister']) ? $_POST['emailRegister'] : '' ?>"
-                        data-toggle="tooltip" title="Email must be a valid format (i.e. name@domain.com)">
+                        data-toggle="tooltip" title="<?php echo($lang('tip_email')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <br>
@@ -73,13 +73,13 @@
                         <label for="fname" class="<?php echo $fnameErr ? 'error' : '' ?>"><?php echo($lang("first_name")); ?></label>
                         <input type="text" class="form-control" id="fname" name="fname"
                         value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>" data-toggle="tooltip"
-                        title="First Name must only contain letters">
+                        title="<?php echo($lang('tip_first_name')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <label for="lname" class="<?php echo $lnameErr ? 'error' : '' ?>"><?php echo($lang("last_name")); ?></label>
                         <input type="text" class="form-control" id="lname" name="lname"
                         value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>" data-toggle="tooltip"
-                        title="Last Name must only contain letters">
+                        title="<?php echo($lang('tip_last_name')); ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -87,12 +87,12 @@
                         <label for="passRegister" class="<?php echo $passErr ? 'error' : '' ?>"><?php echo($lang("password")); ?></label>
                         <input type="Password" class="form-control" id="passRegister" name="passRegister"
                         data-toggle="tooltip"
-                        title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
+                        title="<?php echo($lang('tip_password')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <label for="confirmPass" class="<?php echo $confirmPassErr ? 'error' : '' ?>"><?php echo($lang("confirm_pass")); ?></label>
                         <input type="password" class="form-control" id="confirmPass" name="confirmPass"
-                        data-toggle="tooltip" title="Both passwords must match">
+                        data-toggle="tooltip" title="<?php echo($lang('tip_confirm_pass')); ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -150,7 +150,7 @@
                         <label for="phone" class="<?php echo $phoneErr ? 'error' : '' ?>"><?php echo($lang("phone")); ?></label>
                         <input type="tel" class="form-control" id="phone" name="phone"
                         value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip"
-                        title="Phone number must be valid (i.e. 000-000-0000)">
+                        title="<?php echo($lang('tip_phone')); ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -186,7 +186,7 @@
                         <label for="stateCode" class="<?php echo $stateErr ? 'error' : '' ?>"><?php echo($lang("state")); ?></label>
                         <input type="text" class="form-control" id="stateCode" name="stateCode" maxlength="2"
                         value="<?php echo isset($_POST['stateCode']) ? strtoupper($_POST['stateCode']) : '' ?>"
-                        data-toggle="tooltip" title="State code must be 2 characters long (i.e. FL)">
+                        data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -194,7 +194,7 @@
                         <label for="city" class="<?php echo $cityErr ? 'error' : '' ?>"><?php echo($lang("city")); ?></label>
                         <input type="text" class="form-control" id="city" name="city"
                         value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip"
-                        title="City must only contain letters (i.e. Anytown)">
+                        title="<?php echo($lang('tip_city')); ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -202,13 +202,13 @@
                         <label for="address" class="<?php echo $addressErr ? 'error' : '' ?>"><?php echo($lang("address")); ?></label>
                         <input type="text" class="form-control" id="address" name="address"
                         value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>"
-                        data-toggle="tooltip" title="Address must be valid (i.e. 123 Main Street)">
+                        data-toggle="tooltip" title="<?php echo($lang('tip_address')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <label for="zip" class="<?php echo $zipErr ? 'error' : '' ?>"><?php echo($lang("zip")); ?></label>
                         <input type="text" class="form-control" id="zip" name="zip"
                         value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip"
-                        title="Zip code must be valid (i.e. A1B 2C3)">
+                        title="<?php echo($lang('tip_zip')); ?>">
                     </div>
                 </div>
                 <input type="hidden" name="process" value="register">
