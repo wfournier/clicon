@@ -1,5 +1,5 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
@@ -35,6 +35,7 @@ session_start();
                     <?php
                     $tickets = array();
                     $tickets = $_SESSION["tickets"];
+                    $subTotal = 0;
                     foreach ($tickets as $ticket) {
                         ?>
                         <hr>
@@ -69,12 +70,21 @@ session_start();
                                 ?>
                             </div>
                             <div class="col-xs-2">
-                                <p>$ 00.00</p>
+                                <p>
+                                    <?php
+                                    echo "$ " . number_format($ticket->price, 2);
+                                    $subTotal += $ticket->price;
+                                    ?>
+                                </p>
                             </div>
                         </div>
                         <?php
                     }
                     ?>
+                    <hr>
+                    <div style="text-align: right">
+                        <p>Subtotal : <?php echo "$ " . number_format($subTotal, 2); ?></p>
+                    </div>
                 </div>
                 <div class="row" style="margin: 20px 0 20px 0">
                     <a class="btn btn-warning" href="SetTickets.php">Back</a>
