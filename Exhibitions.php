@@ -1,4 +1,4 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -2,7 +2,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/RegisterProcess.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +45,7 @@
             </tr>
             <tr>
                 <td>10$</td>
-                <td>17</td>
+                <td>17$</td>
                 <td>23$</td>
                 <td>27$</td>
                 <td>30$</td>

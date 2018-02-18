@@ -7,7 +7,7 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/RegisterProcess.php" ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
     <title>GameCon_Login</title>
 </head>
 <body>

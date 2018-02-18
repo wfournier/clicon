@@ -1,5 +1,5 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/CheckLogin.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin($con)) {
@@ -30,9 +30,11 @@ session_start();
                 ?>
                 <h1>Invoice</h1>
                 <hr>
+                <h4>Emailed to: <?php echo func::getEmail($con); ?></h4>
+                <br>
                 <?php
-                $tickets = array();
                 $tickets = $_SESSION["tickets"];
+                $subTotal = 0;
                 foreach ($tickets as $ticket) {
                     ?>
                     <h4>Ticket #<?php echo $ticket->tempID ?></h4>
@@ -67,14 +69,26 @@ session_start();
                             ?>
                         </div>
                         <div class="col-xs-2" style="text-align: right">
-                            <p>$ <?php $ticket->price ?></p>
+                            <p>
+                                <?php echo "$ " . number_format($ticket->price, 2);
+                                $subTotal += $ticket->price;
+                                ?>
+                            </p>
                         </div>
                     </div>
                     <?php
                 }
                 ?>
                 <hr>
-
+                <div style="text-align: right">
+                    <p>Subtotal : <?php echo "$ " . number_format($subTotal, 2); ?></p>
+                    <?php
+                    $taxes = $subTotal * 0.15;
+                    $total = $subTotal + $taxes;
+                    ?>
+                    <p>Taxes : <?php echo "$ " . number_format($taxes, 2); ?></p>
+                    <p>Total : <?php echo "$ " . number_format($total, 2); ?></p>
+                </div>
             </div>
         </div>
         <div class="col-lg-3"></div>

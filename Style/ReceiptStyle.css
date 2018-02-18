@@ -5,6 +5,8 @@
 .boxIndex{
     height: unset;
     text-align: left;
+    background-color: white;
+    color: black;
 }
 
 .boxIndex h1{
