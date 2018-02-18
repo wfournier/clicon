@@ -47,9 +47,9 @@
                     </div>
 
                     <div id="carousel3" class="item">
-                        <a href="Information.php">
+                        <a href="Exhibitions.php#lan">
                             <div class="carousel-caption">
-                                <h3>Information</h3>
+                                <h3>Show off you skills at our LAN party</h3>
                             </div>
                         </a>
                     </div>
@@ -100,16 +100,21 @@
     </div>
     <div class="row">
         <div class="col-md-6" style="padding: 0">
-            <div id="arcadeBox" class="boxIndex">
-                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy the
-                    Retro and Arcade Sections!</h3>
-            </div>
+            <a href="Exhibitions.php#retro">
+                <div id="arcadeBox" class="boxIndex">
+                    <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy
+                        the
+                        Retro and Arcade Sections!</h3>
+                </div>
+            </a>
         </div>
         <div class="col-md-6" style="padding: 0">
-            <div id="aaaBox" class="boxIndex">
-                <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet
-                        your favorite developper from Indie and AAA studios!</b></h3>
-            </div>
+            <a href="Exhibitions.php#aaa">
+                <div id="aaaBox" class="boxIndex">
+                    <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet
+                            your favorite developper from Indie and AAA studios!</b></h3>
+                </div>
+            </a>
         </div>
     </div>
 

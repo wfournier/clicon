@@ -25,6 +25,7 @@ header {
     background: #1d1d1d;
     height: 350px;
     background-size: cover;
+    /*position: relative;*/
 }
 
 #footer {
