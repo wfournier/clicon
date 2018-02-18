@@ -30,6 +30,28 @@
     border-radius: 10px;
     background-position: center left;
 }
+#event1 {
+    width: 100%;
+    height: 400px;
+    background-image: url("https://file-cdn.scdkey.com/product/20171106170403_scdk.png");
+    background-size: cover;
+    border-radius: 10px;
+}
+#event2 {
+    width: 100%;
+    height: 400px;
+    background-image: url("https://cdn.wccftech.com/wp-content/uploads/2015/03/half-life-3.jpg");
+    background-size: cover;
+    border-radius: 10px;
+    background-position: center center;
+}
+#event3 {
+    width: 100%;
+    height: 400px;
+    background-image: url("http://www.otakuthon.com/2017res/img/event_masq2017.jpg");
+    background-size: cover;
+    border-radius: 10px;
+}
 
 .boxIndex {
     margin: 20px;
