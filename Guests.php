@@ -14,10 +14,10 @@
         <div class="col-lg-8">
             <div class="boxIndex">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="guest1"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Shigeru Miyamoto - Nintendo</b></h3>
                         <p>Shigeru Miyamoto (Japanese: 宮本 茂 Hepburn: Miyamoto Shigeru, born November 16, 1952[4])
                             (pronounced [mijamoto ɕiɡeɾɯ]) is a Japanese video game designer and producer, currently
@@ -35,10 +35,10 @@
         <div class="col-lg-8">
             <div class="boxIndex">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="guest2"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Todd Howard - Bethesda</b></h3>
                         <p>Todd Howard (born 1971) is an American video game designer, director, and producer. He
                             currently serves as director and executive producer at Bethesda Game Studios, where he has
@@ -56,10 +56,10 @@
         <div class="col-lg-8">
             <div class="boxIndex">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="guest3"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Hideo Kojima - Kojima Production</b></h3>
                         <p>Hideo Kojima (小島 秀夫 Kojima Hideo, born August 24, 1963) is a Japanese video game designer,
                             screenwriter, director, and game producer. Regarded as an auteur of video games,[5] he
@@ -78,10 +78,10 @@
             <div class="boxIndex">
 
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="guest4"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Sid Meier - Civilization franchise</b></h3>
                         <p>Sidney K. Meier (born February 24, 1954) is a Canadian-American programmer, designer, and
                             producer of several strategy video games and simulation video games, most notably the

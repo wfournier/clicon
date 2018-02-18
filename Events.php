@@ -14,10 +14,10 @@
         <div class="col-lg-8">
             <div class="boxIndex">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="event1"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Panel 1 - Assassin'creed</b></h3>
                         <p>Shigeru Miyamoto (Japanese: 宮本 茂 Hepburn: Miyamoto Shigeru, born November 16, 1952[4])
                             (pronounced [mijamoto ɕiɡeɾɯ]) is a Japanese video game designer and producer, currently
@@ -35,10 +35,10 @@
         <div class="col-lg-8">
             <div class="boxIndex">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="event2"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Panel 2 - Half-Life 3</b></h3>
                         <p>Todd Howard (born 1971) is an American video game designer, director, and producer. He
                             currently serves as director and executive producer at Bethesda Game Studios, where he has
@@ -56,10 +56,10 @@
         <div class="col-lg-8">
             <div class="boxIndex">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div id="event3"></div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <h3><b>Masquerade - Cosplay</b></h3>
                         <p>Hideo Kojima (小島 秀夫 Kojima Hideo, born August 24, 1963) is a Japanese video game designer,
                             screenwriter, director, and game producer. Regarded as an auteur of video games,[5] he
