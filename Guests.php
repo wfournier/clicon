@@ -4,7 +4,7 @@
 <head>
     <title>Clicon_Guests</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
-    <link rel="stylesheet" href="/Style/GuestStyle.css">
+    <link rel="stylesheet" href="/Style/GuestEventStyle.css">
 </head>
 <body>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
@@ -13,7 +13,6 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
             <div class="boxIndex">
-
                 <div class="row">
                     <div class="col-xs-4">
                         <div id="guest1"></div>
@@ -35,7 +34,6 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
             <div class="boxIndex">
-
                 <div class="row">
                     <div class="col-xs-4">
                         <div id="guest2"></div>
@@ -57,7 +55,6 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
             <div class="boxIndex">
-
                 <div class="row">
                     <div class="col-xs-4">
                         <div id="guest3"></div>
