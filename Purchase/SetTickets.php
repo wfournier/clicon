@@ -31,6 +31,11 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
     }
     $_SESSION["tickets"] = $tickets;
 }
+$arr = $_SESSION["tickets"];
+if (empty($arr)) {
+    session_destroy();
+    header("Location: /Purchase/SelectQty.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,16 +68,14 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                     <p><i>Admission for children under 13 years old is free.<br>
                             A ticket is not required</i></p>
                     <?php
-                    $c = 0;
                     $tickets = array();
                     $tickets = $_SESSION["tickets"];
                     foreach ($tickets as $ticket) {
-                        $c++;
                         ?>
                         <div class="row">
                             <hr>
                             <div class="col-xs-6">
-                                <h4>Ticket #<?php echo $c ?></h4>
+                                <h4>Ticket #<?php echo $ticket->tempID ?></h4>
                                 Badge Name: <?php echo $ticket->badgeName ?><br>
                                 Days: <?php
                                 if ($ticket->isFriday() == true) {
@@ -112,7 +115,7 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
                                 </a>
                                 <br>
                                 <a class="btn btn-danger ticketBtn"
-                                   href="RemoveTicket.php?id=<?php echo $ticket->tempID ?>">
+                                   href="RemoveAYS.php?id=<?php echo $ticket->tempID ?>">
                                     Remove
                                 </a>
                                 <?php

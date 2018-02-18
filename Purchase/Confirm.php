@@ -20,10 +20,11 @@ session_start();
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form method="post" action="Validate_ProceedToPayment.php">
+            <form method="post" action="Receipt.php">
                 <div class="row" style="min-height: 400px">
                     <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>>
-                        <a href="/Purchase/Confirm.php">Confirm </a>></div>
+                        <a href="/Purchase/Confirm.php">Confirm </a>>
+                    </div>
                     <?php
                     if (isset($_SESSION["Error_Edit"])) {
                         echo "<p><i style='color: red'>" . $_SESSION["Error_Edit"] . "</i></p>";
@@ -32,18 +33,16 @@ session_start();
                     ?>
                     <h1>Confirm the information is valid</h1>
                     <?php
-                    $c = 0;
                     $tickets = array();
                     $tickets = $_SESSION["tickets"];
                     foreach ($tickets as $ticket) {
-                        $c++;
                         ?>
+                        <hr>
+                        <h4>Ticket #<?php echo $ticket->tempID ?></h4>
                         <div class="row">
-                            <hr>
-                            <div class="col-xs-6">
-                                <h4>Ticket #<?php echo $c ?></h4>
+                            <div class="col-xs-5">
                                 <b>Badge Name:</b> <?php echo $ticket->badgeName ?><br>
-                                <b>Days:</b> <?php
+                                <b>Days:</b> <br><?php
                                 if ($ticket->isFriday() == true)
                                     echo "Friday ";
 
@@ -53,7 +52,8 @@ session_start();
                                 if ($ticket->isSunday() == true)
                                     echo "Sunday ";
                                 ?>
-                                <br>
+                            </div>
+                            <div class="col-xs-5">
                                 <b>Extras:</b><br> <?php if ($ticket->extra1 == true) {
                                     echo "Concert<br>";
                                 }
@@ -68,19 +68,8 @@ session_start();
                                 }
                                 ?>
                             </div>
-                            <div class="col-xs-6" style="text-align: right;">
-                                <a class="btn btn-warning ticketBtn"
-                                   href="SelectTicket.php?id=<?php echo $ticket->tempID ?>">
-                                    Edit
-                                </a>
-                                <br>
-                                <a class="btn btn-danger ticketBtn"
-                                   href="RemoveTicket.php?id=<?php echo $ticket->tempID ?>">
-                                    Remove
-                                </a>
-                                <?php
-
-                                ?>
+                            <div class="col-xs-2">
+                                <p>$ 00.00</p>
                             </div>
                         </div>
                         <?php

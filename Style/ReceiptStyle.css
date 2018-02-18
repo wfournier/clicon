@@ -1,0 +1,12 @@
+#invoice{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.boxIndex{
+    height: unset;
+    text-align: left;
+}
+
+.boxIndex h1{
+    text-align: center;
+}
