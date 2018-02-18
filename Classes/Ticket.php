@@ -2,7 +2,8 @@
 
 class Ticket
 {
-    var $tempID;
+    var $accountID;
+
     var $friday = false;
     var $saturday = false;
     var $sunday = false;
@@ -12,15 +13,14 @@ class Ticket
     var $extra3 = false;
 
     var $badgeName = "";
-    var $ageClass;
-    var $price;
+    var $price = 0;
 
     /**
      * @return int
      */
     public function getTempID(): int
     {
-        return $this->tempID;
+        return $this->accountID;
     }
 
     /**
@@ -28,7 +28,7 @@ class Ticket
      */
     public function setTempID(int $tempID)
     {
-        $this->tempID = $tempID;
+        $this->accountID = $tempID;
     }
 
     /**
@@ -141,22 +141,6 @@ class Ticket
     public function setBadgeName(string $badgeName)
     {
         $this->badgeName = $badgeName;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAgeClass(): string
-    {
-        return $this->ageClass;
-    }
-
-    /**
-     * @param string $ageClass
-     */
-    public function setAgeClass(string $ageClass)
-    {
-        $this->ageClass = $ageClass;
     }
 
     /**

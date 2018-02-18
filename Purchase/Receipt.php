@@ -1,4 +1,3 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
@@ -30,7 +29,7 @@ session_start();
                 ?>
                 <h1>Invoice</h1>
                 <hr>
-                <h4>Emailed to: <?php echo func::getEmail($con); ?></h4>
+                <h4>Emailed to: <?php echo func::getFromTable("email", "account"); ?></h4>
                 <br>
                 <?php
                 $tickets = $_SESSION["tickets"];
