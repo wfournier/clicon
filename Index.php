@@ -33,7 +33,7 @@
                     <div id="carousel1" class="item active">
                         <a href="About.php">
                             <div class="carousel-caption">
-                                <h3>About</h3>
+                                <h3><?php echo($lang("about")); ?></h3>
                             </div>
                         </a>
                     </div>
@@ -41,7 +41,7 @@
                     <div id="carousel2" class="item">
                         <a href="Admission.php">
                             <div class="carousel-caption">
-                                <h3>Admission</h3>
+                                <h3><?php echo($lang("admission")); ?></h3>
                             </div>
                         </a>
                     </div>
@@ -49,7 +49,7 @@
                     <div id="carousel3" class="item">
                         <a href="Exhibitions.php#lan">
                             <div class="carousel-caption">
-                                <h3>Show off you skills at our LAN party</h3>
+                                <h3><?php echo($lang("skills_lan")); ?></h3>
                             </div>
                         </a>
                     </div>
@@ -71,16 +71,15 @@
     <div class="row">
         <div class="col-md-8" id="countdown">
             <div class="boxIndex" style="height: 290px;">
-                <h1 id="countdownTitle">Clicon, Montreal</h1>
-                <p>Coming Soon - Pre Order Opens in
+                <h1 id="countdownTitle">Clicon, <?php echo($lang("mtl")); ?></h1>
+                <p><?php echo($lang("coming_soon")); ?>
                 <h2 id="countdownclock"></h2></p>
-                <h2>The biggest video game convention in Quebec</h2>
+                <h2><?php echo($lang("biggest_con")); ?></h2>
             </div>
         </div>
         <div class="col-md-4" id="app">
             <div class="boxIndex" style="height: 290px;">
-                <h3>Get the official Otakuthon
-                    Mobile Schedule!</h3>
+                <h3><?php echo($lang("otak_schedule")); ?></h3>
                 <p><img
                             src="http://otakuthon.com/2017/images/2014/guidebook-devices.png"></p><br>
                 <p>
@@ -102,17 +101,14 @@
         <div class="col-md-6" style="padding: 0">
             <a href="Exhibitions.php#retro">
                 <div id="arcadeBox" class="boxIndex">
-                    <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px">Enjoy
-                        the
-                        Retro and Arcade Sections!</h3>
+                    <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><?php echo($lang("enjoy_arcade")); ?></h3>
                 </div>
             </a>
         </div>
         <div class="col-md-6" style="padding: 0">
             <a href="Exhibitions.php#aaa">
                 <div id="aaaBox" class="boxIndex">
-                    <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b>Meet
-                            your favorite developper from Indie and AAA studios!</b></h3>
+                    <h3 style="border-radius: 10px ;background-color: rgba(104, 104, 104, 0.8) ;margin-top: 250px"><b><?php echo($lang("meet_devs")); ?></b></h3>
                 </div>
             </a>
         </div>
