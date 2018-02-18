@@ -21,7 +21,7 @@ if (!func::checkLogin($con)) {
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php";?>
 
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.html";?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.php";?>
         <div class="content row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
@@ -33,24 +33,25 @@ if (!func::checkLogin($con)) {
                             <th>Ticket ID</th><th>Price</th><th>Days</th><th>Badge Name</th>
                         </tr>
                         <?php
-                            $get_tickets_res = $con->query("SELECT * FROM ticket ti, TRANSACTION tr WHERE ti.TRANSACTION_ID = tr.TRANSACTION_ID AND tr.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND tr.TRANSACTION_ID = " .$_GET["transaction_id"]) or die("get_tickets_res: " .$con->error);
-                            while($ticket = $get_tickets_res->fetch_array()){
-                                echo("<tr>");
-                                echo("<td>" .$ticket["TICKET_ID"] ."</td>");
-                                echo("<td>$" .$ticket["PRICE"] ."</td>");
-                                echo("<td>" .$ticket["TICKET_TYPE"] ."</td>");
-                                echo("<td>" .$ticket["BADGE_NAME"] ."</td>");
-                                echo("</tr>");
-                            }
+                        $get_tickets_res = $con->query("SELECT * FROM ticket ti, TRANSACTION tr WHERE ti.TRANSACTION_ID = tr.TRANSACTION_ID AND tr.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND tr.TRANSACTION_ID = " .$_GET["transaction_id"]) or die("get_tickets_res: " .$con->error);
+                        while($ticket = $get_tickets_res->fetch_array()){
+                            echo("<tr>");
+                            echo("<td>" .$ticket["TICKET_ID"] ."</td>");
+                            echo("<td>$" .$ticket["PRICE"] ."</td>");
+                            echo("<td>" .$ticket["DAYS"] ."</td>");
+                            echo("<td>" .$ticket["BADGE_NAME"] ."</td>");
+                            echo("</tr>");
+                        }
                         ?>
                     </table>
                     <?php
                 } else{
                     ?>
-                        <h2 class="error">INVALID TRANSACTION ID</h2>
+                    <h2 class="error">INVALID TRANSACTION ID</h2>
                     <?php
                 }
                 ?>
+                <a href="PurchaseHistory.php" class="btn btn-warning">return</a>
             </div>
             <div class="col-sm-3"></div>
         </div>

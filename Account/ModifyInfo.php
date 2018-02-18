@@ -22,11 +22,11 @@ if (!func::checkLogin($con)) {
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.html"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.php"; ?>
         <div class="content row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
-                <h1>Personal Information</h1>
+                <h1><?php echo($lang("personal_info")); ?></h1>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                     <div class="row">
                         <div class="form-group col-xs-6">

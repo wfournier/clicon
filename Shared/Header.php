@@ -79,7 +79,7 @@
                             </li >";
                         }
                         ?>
-                        <li><a style="margin-right: 30px" href="/Purchase/SetTickets.php"><?php echo($lang("get_ticket")); ?></a></li>
+                        <li><a style="margin-right: 30px" href="/Purchase/SetTickets.php"><?php echo($lang("header_buy_ticket")); ?></a></li>
                     </ul>
                 </div>
             </div>

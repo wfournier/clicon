@@ -22,7 +22,7 @@ if (!func::checkLogin($con)) {
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
     <main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.html"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.php"; ?>
         <div class="content row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">

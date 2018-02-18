@@ -21,7 +21,7 @@ if (!func::checkLogin($con)) {
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php";?>
 
 <main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.html";?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/AccountNavigation.php";?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html";?>
 </body>
