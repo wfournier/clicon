@@ -30,10 +30,12 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
     }
     $_SESSION["tickets"] = $tickets;
 }
-$arr = $_SESSION["tickets"];
-if (empty($arr)) {
-    session_destroy();
-    header("Location: /Purchase/SelectQty.php");
+if (isset($_SESSION["tickets"])) {
+    $arr = $_SESSION["tickets"];
+    if (empty($arr)) {
+        session_destroy();
+        header("Location: /Purchase/SelectQty.php");
+    }
 }
 ?>
 <!DOCTYPE html>
