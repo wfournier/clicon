@@ -57,6 +57,7 @@ if(isset($_SESSION["tickets"])){
             func::setToTable("BADGE_NAME", $badgeName, "ticket", "TICKET_ID", $ticketID);
         }
     }
+    header("Location: /Purchase/Receipt.php");
 } else {
     header("Location: /Purchase/SetTickets.php");
 }
