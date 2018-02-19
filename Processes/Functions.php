@@ -90,7 +90,7 @@ class func
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
     }
 
-    public static function insertIntoTransaction($priceTotal, $date, $token)
+    public static function insertIntoTransaction($priceTotal, $token)
     {
         include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Transaction.php";
         $account_id = $_COOKIE['account_id'];
