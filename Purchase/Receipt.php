@@ -29,7 +29,7 @@ session_start();
                 ?>
                 <h1>Invoice</h1>
                 <hr>
-                <h4>Emailed to: <?php echo func::getFromTable("email", "account"); ?></h4>
+                <h4>Emailed to: <?php echo func::getFromTable("email", "account", null, null); ?></h4>
                 <br>
                 <?php
                 $tickets = $_SESSION["tickets"];

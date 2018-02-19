@@ -183,9 +183,11 @@
                     </div>
                     <div class="form-group col-xs-6">
                         <label for="stateCode" class="<?php echo $stateErr ? 'error' : '' ?>"><?php echo($lang("state")); ?></label>
-                        <input type="text" class="form-control" id="stateCode" name="stateCode" maxlength="2"
-                        value="<?php echo isset($_POST['stateCode']) ? strtoupper($_POST['stateCode']) : '' ?>"
-                        data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
+                        <div id="state">
+                            <input type="text" class="form-control" id="stateCode" name="stateCode" maxlength="2"
+                                   value="<?php echo isset($_POST['stateCode']) ? strtoupper($_POST['stateCode']) : '' ?>"
+                                   data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
+                        </div>
                     </div>
                 </div>
                 <div class="row">
