@@ -102,7 +102,7 @@ class func
     {
         $transac_id = "";
         $account_id = $_COOKIE['account_id'];
-        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " && ID_TOKEN = " . $token . ";";
+        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " AND ID_TOKEN = " . $token . ";";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
