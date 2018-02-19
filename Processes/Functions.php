@@ -103,7 +103,7 @@ class func
         $transac_id = "";
         $account_id = $_COOKIE['account_id'];
         $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " AND ID_TOKEN = " . $token . ";";
-        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP1 " . self::getConnection()->error);
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
                 $transac_id = $result["TRANSACTION_ID"];
@@ -111,7 +111,7 @@ class func
         }
         if ($transac_id != "") {
             $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES (null, '" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
-            $results = self::getConnection()->query($query1) or die ("HELP " . self::getConnection()->error . $transac_id);
+            $results = self::getConnection()->query($query1) or die ("HELP2 " . self::getConnection()->error . $transac_id);
         }
     }
 } ?>
