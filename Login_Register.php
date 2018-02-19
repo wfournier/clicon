@@ -8,10 +8,11 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
     <title>GameCon_Login</title>
+
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>
-    <style type="text/css">
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>
+<style type="text/css">
     .row {
         margin-left: 0px;
         margin-right: 0px;
@@ -27,7 +28,7 @@
                     <div class="form-group col-xs-12">
                         <label for="emailLogin"><?php echo($lang("email")); ?></label>
                         <input type="text" class="form-control" id="emailLogin" name="emailLogin"
-                        value="<?php echo isset($_POST['emailLogin']) ? $_POST['emailLogin'] : '' ?>">
+                               value="<?php echo isset($_POST['emailLogin']) ? $_POST['emailLogin'] : '' ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -57,10 +58,11 @@
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="emailRegister" class="<?php echo $emailErr ? 'error' : '' ?>"><?php echo($lang("email")); ?></label>
+                        <label for="emailRegister"
+                               class="<?php echo $emailErr ? 'error' : '' ?>"><?php echo($lang("email")); ?></label>
                         <input type="text" class="form-control" id="emailRegister" name="emailRegister"
-                        value="<?php echo isset($_POST['emailRegister']) ? $_POST['emailRegister'] : '' ?>"
-                        data-toggle="tooltip" title="<?php echo($lang('tip_email')); ?>">
+                               value="<?php echo isset($_POST['emailRegister']) ? $_POST['emailRegister'] : '' ?>"
+                               data-toggle="tooltip" title="<?php echo($lang('tip_email')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <br>
@@ -69,29 +71,33 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="fname" class="<?php echo $fnameErr ? 'error' : '' ?>"><?php echo($lang("first_name")); ?></label>
+                        <label for="fname"
+                               class="<?php echo $fnameErr ? 'error' : '' ?>"><?php echo($lang("first_name")); ?></label>
                         <input type="text" class="form-control" id="fname" name="fname"
-                        value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>" data-toggle="tooltip"
-                        title="<?php echo($lang('tip_first_name')); ?>">
+                               value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>" data-toggle="tooltip"
+                               title="<?php echo($lang('tip_first_name')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="lname" class="<?php echo $lnameErr ? 'error' : '' ?>"><?php echo($lang("last_name")); ?></label>
+                        <label for="lname"
+                               class="<?php echo $lnameErr ? 'error' : '' ?>"><?php echo($lang("last_name")); ?></label>
                         <input type="text" class="form-control" id="lname" name="lname"
-                        value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>" data-toggle="tooltip"
-                        title="<?php echo($lang('tip_last_name')); ?>">
+                               value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>" data-toggle="tooltip"
+                               title="<?php echo($lang('tip_last_name')); ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="passRegister" class="<?php echo $passErr ? 'error' : '' ?>"><?php echo($lang("password")); ?></label>
+                        <label for="passRegister"
+                               class="<?php echo $passErr ? 'error' : '' ?>"><?php echo($lang("password")); ?></label>
                         <input type="Password" class="form-control" id="passRegister" name="passRegister"
-                        data-toggle="tooltip"
-                        title="<?php echo($lang('tip_password')); ?>">
+                               data-toggle="tooltip"
+                               title="<?php echo($lang('tip_password')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="confirmPass" class="<?php echo $confirmPassErr ? 'error' : '' ?>"><?php echo($lang("confirm_pass")); ?></label>
+                        <label for="confirmPass"
+                               class="<?php echo $confirmPassErr ? 'error' : '' ?>"><?php echo($lang("confirm_pass")); ?></label>
                         <input type="password" class="form-control" id="confirmPass" name="confirmPass"
-                        data-toggle="tooltip" title="<?php echo($lang('tip_confirm_pass')); ?>">
+                               data-toggle="tooltip" title="<?php echo($lang('tip_confirm_pass')); ?>">
                     </div>
                 </div>
                 <div class="row">
@@ -146,15 +152,17 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="phone" class="<?php echo $phoneErr ? 'error' : '' ?>"><?php echo($lang("phone")); ?></label>
+                        <label for="phone"
+                               class="<?php echo $phoneErr ? 'error' : '' ?>"><?php echo($lang("phone")); ?></label>
                         <input type="tel" class="form-control" id="phone" name="phone"
-                        value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip"
-                        title="<?php echo($lang('tip_phone')); ?>">
+                               value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip"
+                               title="<?php echo($lang('tip_phone')); ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="countryId" class="<?php echo $countryIdErr ? 'error' : '' ?>"><?php echo($lang("country")); ?></label>
+                        <label for="countryId"
+                               class="<?php echo $countryIdErr ? 'error' : '' ?>"><?php echo($lang("country")); ?></label>
                         <select class="form-control" id="countryId" name="countryId">
                             <?php
                             $get_countries_sql = "SELECT * FROM countries";
@@ -189,42 +197,46 @@
                                    data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-xs-6">
-                        <label for="city" class="<?php echo $cityErr ? 'error' : '' ?>"><?php echo($lang("city")); ?></label>
-                        <input type="text" class="form-control" id="city" name="city"
-                        value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip"
-                        title="<?php echo($lang('tip_city')); ?>">
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <label for="city"
+                                   class="<?php echo $cityErr ? 'error' : '' ?>"><?php echo($lang("city")); ?></label>
+                            <input type="text" class="form-control" id="city" name="city"
+                                   value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>"
+                                   data-toggle="tooltip"
+                                   title="<?php echo($lang('tip_city')); ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-xs-6">
-                        <label for="address" class="<?php echo $addressErr ? 'error' : '' ?>"><?php echo($lang("address")); ?></label>
-                        <input type="text" class="form-control" id="address" name="address"
-                        value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>"
-                        data-toggle="tooltip" title="<?php echo($lang('tip_address')); ?>">
+                    <div class="row">
+                        <div class="form-group col-xs-6">
+                            <label for="address"
+                                   class="<?php echo $addressErr ? 'error' : '' ?>"><?php echo($lang("address")); ?></label>
+                            <input type="text" class="form-control" id="address" name="address"
+                                   value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>"
+                                   data-toggle="tooltip" title="<?php echo($lang('tip_address')); ?>">
+                        </div>
+                        <div class="form-group col-xs-6">
+                            <label for="zip"
+                                   class="<?php echo $zipErr ? 'error' : '' ?>"><?php echo($lang("zip")); ?></label>
+                            <input type="text" class="form-control" id="zip" name="zip"
+                                   value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip"
+                                   title="<?php echo($lang('tip_zip')); ?>">
+                        </div>
                     </div>
-                    <div class="form-group col-xs-6">
-                        <label for="zip" class="<?php echo $zipErr ? 'error' : '' ?>"><?php echo($lang("zip")); ?></label>
-                        <input type="text" class="form-control" id="zip" name="zip"
-                        value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip"
-                        title="<?php echo($lang('tip_zip')); ?>">
+                    <input type="hidden" name="process" value="register">
+                    <div class="row">
+                        <button type="submit" class="btn btn-success btn-lg"><?php echo($lang("register")); ?></button>
+                        <button type="reset" class="btn btn-warning btn-lg"><?php echo($lang("reset")); ?></button>
                     </div>
-                </div>
-                <input type="hidden" name="process" value="register">
-                <div class="row">
-                    <button type="submit" class="btn btn-success btn-lg"><?php echo($lang("register")); ?></button>
-                    <button type="reset" class="btn btn-warning btn-lg"><?php echo($lang("reset")); ?></button>
-                </div>
-                <div class="row" style="height: 80px; padding: 10px;">
-                    <p><span class="success"><?php echo($registerOutput); ?></span></p>
-                    <p><span class="error"><?php echo(nl2br($registerErrMsg)); ?></span></p>
-                </div>
+                    <div class="row" style="height: 80px; padding: 10px;">
+                        <p><span class="success"><?php echo($registerOutput); ?></span></p>
+                        <p><span class="error"><?php echo(nl2br($registerErrMsg)); ?></span></p>
+                    </div>
             </form>
         </div>
         <div class="col-sm-2"></div>
     </div>
+    <script src="/Scripts/StateScript.js"></script>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html" ?>
 </body>
