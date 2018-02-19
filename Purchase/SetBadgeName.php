@@ -59,7 +59,7 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["id"] ?>">Back</a>
-                    <input class="btn btn-warning" type="submit" value="Finish" id="next">
+                    <input class="btn btn-primary" type="submit" value="Finish" id="next">
                 </div>
                 <?php
                 if (isset($_SESSION["Error_BadgeName"])) {

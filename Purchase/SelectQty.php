@@ -43,7 +43,7 @@ session_start();
             </div>
             <div class="row">
                 <a class="btn btn-warning" href="../Account/ModifyInfo.php">Cancel</a>
-                <input class="btn btn-warning" type="submit" value="Next" id="next">
+                <input class="btn btn-primary" type="submit" value="Next" id="next">
             </div>
             </form>
             <?php

@@ -88,7 +88,7 @@ session_start();
                 </div>
                 <div class="row" style="margin: 20px 0 20px 0">
                     <a class="btn btn-warning" href="SetTickets.php">Back</a>
-                    <input class="btn btn-warning" type="submit" value="Proceed to Payment" id="proceed">
+                    <input class="btn btn-success" type="submit" value="Proceed to Payment" id="proceed">
                 </div>
             </form>
         </div>

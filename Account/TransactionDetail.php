@@ -38,7 +38,7 @@ if (!func::checkLogin()) {
                             echo("<tr>");
                             echo("<td>" .$ticket["TICKET_ID"] ."</td>");
                             echo("<td>$" .$ticket["PRICE"] ."</td>");
-                            echo("<td>" .$ticket["DAYS"] ."</td>");
+                            echo("<td>" .$ticket["TICKET_TYPE"] ."</td>");
                             echo("<td>" .$ticket["BADGE_NAME"] ."</td>");
                             echo("</tr>");
                         }

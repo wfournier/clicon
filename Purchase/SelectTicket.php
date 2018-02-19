@@ -68,7 +68,7 @@ if ($_GET["id"] == null) {
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SetTickets.php">Cancel</a>
-                    <input class="btn btn-warning" type="submit" name="submit" value="Next" id="next">
+                    <input class="btn btn-primary" type="submit" name="submit" value="Next" id="next">
                 </div>
             </form>
             <?php
