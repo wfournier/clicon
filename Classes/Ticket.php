@@ -1,5 +1,5 @@
 <?php
-
+include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php";
 class Ticket
 {
     var $accountID;
@@ -16,19 +16,19 @@ class Ticket
     var $price = 0;
 
     /**
-     * @return int
+     * @return mixed
      */
-    public function getTempID(): int
+    public function getAccountID()
     {
         return $this->accountID;
     }
 
     /**
-     * @param int $tempID
+     * @param mixed $accountID
      */
-    public function setTempID(int $tempID)
+    public function setAccountID($accountID)
     {
-        $this->accountID = $tempID;
+        $this->accountID = $accountID;
     }
 
     /**
@@ -159,10 +159,17 @@ class Ticket
         $this->price = $price;
     }
 
+
+
     public function getDBBadge(): string
     {
-        //GET BADGE NAME FROM DATABASE AND RETURN IT
-        $this->setBadgeName("something");
-        return "something";
+        $string = "";
+        try{
+            $string = func::getFromTable("PREF_BADGE_NAME", "account");
+        } catch (Exception $e){
+            $string = "something";
+        }
+
+        return $string;
     }
 }

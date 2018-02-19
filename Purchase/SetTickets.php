@@ -20,13 +20,13 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
     $tickets = array();
     $defaultTicket = new Ticket();
     $defaultTicket->setBadgeName($defaultTicket->getDBBadge());
-    $defaultTicket->setTempID(1);
+    $defaultTicket->setAccountID(1);
     $tickets["1"] = $defaultTicket;
 
     for ($i = 0; $i < $_SESSION["qty"] - 1; $i++) {
         $ticket = new Ticket();
         $w = $i + 2;
-        $ticket->setTempID($w);
+        $ticket->setAccountID($w);
         $tickets["$w"] = $ticket;
     }
     $_SESSION["tickets"] = $tickets;
@@ -110,12 +110,12 @@ if (empty($arr)) {
                             </div>
                             <div class="col-xs-6" style="text-align: right;">
                                 <a class="btn btn-warning ticketBtn"
-                                   href="SelectTicket.php?id=<?php echo $ticket->tempID ?>">
+                                   href="SelectTicket.php?id=<?php echo $ticket->accountID ?>">
                                     Edit
                                 </a>
                                 <br>
                                 <a class="btn btn-danger ticketBtn"
-                                   href="RemoveAYS.php?id=<?php echo $ticket->tempID ?>">
+                                   href="RemoveAYS.php?id=<?php echo $ticket->accountID ?>">
                                     Remove
                                 </a>
                                 <?php

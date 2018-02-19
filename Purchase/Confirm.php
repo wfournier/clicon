@@ -39,7 +39,7 @@ session_start();
                     foreach ($tickets as $ticket) {
                         ?>
                         <hr>
-                        <h4>Ticket #<?php echo $ticket->tempID ?></h4>
+                        <h4>Ticket #<?php echo $ticket->accountID ?></h4>
                         <div class="row">
                             <div class="col-xs-5">
                                 <b>Badge Name:</b> <?php echo $ticket->badgeName ?><br>
