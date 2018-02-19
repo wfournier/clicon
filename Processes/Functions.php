@@ -110,8 +110,8 @@ class func
             }
         }
         if ($transac_id != "") {
-            $query1 = "INSERT INTO ticket (TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES ('" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
-            $results = self::getConnection()->query($query1) or die ("HELP " . self::getConnection()->error);
+            $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES (null, '" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
+            $results = self::getConnection()->query($query1) or die ("HELP " . self::getConnection()->error . $transac_id);
         }
     }
 } ?>
