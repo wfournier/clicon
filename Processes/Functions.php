@@ -92,7 +92,6 @@ class func
 
     public static function insertIntoTransaction($priceTotal, $token)
     {
-        include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Transaction.php";
         $account_id = $_COOKIE['account_id'];
         $query = "INSERT INTO transaction (TRANSACTION_ID, ACCOUNT_ID, PRICE_TOTAL, ID_TOKEN) VALUES (null, '" . $account_id . "', " . $priceTotal . ", '" . $token . "');";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
@@ -102,7 +101,7 @@ class func
     {
         $transac_id = "";
         $account_id = $_COOKIE['account_id'];
-        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " AND ID_TOKEN = " . $token . ";";
+        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " AND ID_TOKEN = '" . $token . "';";
         $results = self::getConnection()->query($query) or die ("HELP1 " . self::getConnection()->error);
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
