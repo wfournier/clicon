@@ -103,10 +103,8 @@ class func
         $account_id = $_COOKIE['account_id'];
         $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " AND ID_TOKEN = '" . $token . "';";
         $results = self::getConnection()->query($query) or die ("HELP1 " . self::getConnection()->error);
-        if ($results->num_rows > 0) {
-            while ($result = $results->fetch_assoc()) {
-                $transac_id = $result["TRANSACTION_ID"];
-            }
+        while ($result = $results->fetch_assoc()) {
+            $transac_id = $result["TRANSACTION_ID"];
         }
         if ($transac_id == 0) {
             $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES (null, '" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
