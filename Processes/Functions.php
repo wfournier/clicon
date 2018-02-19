@@ -94,7 +94,7 @@ class func
     {
         include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Transaction.php";
         $account_id = $_COOKIE['account_id'];
-        $query = "INSERT INTO transaction (ACCOUNT_ID, PRICE_TOTAL, PURCHASE_DATE) VALUES ('" . $account_id . "', " . $priceTotal . ", '" . $date . "');";
+        $query = "INSERT INTO transaction (TRANSACTION_ID, ACCOUNT_ID, PRICE_TOTAL, PURCHASE_DATE) VALUES (null, '" . $account_id . "', " . $priceTotal . ", '" . $date . "');";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
     }
 
