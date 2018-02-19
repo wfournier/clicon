@@ -44,18 +44,37 @@ class func
         return $con;
     }
 
-    public static function getFromTable($column, $table)
+    public static function getIDFromTicket($token)
     {
+        $query = "SELECT TICKET_ID FROM ticket WHERE ID_TOKEN = '" . $token . "' ;";
+        $results = self::getConnection()->query($query) or die ("HELP45 " . self::getConnection()->error);
+        $string = "";
+        if ($results->num_rows > 0) {
+            while ($result = $results->fetch_assoc()) {
+                $string = $result["TICKET_ID"];
+            }
+        }
+        return $string;
+    }
+
+    public static function getFromTable($column, $table, $idFieldName, $id)
+    {
+        if ($id == null)
+            $id = $_COOKIE['account_id'];
+
+        if ($idFieldName == null)
+            $idFieldName = "ACCOUNT_ID";
+
         $table = strtolower($table);
         $column = strtoupper($column);
         $string = "";
         $account_id = $_COOKIE['account_id'];
-        $query = "SELECT " . $column . " FROM " . $table . " WHERE ACCOUNT_ID = " . $account_id . " ;";
+        $query = "SELECT " . $column . " FROM " . $table . " WHERE " . $idFieldName . " = " . $id . " ;";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
 
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
-                $string = $result['$column'];
+                $string = $result["$column"];
             }
         } else {
             print("<script>console.log('no result from query')</script>");
@@ -105,8 +124,8 @@ class func
         while ($result = $results->fetch_assoc()) {
             $transac_id = $result['TRANSACTION_ID'];
             if ($transac_id != 0) {
-                $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES (null, '" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
-                $results = self::getConnection()->query($query1) or die ("HELP2 " . self::getConnection()->error . $transac_id);
+                $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE, ID_TOKEN) VALUES (null, '" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "', '" . $token . "');";
+                $results1 = self::getConnection()->query($query1) or die ("HELP2 " . self::getConnection()->error);
             }
         }
     }

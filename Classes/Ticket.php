@@ -163,7 +163,11 @@ class Ticket
 
     public function getDBBadge(): string
     {
-        $string = func::getFromTable("PREF_BADGE_NAME", "account");
+        try {
+            $string = func::getFromTable("PREF_BADGE_NAME", "account", null, null);
+        } catch (Exception $e){
+            $string = "";
+        }
         if($string == null){
             $string = "";
         }

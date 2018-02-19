@@ -9,13 +9,18 @@ if(isset($_SESSION["tickets"])){
     $arr = $_SESSION["tickets"];
     $subtotal = 0;
     $token = bin2hex(random_bytes(64/2));
+
+//    CREATE TRANSACTION
     foreach ($arr as $ticket) {
         $subtotal += $ticket->price;
     }
     $totalPrice = $subtotal + ($subtotal*0.15);
     func::insertIntoTransaction($totalPrice, $token);
+
+//    CREATE TICKETS
     foreach ($arr as $ticket){
         $price = $ticket->price;
+
         $ticket_type = "";
         if ($ticket->isFriday() == true)
             $ticket_type = $ticket_type . "F";
@@ -44,7 +49,13 @@ if(isset($_SESSION["tickets"])){
         else
             $extra = $extra . "-";
 
-        func::insertIntoTicket($date, $price, $extra, $ticket_type);
+        func::insertIntoTicket($token, $price, $extra, $ticket_type);
+
+        $ticketID = func::getIDFromTicket($token);
+        if($ticket->badgeName != null || $ticket->badgeName != ""){
+            $badgeName = $ticket->badgeName;
+            func::setToTable("BADGE_NAME", $badgeName, "ticket", "TICKET_ID", $ticketID);
+        }
     }
 } else {
     header("Location: /Purchase/SetTickets.php");
