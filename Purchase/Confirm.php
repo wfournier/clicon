@@ -20,7 +20,7 @@ session_start();
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form method="post" action="Receipt.php">
+            <form method="post" action="PaymentProcess.php">
                 <div class="row" style="min-height: 400px">
                     <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>>
                         <a href="/Purchase/Confirm.php">Confirm </a>>

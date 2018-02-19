@@ -92,6 +92,7 @@ session_start();
         </div>
         <div class="col-lg-3"></div>
     </div>
+    <?php session_destroy(); ?>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>

@@ -89,4 +89,29 @@ class func
             $AccountObj->zip . "', " . $AccountObj->country . ", " . $AccountObj->state . ", " . $AccountObj->isAdult . ");";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
     }
+
+    public static function insertIntoTransaction($priceTotal, $date)
+    {
+        include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Transaction.php";
+        $account_id = $_COOKIE['account_id'];
+        $query = "INSERT INTO transaction (ACCOUNT_ID, PRICE_TOTAL, PURCHASE_DATE) VALUES ('" . $account_id . "', " . $priceTotal . ", '" . $date . "');";
+        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+    }
+
+    public static function insertIntoTicket($date, $price, $extra, $ticket)
+    {
+        $transac_id = "";
+        $account_id = $_COOKIE['account_id'];
+        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " && PURCHASE_DATE = " . $date . ";";
+        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        if ($results->num_rows > 0) {
+            while ($result = $results->fetch_assoc()) {
+                $transac_id = $result["TRANSACTION_ID"];
+            }
+        }
+        if ($transac_id != "") {
+            $query1 = "INSERT INTO ticket (TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES ('" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
+            $results = self::getConnection()->query($query1) or die ("HELP " . self::getConnection()->error);
+        }
+    }
 } ?>

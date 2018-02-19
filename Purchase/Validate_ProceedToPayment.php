@@ -10,7 +10,7 @@ if ($_SESSION["tickets"] == null) {
     $_SESSION["Error_Ticket"] = "Please make sure to correctly edit each ticket.(1)";
     header("Location: /Purchase/SetTickets.php");
 } else {
-    $isValid = true;
+    $isValid = false;
     $tickets = $_SESSION["tickets"];
     foreach ($tickets as $ticket) {
         $price = 0;
