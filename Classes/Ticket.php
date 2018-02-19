@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php";
+
 class Ticket
 {
     var $accountID;
