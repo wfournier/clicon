@@ -55,7 +55,7 @@ class func
 
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
-                $string = $result["$column"];
+                $string = $result['$column'];
             }
         } else {
             print("<script>console.log('no result from query')</script>");
@@ -103,7 +103,7 @@ class func
         $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " AND ID_TOKEN = '" . $token . "';";
         $results = self::getConnection()->query($query) or die ("HELP1 " . self::getConnection()->error);
         while ($result = $results->fetch_assoc()) {
-            $transac_id = $result["TRANSACTION_ID"];
+            $transac_id = $result['TRANSACTION_ID'];
             if ($transac_id != 0) {
                 $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE) VALUES (null, '" . $transac_id . "', " . $price . ", '" . $extra . "', '" . $ticket . "');";
                 $results = self::getConnection()->query($query1) or die ("HELP2 " . self::getConnection()->error . $transac_id);
