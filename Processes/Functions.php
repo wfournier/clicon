@@ -90,19 +90,19 @@ class func
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
     }
 
-    public static function insertIntoTransaction($priceTotal, $date)
+    public static function insertIntoTransaction($priceTotal, $date, $token)
     {
         include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Transaction.php";
         $account_id = $_COOKIE['account_id'];
-        $query = "INSERT INTO transaction (TRANSACTION_ID, ACCOUNT_ID, PRICE_TOTAL, PURCHASE_DATE) VALUES (null, '" . $account_id . "', " . $priceTotal . ", '" . $date . "');";
+        $query = "INSERT INTO transaction (TRANSACTION_ID, ACCOUNT_ID, PRICE_TOTAL, PURCHASE_DATE, ID_TOKEN) VALUES (null, '" . $account_id . "', " . $priceTotal . ", null, '" . $token . "');";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
     }
 
-    public static function insertIntoTicket($date, $price, $extra, $ticket)
+    public static function insertIntoTicket($token, $price, $extra, $ticket)
     {
         $transac_id = "";
         $account_id = $_COOKIE['account_id'];
-        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " && PURCHASE_DATE = " . $date . ";";
+        $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . $account_id . " && ID_TOKEN = " . $token . ";";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {

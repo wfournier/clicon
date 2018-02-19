@@ -6,14 +6,14 @@ if (!func::checkLogin()) {
 }
 session_start();
 if(isset($_SESSION["tickets"])){
-    $date = date(time());
     $arr = $_SESSION["tickets"];
     $subtotal = 0;
+    $token = bin2hex(random_bytes(64/2));
     foreach ($arr as $ticket) {
         $subtotal += $ticket->price;
     }
     $totalPrice = $subtotal + ($subtotal*0.15);
-    func::insertIntoTransaction($totalPrice, "$date");
+    func::insertIntoTransaction($totalPrice, $token);
     foreach ($arr as $ticket){
         $price = $ticket->price;
         $ticket_type = "";
