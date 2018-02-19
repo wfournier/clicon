@@ -55,7 +55,7 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
                         if ($_SESSION["badge$id"] != null && $_SESSION["badge$id"] != "") {
                             echo "value = '" . $_SESSION["badge$id"] . "'";
                         } ?>
-                    > This option is optional*
+                    > This is optional**
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["id"] ?>">Back</a>

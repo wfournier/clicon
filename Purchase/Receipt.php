@@ -36,7 +36,7 @@ session_start();
                 $subTotal = 0;
                 foreach ($tickets as $ticket) {
                     ?>
-                    <h4>Ticket #<?php echo $ticket->accountID ?></h4>
+                    <h4>Ticket #<?php echo $ticket->ticketID ?></h4>
                     <b>Badge Name:</b> <?php echo $ticket->badgeName ?>
                     <div class="row">
                         <div class="col-xs-4"></div>

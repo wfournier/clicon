@@ -2,7 +2,7 @@
 
 class Ticket
 {
-    var $accountID;
+    var $ticketID;
 
     var $friday = false;
     var $saturday = false;
@@ -18,17 +18,17 @@ class Ticket
     /**
      * @return mixed
      */
-    public function getAccountID()
+    public function getTicketID()
     {
-        return $this->accountID;
+        return $this->ticketID;
     }
 
     /**
-     * @param mixed $accountID
+     * @param mixed $ticketID
      */
-    public function setAccountID($accountID)
+    public function setTicketID($ticketID)
     {
-        $this->accountID = $accountID;
+        $this->ticketID = $ticketID;
     }
 
     /**

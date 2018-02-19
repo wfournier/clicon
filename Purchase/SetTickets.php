@@ -19,13 +19,13 @@ if (!isset($_SESSION["tickets"]) || isset($_POST["qty"])) {
     $tickets = array();
     $defaultTicket = new Ticket();
     $defaultTicket->setBadgeName($defaultTicket->getDBBadge());
-    $defaultTicket->setAccountID(1);
+    $defaultTicket->setTicketID(1);
     $tickets["1"] = $defaultTicket;
 
     for ($i = 0; $i < $_SESSION["qty"] - 1; $i++) {
         $ticket = new Ticket();
         $w = $i + 2;
-        $ticket->setAccountID($w);
+        $ticket->setTicketID($w);
         $tickets["$w"] = $ticket;
     }
     $_SESSION["tickets"] = $tickets;
@@ -64,7 +64,7 @@ if (isset($_SESSION["tickets"])) {
                         $_SESSION["Error_Edit"] = null;
                     }
                     ?>
-                    <div class="breadcrumbs"><a href="/Purchase/SetTickets/php">Set Tickets </a>></div>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>></div>
                     <h1 style="margin-top: 0">Set your tickets.</h1>
                     <p><i>Admission for children under 13 years old is free.<br>
                             A ticket is not required</i></p>
@@ -76,7 +76,7 @@ if (isset($_SESSION["tickets"])) {
                         <div class="row">
                             <hr>
                             <div class="col-xs-6">
-                                <h4>Ticket #<?php echo $ticket->accountID ?></h4>
+                                <h4>Ticket #<?php echo $ticket->ticketID ?></h4>
                                 Badge Name: <?php echo $ticket->badgeName ?><br>
                                 Days: <?php
                                 if ($ticket->isFriday() == true) {
@@ -111,12 +111,12 @@ if (isset($_SESSION["tickets"])) {
                             </div>
                             <div class="col-xs-6" style="text-align: right;">
                                 <a class="btn btn-warning ticketBtn"
-                                   href="SelectTicket.php?id=<?php echo $ticket->accountID ?>">
+                                   href="SelectTicket.php?id=<?php echo $ticket->ticketID ?>">
                                     Edit
                                 </a>
                                 <br>
                                 <a class="btn btn-danger ticketBtn"
-                                   href="RemoveAYS.php?id=<?php echo $ticket->accountID ?>">
+                                   href="RemoveAYS.php?id=<?php echo $ticket->ticketID ?>">
                                     Remove
                                 </a>
                                 <?php
@@ -128,6 +128,7 @@ if (isset($_SESSION["tickets"])) {
                     }
                     ?>
                 </div>
+                <a class="btn btn-success" href="AddNew.php">Add Ticket</a>
                 <div class="row" style="margin: 20px 0 20px 0">
                     <a class="btn btn-warning" href="SelectQty.php">Cancel</a>
                     <input class="btn btn-warning" type="submit" value="Proceed to Next Step" id="proceed">

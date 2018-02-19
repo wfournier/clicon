@@ -66,7 +66,7 @@ if(!($_GET["id"] > 0) || empty($arr)){
                     ?>
                 </div>
             </div>
-            <a class="btn btn-success" href="RemoveTicket.php?id=<?php echo $ticket->accountID ?>">Yes</a>
+            <a class="btn btn-success" href="RemoveTicket.php?id=<?php echo $ticket->ticketID ?>">Yes</a>
             <a class="btn btn-danger" href="SetTickets.php">No</a>
         </div>
     </div>

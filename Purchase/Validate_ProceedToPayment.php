@@ -57,7 +57,7 @@ if ($_SESSION["tickets"] == null) {
         if ($numExtras >= 5)
             $price += 30;
 
-        $id = $ticket->accountID;
+        $id = $ticket->ticketID;
         $tickets["$id"]->setPrice($price);
         $_SESSION["tickets"] = $tickets;
     }
