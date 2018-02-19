@@ -6,7 +6,7 @@ if (!func::checkLogin()) {
 }
 session_start();
 if(isset($_SESSION["tickets"])){
-    $date = date('Y:m:d:H:i:s', time());
+    $date = date(time());
     $arr = $_SESSION["tickets"];
     $subtotal = 0;
     foreach ($arr as $ticket) {
