@@ -76,7 +76,7 @@ if (isset($_SESSION["tickets"])) {
                         <div class="row">
                             <hr>
                             <div class="col-xs-6">
-                                <h4>Ticket #<?php echo $ticket->tempID ?></h4>
+                                <h4>Ticket #<?php echo $ticket->accountID ?></h4>
                                 Badge Name: <?php echo $ticket->badgeName ?><br>
                                 Days: <?php
                                 if ($ticket->isFriday() == true) {

@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Account.php";
+
 class func
 {
 
@@ -82,6 +82,7 @@ class func
 
     public static function insertIntoAccount(Account $AccountObj)
     {
+        include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Account.php";
         $query = "INSERT INTO account (LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES 
 ('" . $AccountObj->last_name . "', '" . $AccountObj->first_name . "', '" . $AccountObj->email . "', '" . $AccountObj->password .
             "', '" . $AccountObj->dob . "', '" . $AccountObj->phone . "', '" . $AccountObj->address . "', '" . $AccountObj->city . "', '" .
