@@ -41,7 +41,7 @@
                             <li><a href="/Information.php#hours"><?php echo($lang("hours")); ?></a></li>
                             <li><a href="/Information.php#location"><?php echo($lang("location")); ?></a></li>
                             <li><a href="/Information.php#rules"><?php echo($lang("rules")); ?></a></li>
-                            <li><a href="/Information.php#registration"><?php echo($lang("registration")); ?></a></li>
+                            <li><a href="/Information.php#registration"><?php echo($lang("registration_policies")); ?></a></li>
                             <li><a href="/Information.php#weapon"><?php echo($lang("weapon")); ?></a></li>
                             <li><a href="/Information.php#autograph"><?php echo($lang("autograph")); ?></a></li>
                         </ul>

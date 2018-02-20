@@ -48,6 +48,8 @@ class LangQuery{
 		$text = $this->find($matches['key'], $arguments, $matches['language']);
 		if($matches['operation']==">"){
 			echo($text);
+		}else if($key == "html_text"){
+			return file_get_contents(dirname(__FILE__)."/$this->language_folder/html_text/" .$text);
 		}else{
 			return $text;
 		}
