@@ -50,7 +50,7 @@ function sendResetToken($account, $token){
 	$url = "localhost/Account/ResetPassword.php?token=" .$token;
 
 	$to = $account["EMAIL"];
-	$subject = "gamecon Password Recovery";
+	$subject = "Clicon Password Recovery";
 	$message = nl2br("Dear " .$fname .",\n\nIf this e-mail does not apply to you please ignore it. It appears that you have requested a password reset at our website.\n\nTo reset your password, please click the link below. If you cannot click it, please paste it into your web browser's address bar.\n\n<a href='$url'>Reset Password</a>\n\nPlease note that the link will expire in 24 hours.\n\nThank you,\nThe Administration");
 	$headers = "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
