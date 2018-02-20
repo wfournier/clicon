@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 function sendResetToken($account, $token){
 	$fname = $account["FIRST_NAME"];
-	$url = "localhost/Account/ResetPassword.php?token=" .$token;
+	$url = "clicon.pw/Account/ResetPassword.php?token=" .$token;
 
 	$to = $account["EMAIL"];
 	$subject = "Clicon Password Recovery";
