@@ -153,12 +153,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($error) {
             $registerErrMsg = nl2br($lang("err_msg"));
         } else {
-            $insertSql = "INSERT INTO account (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) 
-VALUES (NULL, '" . $con->real_escape_string(ucwords(strtolower($lname), " ")) . "', '" . $con->real_escape_string(ucwords(strtolower($fname), " ")) . "', '" . $con->real_escape_string($email) . "', '" . $con->real_escape_string(password_hash($pass, PASSWORD_BCRYPT)) . "', '" . $con->real_escape_string(date('Y-m-d', strtotime(str_replace('-', '/', $dob)))) . "', '" . $con->real_escape_string(str_replace('-', '/', $phone)) . "', '" . $con->real_escape_string(ucwords(strtolower($address), " ")) . "', '" . $con->real_escape_string(ucwords(strtolower($city), " ")) . "', '" . $con->real_escape_string(strtoupper(str_replace(' ', '', $zip))) . "', " . $con->real_escape_string($countryId) . ", " . $con->real_escape_string($stateId) . ", '" . $con->real_escape_string($isAdult) . "')";
+            $id_token = bin2hex(random_bytes(64 / 2));
+            $insertSql = "INSERT INTO account (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT, ID_TOKEN) 
+VALUES (NULL, '" . $con->real_escape_string(ucwords(strtolower($lname), " ")) . "', '" . $con->real_escape_string(ucwords(strtolower($fname), " ")) . "', '" . $con->real_escape_string($email) . "', '" . $con->real_escape_string(password_hash($pass, PASSWORD_BCRYPT)) . "', '" . $con->real_escape_string(date('Y-m-d', strtotime(str_replace('-', '/', $dob)))) . "', '" . $con->real_escape_string(str_replace('-', '/', $phone)) . "', '" . $con->real_escape_string(ucwords(strtolower($address), " ")) . "', '" . $con->real_escape_string(ucwords(strtolower($city), " ")) . "', '" . $con->real_escape_string(strtoupper(str_replace(' ', '', $zip))) . "', " . $con->real_escape_string($countryId) . ", " . $con->real_escape_string($stateId) . ", '" . $con->real_escape_string($isAdult) . "', '" .$con->real_escape_string($id_token) ."')";
 
             if ($con->query($insertSql) === TRUE) {
                 $registerOutput = $lang("register_success");
-                func::login(func::getIdFromEmail($email));
+                func::login(func::getFromTable("ACCOUNT_ID", "account", "ID_TOKEN", $id_token));
             } else {
                 $registerErrMsg = "Error: " . $insertSql . "<br>" . $con->error;
             }
