@@ -1,14 +1,15 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+<script src="/Scripts/MainScript.js"></script>
 <header>
     <?php
     if(isset($_COOKIE["current_language"])){
         if($_COOKIE["current_language"] == "en"){
             ?>
-            <div class="lang"><a href="<?php echo(htmlspecialchars($_SERVER['PHP_SELF']) .'?lang=fr'); ?>">FR</a></div>
+            <div class="lang"><button id="changeLang" class="btn btn-default btn-sm" onclick="setLanguage('current_language', 'fr')">FR</button></div>
             <?php
         } else if($_COOKIE["current_language"] == "fr"){
             ?>
-            <div class="lang"><a href="<?php echo(htmlspecialchars($_SERVER['PHP_SELF']) .'?lang=en'); ?>">EN</a></div>
+            <div class="lang"><button id="changeLang" class="btn btn-default btn-sm" onclick="setLanguage('current_language', 'en')">EN</button></div>
             <?php
         }
         ?>

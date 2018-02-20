@@ -30,7 +30,7 @@ if (!func::checkLogin()) {
                     ?>
                     <table class="table table-hover" border="2">
                         <tr>
-                            <th>Ticket ID</th><th>Price</th><th>Days</th><th>Badge Name</th>
+                            <th><?php echo($lang("ticket_id")); ?></th><th><?php echo($lang("ticket_price")); ?></th><th><?php echo($lang("ticket_days")); ?></th><th><?php echo($lang("ticket_badge_name")); ?></th><th><?php echo($lang("ticket_extras")); ?></th>
                         </tr>
                         <?php
                         $get_tickets_res = $con->query("SELECT * FROM ticket ti, transaction tr WHERE ti.TRANSACTION_ID = tr.TRANSACTION_ID AND tr.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND tr.TRANSACTION_ID = " .$_GET["transaction_id"]) or die("get_tickets_res: " .$con->error);
@@ -38,8 +38,45 @@ if (!func::checkLogin()) {
                             echo("<tr>");
                             echo("<td>" .$ticket["TICKET_ID"] ."</td>");
                             echo("<td>$" .$ticket["PRICE"] ."</td>");
-                            echo("<td>" .$ticket["TICKET_TYPE"] ."</td>");
+                            echo("<td><ul>");
+                            for($i = 0; $i < strlen($ticket["TICKET_TYPE"]); $i ++){
+                                if($ticket["TICKET_TYPE"][$i] != "-"){
+                                    echo("<li>");
+                                    switch ($i) {
+                                        case 0:
+                                        echo($lang("friday"));
+                                        break;
+                                        case 1:
+                                        echo($lang("saturday"));
+                                        break;
+                                        case 2:
+                                        echo($lang("sunday"));
+                                        break;
+                                    }
+                                    echo("</li>");
+                                }
+                            }
+                            echo("</ul></td>");
                             echo("<td>" .$ticket["BADGE_NAME"] ."</td>");
+                            echo("<td><ul>");
+                            for($i = 0; $i < strlen($ticket["EXTRAS"]); $i ++){
+                                if($ticket["EXTRAS"][$i] != "-"){
+                                    echo("<li>");
+                                    switch ($i) {
+                                        case 0:
+                                        echo($lang("ticket_extra_concert"));
+                                        break;
+                                        case 1:
+                                        echo($lang("ticket_extra_panel"));
+                                        break;
+                                        case 2:
+                                        echo($lang("ticket_extra_vip"));
+                                        break;
+                                    }
+                                    echo("</li>");
+                                }
+                            }
+                            echo("</ul></td>");
                             echo("</tr>");
                         }
                         ?>

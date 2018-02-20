@@ -49,7 +49,7 @@ if (!func::checkLogin()) {
                             
                             $ticketCount = $get_ticket_count_res->fetch_array()["TICKET_COUNT"];
 
-                            echo("<td>" .$ticketCount ."&nbsp;<a href=\"TransactionDetail.php?transaction_id=" .$transaction['TRANSACTION_ID'] ."\">" .$lang("view_tickets") ."</a></td>");
+                            echo("<td>" .$ticketCount ."&nbsp;<a href=\"TransactionDetail.php?transaction_id=" .$transaction['TRANSACTION_ID'] ."\" id=\"viewTicketsLink\" class=\"btn btn-info btn-xs\">" .$lang("view_tickets") ."</a></td>");
                             echo("<td>$" .$transaction['PRICE_TOTAL'] ."</td>");
                             echo("</tr>");
                         }

@@ -1,17 +1,22 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/RegisterProcess.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/RegisterProcess.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
+    <?php
+    if (func::checkLogin()) {
+        header("Location: /Purchase/SelectQty.php");
+    }
+    ?>
     <title>Clicon_Admission</title>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>
-<style type="text/css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>
+    <style type="text/css">
     .row {
         margin-left: 0px;
         margin-right: 0px;
@@ -19,13 +24,13 @@
 </style>
 <main>
     <div class="row" style="text-align: center">
-        <h1>Price Chart</h1>
-        <table id="priceChart" align="center">
+        <h1><?php echo($lang("price_chart")); ?></h1>
+        <table id="priceChart" align="center" style="color: white;">
             <tr>
-                <th>Friday</th>
-                <th>Saturday</th>
-                <th>Sunday</th>
-                <th>3-Day</th>
+                <th><?php echo($lang("friday")); ?></th>
+                <th><?php echo($lang("saturday")); ?></th>
+                <th><?php echo($lang("sunday")); ?></th>
+                <th><?php echo($lang("3day")); ?></th>
             </tr>
             <tr>
                 <td>25$</td>
@@ -35,7 +40,7 @@
             </tr>
         </table>
         <br>
-        <table id="priceChart" align="center">
+        <table id="priceChart" align="center" style="color: white;">
             <tr>
                 <th>1 extra</th>
                 <th>2 extra</th>
@@ -52,34 +57,33 @@
             </tr>
         </table>
         <br>
-        <p>To get more info on ticket collection or to see opening hours. Checkout our <a href="Information.php#hours">info
-                page</a></p>
+        <p><?php echo($lang("more_info")); ?></p>
     </div>
     <div class="content row">
         <div class="col-sm-1"></div>
         <div id="login" class="col-sm-4">
-            <h2 class="page-header">LOGIN</h2><br>
+            <h2 class="page-header"><?php echo(strtoupper($lang("login"))); ?></h2><br>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <label for="emailLogin">Email</label>
+                        <label for="emailLogin"><?php echo($lang("email")); ?></label>
                         <input type="text" class="form-control" id="emailLogin" name="emailLogin"
-                               value="<?php echo isset($_POST['emailLogin']) ? $_POST['emailLogin'] : '' ?>">
+                        value="<?php echo isset($_POST['emailLogin']) ? $_POST['emailLogin'] : '' ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-12">
-                        <label for="passLogin">Password</label>
+                        <label for="passLogin"><?php echo($lang("password")); ?></label>
                         <input type="password" class="form-control" id="passLogin" name="passLogin">
                     </div>
                 </div>
                 <input type="hidden" name="process" value="login">
                 <div class="row">
                     <div class="col-xs-6">
-                        <button type="submit" class="btn btn-success btn-lg">Login</button>
+                        <button type="submit" class="btn btn-success btn-lg"><?php echo($lang("login")); ?></button>
                     </div>
                     <div class="col-xs-6" style="text-align: right">
-                        <a href="Account/Forgot_Password.php">Forgot Password?</a>
+                        <a href="Account/Forgot_Password.php"><?php echo($lang("forgot_pass")); ?></a>
                     </div>
                 </div>
                 <div class="row" style="height: 80px; padding: 10px;">
@@ -87,13 +91,13 @@
                     <p><span class="error"><?php echo($loginErrMsg); ?></span></p>
                 </div>
             </form>
-            <h4>Account Advantages:</h4>
+            <h4><?php echo($lang("account_advantages")); ?></h4>
             <div id="register">
-                <p>
-                    - Make you transaction faster each year with an account.<br>
-                    - Resolve issues faster.<br>
-                    - Save time by selecting your badge name before the convention.
-                </p><br>
+                <ul>
+                    <li><?php echo($lang("faster_transaction")); ?></li>
+                    <li><?php echo($lang("resolve_issues")); ?></li>
+                    <li><?php echo($lang("save_time")); ?></li>
+                </ul><br>
                 <a href="Login_Register.php">
                     <button class="btn btn-warning">Create Account</button>
                 </a>
@@ -101,14 +105,14 @@
         </div>
         <div class="col-sm-2"></div>
         <div id="register" class="col-sm-4">
-            <h2 class="page-header">ONE-TIME USER</h2><br>
+            <h2 class="page-header"><?php echo(strtoupper($lang("friday"))); ?></h2><br>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="emailRegister" class="<?php echo $emailErr ? 'error' : '' ?>">Email</label>
+                        <label for="emailRegister" class="<?php echo $emailErr ? 'error' : '' ?>"><?php echo($lang("email")); ?></label>
                         <input type="text" class="form-control" id="emailRegister" name="emailRegister"
-                               value="<?php echo isset($_POST['emailRegister']) ? $_POST['emailRegister'] : '' ?>"
-                               data-toggle="tooltip" title="Email must be a valid format (i.e. name@domain.com)">
+                        value="<?php echo isset($_POST['emailRegister']) ? $_POST['emailRegister'] : '' ?>"
+                        data-toggle="tooltip" title="<?php echo($lang('tip_email')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
                         <br>
@@ -117,31 +121,31 @@
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="fname" class="<?php echo $fnameErr ? 'error' : '' ?>">First Name</label>
+                        <label for="fname" class="<?php echo $fnameErr ? 'error' : '' ?>"><?php echo($lang("first_name")); ?></label>
                         <input type="text" class="form-control" id="fname" name="fname"
-                               value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>" data-toggle="tooltip"
-                               title="First Name must only contain letters">
+                        value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>" data-toggle="tooltip"
+                        title="<?php echo($lang('tip_first_name')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="lname" class="<?php echo $lnameErr ? 'error' : '' ?>">Last Name</label>
+                        <label for="lname" class="<?php echo $lnameErr ? 'error' : '' ?>"><?php echo($lang("last_name")); ?></label>
                         <input type="text" class="form-control" id="lname" name="lname"
-                               value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>" data-toggle="tooltip"
-                               title="Last Name must only contain letters">
+                        value="<?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>" data-toggle="tooltip"
+                        title="<?php echo($lang('tip_last_name')); ?>">
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="phone" class="<?php echo $phoneErr ? 'error' : '' ?>">Phone Number</label>
+                        <label for="phone" class="<?php echo $phoneErr ? 'error' : '' ?>"><?php echo($lang("phone")); ?></label>
                         <input type="tel" class="form-control" id="phone" name="phone"
-                               value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip"
-                               title="Phone number must be valid (i.e. 000-000-0000)">
+                        value="<?php echo isset($_POST['phone']) ? $_POST['phone'] : '' ?>" data-toggle="tooltip"
+                        title="<?php echo($lang('tip_phone')); ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="countryId" class="<?php echo $countryIdErr ? 'error' : '' ?>">Country</label>
+                        <label for="countryId" class="<?php echo $countryIdErr ? 'error' : '' ?>"><?php echo($lang("country")); ?></label>
                         <select class="form-control" id="countryId" name="countryId">
                             <?php
                             $get_countries_sql = "SELECT * FROM countries";
@@ -169,37 +173,37 @@
                         </select>
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="stateCode" class="<?php echo $stateErr ? 'error' : '' ?>">State/Province</label>
+                        <label for="stateCode" class="<?php echo $stateErr ? 'error' : '' ?>"><?php echo($lang("state")); ?></label>
                         <input type="text" class="form-control" id="stateCode" name="stateCode" maxlength="2"
-                               value="<?php echo isset($_POST['stateCode']) ? strtoupper($_POST['stateCode']) : '' ?>"
-                               data-toggle="tooltip" title="State code must be 2 characters long (i.e. FL)">
+                        value="<?php echo isset($_POST['stateCode']) ? strtoupper($_POST['stateCode']) : '' ?>"
+                        data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="city" class="<?php echo $cityErr ? 'error' : '' ?>">City</label>
+                        <label for="city" class="<?php echo $cityErr ? 'error' : '' ?>"><?php echo($lang("city")); ?></label>
                         <input type="text" class="form-control" id="city" name="city"
-                               value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip"
-                               title="City must only contain letters (i.e. Anytown)">
+                        value="<?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>" data-toggle="tooltip"
+                        title="<?php echo($lang('tip_city')); ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-xs-6">
-                        <label for="address" class="<?php echo $addressErr ? 'error' : '' ?>">Address</label>
+                        <label for="address" class="<?php echo $addressErr ? 'error' : '' ?>"><?php echo($lang("address")); ?></label>
                         <input type="text" class="form-control" id="address" name="address"
-                               value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>"
-                               data-toggle="tooltip" title="Address must be valid (i.e. 123 Main Street)">
+                        value="<?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>"
+                        data-toggle="tooltip" title="<?php echo($lang('tip_address')); ?>">
                     </div>
                     <div class="form-group col-xs-6">
-                        <label for="zip" class="<?php echo $zipErr ? 'error' : '' ?>">Zip Code</label>
+                        <label for="zip" class="<?php echo $zipErr ? 'error' : '' ?>"><?php echo($lang("zip")); ?></label>
                         <input type="text" class="form-control" id="zip" name="zip"
-                               value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip"
-                               title="Zip code must be valid (i.e. A1B 2C3)">
+                        value="<?php echo isset($_POST['zip']) ? $_POST['zip'] : '' ?>" data-toggle="tooltip"
+                        title="<?php echo($lang('tip_zip')); ?>">
                     </div>
                 </div>
                 <input type="hidden" name="process" value="register">
                 <div class="row">
-                    <button type="submit" class="btn btn-success btn-lg">Continue as one-time user ></button>
+                    <button type="submit" class="btn btn-success btn-lg"><?php echo($lang("continue_one_time")); ?></button>
                 </div>
                 <div class="row" style="height: 80px; padding: 10px;">
                     <p><span class="error"><?php echo($registerErrMsg); ?></span></p>
