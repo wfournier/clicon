@@ -61,17 +61,16 @@ if (isset($_SESSION["tickets"])) {
     $to = func::getFromTable("EMAIL", "account", null, null);
     $first = func::getFromTable("FIRST_NAME", "account", null, null);
     $last = func::getFromTable("LAST_NAME", "account", null, null);
-    $subject = "Clicon Password Recovery";
-    $m = "Dear " . $first . " " . $last . ",\n\n<h1>Thank you for you purchase</h1>. \n\nThis is your receipt for ticket to attend Clicon 2019.
+    $subject = "Clicon Ticket Receipt";
+    $m = "Dear " . $first . " " . $last . ",\n\n<h1>Thank you for you purchase</h1>. \nThis is your receipt for tickets to attend Clicon 2019.
     \n\n";
-
 
     $tickets = $_SESSION["tickets"];
     $subTotal = 0;
     foreach ($tickets as $ticket) {
-        $m = $m . "Ticket #" . $ticket->ticketID . "\n";
-        $m = $m . "Badge Name:" . $ticket->badgeName . "\n";
-        $m = $m . "Days:\n";
+        $m = $m . "<h3>Ticket #" . $ticket->ticketID . "</h3>\n";
+        $m = $m . "<b>Badge Name:</b>\n " . $ticket->badgeName . "\n";
+        $m = $m . "<b>Days:</b>\n";
         if ($ticket->isFriday() == true)
             $m = $m . " - Friday\n";
         if ($ticket->isSaturday() == true)
@@ -79,7 +78,7 @@ if (isset($_SESSION["tickets"])) {
         if ($ticket->isSunday() == true)
             $m = $m . " - Sunday\n";
 
-        $m = $m . "\nExtras:\n";
+        $m = $m . "<b>Extras:</b>\n";
         if ($ticket->extra1 == true) {
             $m = $m . " - Concert\n";
         }
@@ -93,14 +92,14 @@ if (isset($_SESSION["tickets"])) {
             $m = $m . " <i>None</i>\n";
         }
         $subTotal += $ticket->price;
-        $m = $m . "\nTicket Price: $ " . number_format($ticket->price, 2);
+        $m = $m . "$ " . number_format($ticket->price, 2) . "\n\n";
     }
     $m = $m . " \n<hr>\n";
-    $m = $m . "SubTotal: $ " . number_format($subTotal, 2);
+    $m = $m . "<b>SubTotal:</b> $ " . number_format($subTotal, 2);
     $taxes = $subTotal * 0.15;
     $total = $subTotal + $taxes;
-    $m = $m . "\nTaxes: $ " . number_format($taxes, 2);
-    $m = $m . "\nTotal: $ " . number_format($total, 2);
+    $m = $m . "\n<b>Taxes:</b> $ " . number_format($taxes, 2);
+    $m = $m . "\n<b>Total:</b> $ " . number_format($total, 2);
 
     $message = nl2br($m);
     $headers = "Content-Type: text/html; charset=ISO-8859-1\r\n";
