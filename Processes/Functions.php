@@ -91,20 +91,29 @@ class func
         return $string;
     }
 
-    public static function getIdFromEmail($email)
+    public static function getIdFromToken($column, $table, $idFieldName, $id)
     {
-        $query = "SELECT ACCOUNT_ID FROM ACCOUNT WHERE EMAIL ='" . self::getConnection()->real_escape_string($email) . "';";
-        $results = self::getConnection()->query($query) or die ("HELP getIdFromEmail " . self::getConnection()->error);
+        if ($id == null)
+            $id = $_COOKIE['account_id'];
+
+        if ($idFieldName == null)
+            $idFieldName = "ACCOUNT_ID";
+
+        $table = strtolower($table);
+        $column = strtoupper($column);
+        $string = "";
+        $query = "SELECT " . $column . " FROM " . $table . " WHERE " . $idFieldName . " = '" . $id . "' ;";
+        $results = self::getConnection()->query($query) or die ("HELP getFromTable " . self::getConnection()->error);
 
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
-                $id = $result["ACCOUNT_ID"];
+                $string = $result["$column"];
             }
         } else {
             print("<script>console.log('no result from query')</script>");
         }
 
-        return $id;
+        return $string;
     }
 
     public static function setToTable($column, $val, $table, $id, $idFieldName)
