@@ -5,11 +5,11 @@
     if(isset($_COOKIE["current_language"])){
         if($_COOKIE["current_language"] == "en"){
             ?>
-            <div class="lang"><button id="changeLang" class="btn btn-default btn-sm flag flag-fr" onclick="setLanguage('current_language', 'fr')"></button></div>
+            <div class="lang"><button id="changeLang" class="btn btn-default btn-sm" onclick="setLanguage('current_language', 'fr')"><div class="flag flag-fr"></div></button></div>
             <?php
         } else if($_COOKIE["current_language"] == "fr"){
             ?>
-            <div class="lang"><button id="changeLang" class="btn btn-default btn-sm flag flag-us" onclick="setLanguage('current_language', 'en')">EN</button></div>
+            <div class="lang"><button id="changeLang" class="btn btn-default btn-sm" onclick="setLanguage('current_language', 'en')"><div class="flag flag-us"></div></button></div>
             <?php
         }
         ?>
