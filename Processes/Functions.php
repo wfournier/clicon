@@ -56,7 +56,7 @@ class func
     public static function getIDFromTicket($token)
     {
         $query = "SELECT TICKET_ID FROM ticket WHERE ID_TOKEN = '" . self::getConnection()->real_escape_string($token) . "' ;";
-        $results = self::getConnection()->query($query) or die ("HELP45 " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP getIDFromTicket " . self::getConnection()->error);
         $string = "";
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
@@ -78,7 +78,7 @@ class func
         $column = strtoupper($column);
         $string = "";
         $query = "SELECT " . $column . " FROM " . $table . " WHERE " . $idFieldName . " = " . $id . " ;";
-        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP getFromTable " . self::getConnection()->error);
 
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
@@ -94,7 +94,7 @@ class func
     public static function getIdFromEmail($email)
     {
         $query = "SELECT ACCOUNT_ID FROM ACCOUNT WHERE EMAIL ='" . self::getConnection()->real_escape_string($email) . "';";
-        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP getIdFromEmail " . self::getConnection()->error);
 
         if ($results->num_rows > 0) {
             while ($result = $results->fetch_assoc()) {
@@ -120,7 +120,7 @@ class func
         $idFieldName = strtoupper($idFieldName);
 
         $query = "UPDATE " . $table . " SET " . $column . " = '" . $val . "' WHERE " . $idFieldName . " = " . $id . ";";
-        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP setToTable " . self::getConnection()->error);
     }
 
     public static function insertIntoAccount(Account $AccountObj)
@@ -130,21 +130,21 @@ class func
         ('" . self::getConnection()->real_escape_string($AccountObj->last_name) . "', '" . self::getConnection()->real_escape_string($AccountObj->first_name) . "', '" . self::getConnection()->real_escape_string($AccountObj->email) . "', '" . self::getConnection()->real_escape_string($AccountObj->password) .
             "', '" . self::getConnection()->real_escape_string($AccountObj->dob) . "', '" . self::getConnection()->real_escape_string($AccountObj->phone) . "', '" . self::getConnection()->real_escape_string($AccountObj->address) . "', '" . self::getConnection()->real_escape_string($AccountObj->city) . "', '" .
             self::getConnection()->real_escape_string($AccountObj->zip) . "', " . self::getConnection()->real_escape_string($AccountObj->country) . ", " . self::getConnection()->real_escape_string($AccountObj->state) . ", " . self::getConnection()->real_escape_string($AccountObj->isAdult) . ");";
-        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP insertIntoAccount " . self::getConnection()->error);
     }
 
     public static function insertIntoTransaction($priceTotal, $token)
     {
         $account_id = $_COOKIE['account_id'];
         $query = "INSERT INTO transaction (TRANSACTION_ID, ACCOUNT_ID, PRICE_TOTAL, ID_TOKEN) VALUES (null, '" . self::getConnection()->real_escape_string($account_id) . "', " . self::getConnection()->real_escape_string($priceTotal) . ", '" . self::getConnection()->real_escape_string($token) . "');";
-        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP insertIntoTransaction " . self::getConnection()->error);
     }
 
     public static function insertIntoTicket($token, $price, $extra, $ticket)
     {
         $account_id = $_COOKIE['account_id'];
         $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . self::getConnection()->real_escape_string($account_id) . " AND ID_TOKEN = '" . self::getConnection()->real_escape_string($token) . "';";
-        $results = self::getConnection()->query($query) or die ("HELP1 " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP insertIntoTicket " . self::getConnection()->error);
         while ($result = $results->fetch_assoc()) {
             $transac_id = $result['TRANSACTION_ID'];
             if ($transac_id != 0) {
