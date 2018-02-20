@@ -31,9 +31,9 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" id="carousel">
                     <div id="carousel1" class="item active">
-                        <a href="About.php">
+                        <a href="Events.php">
                             <div class="carousel-caption">
-                                <h3><?php echo($lang("about")); ?></h3>
+                                <h3><?php echo($lang("events")); ?></h3>
                             </div>
                         </a>
                     </div>
