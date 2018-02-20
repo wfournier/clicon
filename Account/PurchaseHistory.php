@@ -27,7 +27,7 @@ if (!func::checkLogin()) {
             <div class="col-sm-6">
                 <table class="table table-hover" border="2">
                     <tr>
-                        <th><?php echo($lang("transaction_id")); ?></th><th><?php echo($lang("purchase_date")); ?></th><th><?php echo($lang("num_tickets")); ?></th><th><?php echo($lang("total_price")); ?></th>
+                        <th><?php echo($lang("transaction_id")); ?></th><th><?php echo($lang("purchase_date")); ?></th><th><?php echo($lang("num_tickets")); ?></th><th style="border-right: solid 1px black;"><?php echo($lang("total_price")); ?></th>
                     </tr>
                     <?php
                     $get_transactions = "SELECT * FROM transaction WHERE ACCOUNT_ID = " .$_COOKIE['account_id'];

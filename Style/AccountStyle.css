@@ -88,6 +88,10 @@ main{
     border-color: lawngreen;
 }
 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: lightgray;
+}
+
 @media screen and (max-width: 768px) and (min-width: 426px) {
     .sidenav a {
         font-size: small;
