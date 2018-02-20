@@ -159,7 +159,7 @@ VALUES (NULL, '" . $con->real_escape_string(ucwords(strtolower($lname), " ")) . 
 
             if ($con->query($insertSql) === TRUE) {
                 $registerOutput = $lang("register_success");
-                func::login(func::getFromTable("ACCOUNT_ID", "account", "ID_TOKEN", $id_token));
+                func::login(func::getIdFromToken("ACCOUNT_ID", "account", "ID_TOKEN", $id_token));
             } else {
                 $registerErrMsg = "Error: " . $insertSql . "<br>" . $con->error;
             }
