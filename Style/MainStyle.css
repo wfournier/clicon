@@ -17,6 +17,22 @@ header {
     background: black;
 }
 
+.flag {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+.flag.flag-us {
+    background: url('/Resources/flags-us.png') no-repeat;
+    background-position: 0 0;
+}
+
+.flag.flag-fr {
+    background: url('/Resources/flags-fr.png') no-repeat;
+    background-position: 0 0;
+}
+
 .boxIndex {
     border: black solid 1px;
     border-radius: 10px;
