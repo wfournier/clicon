@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			if((bool)preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i", clean($p["forgotPassEmail"]))){
 				$forgotPassEmail = $p["forgotPassEmail"];
 
-				$get_email_sql = "SELECT * FROM account WHERE EMAIL = '" .clean($forgotPassEmail) ."'";
+				$get_email_sql = "SELECT * FROM account WHERE EMAIL = '" . $con->real_escape_string(clean($forgotPassEmail)) ."'";
 				$get_email_res = $con->query($get_email_sql) or die("get_email_res:" .$get_email_sql);
 
 				if($get_email_res->num_rows == 1){
@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 					$account = $get_email_res->fetch_array();
 
-					$insert_token_sql = "UPDATE account SET PASS_RESET_TOKEN = '" .$token ."', TOKEN_EXPIRY = '" .date('Y-m-d H:i:s', time() + 24 * 60 * 60) ."' WHERE EMAIL ='" .clean($forgotPassEmail) ."'";
+					$insert_token_sql = "UPDATE account SET PASS_RESET_TOKEN = '" . $con->real_escape_string($token) ."', TOKEN_EXPIRY = '" . $con->real_escape_string(date('Y-m-d H:i:s', time() + 24 * 60 * 60)) ."' WHERE EMAIL ='" . $con->real_escape_string(clean($forgotPassEmail)) ."'";
 
 					if($con->query($insert_token_sql) === TRUE){
 						sendResetToken($account, $token);

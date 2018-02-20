@@ -5,21 +5,6 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <link rel="stylesheet" href="/Style/InformationStyle.css">
     <title>GameCon_Information</title>
-    <script>
-        hash = window.location.hash.substr(1);
-        if(hash == "rules"){
-            $("#collapse1").collapse("show");
-        }
-        if(hash == "registration"){
-            $('#collapse2').collapse("show");
-        }
-        if(hash == "weapon"){
-            $('#collapse3').collapse("show");
-        }
-        if(hash == "autograph"){
-            $('#collapse4').collapse("show");
-        }
-    </script>
 </head>
 <body>
 <div id="fb-root"></div>
@@ -149,8 +134,33 @@
         </div>
         <div class="col-md-3"></div>
     </div>
-
-
+    <script>
+        hash = window.location.hash.substr(1);
+        if (hash == "rules") {
+            $("#collapse2").collapse("hide");
+            $("#collapse3").collapse("hide");
+            $("#collapse4").collapse("hide");
+            $("#collapse1").collapse("show");
+        }
+        if (hash == "registration") {
+            $("#collapse1").collapse("hide");
+            $("#collapse3").collapse("hide");
+            $("#collapse4").collapse("hide");
+            $('#collapse2').collapse("show");
+        }
+        if (hash == "weapon") {
+            $("#collapse1").collapse("hide");
+            $("#collapse2").collapse("hide");
+            $("#collapse4").collapse("hide");
+            $('#collapse3').collapse("show");
+        }
+        if (hash == "autograph") {
+            $("#collapse1").collapse("hide");
+            $("#collapse2").collapse("hide");
+            $("#collapse3").collapse("hide");
+            $('#collapse4').collapse("show");
+        }
+    </script>
 </main>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>

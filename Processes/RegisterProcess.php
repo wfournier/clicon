@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($p["emailRegister"])) {
             $emailErr = $error = true;
         } else {
-            $get_emails_sql = "SELECT * FROM account WHERE EMAIL = '" . clean($p["emailRegister"]) . "'";
+            $get_emails_sql = "SELECT * FROM account WHERE EMAIL = '" . $con->real_escape_string(clean($p["emailRegister"])) . "'";
             $get_emails_res = $con->query($get_emails_sql) or die("get_emails_res: " . $con->error);
 
             if ($get_emails_res->num_rows < 1) {
@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stateErr = $error = true;
         } else {
             if (strlen($p["stateCode"]) == 2 && ctype_alpha(gut($p["stateCode"]))) {
-                $get_states_sql = "SELECT * FROM states WHERE COUNTRY_ID = " . $countryId . " AND STATE_CODE = '" . strtoupper($p["stateCode"]) . "'";
+                $get_states_sql = "SELECT * FROM states WHERE COUNTRY_ID = " . $con->real_escape_string($countryId) . " AND STATE_CODE = '" . $con->real_escape_string(strtoupper($p["stateCode"])) . "'";
                 $get_states_res = $con->query($get_states_sql) or die("get_states_res: " . $con->error);
 
                 if ($get_states_res->num_rows < 1) {
@@ -153,7 +153,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($error) {
             $registerErrMsg = nl2br($lang("err_msg"));
         } else {
-            $insertSql = "INSERT INTO account (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES (NULL, '" . ucwords(strtolower($lname), " ") . "', '" . ucwords(strtolower($fname), " ") . "', '" . $email . "', '" . password_hash($pass, PASSWORD_BCRYPT) . "', '" . date('Y-m-d', strtotime(str_replace('-', '/', $dob))) . "', '" . str_replace('-', '/', $phone) . "', '" . ucwords(strtolower($address), " ") . "', '" . ucwords(strtolower($city), " ") . "', '" . strtoupper(str_replace(' ', '', $zip)) . "', " . $countryId . ", " . $stateId . ", '" . $isAdult . "')";
+            $insertSql = "INSERT INTO account (ACCOUNT_ID, LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) 
+VALUES (NULL, '" . $con->real_escape_string(ucwords(strtolower($lname), " ")) . "', '" . $con->real_escape_string(ucwords(strtolower($fname), " ")) . "', '" . $con->real_escape_string($email) . "', '" . $con->real_escape_string(password_hash($pass, PASSWORD_BCRYPT)) . "', '" . $con->real_escape_string(date('Y-m-d', strtotime(str_replace('-', '/', $dob)))) . "', '" . $con->real_escape_string(str_replace('-', '/', $phone)) . "', '" . $con->real_escape_string(ucwords(strtolower($address), " ")) . "', '" . $con->real_escape_string(ucwords(strtolower($city), " ")) . "', '" . $con->real_escape_string(strtoupper(str_replace(' ', '', $zip))) . "', " . $con->real_escape_string($countryId) . ", " . $con->real_escape_string($stateId) . ", '" . $con->real_escape_string($isAdult) . "')";
 
             if ($con->query($insertSql) === TRUE) {
                 $registerOutput = $lang("register_success");
