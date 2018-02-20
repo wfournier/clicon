@@ -143,6 +143,10 @@ header {
     text-align: center;
 }
 
+#changeLang{
+    padding: 0;
+}
+
 #priceChart td, #priceChart th {
     border: solid white 1px;
     padding: 3px;
