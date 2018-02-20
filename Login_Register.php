@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php" ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/RegisterProcess.php" ?>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
     <title>GameCon_Login</title>
 
 </head>

@@ -14,11 +14,9 @@ class func
             $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
 
             if ($results->num_rows > 0) {
-
                 while ($result = $results->fetch_assoc()) {
                     $te = $result['session_token'];
-                    if ($result['session_accountid'] == $account_id &&
-                        $result['session_token'] == $token) {
+                    if ($result['session_accountid'] == $account_id && $result['session_token'] == $token) {
                         $bool = true;
                     }
                 }
@@ -27,6 +25,16 @@ class func
             }
         }
         return $bool;
+    }
+
+    public static function login($accountId){
+        $token = bin2hex(random_bytes(64/2));
+        setcookie("token", $token, (time() + (89400 * 365)), "/");
+        setcookie("account_id", $accountId, (time() + (89400 * 365)), "/");
+        $set_sess = "INSERT INTO sessions (session_id, session_accountid, session_token) VALUES (NULL, " .
+        $accountId . ", '" . $token . "');";
+        self::getConnection()->query($set_sess) or die("set session failed " . $con->error);
+        header("Location: Account/ModifyInfo.php");
     }
 
     public static function getConnection()
@@ -68,7 +76,6 @@ class func
         $table = strtolower($table);
         $column = strtoupper($column);
         $string = "";
-        $account_id = $_COOKIE['account_id'];
         $query = "SELECT " . $column . " FROM " . $table . " WHERE " . $idFieldName . " = " . $id . " ;";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
 
@@ -81,6 +88,21 @@ class func
         }
 
         return $string;
+    }
+
+    public static function getIdFromEmail($email){
+        $query = "SELECT ACCOUNT_ID FROM ACCOUNT WHERE EMAIL ='" .$email ."';";
+        $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+
+        if ($results->num_rows > 0) {
+            while ($result = $results->fetch_assoc()) {
+                $id = $result["ACCOUNT_ID"];
+            }
+        } else {
+            print("<script>console.log('no result from query')</script>");
+        }
+
+        return $id;
     }
 
     public static function setToTable($column, $val, $table, $id, $idFieldName)
@@ -103,9 +125,9 @@ class func
     {
         include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Account.php";
         $query = "INSERT INTO account (LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES 
-('" . $AccountObj->last_name . "', '" . $AccountObj->first_name . "', '" . $AccountObj->email . "', '" . $AccountObj->password .
-            "', '" . $AccountObj->dob . "', '" . $AccountObj->phone . "', '" . $AccountObj->address . "', '" . $AccountObj->city . "', '" .
-            $AccountObj->zip . "', " . $AccountObj->country . ", " . $AccountObj->state . ", " . $AccountObj->isAdult . ");";
+        ('" . $AccountObj->last_name . "', '" . $AccountObj->first_name . "', '" . $AccountObj->email . "', '" . $AccountObj->password .
+        "', '" . $AccountObj->dob . "', '" . $AccountObj->phone . "', '" . $AccountObj->address . "', '" . $AccountObj->city . "', '" .
+        $AccountObj->zip . "', " . $AccountObj->country . ", " . $AccountObj->state . ", " . $AccountObj->isAdult . ");";
         $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
     }
 

@@ -26,13 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 					while ($account = $get_account_res->fetch_array()) {
 						if (password_verify($password, $account["PASS_HASH"])) {
-							$token = bin2hex(random_bytes(64/2));
-							setcookie("token", $token, (time() + (89400 * 365)), "/");
-							setcookie("account_id", $account['ACCOUNT_ID'], (time() + (89400 * 365)), "/");
-							$set_sess = "INSERT INTO sessions (session_id, session_accountid, session_token) VALUES (NULL, " .
-							$account['ACCOUNT_ID'] . ", '" . $token . "');";
-							$con->query($set_sess) or die("set session failed " . $con->error);
-							header("Location: Account/ModifyInfo.php");
+							func::login($account["ACCOUNT_ID"]);
 						} else {
 							$loginErrMsg = "Invalid Password";
 						}

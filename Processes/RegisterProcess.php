@@ -157,6 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($con->query($insertSql) === TRUE) {
                 $registerOutput = $lang("register_success");
+                func::login(func::getIdFromEmail($email));
             } else {
                 $registerErrMsg = "Error: " . $insertSql . "<br>" . $con->error;
             }
