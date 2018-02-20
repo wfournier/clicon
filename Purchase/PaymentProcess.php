@@ -68,7 +68,7 @@ if (isset($_SESSION["tickets"])) {
     $tickets = $_SESSION["tickets"];
     $subTotal = 0;
     foreach ($tickets as $ticket) {
-        $m = $m . "<h3>Ticket #" . $ticket->ticketID . "</h3>\n";
+        $m = $m . "<h3>Ticket #" . $ticket->ticketID . "</h3>";
         $m = $m . "<b>Badge Name:</b>\n " . $ticket->badgeName . "\n";
         $m = $m . "<b>Days:</b>\n";
         if ($ticket->isFriday() == true)
@@ -92,7 +92,7 @@ if (isset($_SESSION["tickets"])) {
             $m = $m . " <i>None</i>\n";
         }
         $subTotal += $ticket->price;
-        $m = $m . "$ " . number_format($ticket->price, 2) . "\n\n";
+        $m = $m . "\n$ " . number_format($ticket->price, 2) . "\n\n";
     }
     $m = $m . " \n<hr>\n";
     $m = $m . "<b>SubTotal:</b> $ " . number_format($subTotal, 2);
