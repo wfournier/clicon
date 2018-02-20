@@ -33,7 +33,7 @@ if (!func::checkLogin()) {
                             <th>Ticket ID</th><th>Price</th><th>Days</th><th>Badge Name</th>
                         </tr>
                         <?php
-                        $get_tickets_res = $con->query("SELECT * FROM ticket ti, TRANSACTION tr WHERE ti.TRANSACTION_ID = tr.TRANSACTION_ID AND tr.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND tr.TRANSACTION_ID = " .$_GET["transaction_id"]) or die("get_tickets_res: " .$con->error);
+                        $get_tickets_res = $con->query("SELECT * FROM ticket ti, transaction tr WHERE ti.TRANSACTION_ID = tr.TRANSACTION_ID AND tr.ACCOUNT_ID = " .$_COOKIE['account_id'] ." AND tr.TRANSACTION_ID = " .$_GET["transaction_id"]) or die("get_tickets_res: " .$con->error);
                         while($ticket = $get_tickets_res->fetch_array()){
                             echo("<tr>");
                             echo("<td>" .$ticket["TICKET_ID"] ."</td>");
