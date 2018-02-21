@@ -10,7 +10,7 @@ class func
             $account_id = $_COOKIE['account_id'];
             $token = $_COOKIE['token'];
 
-            $query = "SELECT * FROM sessions WHERE session_accountid = " . self::getConnection()->real_escape_string($account_id) . " ;";
+            $query = "SELECT * FROM sessions WHERE account_id = " . self::getConnection()->real_escape_string($account_id) . " ;";
             $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
 
             if ($results->num_rows > 0) {
