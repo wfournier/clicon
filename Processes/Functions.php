@@ -16,7 +16,7 @@ class func
             if ($results->num_rows > 0) {
                 while ($result = $results->fetch_assoc()) {
                     $te = $result['session_token'];
-                    if ($result['session_accountid'] == $account_id && $result['session_token'] == $token) {
+                    if ($result['account_id'] == $account_id && $result['session_token'] == $token) {
                         $bool = true;
                     }
                 }
