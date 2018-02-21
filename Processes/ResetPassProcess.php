@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				$loginToken = bin2hex(random_bytes(64/2));
 				setcookie("token", $loginToken, (time() + (89400 * 365)), "/");
 				setcookie("account_id", $account["ACCOUNT_ID"], (time() + (89400 * 365)), "/");
-				$set_sess = "INSERT INTO sessions (session_id, session_accountid, session_token) VALUES (NULL, " . $con->real_escape_string($account['ACCOUNT_ID']) . ", '" . $con->real_escape_string($loginToken) . "');";
+				$set_sess = "INSERT INTO sessions (session_id, account_id, session_token) VALUES (NULL, " . $con->real_escape_string($account['ACCOUNT_ID']) . ", '" . $con->real_escape_string($loginToken) . "');";
 				$con->query($set_sess) or die("set session failed " . $con->error);
 				header("Location: ModifyInfo.php");
 			} else {
