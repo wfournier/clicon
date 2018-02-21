@@ -47,7 +47,7 @@ class func
         $token = bin2hex(random_bytes(64 / 2));
         setcookie("token", $token, (time() + (89400 * 365)), "/");
         setcookie("account_id", $accountId, (time() + (89400 * 365)), "/");
-        $set_sess = "INSERT INTO sessions (session_id, session_accountid, session_token) VALUES (NULL, " .
+        $set_sess = "INSERT INTO sessions (session_id, account_id, session_token) VALUES (NULL, " .
             self::getConnection()->real_escape_string($accountId) . ", '" . self::getConnection()->real_escape_string($token) . "');";
         self::getConnection()->query($set_sess) or die("set session failed " . self::getConnection()->error);
         header("Location: Account/ModifyInfo.php");
