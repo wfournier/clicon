@@ -10,13 +10,12 @@ class func
             $account_id = $_COOKIE['account_id'];
             $token = $_COOKIE['token'];
 
-            $query = "SELECT * FROM sessions WHERE account_id = " . self::getConnection()->real_escape_string($account_id) . " ;";
+            $query = "SELECT * FROM sessions WHERE ACCOUNT_ID = " . self::getConnection()->real_escape_string($account_id) . " and  SESSION_TOKEN = '" . self::getConnection()->real_escape_string($token) . "';";
             $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
 
             if ($results->num_rows > 0) {
                 while ($result = $results->fetch_assoc()) {
-                    $te = $result['session_token'];
-                    if ($result['account_id'] == $account_id && $result['session_token'] == $token) {
+                    if ($results['account_id'] == $account_id && $results['session_token'] == $token) {
                         $bool = true;
                     }
                 }
