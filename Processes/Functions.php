@@ -14,11 +14,7 @@ class func
             $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
 
             if ($results->num_rows > 0) {
-                while ($result = $results->fetch_assoc()) {
-                    if ($results['account_id'] == $account_id && $results['session_token'] == $token) {
-                        $bool = true;
-                    }
-                }
+                $bool = true;
             } else {
                 print("<script>console.log('no result from query')</script>");
             }
