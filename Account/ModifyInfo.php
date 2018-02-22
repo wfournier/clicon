@@ -31,13 +31,13 @@
                         <div class="form-group col-xs-6">
                             <label for="fnameMod" class="<?php echo $fnameModErr ? 'error' : '' ?>"><?php echo($lang("first_name")); ?></label>
                             <input type="text" class="form-control" id="fnameMod" name="fnameMod"
-                            value="<?php echo $fnameMod ?>" data-toggle="tooltip" title="<?php echo($lang('tip_first_name')); ?>">
+                            value="<?php echo $fnameMod ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_first_name')); ?>">
                         </div>
                         <div class="form-group col-xs-6">
                             <label for="lnameMod" class="<?php echo $lnameModErr ? 'error' : '' ?>"><?php echo($lang("last_name")); ?></label>
                             <input type="text" class="form-control" id="lnameMod" name="lnameMod"
                             value="<?php echo $lnameMod ?>"
-                            data-toggle="tooltip" title="<?php echo($lang('tip_last_name')); ?>">
+                            data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_last_name')); ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -45,14 +45,14 @@
                             <label for="phoneMod" class="<?php echo $phoneModErr ? 'error' : '' ?>"><?php echo($lang("phone")); ?></label>
                             <input type="tel" class="form-control" id="phoneMod" name="phoneMod"
                             value="<?php echo $phoneMod ?>"
-                            data-toggle="tooltip" title="<?php echo($lang('tip_phone')); ?>">
+                            data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_phone')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="countryIdMod"
                             class="<?php echo $countryIdModErr ? 'error' : '' ?>"><?php echo($lang("country")); ?></label>
-                            <select class="form-control" id="countryIdMod" name="countryIdMod" data-toggle="tooltip" title="">
+                            <select class="form-control" id="countryIdMod" name="countryIdMod" data-toggle="tooltip" data-placement="bottom" title="">
                                 <?php
                                 $get_countries_sql = "SELECT * FROM countries";
                                 $get_countries_res = $con->query($get_countries_sql) or die("get_countries_res: " . $con->error);
@@ -79,32 +79,32 @@
                         </div>
                         <div class="form-group col-xs-6">
                             <label for="stateCodeMod" class="<?php echo $stateCodeModErr ? 'error' : '' ?>"><?php echo($lang("state")); ?></label>
-                            <input type="text" class="form-control" id="stateCodeMod" name="stateCodeMod" value="<?php echo $stateCodeMod ?>" data-toggle="tooltip" title="<?php echo($lang('tip_state')); ?>">
+                            <input type="text" class="form-control" id="stateCodeMod" name="stateCodeMod" value="<?php echo $stateCodeMod ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_state')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="cityMod" class="<?php echo $cityModErr ? 'error' : '' ?>"><?php echo($lang("city")); ?></label>
                             <input type="text" class="form-control" id="cityMod" name="cityMod" value="<?php echo $cityMod ?>"
-                            data-toggle="tooltip" title="<?php echo($lang('tip_city')); ?>">
+                            data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_city')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="addressMod" class="<?php echo $addressModErr ? 'error' : '' ?>"><?php echo($lang("address")); ?></label>
-                            <input type="text" class="form-control" id="addressMod" name="addressMod" value="<?php echo $addressMod ?>" data-toggle="tooltip" title="<?php echo($lang('tip_address')); ?>">
+                            <input type="text" class="form-control" id="addressMod" name="addressMod" value="<?php echo $addressMod ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_address')); ?>">
                         </div>
                         <div class="form-group col-xs-6">
                             <label for="zipMod" class="<?php echo $zipModErr ? 'error' : '' ?>"><?php echo($lang("zip")); ?></label>
                             <input type="text" class="form-control" id="zipMod" name="zipMod" value="<?php echo $zipMod ?>"
-                            data-toggle="tooltip" title="<?php echo($lang('tip_zip')); ?>">
+                            data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_zip')); ?>">
                         </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="passMod" class="<?php echo $passModErr ? 'error' : '' ?>"><?php echo($lang("current_pass")); ?></label>
-                            <input type="Password" class="form-control" id="passMod" name="passMod" data-toggle="tooltip"
+                            <input type="Password" class="form-control" id="passMod" name="passMod" data-toggle="tooltip" data-placement="bottom"
                             title="<?php echo($lang('tip_validate_pass')); ?>">
                         </div>
                         <div class="col-xs-6"><br>

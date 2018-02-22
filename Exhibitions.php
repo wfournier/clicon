@@ -25,7 +25,7 @@
                         see who will be the best of the best.
                     </p>
                     <h3>
-                        <b>Play the games of your childhood at the <br>Retro Gaming Station</b>
+                        <b><?php echo($lang("exhib_retro")); ?></b>
                     </h3>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         see who will be the best of the best.
                     </p>
                     <h3>
-                        <b>Come and see the latest games from<br> Montreal's AAA studios</b>
+                        <b><?php echo($lang("exhib_studios")); ?></b>
                     </h3>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         see who will be the best of the best.
                     </p>
                     <h3>
-                        <b>Compete against your friends and other gamers at the LAN party</b>
+                        <b><?php echo($lang("exhib_lan")); ?></b>
                     </h3>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                         see who will be the best of the best.
                     </p>
                     <h3>
-                        <b>Don't spend all your money,<br> as our arcade section is free!</b>
+                        <b><?php echo($lang("exhib_arcade")); ?></b>
                     </h3>
                 </div>
             </div>
@@ -108,7 +108,7 @@
                     </p>
 
                     <h3>
-                        <b>Meet your favorite indie studios</b>
+                        <b><?php echo($lang("exhib_indie")); ?></b>
                     </h3>
                 </div>
             </div>

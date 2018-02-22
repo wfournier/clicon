@@ -33,17 +33,17 @@
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="badgeName" class="<?php echo $badgeNameErr ? 'error' : '' ?>"><?php echo($lang("pref_badge_name")); ?></label>
-                            <input type="text" class="form-control" id="badgeName" name="badgeName" value="<?php echo $badgeName ?>" maxlength="20" data-toggle="tooltip" title="<?php echo($lang('tip_pref_badge_name')); ?>">
+                            <input type="text" class="form-control" id="badgeName" name="badgeName" value="<?php echo $badgeName ?>" maxlength="20" data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_pref_badge_name')); ?>">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="emergContact" class="<?php echo $emergContactErr ? 'error' : '' ?>"><?php echo($lang("emerg_contact_phone")); ?></label>
-                            <input type="tel" class="form-control" id="emergContact" name="emergContact" value="<?php echo $emergContact ?>" data-toggle="tooltip" title="<?php echo($lang('tip_emerg_contact_phone')); ?>">
+                            <input type="tel" class="form-control" id="emergContact" name="emergContact" value="<?php echo $emergContact ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_emerg_contact_phone')); ?>">
                         </div>
                         <div class="form-group col-xs-6">
                             <label for="emergContactName" class="<?php echo $emergContactNameErr ? 'error' : '' ?>"><?php echo($lang("emerg_contact_name")); ?></label>
-                            <input type="tel" class="form-control" id="emergContactName" name="emergContactName" value="<?php echo $emergContactName ?>" data-toggle="tooltip" title="<?php echo($lang('tip_emerg_contact_name')); ?>">
+                            <input type="tel" class="form-control" id="emergContactName" name="emergContactName" value="<?php echo $emergContactName ?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_emerg_contact_name')); ?>">
                         </div>
                     </div>
                     <div class="row">
