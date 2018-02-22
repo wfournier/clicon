@@ -30,17 +30,17 @@ if (!func::checkLogin()) {
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="currPass" class="<?php echo $currPassErr ? 'error' : '' ?>"><?php echo($lang("current_pass")); ?></label>
-                            <input type="Password" class="form-control" id="currPass" name="currPass" data-toggle="tooltip" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
+                            <input type="Password" class="form-control" id="currPass" name="currPass" data-toggle="tooltip" data-placement="bottom" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-xs-6">
                             <label for="newPass" class="<?php echo $newPassErr ? 'error' : '' ?>"><?php echo($lang("new_pass")); ?></label>
-                            <input type="Password" class="form-control" id="newPass" name="newPass" data-toggle="tooltip" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
+                            <input type="Password" class="form-control" id="newPass" name="newPass" data-toggle="tooltip" data-placement="bottom" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
                         </div>
                         <div class="form-group col-xs-6">
                             <label for="confirmNewPass" class="<?php echo $confirmNewPassErr ? 'error' : '' ?>"><?php echo($lang("confirm_new_pass")); ?></label>
-                            <input type="Password" class="form-control" id="confirmNewPass" name="confirmNewPass" data-toggle="tooltip" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
+                            <input type="Password" class="form-control" id="confirmNewPass" name="confirmNewPass" data-toggle="tooltip" data-placement="bottom" title="Password must contain be at least 8 characters long, contain numbers and at least 1 uppercase letter">
                         </div>
                     </div>
                     <div class="row">

@@ -29,13 +29,16 @@
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<label for="newPass">New Password</label>
-							<input type="Password" class="form-control" id="newPass" name="newPass">
+							<input type="Password" class="form-control" id="newPass" name="newPass"
+							data-toggle="tooltip" data-placement="bottom"
+							title="<?php echo($lang('tip_password')); ?>">
 						</div>
 					</div>
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<label for="confirmNewPass">Confirm New Password</label>
-							<input type="Password" class="form-control" id="confirmNewPass" name="confirmNewPass">
+							<input type="Password" class="form-control" id="confirmNewPass" name="confirmNewPass"
+							data-toggle="tooltip" data-placement="bottom" title="<?php echo($lang('tip_confirm_pass')); ?>">
 						</div>
 					</div>
 					<input type="hidden" name="process" value="resetPass">
@@ -51,7 +54,7 @@
 				<?php
 			} else{
 				?>
-					<h3 class="error">INVALID/EXPIRED RESET TOKEN</h3>
+				<h3 class="error">INVALID/EXPIRED RESET TOKEN</h3>
 				<?php
 			}
 			?>

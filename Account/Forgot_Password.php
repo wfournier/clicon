@@ -28,7 +28,7 @@
                                class="<?php echo $forgotPassEmailErr ? 'error' : '' ?>">Email</label>
                         <input type="text" class="form-control" id="forgotPassEmail" name="forgotPassEmail"
                                value="<?php echo isset($_POST['forgotPassEmail']) ? $_POST['forgotPassEmail'] : '' ?>"
-                               data-toggle="tooltip" title="Email linked to your account (i.e. name@domain.com)">
+                               data-toggle="tooltip" data-placement="bottom" title="Email linked to your account (i.e. name@domain.com)">
                     </div>
                 </div>
                 <input type="hidden" name="process" value="forgotPass">
