@@ -28,10 +28,8 @@ session_start();
         <div class="col-md-4">
             <form method="post" action="SetTickets.php">
             <div class="row" style="min-height: 400px">
-                <h1>Select quantity of tickets.</h1>
-                <p><i>Children under 13 years old don't need a ticket.<br>
-                        Their admission is free.</i></p>
-
+                <h1><?php echo($lang("select_qty")); ?></h1>
+                <p><i><?php echo($lang("under13")); ?></p>
                     <?php
                     if (isset($_SESSION["qty"])) {
                         $y = $_SESSION["qty"];
@@ -39,10 +37,10 @@ session_start();
                         $y = 1;
                     }
                     ?>
-                    <input style="color: black" type="number" value="<?php echo $y ?>" name="qty" min="1" max="50" required> Ticket(s)
+                    <input style="color: black" type="number" value="<?php echo $y ?>" name="qty" min="1" max="50" required> <?php echo($lang("ticket")); ?>(s)
             </div>
             <div class="row">
-                <a class="btn btn-warning" href="../Account/ModifyInfo.php">Cancel</a>
+                <a class="btn btn-warning" href="../Account/ModifyInfo.php"><?php echo($lang("cancel")); ?></a>
                 <input class="btn btn-primary" type="submit" value="Next" id="next">
             </div>
             </form>

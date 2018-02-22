@@ -1,6 +1,10 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT']."/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/langquery/langquery.php" ?>
 <?php
+
+$lang = new LangQuery();
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
@@ -37,16 +41,16 @@ if ($_POST["id"] != null) {
         header("Location: /Purchase/SelectExtra.php?id=$id");
     else {
         $id=$_POST["id"];
-        $_SESSION["Error_Ticket"] = "Please make sure you select at least one day.";
+        $_SESSION["Error_Ticket"] = $lang("err_ticket");
         header("Location: /Purchase/SelectTicket.php?id=$id");
     }
 } else {
     if($_POST["id"]!=null){
         $id=$_POST["id"];
-        $_SESSION["Error_Ticket"] = "Please make sure you select at least one day.";
+        $_SESSION["Error_Ticket"] = $lang("err_ticket");
         header("Location: /Purchase/SelectTicket.php?id=$id");
     } else {
-        $_SESSION["Error_Edit"] = "An error occurred while processing ticket. Please try again.";
+        $_SESSION["Error_Edit"] = $lang("err_edit");
         header("Location: /Purchase/SetTickets.php");
     }
 }

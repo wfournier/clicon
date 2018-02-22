@@ -1,13 +1,17 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/langquery/langquery.php" ?>
 <?php
+
+$lang = new LangQuery();
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
 session_start();
 if ($_SESSION["tickets"] == null) {
-    $_SESSION["Error_Ticket"] = "Please make sure to correctly edit each ticket.(1)";
+    $_SESSION["Error_Ticket"] = $lang("err_ticket") ."(1)";
     header("Location: /Purchase/SetTickets.php");
 } else {
     $isValid = false;
@@ -62,7 +66,7 @@ if ($_SESSION["tickets"] == null) {
         $_SESSION["tickets"] = $tickets;
     }
     if ($isValid == false) {
-        $_SESSION["Error_Edit"] = "Please make sure to correctly edit each ticket.(2)";
+        $_SESSION["Error_Edit"] = $lang("err_ticket") ."(2)";
         header("Location: /Purchase/SetTickets.php");
     } else {
         header("Location: /Purchase/Confirm.php");

@@ -1,6 +1,10 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT']."/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/langquery/langquery.php" ?>
 <?php
+
+$lang = new LangQuery();
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
@@ -33,10 +37,10 @@ if ($_POST["id"] != null) {
 } else {
     if($_POST["id"]!=null){
         $id=$_POST["id"];
-        $_SESSION["Error_Extra"] = "An error occurred (101). Please try again";
+        $_SESSION["Error_Extra"] = $lang("err_extra");
         header("Location: /Purchase/SelectExtra.php?id=$id");
     } else {
-        $_SESSION["Error_Extra"] = "An error occurred while processing extra. Please try again.";
+        $_SESSION["Error_Extra"] = $lang("err_extra");
         header("Location: /Purchase/SetTickets.php");
     }
 }
