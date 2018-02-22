@@ -2,6 +2,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }

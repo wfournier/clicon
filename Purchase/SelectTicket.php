@@ -1,6 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
@@ -41,11 +42,10 @@ if ($_GET["id"] == null) {
         <div class="col-md-6">
             <form method="post" action="ProcessingSelectTicket.php">
                 <div class="row" style="height: 400px">
-                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>></div>
-                    <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id ?>">Select
-                            Ticket </a>>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
+                    <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id ?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
                     </div>
-                    <h1 style="margin-top: 0">Select dates for your ticket:</h1>
+                    <h1 style="margin-top: 0"><?php echo($lang("select_dates")); ?>:</h1>
                     <table id="priceChart" align="center" style="color: white; margin: 0 0 20px 0">
                         <tr>
                             <th><?php echo($lang("friday")); ?></th>
@@ -62,7 +62,7 @@ if ($_GET["id"] == null) {
                     </table>
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
-                    <label for="friday">Friday: </label>
+                    <label for="friday"><?php echo($lang("friday")) ?>: </label>
                     <input id="friday" type="checkbox" name="friday"
                         <?php
                         $id = $_GET["id"];
@@ -70,13 +70,13 @@ if ($_GET["id"] == null) {
                             echo "checked";
                         } ?>
                     ><br><br>
-                    <label for="saturday">Saturday: </label>
+                    <label for="saturday"><?php echo($lang("saturday")) ?>: </label>
                     <input id="saturday" type="checkbox" name="saturday"
                         <?php if ($_SESSION["saturday$id"] == "something") {
                             echo "checked";
                         } ?>
                     ><br><br>
-                    <label for="sunday">Sunday: </label>
+                    <label for="sunday"><?php echo($lang("sunday")) ?>: </label>
                     <input id="sunday" type="checkbox" name="sunday"
                         <?php if ($_SESSION["sunday$id"] == "something") {
                             echo "checked";
@@ -89,7 +89,7 @@ if ($_GET["id"] == null) {
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SetTickets.php">Cancel</a>
-                    <input class="btn btn-primary" type="submit" name="submit" value="Next" id="next">
+                    <input class="btn btn-primary" type="submit" name="submit" value="<?php echo($lang('next')); ?>" id="next">
                 </div>
             </form>
             <?php

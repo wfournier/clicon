@@ -2,6 +2,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
 <?php
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
@@ -58,7 +59,7 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["id"] ?>"><?php echo($lang("back")); ?></a>
-                    <input class="btn btn-primary" type="submit" value="Finish" id="next">
+                    <input class="btn btn-primary" type="submit" value="<?php echo($lang('finish')); ?>" id="next">
                 </div>
                 <?php
                 if (isset($_SESSION["Error_BadgeName"])) {

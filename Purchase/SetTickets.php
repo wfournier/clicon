@@ -1,6 +1,8 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
 <?php
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
@@ -42,7 +44,6 @@ if (isset($_SESSION["tickets"])) {
 <html lang="en">
 <head>
     <title>Payment_TicketSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <style>
     label {
         width: 100px;

@@ -1,6 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
 <?php
+
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
 }
@@ -86,7 +87,7 @@ $_SESSION["Error_Ticket$id"] = null;
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["id"] ?>"><?php echo($lang("back")); ?></a>
-                    <input class="btn btn-primary" type="submit" value="Next" id="next">
+                    <input class="btn btn-primary" type="submit" value="Next" id="<?php echo($lang('next')); ?>">
                 </div>
                 <?php
                 if (isset($_SESSION["Error_Extra"])) {
