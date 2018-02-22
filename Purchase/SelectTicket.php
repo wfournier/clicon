@@ -25,7 +25,7 @@ if ($_GET["id"] == null) {
 <head>
     <title>Payment_TicketSelection</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
-    <script src="/Scripts/PriceScript.js"></script>
+
     <style>
         label {
             width: 100px;
@@ -84,7 +84,6 @@ if ($_GET["id"] == null) {
                     >
                     <br><br>
                     <p class="priceUTD">Ticket #<?php echo $id; ?>: $
-<!--                        <input style="color: black" type="text" class="priceUTDnum" id="price1" value=0 readonly>-->
                         <span id="price1">0</span>
                     </p>
                 </div>
@@ -101,6 +100,7 @@ if ($_GET["id"] == null) {
             ?>
         </div>
     </div>
+    <script src="/Scripts/PriceScriptTicket.js"></script>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
