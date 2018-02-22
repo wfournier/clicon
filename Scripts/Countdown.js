@@ -16,8 +16,14 @@ var x = setInterval(function() {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+    var days_name = "DAYS";
+
+    if(getCookie("current_language") == "fr"){
+        var days_name = "JOURS";
+    }
+
     // Output the result in an element with id="demo"
-    document.getElementById("countdownclock").innerHTML = days + " DAYS | " + hours + " HRS | "
+    document.getElementById("countdownclock").innerHTML = days + " " +days_name +" | " + hours + " HRS | "
         + minutes + " MIN | " + seconds + " SEC ";
 
     // If the count down is over, write some text
