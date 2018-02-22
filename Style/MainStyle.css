@@ -103,6 +103,17 @@ header {
     margin: 10px 0 0 0;
 }
 
+.priceUTD{
+    padding: 5px;
+    border:black 1px solid;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.priceUTDnum{
+    width: 60px;
+}
+
 .lowerbreadcrumbs {
     margin: 10px 0 0 30px;
     font-size: x-small;

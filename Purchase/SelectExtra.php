@@ -43,7 +43,7 @@ $_SESSION["Error_Ticket$id"] = null;
                     <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
                         <a href="/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>></div>
                     <h1 style="margin-top: 0">Select extras for your ticket:</h1>
-                    <p><i>Selecting all 3 days get you a 15$ off.</i></p>
+                    <p><i></i></p>
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
                     <label for="concert">Concert: </label><input id="concert" type="checkbox" name="concert"
