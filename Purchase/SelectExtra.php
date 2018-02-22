@@ -40,7 +40,7 @@ $_SESSION["Error_Ticket$id"] = null;
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <form method="post" action="ProcessingSelectExtra.php">
-                <div class="row" style="min-height: 400px">
+                <div class="row" style="min-height: 500px">
                     <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
                     <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
                         <a href="/Purchase/SelectExtra.php?id=<?php echo $id?>"><?php echo($lang("bread_select_extra")); ?> </a>></div>
@@ -85,7 +85,7 @@ $_SESSION["Error_Ticket$id"] = null;
                         <span id="price2">0</span>
                     </p>
                 </div>
-                <div class="row">
+                <div class="row"  style="margin-bottom: 30px">
                     <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["id"] ?>"><?php echo($lang("back")); ?></a>
                     <input class="btn btn-primary" type="submit" value="Next" id="<?php echo($lang('next')); ?>">
                 </div>

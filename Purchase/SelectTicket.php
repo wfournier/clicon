@@ -41,7 +41,7 @@ if ($_GET["id"] == null) {
         <div class="col-md-4"></div>
         <div class="col-md-6">
             <form method="post" action="ProcessingSelectTicket.php">
-                <div class="row" style="min-height: 400px">
+                <div class="row" style="min-height: 500px">
                     <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
                     <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id ?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
                     </div>
@@ -87,7 +87,7 @@ if ($_GET["id"] == null) {
                         <span id="price1">0</span>
                     </p>
                 </div>
-                <div class="row">
+                <div class="row"  style="margin-bottom: 30px">
                     <a class="btn btn-warning" href="SetTickets.php">Cancel</a>
                     <input class="btn btn-primary" type="submit" name="submit" value="<?php echo($lang('next')); ?>" id="next">
                 </div>
