@@ -33,27 +33,27 @@
                 <th><?php echo($lang("3day")); ?></th>
             </tr>
             <tr>
-                <td>25$</td>
-                <td>40$</td>
-                <td>35$</td>
-                <td>55$</td>
+                <td><?php echo($lang("currency", "25")); ?></td>
+                <td><?php echo($lang("currency", "40")); ?></td>
+                <td><?php echo($lang("currency", "35")); ?></td>
+                <td><?php echo($lang("currency", "55")); ?></td>
             </tr>
         </table>
         <br>
         <table id="priceChart" align="center" style="color: white;">
             <tr>
-                <th>1 extra</th>
-                <th>2 extra</th>
-                <th>3 extra</th>
-                <th>4 extra</th>
-                <th>5+ extra</th>
+                <th>1 extras</th>
+                <th>2 extras</th>
+                <th>3 extras</th>
+                <th>4 extras</th>
+                <th>5+ extras</th>
             </tr>
             <tr>
-                <td>10$</td>
-                <td>17$</td>
-                <td>23$</td>
-                <td>27$</td>
-                <td>30$</td>
+                <td><?php echo($lang("currency", "10")); ?></td>
+                <td><?php echo($lang("currency", "17")); ?></td>
+                <td><?php echo($lang("currency", "23")); ?></td>
+                <td><?php echo($lang("currency", "27")); ?></td>
+                <td><?php echo($lang("currency", "30")); ?></td>
             </tr>
         </table>
         <br>
@@ -105,7 +105,7 @@
         </div>
         <div class="col-sm-2"></div>
         <div id="register" class="col-sm-4">
-            <h2 class="page-header"><?php echo(strtoupper($lang("friday"))); ?></h2><br>
+            <h2 class="page-header"><?php echo(strtoupper($lang("one_time_user"))); ?></h2><br>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form">
                 <div class="row">
                     <div class="form-group col-xs-6">

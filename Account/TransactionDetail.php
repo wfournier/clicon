@@ -88,7 +88,7 @@ if (!func::checkLogin()) {
                     <?php
                 }
                 ?>
-                <a href="PurchaseHistory.php" class="btn btn-warning">return</a>
+                <a href="PurchaseHistory.php" class="btn btn-warning"><?php echo($lang("return")); ?></a>
             </div>
             <div class="col-sm-3"></div>
         </div>
