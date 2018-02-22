@@ -40,25 +40,24 @@ if ($tickets["$id"]->getBadgeName() != null && $tickets["$id"]->getBadgeName() !
         <div class="col-md-4">
             <form method="post" action="ProcessingBadgeName.php">
                 <div class="row" style="height: 400px">
-                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>></div>
-                    <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
-                        <a href="/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>>
-                        <a href="/Purchase/SetBadgeName.php?id=<?php echo $id?>">Set Badge Name </a></div>
-                    <h1 style="margin-top: 0">Select your badge name:</h1>
-                    <p><i style="color: red">Please avoid any inappropriate name as it will be checked and modified if
-                            needed at pickup.</i></p>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
+                    <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
+                        <a href="/Purchase/SelectExtra.php?id=<?php echo $id?>"><?php echo($lang("bread_select_extra")); ?> </a>>
+                        <a href="/Purchase/SetBadgeName.php?id=<?php echo $id?>"><?php echo($lang("bread_set_badge_name")); ?> </a></div>
+                    <h1 style="margin-top: 0"><?php echo($lang("set_badge_name")); ?>:</h1>
+                    <p><i style="color: red"><?php echo($lang("avoid_alert")); ?></i></p>
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
-                    <label for="badge">Badge Name: </label><input style="color: black" id="badge" type="text" name="badge"
+                    <label for="badge"><?php echo($lang("ticket_badge_name")); ?>: </label><input style="color: black" id="badge" type="text" name="badge"
                         <?php
                         $id = $_GET["id"];
                         if ($_SESSION["badge$id"] != null && $_SESSION["badge$id"] != "") {
                             echo "value = '" . $_SESSION["badge$id"] . "'";
                         } ?>
-                    > This is optional**
+                    > *<?php echo($lang("is_optional")); ?>
                 </div>
                 <div class="row">
-                    <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["id"] ?>">Back</a>
+                    <a class="btn btn-warning" href="SelectExtra.php?id=<?php echo $_GET["id"] ?>"><?php echo($lang("back")); ?></a>
                     <input class="btn btn-primary" type="submit" value="Finish" id="next">
                 </div>
                 <?php

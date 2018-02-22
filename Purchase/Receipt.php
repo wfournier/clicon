@@ -19,7 +19,7 @@ session_start();
     <div class="row" style="min-height: 400px">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-            <p style="color: lawngreen; margin-top: 20px"><b><i>Payment Successful</i></b></p>
+            <p style="color: lawngreen; margin-top: 20px"><b><i><?php echo($lang("payment_successful")); ?></i></b></p>
             <div class="boxIndex" id="invoice">
                 <?php
                 if (isset($_SESSION["Error_Edit"])) {
@@ -27,43 +27,43 @@ session_start();
                     $_SESSION["Error_Edit"] = null;
                 }
                 ?>
-                <h1>Invoice</h1>
+                <h1><?php echo($lang("invoice")); ?></h1>
                 <hr>
-                <h4>Emailed to: <?php echo func::getFromTable("email", "account", null, null); ?></h4>
+                <h4><?php echo($lang("emailed_to")); ?>: <?php echo func::getFromTable("email", "account", null, null); ?></h4>
                 <br>
                 <?php
                 $tickets = $_SESSION["tickets"];
                 $subTotal = 0;
                 foreach ($tickets as $ticket) {
                     ?>
-                    <h4>Ticket #<?php echo $ticket->ticketID ?></h4>
-                    <b>Badge Name:</b> <?php echo $ticket->badgeName ?>
+                    <h4><?php echo($lang("ticket")); ?> #<?php echo $ticket->ticketID ?></h4>
+                    <b><?php echo($lang("ticket_badge_name")); ?>:</b> <?php echo $ticket->badgeName ?>
                     <div class="row">
                         <div class="col-xs-4"></div>
                         <div class="col-xs-3">
-                            <b>Days:</b> <br><?php
+                            <b><?php echo($lang("ticket_days")); ?>:</b> <br><?php
                             if ($ticket->isFriday() == true)
-                                echo "Friday ";
+                                echo $lang("friday") ." ";
 
                             if ($ticket->isSaturday() == true)
-                                echo "Saturday ";
+                                echo $lang("saturday") ." ";
 
                             if ($ticket->isSunday() == true)
-                                echo "Sunday ";
+                                echo $lang("sunday") ." ";
                             ?>
                         </div>
                         <div class="col-xs-3">
                             <b>Extras:</b><br> <?php if ($ticket->extra1 == true) {
-                                echo "Concert<br>";
+                                echo $lang("ticket_extra_concert") ."<br>";
                             }
                             if ($ticket->extra2 == true) {
-                                echo "Extra Panel<br>";
+                                echo $lang("ticket_extra_panel") ."<br>";
                             }
                             if ($ticket->extra3 == true) {
-                                echo "Special Guest Autograph<br>";
+                                echo $lang("ticket_extra_vip") ."<br>";
                             }
                             if ($ticket->extra1 == false && $ticket->extra2 == false && $ticket->extra3 == false) {
-                                echo "none";
+                                echo $lang("no_extras");
                             }
                             ?>
                         </div>
@@ -80,13 +80,13 @@ session_start();
                 ?>
                 <hr>
                 <div style="text-align: right">
-                    <p>Subtotal : <?php echo "$ " . number_format($subTotal, 2); ?></p>
+                    <p><?php echo($lang("subtotal")); ?> : <?php echo "$ " . number_format($subTotal, 2); ?></p>
                     <?php
                     $taxes = $subTotal * 0.15;
                     $total = $subTotal + $taxes;
                     ?>
-                    <p>Taxes : <?php echo "$ " . number_format($taxes, 2); ?></p>
-                    <p>Total : <?php echo "$ " . number_format($total, 2); ?></p>
+                    <p><?php echo($lang("taxes")); ?> : <?php echo "$ " . number_format($taxes, 2); ?></p>
+                    <p><?php echo($lang("total")); ?> : <?php echo "$ " . number_format($total, 2); ?></p>
                 </div>
             </div>
         </div>

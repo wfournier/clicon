@@ -22,8 +22,8 @@ session_start();
         <div class="col-md-4">
             <form method="post" action="PaymentProcess.php">
                 <div class="row" style="min-height: 400px">
-                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>>
-                        <a href="/Purchase/Confirm.php">Confirm </a>>
+                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>>
+                        <a href="/Purchase/Confirm.php"><?php echo($lang("bread_confirm")); ?> </a>>
                     </div>
                     <?php
                     if (isset($_SESSION["Error_Edit"])) {
@@ -31,7 +31,7 @@ session_start();
                         $_SESSION["Error_Edit"] = null;
                     }
                     ?>
-                    <h1>Confirm the information is valid</h1>
+                    <h1><?php echo($lang("confirm_info")); ?></h1>
                     <?php
                     $tickets = array();
                     $tickets = $_SESSION["tickets"];
@@ -42,30 +42,30 @@ session_start();
                         <h4>Ticket #<?php echo $ticket->ticketID ?></h4>
                         <div class="row">
                             <div class="col-xs-5">
-                                <b>Badge Name:</b> <?php echo $ticket->badgeName ?><br>
-                                <b>Days:</b> <br><?php
+                                <b><?php echo($lang("ticket_badge_name")); ?>:</b> <?php echo $ticket->badgeName ?><br>
+                                <b><?php echo($lang("ticket_days")); ?>:</b> <br><?php
                                 if ($ticket->isFriday() == true)
-                                    echo "Friday ";
+                                    echo $lang("friday") ." ";
 
                                 if ($ticket->isSaturday() == true)
-                                    echo "Saturday ";
+                                    echo $lang("saturday") ." ";
 
                                 if ($ticket->isSunday() == true)
-                                    echo "Sunday ";
+                                    echo $lang("sunday") ." ";
                                 ?>
                             </div>
                             <div class="col-xs-5">
                                 <b>Extras:</b><br> <?php if ($ticket->extra1 == true) {
-                                    echo "Concert<br>";
+                                    echo $lang("ticket_extra_concert") ."<br>";
                                 }
                                 if ($ticket->extra2 == true) {
-                                    echo "Extra Panel<br>";
+                                    echo $lang("ticket_extra_panel") ."<br>";
                                 }
                                 if ($ticket->extra3 == true) {
-                                    echo "Special Guest Autograph<br>";
+                                    echo $lang("ticket_extra_vip") ."<br>";
                                 }
                                 if ($ticket->extra1 == false && $ticket->extra2 == false && $ticket->extra3 == false) {
-                                    echo "none";
+                                    echo $lang("no_extras");
                                 }
                                 ?>
                             </div>
@@ -83,11 +83,11 @@ session_start();
                     ?>
                     <hr>
                     <div style="text-align: right">
-                        <p>Subtotal : <?php echo "$ " . number_format($subTotal, 2); ?></p>
+                        <p><?php echo($lang("subtotal")); ?> : <?php echo "$ " . number_format($subTotal, 2); ?></p>
                     </div>
                 </div>
                 <div class="row" style="margin: 20px 0 20px 0">
-                    <a class="btn btn-warning" href="SetTickets.php">Back</a>
+                    <a class="btn btn-warning" href="SetTickets.php"><?php echo($lang("back")); ?></a>
                     <input class="btn btn-success" type="submit" value="Proceed to Payment" id="proceed">
                 </div>
             </form>

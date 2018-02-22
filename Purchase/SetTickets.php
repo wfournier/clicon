@@ -124,7 +124,7 @@ if (isset($_SESSION["tickets"])) {
                         <a class="btn btn-success" href="AddNew.php"><?php echo($lang("add_ticket")); ?></a>
                         <div class="row" style="margin: 20px 0 20px 0">
                             <a class="btn btn-warning" href="SelectQty.php"><?php echo($lang("back")); ?></a>
-                            <input class="btn btn-primary" type="submit" value="Proceed to Next Step" id="proceed">
+                            <input class="btn btn-primary" type="submit" value="<?php echo($lang('next_step')) ?>" id="proceed">
                         </div>
                     </form>
                 </div>
