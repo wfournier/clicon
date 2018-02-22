@@ -48,3 +48,8 @@ iframe {
     float: right;
 }
 
+#rules, #registration, #weapon, #autograph{
+    cursor: pointer;
+}
+
+

@@ -39,12 +39,12 @@
                         <span class="glyphicon glyphicon-info-sign"></span> <?php echo($lang("info")); ?>
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Information.php#hours"><?php echo($lang("hours")); ?></a></li>
+                            <li><a href="/Information.php#hours" ><?php echo($lang("hours")); ?></a></li>
                             <li><a href="/Information.php#location"><?php echo($lang("location")); ?></a></li>
-                            <li><a href="/Information.php#rules"><?php echo($lang("rules")); ?></a></li>
-                            <li><a href="/Information.php#registration"><?php echo($lang("registration_policies")); ?></a></li>
-                            <li><a href="/Information.php#weapon"><?php echo($lang("weapon")); ?></a></li>
-                            <li><a href="/Information.php#autograph"><?php echo($lang("autograph")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/Information.php#rules"><?php echo($lang("rules")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/Information.php#registration"><?php echo($lang("registration_policies")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/Information.php#weapon"><?php echo($lang("weapon")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/Information.php#autograph"><?php echo($lang("autograph")); ?></a></li>
                         </ul>
                     </li>
                     <li><a href="/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> <?php echo($lang("header_admission")); ?></a></li>
