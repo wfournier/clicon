@@ -2,7 +2,8 @@ var price = parseInt($('#price1').text(), 10);
 if(isNaN(price)){
     price = 0;
 }
-$(document).on(function () {
+$(document).ready(function ()
+{
     if ($('#friday').is(':checked'))
         price = 25;
     if ($('#saturday').is(':checked'))
@@ -18,10 +19,6 @@ $(document).on(function () {
     if ($('#sunday').is(':checked') && $('#saturday').is(':checked') && $('#friday').is(':checked'))
         price = 55;
     $('#price1').text(price);
-});
-$(document).ready(function ()
-{
-
     $('#friday').click(function () {
         if ($(this).is(':checked')) {
             price = 25;

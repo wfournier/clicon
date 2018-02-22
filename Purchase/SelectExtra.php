@@ -81,8 +81,8 @@ $_SESSION["Error_Ticket$id"] = null;
                         } ?>
                     >
                     <br><br>
-                    <p class="priceUTD"><?php echo($lang("ticket")); ?> #<?php echo $id; ?>: $
-                        <input type="number" class="priceUTDnum" readonly>
+                    <p class="priceUTD">Ticket #<?php echo $id; ?>: $
+                        <span id="price2">0</span>
                     </p>
                 </div>
                 <div class="row">

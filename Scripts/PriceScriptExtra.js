@@ -1,75 +1,97 @@
-var price = localStorage.price;
+var price = parseInt($('#price2').text(), 10);
+if(isNaN(price)){
+    var tickets = parseInt(localStorage.price);
+    price = 0;
+}
+
+price = tickets;
 $(document).ready(function ()
 {
-    $('#friday').click(function () {
+    if ($('#concert').is(':checked'))
+        price = 25 + tickets;
+    if ($('#panel').is(':checked'))
+        price = 40 + tickets;
+    if ($('#guest').is(':checked'))
+        price = 35 + tickets;
+    if ($('#guest').is(':checked') && $('#panel').is(':checked'))
+        price = 75 + tickets;
+    if ($('#guest').is(':checked') && $('#concert').is(':checked'))
+        price = 60 + tickets;
+    if ($('#concert').is(':checked') && $('#panel').is(':checked'))
+        price = 65 + tickets;
+    if ($('#guest').is(':checked') && $('#panel').is(':checked') && $('#concert').is(':checked'))
+        price = 55 + tickets;
+    $('#price2').text(price);
+
+    $('#concert').click(function () {
         if ($(this).is(':checked')) {
-            price = 25;
-            if ($('#saturday').is(':checked'))
-                price = 65;
-            if ($('#sunday').is(':checked'))
-                price = 60;
-            if ($('#sunday').is(':checked') && $('#saturday').is(':checked'))
-                price = 55;
-            $('#price1').text(price);
+            price = 25 + tickets;
+            if ($('#panel').is(':checked'))
+                price = 65 + tickets;
+            if ($('#guest').is(':checked'))
+                price = 60 + tickets;
+            if ($('#guest').is(':checked') && $('#panel').is(':checked'))
+                price = 55 + tickets;
+            $('#price2').text(price);
             localStorage.price = price;
         }
         if (!$(this).is(':checked')) {
-            price = 0;
-            if ($('#saturday').is(':checked'))
-                price = 40;
-            if ($('#sunday').is(':checked'))
-                price = 35;
-            if ($('#sunday').is(':checked') && $('#saturday').is(':checked'))
-                price = 75;
-            $('#price1').text(price);
+            price = 0 + tickets;
+            if ($('#panel').is(':checked'))
+                price = 40 + tickets;
+            if ($('#guest').is(':checked'))
+                price = 35 + tickets;
+            if ($('#guest').is(':checked') && $('#panel').is(':checked'))
+                price = 75 + tickets;
+            $('#price2').text(price);
             localStorage.price = price;
         }
     });
-    $('#saturday').click(function () {
+    $('#panel').click(function () {
         if ($(this).is(':checked')) {
-            price = 40;
-            if ($('#friday').is(':checked'))
-                price = 65;
-            if ($('#sunday').is(':checked'))
-                price = 75;
-            if ($('#sunday').is(':checked') && $('#friday').is(':checked'))
-                price = 55;
-            $('#price1').text(price);
+            price = 40 + tickets;
+            if ($('#concert').is(':checked'))
+                price = 65 + tickets;
+            if ($('#guest').is(':checked'))
+                price = 75 + tickets;
+            if ($('#guest').is(':checked') && $('#concert').is(':checked'))
+                price = 55 + tickets;
+            $('#price2').text(price);
             localStorage.price = price;
         }
         if (!$(this).is(':checked')) {
-            price = 0;
-            if ($('#friday').is(':checked'))
-                price = 25;
-            if ($('#sunday').is(':checked'))
-                price = 35;
-            if ($('#sunday').is(':checked') && $('#friday').is(':checked'))
-                price = 60;
-            $('#price1').text(price);
+            price = 0 + tickets;
+            if ($('#concert').is(':checked'))
+                price = 25 + tickets;
+            if ($('#guest').is(':checked'))
+                price = 35 + tickets;
+            if ($('#guest').is(':checked') && $('#concert').is(':checked'))
+                price = 60 + tickets;
+            $('#price2').text(price);
             localStorage.price = price;
         }
     });
-    $('#sunday').click(function () {
+    $('#guest').click(function () {
         if ($(this).is(':checked')) {
-            price = 35;
-            if ($('#saturday').is(':checked'))
-                price = 75;
-            if ($('#friday').is(':checked'))
-                price = 60;
-            if ($('#friday').is(':checked') && $('#saturday').is(':checked'))
-                price = 55;
-            $('#price1').text(price);
+            price = 35 + tickets;
+            if ($('#panel').is(':checked'))
+                price = 75 + tickets;
+            if ($('#concert').is(':checked'))
+                price = 60 + tickets;
+            if ($('#concert').is(':checked') && $('#panel').is(':checked'))
+                price = 55 + tickets;
+            $('#price2').text(price);
             localStorage.price = price;
         }
         if (!$(this).is(':checked')) {
-            price = 0;
-            if ($('#saturday').is(':checked'))
-                price = 40;
-            if ($('#friday').is(':checked'))
-                price = 25;
-            if ($('#friday').is(':checked') && $('#saturday').is(':checked'))
-                price = 65;
-            $('#price1').text(price);
+            price = 0 + tickets;
+            if ($('#panel').is(':checked'))
+                price = 40 + tickets;
+            if ($('#concert').is(':checked'))
+                price = 25 + tickets;
+            if ($('#concert').is(':checked') && $('#panel').is(':checked'))
+                price = 65 + tickets;
+            $('#price2').text(price);
             localStorage.price = price;
         }
     });
