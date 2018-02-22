@@ -25,6 +25,7 @@ if ($_GET["id"] == null) {
 <head>
     <title>Payment_TicketSelection</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
+    <script src="/Scripts/PriceScript.js"></script>
     <style>
         label {
             width: 100px;
@@ -45,48 +46,47 @@ if ($_GET["id"] == null) {
                             Ticket </a>>
                     </div>
                     <h1 style="margin-top: 0">Select dates for your ticket:</h1>
-                    <p><i>Selecting all 3 days get you a 15$ off.</i></p>
-                    <div class="col-lg-6">
-                        <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
-                        <label for="friday">Friday: </label>
-                        <input id="friday" type="checkbox" name="friday"
-                            <?php
-                            $id = $_GET["id"];
-                            if ($_SESSION["friday$id"] == "something") {
-                                echo "checked";
-                            } ?>
-                        ><br><br>
-                        <label for="saturday">Saturday: </label>
-                        <input id="saturday" type="checkbox" name="saturday"
-                            <?php if ($_SESSION["saturday$id"] == "something") {
-                                echo "checked";
-                            } ?>
-                        ><br><br>
-                        <label for="sunday">Sunday: </label>
-                        <input id="sunday" type="checkbox" name="sunday"
-                            <?php if ($_SESSION["sunday$id"] == "something") {
-                                echo "checked";
-                            } ?>
-                        ><br><br>
-                        <p class="priceUTD">Ticket #<?php echo $id; ?>: <input type="number" class="priceUTDnum"
-                                                                               readonly> </input></p>
-                    </div>
-                    <div class="col-lg-6">
-                        <table id="priceChart" align="center" style="color: white;">
-                            <tr>
-                                <th><?php echo($lang("friday")); ?></th>
-                                <th><?php echo($lang("saturday")); ?></th>
-                                <th><?php echo($lang("sunday")); ?></th>
-                                <th><?php echo($lang("3day")); ?></th>
-                            </tr>
-                            <tr>
-                                <td><?php echo($lang("currency", "25")); ?></td>
-                                <td><?php echo($lang("currency", "40")); ?></td>
-                                <td><?php echo($lang("currency", "35")); ?></td>
-                                <td><?php echo($lang("currency", "55")); ?></td>
-                            </tr>
-                        </table>
-                    </div>
+                    <table id="priceChart" align="center" style="color: white; margin: 0 0 20px 0">
+                        <tr>
+                            <th><?php echo($lang("friday")); ?></th>
+                            <th><?php echo($lang("saturday")); ?></th>
+                            <th><?php echo($lang("sunday")); ?></th>
+                            <th><?php echo($lang("3day")); ?></th>
+                        </tr>
+                        <tr>
+                            <td><?php echo($lang("currency", "25")); ?></td>
+                            <td><?php echo($lang("currency", "40")); ?></td>
+                            <td><?php echo($lang("currency", "35")); ?></td>
+                            <td><?php echo($lang("currency", "55")); ?></td>
+                        </tr>
+                    </table>
+
+                    <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
+                    <label for="friday">Friday: </label>
+                    <input id="friday" type="checkbox" name="friday"
+                        <?php
+                        $id = $_GET["id"];
+                        if ($_SESSION["friday$id"] == "something") {
+                            echo "checked";
+                        } ?>
+                    ><br><br>
+                    <label for="saturday">Saturday: </label>
+                    <input id="saturday" type="checkbox" name="saturday"
+                        <?php if ($_SESSION["saturday$id"] == "something") {
+                            echo "checked";
+                        } ?>
+                    ><br><br>
+                    <label for="sunday">Sunday: </label>
+                    <input id="sunday" type="checkbox" name="sunday"
+                        <?php if ($_SESSION["sunday$id"] == "something") {
+                            echo "checked";
+                        } ?>
+                    >
+                    <br><br>
+                    <p class="priceUTD">Ticket #<?php echo $id; ?>: $
+<!--                        <input style="color: black" type="text" class="priceUTDnum" id="price1" value=0 readonly>-->
+                        <span id="price1">0</span>
+                    </p>
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SetTickets.php">Cancel</a>
@@ -101,30 +101,6 @@ if ($_GET["id"] == null) {
             ?>
         </div>
     </div>
-    <script>
-        var price = 0;
-        $('#friday').click(function () {
-            if ($(this).is(':checked')) {
-                price += 25;
-                $('.priceUTDnum').text(price);
-            } else {
-                if$(this).is(':unchecked')
-                price -= 25;
-            }
-        });
-        $('#saturday').click(function () {
-            if ($(this).is(':checked')) {
-                price += 40;
-                $('.priceUTDnum').text(price);
-            }
-        });
-        $('#sunday').click(function () {
-            if ($(this).is(':checked')) {
-                price += 35;
-                $('.priceUTDnum').text(price);
-            }
-        });
-    </script>
 </main>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
 </body>
