@@ -21,6 +21,7 @@ class func
         }
         return $bool;
     }
+
 //    used to pass connection setting to rest of this folder and some other code without need for repetition
     public static function getConnection()
     {
@@ -36,6 +37,7 @@ class func
 
         return $con;
     }
+
 //    used to login at registration with account id retrieved from token !!!only use then, because otherwise doesn't require password
     public static function login($accountId)
     {
@@ -47,6 +49,36 @@ class func
         self::getConnection()->query($set_sess) or die("set session failed " . self::getConnection()->error);
         header("Location: Account/ModifyInfo.php");
     }
+
+//    log outs the user
+    public static function logout()
+    {
+        $query = "DELETE FROM sessions WHERE account_id = " . self::getConnection()->real_escape_string($_COOKIE["account_id"]) . ";";
+        self::getConnection()->query($query);
+        unset($_COOKIE['account_id']);
+        unset($_COOKIE['token']);
+    }
+
+//    updates user info
+    public static function UpdateAccount($lname, $fname, $phone, $address, $city, $zip, $country, $state)
+    {
+        $worked = false;
+        $account_id = $_COOKIE['account_id'];
+        $updateSql = "UPDATE account SET LAST_NAME = '" . self::getConnection()->real_escape_string($lname) . "', FIRST_NAME = '" . self::getConnection()->real_escape_string($fname) . "', PHONE = '" . self::getConnection()->real_escape_string($phone) . "', ADDRESS = '" . self::getConnection()->real_escape_string($address) . "', CITY = '" . self::getConnection()->real_escape_string($city) . "', ZIP = '" . self::getConnection()->real_escape_string($zip) . "', COUNTRY_ID = " . self::getConnection()->real_escape_string($country) . ", STATE_ID = " . self::getConnection()->real_escape_string($state) . " WHERE ACCOUNT_ID = " . self::getConnection()->real_escape_string($account_id);
+        if (self::getConnection()->query($updateSql) === TRUE)
+            $worked = true;
+        return $worked;
+    }
+
+    public static function UpdatePass($passHash){
+        $account_id = $_COOKIE['account_id'];
+        $update_pass_sql = "UPDATE account SET PASS_HASH = '" .self::getConnection()->real_escape_string($passHash) ."' WHERE ACCOUNT_ID = " .self::getConnection()->real_escape_string($account_id);
+        $worked = false;
+        if (self::getConnection()->query($update_pass_sql) === TRUE)
+            $worked = true;
+        return $worked;
+    }
+
 //    get id from ticket with unique token
     public static function getTicketID($token)
     {
@@ -60,6 +92,7 @@ class func
         }
         return $string;
     }
+
     //generic function to get a field from a table       !!! id no '' !!!
     public static function getFromTable($column, $table, $idFieldName, $id)
     {
@@ -82,6 +115,7 @@ class func
             print("<script>console.log('no result from query')</script>");
         return $string;
     }
+
     //Used to get account id to login suring registration process
     public static function getIdFromToken($column, $table, $idFieldName, $id)
     {

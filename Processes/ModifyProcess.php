@@ -28,104 +28,105 @@ while($account = $get_account_info_res->fetch_array()){
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$p = $_POST;
 	if ($p["process"] == "modify") {
-		if(empty($p["fnameMod"])){
+		if(empty($p["fnameMod"]))
 			$fnameModErr = $error = true;
-		} else{
-			if(ctype_alpha(gut($p["fnameMod"]))){
+		else{
+			if(ctype_alpha(gut($p["fnameMod"])))
 				$fnameMod = clean($p["fnameMod"]);
-			} else{
+			else
 				$fnameModErr = $error = true;
-			}
+
 		}
 
-		if(empty($p["lnameMod"])){
+		if(empty($p["lnameMod"]))
 			$lnameModErr = $error = true;
-		} else{
-			if(ctype_alpha(gut($p["lnameMod"]))){
+		else{
+			if(ctype_alpha(gut($p["lnameMod"])))
 				$lnameMod = clean($p["lnameMod"]);
-			} else{
+			else
 				$lnameModErr = $error = true;
-			}
+
 		}
 
-		if(empty($p["phoneMod"])){
+		if(empty($p["phoneMod"]))
 			$phoneModErr = $error = true;
-		} else{
-			if((bool)preg_match('/^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/', clean($p["phoneMod"]))){
+		else{
+			if((bool)preg_match('/^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/', clean($p["phoneMod"])))
 				$phoneMod = gut($p["phoneMod"]);
-			} else{
+			else
 				$phoneModErr = $error = true;
-			}
+
 		}
 
-		if(empty($p["countryIdMod"])){
+		if(empty($p["countryIdMod"]))
 			$countryErr = $error = true;
-		} else{
+		else
 			$countryIdMod = $p["countryIdMod"];
-		}
 
-		if(empty($p["stateCodeMod"])){
+		if(empty($p["stateCodeMod"]))
 			$stateCodeModErr = $error = true;
-		} else{
+		else{
 			if(strlen($p["stateCodeMod"]) == 2 && ctype_alpha(gut($p["stateCodeMod"]))){
 				$get_states_sql="SELECT * FROM states WHERE COUNTRY_ID = " . $con->real_escape_string($countryIdMod) ." AND STATE_CODE = '" . $con->real_escape_string(strtoupper($p["stateCodeMod"])) ."'";
 				$get_states_res=$con->query($get_states_sql) or die("get_states_res: " .$con->error);
 
-				if($get_states_res->num_rows < 1){
+				if($get_states_res->num_rows < 1)
 					$stateCodeModErr = $error = true;
-				} else{
+				else{
 					while($states = $get_states_res->fetch_array()){
 						$stateIdMod = $states["STATE_ID"];
 						$stateCodeMod = $states["STATE_CODE"];
 					}
 				}
-			} else{
+			} else
 				$stateCodeModErr = $error = true;
-			}
 		}
 
-		if(empty($p["cityMod"])){
+		if(empty($p["cityMod"]))
 			$cityModErr = $error = true;
-		} else{
-			if(ctype_alpha(gut($p["cityMod"]))){
+		else{
+			if(ctype_alpha(gut($p["cityMod"])))
 				$cityMod = clean($p["cityMod"]);
-			} else{
+			else
 				$cityModErr = $error = true;
-			}
 		}
 
-		if(empty($p["addressMod"])){
+		if(empty($p["addressMod"]))
 			$addressModErr = $error = true;
-		} else{
-			if((bool)preg_match("~[0-9]~", $p["addressMod"] && (bool)preg_match("/[a-z]/i", $p["addressMod"]) && strpos($p["addressMod"], " "))){
+		else{
+			if((bool)preg_match("~[0-9]~", $p["addressMod"] && (bool)preg_match("/[a-z]/i", $p["addressMod"]) && strpos($p["addressMod"], " ")))
 				$addressMod = clean($p["addressMod"]);
-			} else{
+			else
 				$addressModErr = $error = true;
-			}
 		}
 
-		if(empty($p["zipMod"])){
+		if(empty($p["zipMod"]))
 			$zipModErr = $error = true;
-		} else{
-			if((bool)preg_match("/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/", str_replace(' ', '', strtolower(clean($p["zipMod"]))))){
+		else{
+			if((bool)preg_match("/^([a-zA-Z]\d[a-zA-Z])\ {0,1}(\d[a-zA-Z]\d)$/", str_replace(' ', '', strtolower(clean($p["zipMod"])))))
 				$zipMod = clean($p["zipMod"]);
-			} else{
+			else
 				$zipModErr = $error = true;
-			}
+
 		}
 
-		if($error){
+		if($error)
 			$modErrMsg = nl2br($lang("err_msg"));
-		} else{
+		else{
 			$passMod = $p["passMod"];
 			if(password_verify($passMod, $passHash)){
-				$updateSql = "UPDATE account SET LAST_NAME = '" . $con->real_escape_string(ucwords(strtolower($lnameMod), " ")) ."', FIRST_NAME = '" . $con->real_escape_string(ucwords(strtolower($fnameMod), " ")) ."', PHONE = '" . $con->real_escape_string(str_replace('-', '/', $phoneMod)) ."', ADDRESS = '" . $con->real_escape_string(ucwords(strtolower($addressMod), " ")) ."', CITY = '" . $con->real_escape_string(ucwords(strtolower($cityMod), " ")) ."', ZIP = '" . $con->real_escape_string(strtoupper(str_replace(' ', '', $zipMod))) ."', COUNTRY_ID = " . $con->real_escape_string($countryIdMod) .", STATE_ID = " .$con->real_escape_string($stateIdMod) ." WHERE ACCOUNT_ID = " .$con->real_escape_string($_COOKIE['account_id']);
+                $lname = ucwords(strtolower($lnameMod), " ");
+                $fname = ucwords(strtolower($fnameMod), " ");
+                $phone = str_replace('-', '/', $phoneMod);
+                $address = ucwords(strtolower($addressMod), " ");
+                $city = ucwords(strtolower($cityMod), " ");
+                $zip = strtoupper(str_replace(' ', '', $zipMod));
 
-				if ($con->query($updateSql) === TRUE) {
+                $worked = func::UpdateAccount($lname, $fname, $phone, $address, $city, $zip, $countryIdMod, $stateIdMod);
+                if ($worked)
 					$modOutput = $lang("changes_saved");
-				} else {
+				else
 					$modErrMsg = "Error: " . $updateSql . "<br>" . $con->error;
-				}
 			} else{
 				$passModErr = $error = true;
 				$modErrMsg = "Password is incorrect";
@@ -134,30 +135,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else if($p["process"] == "changePassword"){
 		$currPass = $p["currPass"];
 		if(password_verify($currPass, $passHash)){
-			if(empty($p["newPass"])){
+			if(empty($p["newPass"]))
 				$newPassErr = $changePassErr = true;
-			} else{
-				if(strlen($p["newPass"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["newPass"]) && !ctype_alpha($p["newPass"]) && !ctype_digit($p["newPass"]) && !strpos($p["newPass"], " ")){
+			else{
+				if(strlen($p["newPass"]) >= 8 && (bool)preg_match('/[A-Z]/', $p["newPass"]) && !ctype_alpha($p["newPass"]) && !ctype_digit($p["newPass"]) && !strpos($p["newPass"], " "))
 					$newPass = clean($p["newPass"]);
-				} else{
+                else
 					$newPassErr = $changePassErr = true;
-				}
 			}
 
 			if(empty($p["confirmNewPass"]) || $p["newPass"] != $p["confirmNewPass"]){
 				$confirmNewPassErr = $changePassErr = true;
 			}
 
-			if($changePassErr){
+			if($changePassErr)
 				$changePassErrMsg = nl2br($lang("err_msg"));
-			} else{
-				$update_pass_sql = "UPDATE account SET PASS_HASH = '" .$con->real_escape_string(password_hash($newPass, PASSWORD_BCRYPT)) ."' WHERE ACCOUNT_ID = " .$con->real_escape_string($_COOKIE['account_id']);
+			else{
 
-				if ($con->query($update_pass_sql) === TRUE) {
+				$worked1 = func::UpdatePass(password_hash($newPass, PASSWORD_BCRYPT));
+				if ($worked1)
 					header("Location: ModifyInfo.php?passChanged=true");
-				} else {
+				else
 					$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
-				}
 				
 			}
 		} else{
