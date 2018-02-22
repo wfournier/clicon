@@ -27,6 +27,17 @@
         <div class="col-lg-4" id="hours">
             <h3><?php echo($lang("hours")); ?></h3>
             <br>
+            <?php
+                $start_time = "0";
+                $end_time = "0";
+                if($_COOKIE["current_language"] == "en"){
+                    $start_time = "8";
+                    $end_time = "10";
+                } else if($_COOKIE["current_language"] == "fr"){
+                    $start_time = "8";
+                    $end_time = "22";
+                }
+            ?>
             <table align="center">
                 <tr>
                     <th></th>
@@ -36,39 +47,39 @@
                 </tr>
                 <tr>
                     <th><?php echo($lang("registration")); ?></th>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
                 </tr>
                 <tr>
                     <th><?php echo($lang("con_hours")); ?></th>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
                 </tr>
                 <tr>
                     <th><?php echo($lang("retro_corner")); ?></th>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
                 </tr>
                 <tr>
                     <th><?php echo($lang("arcade_games")); ?></th>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
                 </tr>
                 <tr>
                     <th><?php echo($lang("lan")); ?></th>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
                 </tr>
                 <tr>
                     <th><?php echo($lang("studios_hall")); ?></th>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
-                    <td>8 AM - 10 PM</td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
+                    <td><?php echo($lang("timeframe", $start_time, $end_time)); ?></td>
                 </tr>
             </table>
             <br>
@@ -82,7 +93,7 @@
             </p>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Place_Bonaventure_04.JPG/1024px-Place_Bonaventure_04.JPG"
                  alt="PlaceBonaventure_Wikipedia" width="300px" height="auto" style="border: solid black 1px">
-            <p>800 De La Gauchetière,<br><?php echo($lang("mtl")); ?>, QC H5A 1K6<br>(415) 397-2233<br><?php echo($lang("open_24h")); ?></p>
+            <p>800 de la Gauchetière,<br><?php echo($lang("mtl")); ?>, QC H5A 1K6<br>(415) 397-2233<br><?php echo($lang("open_24h")); ?></p>
         </div>
     </div>
     <!--RULES-->
