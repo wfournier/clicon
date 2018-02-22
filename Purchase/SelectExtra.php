@@ -43,7 +43,22 @@ $_SESSION["Error_Ticket$id"] = null;
                     <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id?>">Select Ticket </a>>
                         <a href="/Purchase/SelectExtra.php?id=<?php echo $id?>">Select Extra </a>></div>
                     <h1 style="margin-top: 0">Select extras for your ticket:</h1>
-                    <p><i></i></p>
+                    <table id="priceChart" align="center" style="color: white; margin: 0 0 20px 0;">
+                        <tr>
+                            <th>1 extras</th>
+                            <th>2 extras</th>
+                            <th>3 extras</th>
+                            <th>4 extras</th>
+                            <th>5+ extras</th>
+                        </tr>
+                        <tr>
+                            <td><?php echo($lang("currency", "10")); ?></td>
+                            <td><?php echo($lang("currency", "17")); ?></td>
+                            <td><?php echo($lang("currency", "23")); ?></td>
+                            <td><?php echo($lang("currency", "27")); ?></td>
+                            <td><?php echo($lang("currency", "30")); ?></td>
+                        </tr>
+                    </table>
 
                     <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
                     <label for="concert">Concert: </label><input id="concert" type="checkbox" name="concert"
@@ -63,6 +78,10 @@ $_SESSION["Error_Ticket$id"] = null;
                             echo "checked";
                         } ?>
                     >
+                    <br><br>
+                    <p class="priceUTD">Ticket #<?php echo $id; ?>: $
+                        <input type="number" class="priceUTDnum" readonly>
+                    </p>
                 </div>
                 <div class="row">
                     <a class="btn btn-warning" href="SelectTicket.php?id=<?php echo $_GET["id"] ?>">Back</a>
