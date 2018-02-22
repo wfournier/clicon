@@ -11,7 +11,7 @@ class func
             $token = $_COOKIE['token'];
 
             $query = "SELECT * FROM sessions WHERE ACCOUNT_ID = " . self::getConnection()->real_escape_string($account_id) . " and  SESSION_TOKEN = '" . self::getConnection()->real_escape_string($token) . "';";
-            $results = self::getConnection()->query($query) or die ("HELP " . self::getConnection()->error);
+            $results = self::getConnection()->query($query) or die ("HELP checklogin " . self::getConnection()->error);
 
             if ($results->num_rows > 0) {
                 $bool = true;
@@ -148,13 +148,19 @@ class func
     {
         $account_id = $_COOKIE['account_id'];
         $query = "SELECT TRANSACTION_ID FROM transaction WHERE ACCOUNT_ID = " . self::getConnection()->real_escape_string($account_id) . " AND ID_TOKEN = '" . self::getConnection()->real_escape_string($token) . "';";
-        $results = self::getConnection()->query($query) or die ("HELP insertIntoTicket " . self::getConnection()->error);
+        $results = self::getConnection()->query($query) or die ("HELP insertIntoTicket(getTransID " . self::getConnection()->error);
         while ($result = $results->fetch_assoc()) {
             $transac_id = $result['TRANSACTION_ID'];
             if ($transac_id != 0) {
                 $query1 = "INSERT INTO ticket (TICKET_ID, TRANSACTION_ID, PRICE, EXTRAS, TICKET_TYPE, ID_TOKEN) VALUES (null, '" . self::getConnection()->real_escape_string($transac_id) . "', " . self::getConnection()->real_escape_string($price) . ", '" . self::getConnection()->real_escape_string($extra) . "', '" . self::getConnection()->real_escape_string($ticket) . "', '" . self::getConnection()->real_escape_string($token) . "');";
-                $results1 = self::getConnection()->query($query1) or die ("HELP2 " . self::getConnection()->error);
+                $results1 = self::getConnection()->query($query1) or die ("HELP insertIntoTicket " . self::getConnection()->error);
             }
         }
+    }
+
+    public static function insertIntoAttendee($ticketID)
+    {
+        $query = "INSERT INTO attendee (ATTENDEE_ID, TICKET_ID) VALUES (null, " . self::getConnection()->real_escape_string($ticketID) . ");";
+        $results = self::getConnection()->query($query) or die ("HELP insertIntoAttendee " . self::getConnection()->error);
     }
 } ?>

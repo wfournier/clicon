@@ -56,6 +56,7 @@ if (isset($_SESSION["tickets"])) {
             $badgeName = $ticket->badgeName;
             func::setToTable("BADGE_NAME", $badgeName, "ticket", "TICKET_ID", $ticketID);
         }
+        func::insertIntoAttendee($ticketID);
     }
 
     $to = func::getFromTable("EMAIL", "account", null, null);
