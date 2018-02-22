@@ -41,7 +41,7 @@ if ($_GET["id"] == null) {
         <div class="col-md-4"></div>
         <div class="col-md-6">
             <form method="post" action="ProcessingSelectTicket.php">
-                <div class="row" style="height: 400px">
+                <div class="row" style="min-height: 400px">
                     <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
                     <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id ?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
                     </div>
