@@ -8,14 +8,16 @@ session_start();
 if (isset($_SESSION["tickets"])) {
     $arr = $_SESSION["tickets"];
     $subtotal = 0;
-    $token = bin2hex(random_bytes(64 / 2));
+    //Unique token to identify the transaction without knowing the primary key
+    $tokenTrans = bin2hex(random_bytes(64 / 2));
 
 //    CREATE TRANSACTION
     foreach ($arr as $ticket) {
         $subtotal += $ticket->price;
     }
     $totalPrice = $subtotal + ($subtotal * 0.15);
-    func::insertIntoTransaction($totalPrice, $token);
+    func::insertIntoTransaction($totalPrice, $tokenTrans);
+    $transactionID = func::getTransactionIDFromToken($tokenTrans);
 
 //    CREATE TICKETS
     foreach ($arr as $ticket) {
@@ -49,9 +51,11 @@ if (isset($_SESSION["tickets"])) {
         else
             $extra = $extra . "-";
 
-        func::insertIntoTicket($token, $price, $extra, $ticket_type);
+        //Unique token to identify the ticket without knowing the primary key
+        $tokenTicket = bin2hex(random_bytes(64 / 2));
+        func::insertIntoTicket($tokenTicket, $transactionID, $price, $extra, $ticket_type);
+        $ticketID = func::getTicketID($tokenTicket);
 
-        $ticketID = func::getIDFromTicket($token);
         if ($ticket->badgeName != null || $ticket->badgeName != "") {
             $badgeName = $ticket->badgeName;
             func::setToTable("BADGE_NAME", $badgeName, "ticket", "TICKET_ID", $ticketID);
