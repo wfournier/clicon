@@ -2,8 +2,26 @@ var price = parseInt($('#price1').text(), 10);
 if(isNaN(price)){
     price = 0;
 }
+$(document).on(function () {
+    if ($('#friday').is(':checked'))
+        price = 25;
+    if ($('#saturday').is(':checked'))
+        price = 40;
+    if ($('#sunday').is(':checked'))
+        price = 35;
+    if ($('#sunday').is(':checked') && $('#saturday').is(':checked'))
+        price = 75;
+    if ($('#sunday').is(':checked') && $('#friday').is(':checked'))
+        price = 60;
+    if ($('#friday').is(':checked') && $('#saturday').is(':checked'))
+        price = 65;
+    if ($('#sunday').is(':checked') && $('#saturday').is(':checked') && $('#friday').is(':checked'))
+        price = 55;
+    $('#price1').text(price);
+});
 $(document).ready(function ()
 {
+
     $('#friday').click(function () {
         if ($(this).is(':checked')) {
             price = 25;
@@ -14,6 +32,7 @@ $(document).ready(function ()
             if ($('#sunday').is(':checked') && $('#saturday').is(':checked'))
                 price = 55;
             $('#price1').text(price);
+            localStorage.price = price;
         }
         if (!$(this).is(':checked')) {
             price = 0;
@@ -24,6 +43,7 @@ $(document).ready(function ()
             if ($('#sunday').is(':checked') && $('#saturday').is(':checked'))
                 price = 75;
             $('#price1').text(price);
+            localStorage.price = price;
         }
     });
     $('#saturday').click(function () {
@@ -36,6 +56,7 @@ $(document).ready(function ()
             if ($('#sunday').is(':checked') && $('#friday').is(':checked'))
                 price = 55;
             $('#price1').text(price);
+            localStorage.price = price;
         }
         if (!$(this).is(':checked')) {
             price = 0;
@@ -46,6 +67,7 @@ $(document).ready(function ()
             if ($('#sunday').is(':checked') && $('#friday').is(':checked'))
                 price = 60;
             $('#price1').text(price);
+            localStorage.price = price;
         }
     });
     $('#sunday').click(function () {
@@ -58,6 +80,7 @@ $(document).ready(function ()
             if ($('#friday').is(':checked') && $('#saturday').is(':checked'))
                 price = 55;
             $('#price1').text(price);
+            localStorage.price = price;
         }
         if (!$(this).is(':checked')) {
             price = 0;
@@ -68,6 +91,7 @@ $(document).ready(function ()
             if ($('#friday').is(':checked') && $('#saturday').is(':checked'))
                 price = 65;
             $('#price1').text(price);
+            localStorage.price = price;
         }
     });
 });

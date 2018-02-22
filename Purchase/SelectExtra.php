@@ -24,6 +24,7 @@ $_SESSION["Error_Ticket$id"] = null;
 <head>
     <title>Payment_ExtraSelection</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
+    <script src="/Scripts/PriceScriptExtra.js"></script>
     <style>
         label {
             width: 100px;
