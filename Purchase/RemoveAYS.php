@@ -18,58 +18,58 @@ if(!($_GET["id"] > 0) || empty($arr)){
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php";?>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php";?>
-<main>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <p>Do you really want to remove this ticket</p>
-            <?php
-            $c = $_GET["id"];
-            $ticket = $arr["$c"];
-            ?>
-            <div class="row">
-                <hr>
-                <div class="col-xs-6">
-                    <h4>Ticket #<?php echo $c ?></h4>
-                    Badge Name: <?php echo $ticket->badgeName ?><br>
-                    Days: <?php
-                    if ($ticket->isFriday() == true) {
-                        echo "F ";
-                    } else {
-                        echo "- ";
-                    }
-                    if ($ticket->isSaturday() == true) {
-                        echo "S ";
-                    } else {
-                        echo "- ";
-                    }
-                    if ($ticket->isSunday() == true) {
-                        echo "S ";
-                    } else {
-                        echo "- ";
-                    } ?>
-                    <br>
-                    Extras: <?php if ($ticket->extra1 == true) {
-                        echo "<p> - Concert</p>";
-                    }
-                    if ($ticket->extra2 == true) {
-                        echo "<p> - Extra Panel</p>";
-                    }
-                    if ($ticket->extra3 == true) {
-                        echo "<p> - Special Guest Autograph</p>";
-                    }
-                    if ($ticket->extra1 == false && $ticket->extra2 == false && $ticket->extra3 == false) {
-                        echo "none";
-                    }
-                    ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php";?>
+    <main>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <p><?php echo($lang("delete_prompt")); ?></p>
+                <?php
+                $c = $_GET["id"];
+                $ticket = $arr["$c"];
+                ?>
+                <div class="row">
+                    <hr>
+                    <div class="col-xs-6">
+                        <h4><?php echo($lang("ticket")); ?> #<?php echo $c ?></h4>
+                        <?php echo($lang("ticket_badge_name")); ?>: <?php echo $ticket->badgeName ?><br>
+                        <?php echo($lang("ticket_days")); ?>: <?php
+                        if ($ticket->isFriday() == true) {
+                            echo $lang("friday")[0] ." ";
+                        } else {
+                            echo "- ";
+                        }
+                        if ($ticket->isSaturday() == true) {
+                            echo $lang("saturday")[0] ." ";
+                        } else {
+                            echo "- ";
+                        }
+                        if ($ticket->isSunday() == true) {
+                            echo $lang("sunday")[0] ." ";
+                        } else {
+                            echo "- ";
+                        } ?>
+                        <br>
+                        <?php echo($lang("ticket_extras")); ?>: <?php if ($ticket->extra1 == true) {
+                            echo "<p> - " .$lang("ticket_extra_concert") ."</p>";
+                        }
+                        if ($ticket->extra2 == true) {
+                            echo "<p> - " .$lang("ticket_extra_panel") ."</p>";
+                        }
+                        if ($ticket->extra3 == true) {
+                            echo "<p> - " .$lang("ticket_extra_vip") ."</p>";
+                        }
+                        if ($ticket->extra1 == false && $ticket->extra2 == false && $ticket->extra3 == false) {
+                            echo $lang("no_extras");
+                        }
+                        ?>
+                    </div>
                 </div>
+                <a class="btn btn-success" href="RemoveTicket.php?id=<?php echo $ticket->ticketID ?>"><?php echo($lang("yes_btn")); ?></a>
+                <a class="btn btn-danger" href="SetTickets.php"><?php echo($lang("no_btn")); ?></a>
             </div>
-            <a class="btn btn-success" href="RemoveTicket.php?id=<?php echo $ticket->ticketID ?>">Yes</a>
-            <a class="btn btn-danger" href="SetTickets.php">No</a>
         </div>
-    </div>
-</main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html";?>
+    </main>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html";?>
 </body>
 </html>

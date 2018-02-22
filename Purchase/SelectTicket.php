@@ -7,7 +7,7 @@ if (!func::checkLogin()) {
 session_start();
 $id = 0;
 if ($_GET["id"] == null) {
-    $_SESSION["Error_Edit"] = "An error occurred please try again";
+    $_SESSION["Error_Edit"] = $lang("err_occured");
     header("Location: /Purchase/SetTickets.php");
 } else {
     $id = $_GET["id"];
@@ -26,23 +26,23 @@ if ($_GET["id"] == null) {
     <title>Payment_TicketSelection</title>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
     <style>
-        label {
-            width: 100px;
-            margin-left: 30px;
-        }
-    </style>
+    label {
+        width: 100px;
+        margin-left: 30px;
+    }
+</style>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
-<main>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-6">
-            <form method="post" action="ProcessingSelectTicket.php">
-                <div class="row" style="height: 400px">
-                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>></div>
-                    <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id ?>">Select
-                            Ticket </a>>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
+    <main>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-6">
+                <form method="post" action="ProcessingSelectTicket.php">
+                    <div class="row" style="height: 400px">
+                        <div class="breadcrumbs"><a href="/Purchase/SetTickets.php">Set Tickets </a>></div>
+                        <div class="lowerbreadcrumbs"><a href="/Purchase/SelectTicket.php?id=<?php echo $id ?>">Select
+                        Ticket </a>>
                     </div>
                     <h1 style="margin-top: 0">Select dates for your ticket:</h1>
                     <p><i>Selecting all 3 days get you a 15$ off.</i></p>
@@ -50,28 +50,28 @@ if ($_GET["id"] == null) {
                         <input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
                         <label for="friday">Friday: </label>
                         <input id="friday" type="checkbox" name="friday"
-                            <?php
-                            $id = $_GET["id"];
-                            if ($_SESSION["friday$id"] == "something") {
-                                echo "checked";
-                            } ?>
+                        <?php
+                        $id = $_GET["id"];
+                        if ($_SESSION["friday$id"] == "something") {
+                            echo "checked";
+                        } ?>
                         ><br><br>
                         <label for="saturday">Saturday: </label>
                         <input id="saturday" type="checkbox" name="saturday"
-                            <?php if ($_SESSION["saturday$id"] == "something") {
-                                echo "checked";
-                            } ?>
+                        <?php if ($_SESSION["saturday$id"] == "something") {
+                            echo "checked";
+                        } ?>
                         ><br><br>
                         <label for="sunday">Sunday: </label>
                         <input id="sunday" type="checkbox" name="sunday"
-                            <?php if ($_SESSION["sunday$id"] == "something") {
-                                echo "checked";
-                            } ?>
+                        <?php if ($_SESSION["sunday$id"] == "something") {
+                            echo "checked";
+                        } ?>
                         ><br><br>
                         <p class="priceUTD">Ticket #<?php echo $id; ?>: <input type="number" class="priceUTDnum"
-                                                                               readonly> </input></p>
-                    </div>
-                    <div class="col-lg-6">
+                         readonly> </input></p>
+                     </div>
+                     <div class="col-lg-6">
                         <table id="priceChart" align="center" style="color: white;">
                             <tr>
                                 <th><?php echo($lang("friday")); ?></th>
@@ -109,7 +109,7 @@ if ($_GET["id"] == null) {
                 $('.priceUTDnum').text(price);
             } else {
                 if$(this).is(':unchecked')
-                price -= 25;
+                    price -= 25;
             }
         });
         $('#saturday').click(function () {
