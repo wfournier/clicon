@@ -1,5 +1,4 @@
 <?php
-
 $fnameMod = $lnameMod = $phoneMod = $countryIdMod = $stateCodeMod = $stateIdMod = $cityMod = $addressMod = $zipMod = $passMod = $passHash = "";
 $fnameModErr = $lnameModErr = $phoneModErr = $countryIdModErr = $stateCodeModErr = $cityModErr = $addressModErr = $zipModErr = $passModErr = false;
 
@@ -10,8 +9,8 @@ $modPassErr = $changePassErr = false;
 $modErrMsg = $modOutput = $changePassErrMsg = "";
 $error = false;
 
-$get_account_info_sql = "SELECT a.FIRST_NAME, a.LAST_NAME, a.PHONE, a.COUNTRY_ID, s.STATE_CODE, a.CITY, a.ADDRESS, a.ZIP, a.PASS_HASH FROM account a, states s WHERE a.ACCOUNT_ID = " . $con->real_escape_string($_COOKIE['account_id']) ." AND s.STATE_ID = a.STATE_ID";
-$get_account_info_res = $con->query($get_account_info_sql) or die("get_account_info_res: " .$con->error);
+$get_account_info_sql = "SELECT a.FIRST_NAME, a.LAST_NAME, a.PHONE, a.COUNTRY_ID, s.STATE_CODE, a.CITY, a.ADDRESS, a.ZIP, a.PASS_HASH FROM account a, states s WHERE a.ACCOUNT_ID = " . func::getConnection()->real_escape_string($_COOKIE['account_id']) ." AND s.STATE_ID = a.STATE_ID";
+$get_account_info_res = func::getConnection()->query($get_account_info_sql) or die("get_account_info_res: " .func::getConnection()->error);
 
 while($account = $get_account_info_res->fetch_array()){
 	$fnameMod = $account["FIRST_NAME"];
@@ -67,8 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$stateCodeModErr = $error = true;
 		else{
 			if(strlen($p["stateCodeMod"]) == 2 && ctype_alpha(gut($p["stateCodeMod"]))){
-				$get_states_sql="SELECT * FROM states WHERE COUNTRY_ID = " . $con->real_escape_string($countryIdMod) ." AND STATE_CODE = '" . $con->real_escape_string(strtoupper($p["stateCodeMod"])) ."'";
-				$get_states_res=$con->query($get_states_sql) or die("get_states_res: " .$con->error);
+				$get_states_sql="SELECT * FROM states WHERE COUNTRY_ID = " . func::getConnection()->real_escape_string($countryIdMod) ." AND STATE_CODE = '" . func::getConnection()->real_escape_string(strtoupper($p["stateCodeMod"])) ."'";
+				$get_states_res=func::getConnection()->query($get_states_sql) or die("get_states_res: " .func::getConnection()->error);
 
 				if($get_states_res->num_rows < 1)
 					$stateCodeModErr = $error = true;
@@ -126,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if ($worked)
 					$modOutput = $lang("changes_saved");
 				else
-					$modErrMsg = "Error: " . $updateSql . "<br>" . $con->error;
+					$modErrMsg = "Error: " . $updateSql . "<br>" . func::getConnection()->error;
 			} else{
 				$passModErr = $error = true;
 				$modErrMsg = "Password is incorrect";
@@ -156,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				if ($worked1)
 					header("Location: ModifyInfo.php?passChanged=true");
 				else
-					$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
+					$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . func::getConnection()->error;
 				
 			}
 		} else{

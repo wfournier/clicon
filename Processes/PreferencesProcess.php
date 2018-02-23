@@ -47,7 +47,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if($error){
 			$prefErrMsg = nl2br($lang("err_msg"));
 		} else{
-			$update_pref_sql = "UPDATE account SET PREF_BADGE_NAME = '" . $con->real_escape_string($badgeName) ."', EMERGENCY_CONTACT_PHONE = '" . $con->real_escape_string(str_replace('-', '/', $emergContact)) ."', EMERGENCY_CONTACT_NAME = '" . $con->real_escape_string(ucwords(strtolower($emergContactName)), " ") ."' WHERE ACCOUNT_ID = " . $con->real_escape_string($_COOKIE['account_id']);
+		    $temp1 = str_replace('-', '/', $emergContact);
+		    $temp2 = ucwords(strtolower($emergContactName));
+			$update_pref_sql = "UPDATE account SET PREF_BADGE_NAME = '" . $con->real_escape_string($badgeName) ."', EMERGENCY_CONTACT_PHONE = '" . $con->real_escape_string($temp1) ."', EMERGENCY_CONTACT_NAME = '" . $con->real_escape_string($temp2) ."' WHERE ACCOUNT_ID = " . $con->real_escape_string($_COOKIE['account_id']);
 
 			if ($con->query($update_pref_sql) === TRUE) {
 				$prefOutput = $lang("preferences_saved");

@@ -1,7 +1,7 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/ModifyProcess.php" ?>
 <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/ModifyProcess.php" ?>
 <?php
 if (!func::checkLogin()) {
     header("Location: /Login_Register.php");
