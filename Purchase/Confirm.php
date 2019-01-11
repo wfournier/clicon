@@ -1,10 +1,10 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Classes/Ticket.php" ?>
 <?php
 
 if (!func::checkLogin()) {
-    header("Location: /Login_Register.php");
+    header("Location: /gamecon/Login_Register.php");
 }
 session_start();
 ?>
@@ -12,10 +12,10 @@ session_start();
 <html lang="en">
 <head>
     <title>Payment_ConfirmSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php"; ?>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php"; ?>
 
 <main>
     <div class="row">
@@ -23,8 +23,8 @@ session_start();
         <div class="col-md-4">
             <form method="post" action="PaymentProcess.php">
                 <div class="row" style="min-height: 400px">
-                    <div class="breadcrumbs"><a href="/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>>
-                        <a href="/Purchase/Confirm.php"><?php echo($lang("bread_confirm")); ?> </a>>
+                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>>
+                        <a href="/gamecon/Purchase/Confirm.php"><?php echo($lang("bread_confirm")); ?> </a>>
                     </div>
                     <?php
                     if (isset($_SESSION["Error_Edit"])) {
@@ -95,6 +95,6 @@ session_start();
         </div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html"; ?>
 </body>
 </html>

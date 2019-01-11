@@ -1,13 +1,13 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php"; ?>
-    <link rel="stylesheet" href="/Style/InformationStyle.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php"; ?>
+    <link rel="stylesheet" href="/gamecon/Style/InformationStyle.css">
     <title>GameCon_Information</title>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php"; ?>
 <main>
     <div style="text-align: center">
         <h1><?php echo($lang("general_info")); ?></h1>
@@ -169,6 +169,6 @@
     </script>
 </main>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html"; ?>
 </body>
 </html>

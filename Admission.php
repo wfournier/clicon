@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Head.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Functions/FilterData.php"; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/RegisterProcess.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/LoginProcess.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Functions/FilterData.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/RegisterProcess.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/LoginProcess.php" ?>
     <?php
     if (func::checkLogin()) {
-        header("Location: /Purchase/SelectQty.php");
+        header("Location: /gamecon/Purchase/SelectQty.php");
     }
     ?>
     <title>Clicon_Admission</title>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Header.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php" ?>
     <style type="text/css">
     .row {
         margin-left: 0px;
@@ -98,7 +98,7 @@
                     <li><?php echo($lang("resolve_issues")); ?></li>
                     <li><?php echo($lang("save_time")); ?></li>
                 </ul><br>
-                <a href="Login_Register.php">
+                <a href="/gamecon/Login_Register.php">
                     <button class="btn btn-warning">Create Account</button>
                 </a>
             </div>
@@ -213,6 +213,6 @@
         <div class="col-sm-2"></div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/Footer.html" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html" ?>
 </body>
 </html>

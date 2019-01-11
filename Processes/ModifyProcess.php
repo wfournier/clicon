@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 				$worked1 = func::UpdatePass(password_hash($newPass, PASSWORD_BCRYPT));
 				if ($worked1)
-					header("Location: ModifyInfo.php?passChanged=true");
+					header("Location: /gamecon/Account/ModifyInfo.php?passChanged=true");
 				else
 					$changePassErrMsg = "Error: " . $update_pass_sql . "<br>" . func::getConnection()->error;
 				

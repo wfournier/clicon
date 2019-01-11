@@ -1,8 +1,8 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Classes/Ticket.php" ?>
 <?php
 if (!func::checkLogin()) {
-    header("Location: /Login_Register.php");
+    header("Location: /gamecon/Login_Register.php");
 }
 session_start();
 if (isset($_SESSION["tickets"])) {
@@ -110,7 +110,7 @@ if (isset($_SESSION["tickets"])) {
     $headers = "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
     mail($to, $subject, $message, $headers);
-    header("Location: /Purchase/Receipt.php");
+    header("Location: /gamecon/Purchase/Receipt.php");
 } else {
-    header("Location: /Purchase/SetTickets.php");
+    header("Location: /gamecon/Purchase/SetTickets.php");
 }

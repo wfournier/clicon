@@ -1,18 +1,18 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Processes/Functions.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/Classes/Ticket.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/langquery/langquery.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/langquery/langquery.php" ?>
 <?php
 
 $lang = new LangQuery();
 
 if (!func::checkLogin()) {
-    header("Location: /Login_Register.php");
+    header("Location: /gamecon/Login_Register.php");
 }
 session_start();
 if ($_SESSION["tickets"] == null) {
     $_SESSION["Error_Ticket"] = $lang("err_ticket") ."(1)";
-    header("Location: /Purchase/SetTickets.php");
+    header("Location: /gamecon/Purchase/SetTickets.php");
 } else {
     $isValid = false;
     $tickets = $_SESSION["tickets"];
@@ -67,9 +67,9 @@ if ($_SESSION["tickets"] == null) {
     }
     if ($isValid == false) {
         $_SESSION["Error_Edit"] = $lang("err_ticket") ."(2)";
-        header("Location: /Purchase/SetTickets.php");
+        header("Location: /gamecon/Purchase/SetTickets.php");
     } else {
-        header("Location: /Purchase/Confirm.php");
+        header("Location: /gamecon/Purchase/Confirm.php");
     }
 }
 ?>

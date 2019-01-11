@@ -1,253 +1,259 @@
 main {
-    position: relative;
-    min-height: 500px;
-    color: white;
-    background-color: #2d2d2d;
+  position: relative;
+  min-height: 500px;
+  color: white;
+  background-color: #2d2d2d;
 }
 
 nav {
-    font-family: "Trebuchet MS";
+  font-family: "Trebuchet MS";
 }
 
 body {
-    background: transparent;
+  background: transparent;
 }
 
 header {
-    background: black;
+  background: black;
 }
 
 .flag {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
 }
 
 .flag.flag-us {
-    background: url('/Resources/flags-us.png') no-repeat;
-    background-position: 0 0;
+  background: url("/gamecon/Resources/flags-us.png") no-repeat;
+  background-position: 0 0;
 }
 
 .flag.flag-fr {
-    background: url('/Resources/flags-fr.png') no-repeat;
-    background-position: 0 0;
+  background: url("/gamecon/Resources/flags-fr.png") no-repeat;
+  background-position: 0 0;
 }
 
 .boxIndex {
-    border: black solid 1px;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    background: #1d1d1d;
-    height: 350px;
-    background-size: cover;
-    /*position: relative;*/
+  border: black solid 1px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #1d1d1d;
+  height: 350px;
+  background-size: cover;
+  /*position: relative;*/
 }
 
 #footer {
-    text-align: center;
-    background-color: black;
-    color: white;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 
 #footer p {
-    background: transparent;
+  background: transparent;
 }
 
 .item {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .lang {
-    border-radius: 0 0 5px 5px;
-    float: right;
-    background-color: white;
-    margin-right: 10%;
+  border-radius: 0 0 5px 5px;
+  float: right;
+  background-color: white;
+  margin-right: 10%;
 }
 
 /*NavBar--------------------------------------------------------------------------------------------------------------*/
 
 .navbar-inverse {
-    background-color: rgba(96, 156, 255, 0.5);
+  background-color: rgba(96, 156, 255, 0.5);
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: black;
+  color: black;
 }
 
 .navbar {
-    margin-bottom: 0;
-    position: relative;
+  margin-bottom: 0;
+  position: relative;
 }
 
 #myNavbar a:hover {
-    color: lawngreen;
+  color: lawngreen;
 }
 
 .mainNavBarText {
-    font-size: x-large;
+  font-size: x-large;
 }
 
 .mainNavBtn {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
-.glyphicon-chevron-right:before, .glyphicon-chevron-left:before {
-    color: lawngreen;
+.glyphicon-chevron-right:before,
+.glyphicon-chevron-left:before {
+  color: lawngreen;
 }
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
 .breadcrumbs {
-    margin: 10px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
-.priceUTD{
-    padding: 5px;
-    border:black 1px solid;
-    width: 115px;
-    border-radius: 10px;
+.priceUTD {
+  padding: 5px;
+  border: black 1px solid;
+  width: 115px;
+  border-radius: 10px;
 }
 
-.priceUTDnum{
-    width: 60px;
+.priceUTDnum {
+  width: 60px;
 }
 
 .lowerbreadcrumbs {
-    margin: 10px 0 0 30px;
-    font-size: x-small;
+  margin: 10px 0 0 30px;
+  font-size: x-small;
 }
 
 .row {
-    margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 0;
 }
 
 .ticketBtn {
-    margin: 10px;
-    width: 80px;
+  margin: 10px;
+  width: 80px;
 }
 
 .col-xs-6 {
-    padding-left: 0;
+  padding-left: 0;
 }
 
-#login .col-xs-12, #forgotPassForm .col-xs-12, #resetPassForm .col-xs-12 {
-    padding-left: 0;
+#login .col-xs-12,
+#forgotPassForm .col-xs-12,
+#resetPassForm .col-xs-12 {
+  padding-left: 0;
 }
 
 #bannerSec {
-    height: 200px;
-    background-image: url("../Resources/bannerConcept.png");
-    background-size: cover;
-    background-position: center center;
+  height: 200px;
+  background-image: url("../Resources/bannerConcept.png");
+  background-size: cover;
+  background-position: center center;
 }
 
 #indexContent {
-    padding: 0;
+  padding: 0;
 }
 
 #priceChart {
-    text-align: center;
+  text-align: center;
 }
 
-#changeLang{
-    padding: 0;
+#changeLang {
+  padding: 0;
 }
 
-#priceChart td, #priceChart th {
-    border: solid white 1px;
-    padding: 3px;
+#priceChart td,
+#priceChart th {
+  border: solid white 1px;
+  padding: 3px;
 }
 
 #menuTitle {
-    display: none;
-    color: black;
+  display: none;
+  color: black;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .success {
-    color: lawngreen;
+  color: lawngreen;
 }
 
 #dob div {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 #timer-msg {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .sticky {
-    width: 100%;
-    border: solid black 1px;
-    border-radius: 0;
+  width: 100%;
+  border: solid black 1px;
+  border-radius: 0;
 }
 
 #sticky a {
-    color: white;
+  color: white;
 }
 
 #sticky li a:hover {
-    background: black;
+  background: black;
 }
 
 #sticky li ul {
-    background: black;
+  background: black;
 }
 
 .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
-    .mainNavBarText, .navBarText {
-        font-size: medium;
-    }
+  .mainNavBarText,
+  .navBarText {
+    font-size: medium;
+  }
 }
 
 @media only screen and (max-width: 1006px) and (min-width: 769px) {
-    .mainNavBarText, .navBarText {
-        font-size: x-small;
-    }
+  .mainNavBarText,
+  .navBarText {
+    font-size: x-small;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    #myNavbar {
-        margin-right: 0;
-        margin-left: 0;
-    }
+  #myNavbar {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 427px) {
-    .mainNavBarText, .navBarText {
-        font-size: x-small;
-    }
+  .mainNavBarText,
+  .navBarText {
+    font-size: x-small;
+  }
 
-    #bannerSec {
-        text-align: center;
-    }
+  #bannerSec {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 426px) {
+  #menuTitle {
+    display: unset;
+  }
 
-    #menuTitle {
-        display: unset;
-    }
+  #bannerSec {
+    text-align: center;
+    height: 140px;
+  }
 
-    #bannerSec {
-        text-align: center;
-        height: 140px;
-    }
-
-    #myNavbar {
-        padding-left: 40px;
-    }
+  #myNavbar {
+    padding-left: 40px;
+  }
 }

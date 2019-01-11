@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				setcookie("account_id", $account["ACCOUNT_ID"], (time() + (89400 * 365)), "/");
 				$set_sess = "INSERT INTO sessions (session_id, account_id, session_token) VALUES (NULL, " . $con->real_escape_string($account['ACCOUNT_ID']) . ", '" . $con->real_escape_string($loginToken) . "');";
 				$con->query($set_sess) or die("set session failed " . $con->error);
-				header("Location: ModifyInfo.php");
+				header("Location: /gamecon/Account/ModifyInfo.php");
 			} else {
 				$resetPassErrMsg = "Error: " . $update_pass_sql . "<br>" . $con->error;
 			}
