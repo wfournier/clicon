@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
--- Host: 192.168.0.108    Database: gamecon
+-- Host: 192.168.0.108    Database: clicon
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.1.23-MariaDB-9+deb9u1
 

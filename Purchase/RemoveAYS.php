@@ -1,25 +1,25 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Classes/Ticket.php" ?>
 <?php
 
 if(!func::checkLogin()){
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /clicon/Login_Register.php");
 }
 session_start();
 $arr = $_SESSION["tickets"];
 if(!($_GET["id"] > 0) || empty($arr)){
     print("<script>console.log('Error Remove Ticket')</script>");
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /clicon/Purchase/SetTickets.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>AreYouSure?</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php";?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php";?>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php";?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php";?>
     <main>
         <div class="row">
             <div class="col-md-4"></div>
@@ -71,6 +71,6 @@ if(!($_GET["id"] > 0) || empty($arr)){
             </div>
         </div>
     </main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html";?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html";?>
 </body>
 </html>

@@ -1,63 +1,63 @@
 #guest1 {
-    width: 100%;
-    height: 400px;
-    background-image: url("http://images.nintendolife.com/articles/2006/03/10/question_miyamoto/attachment/large.jpg");
-    background-size: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  background-image: url("https://vignette.wikia.nocookie.net/nintendo/images/e/e6/Shigeru_Miyamoto.jpg/revision/latest?cb=20180719231532&path-prefix=en");
+  background-size: cover;
+  border-radius: 10px;
 }
 
 #guest2 {
-    width: 100%;
-    height: 400px;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/ToddHoward2010sm.jpg/1200px-ToddHoward2010sm.jpg");
-    background-size: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/ToddHoward2010sm.jpg/1200px-ToddHoward2010sm.jpg");
+  background-size: cover;
+  border-radius: 10px;
 }
 
 #guest3 {
-     width: 100%;
-     height: 400px;
-     background-image: url("https://img.wennermedia.com/480-width/3064712-1248675325-hideo-1769eaa5-6d30-4a8f-8ad9-bb6b6e4351f4.jpg");
-     background-size: cover;
-     border-radius: 10px;
-     background-position: center center;
- }
+  width: 100%;
+  height: 400px;
+  background-image: url("https://img.wennermedia.com/480-width/3064712-1248675325-hideo-1769eaa5-6d30-4a8f-8ad9-bb6b6e4351f4.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  background-position: center center;
+}
 #guest4 {
-    width: 100%;
-    height: 400px;
-    background-image: url("http://www.popten.net/wp-content/uploads/2010/04/IMG_2841.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    background-position: center left;
+  width: 100%;
+  height: 400px;
+  background-image: url("http://www.popten.net/wp-content/uploads/2010/04/IMG_2841.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  background-position: center left;
 }
 #event1 {
-    width: 100%;
-    height: 400px;
-    background-image: url("https://file-cdn.scdkey.com/product/20171106170403_scdk.png");
-    background-size: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  background-image: url("https://file-cdn.scdkey.com/product/20171106170403_scdk.png");
+  background-size: cover;
+  border-radius: 10px;
 }
 #event2 {
-    width: 100%;
-    height: 400px;
-    background-image: url("https://cdn.wccftech.com/wp-content/uploads/2015/03/half-life-3.jpg");
-    background-size: cover;
-    border-radius: 10px;
-    background-position: center center;
+  width: 100%;
+  height: 400px;
+  background-image: url("https://cdn.wccftech.com/wp-content/uploads/2015/03/half-life-3.jpg");
+  background-size: cover;
+  border-radius: 10px;
+  background-position: center center;
 }
 #event3 {
-    width: 100%;
-    height: 400px;
-    background-image: url("http://www.otakuthon.com/2017res/img/event_masq2017.jpg");
-    background-size: cover;
-    border-radius: 10px;
+  width: 100%;
+  height: 400px;
+  background-image: url("http://www.otakuthon.com/2017res/img/event_masq2017.jpg");
+  background-size: cover;
+  border-radius: 10px;
 }
 
 .boxIndex {
-    margin: 20px;
-    height: unset;
+  margin: 20px;
+  height: unset;
 }
 
 .boxIndex p {
-    text-align: left;
+  text-align: left;
 }

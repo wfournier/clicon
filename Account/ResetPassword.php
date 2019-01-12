@@ -1,15 +1,15 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Functions/FilterData.php"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/ResetPassProcess.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Functions/FilterData.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/ResetPassProcess.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php" ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php" ?>
 	<title>Reset Password</title>
 </head>
 <body>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php" ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php" ?>
 	<style type="text/css">
 	.row {
 		margin-left: 0px;
@@ -60,6 +60,6 @@
 			?>
 		</div>
 	</main>
-	<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html" ?>
+	<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html" ?>
 </body>
 </html>

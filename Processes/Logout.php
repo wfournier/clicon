@@ -1,5 +1,5 @@
 <?php
 include "Functions.php";
 func::logout();
-header("Location: /gamecon//Index.php");
+header("Location: /clicon//Index.php");
 ?>

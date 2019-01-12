@@ -1,13 +1,13 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Clicon_Exhibitions</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php"; ?>
-    <link rel="stylesheet" href="/gamecon/Style/ExhibitionStyle.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php"; ?>
+    <link rel="stylesheet" href="/clicon/Style/ExhibitionStyle.css">
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php"; ?>
 <main>
     <!--    RETRO / AAA-->
     <div class="row">
@@ -116,6 +116,6 @@
         <div class="col-lg-1"></div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html"; ?>
 </body>
 </html>

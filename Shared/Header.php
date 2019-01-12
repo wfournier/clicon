@@ -1,5 +1,5 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
-<script src="/gamecon/Scripts/MainScript.js"></script>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/connection.php" ?>
+<script src="/clicon/Scripts/MainScript.js"></script>
 <header>
     <?php
     if(isset($_COOKIE["current_language"])){
@@ -33,33 +33,33 @@
         <!--Left Side-->
         <div class="collapse navbar-collapse navBarText" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="/gamecon/Index.php"><span class="glyphicon glyphicon-home"></span> <?php echo($lang("home")); ?></a></li>
+                <li><a href="/clicon/Index.php"><span class="glyphicon glyphicon-home"></span> <?php echo($lang("home")); ?></a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
                         <span class="glyphicon glyphicon-info-sign"></span> <?php echo($lang("info")); ?>
                         <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/gamecon/Information.php#hours" ><?php echo($lang("hours")); ?></a></li>
-                            <li><a href="/gamecon/Information.php#location"><?php echo($lang("location")); ?></a></li>
-                            <li><a onclick='window.location.reload(true);' href="/gamecon/Information.php#rules"><?php echo($lang("rules")); ?></a></li>
-                            <li><a onclick='window.location.reload(true);' href="/gamecon/Information.php#registration"><?php echo($lang("registration_policies")); ?></a></li>
-                            <li><a onclick='window.location.reload(true);' href="/gamecon/Information.php#weapon"><?php echo($lang("weapon")); ?></a></li>
-                            <li><a onclick='window.location.reload(true);' href="/gamecon/Information.php#autograph"><?php echo($lang("autograph")); ?></a></li>
+                            <li><a href="/clicon/Information.php#hours" ><?php echo($lang("hours")); ?></a></li>
+                            <li><a href="/clicon/Information.php#location"><?php echo($lang("location")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/clicon/Information.php#rules"><?php echo($lang("rules")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/clicon/Information.php#registration"><?php echo($lang("registration_policies")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/clicon/Information.php#weapon"><?php echo($lang("weapon")); ?></a></li>
+                            <li><a onclick='window.location.reload(true);' href="/clicon/Information.php#autograph"><?php echo($lang("autograph")); ?></a></li>
                         </ul>
                     </li>
-                    <li><a href="/gamecon/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> <?php echo($lang("header_admission")); ?></a></li>
-                    <li><a href="/gamecon/Guests.php"><span class="glyphicon glyphicon-star"></span> <?php echo($lang("guests")); ?></a></li>
-                    <li><a href="/gamecon/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> <?php echo($lang("events")); ?></a></li>
+                    <li><a href="/clicon/Admission.php"><span class="glyphicon glyphicon-bookmark"></span> <?php echo($lang("header_admission")); ?></a></li>
+                    <li><a href="/clicon/Guests.php"><span class="glyphicon glyphicon-star"></span> <?php echo($lang("guests")); ?></a></li>
+                    <li><a href="/clicon/Events.php"><span class="glyphicon glyphicon-bullhorn"></span> <?php echo($lang("events")); ?></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="navButtons">
                             <span class="glyphicon glyphicon-flag"></span> <?php echo($lang("exhibitions")); ?>
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/gamecon/Exhibitions.php#retro"><?php echo($lang("retro")); ?></a></li>
-                                <li><a href="/gamecon/Exhibitions.php#arcade"><?php echo($lang("arcade")); ?></a></li>
-                                <li><a href="/gamecon/Exhibitions.php#lan"><?php echo($lang("lan")); ?></a></li>
-                                <li><a href="/gamecon/Exhibitions.php#aaa"><?php echo($lang("aaa")); ?></a></li>
-                                <li><a href="/gamecon/Exhibitions.php#indie"><?php echo($lang("indie")); ?></a></li>
+                                <li><a href="/clicon/Exhibitions.php#retro"><?php echo($lang("retro")); ?></a></li>
+                                <li><a href="/clicon/Exhibitions.php#arcade"><?php echo($lang("arcade")); ?></a></li>
+                                <li><a href="/clicon/Exhibitions.php#lan"><?php echo($lang("lan")); ?></a></li>
+                                <li><a href="/clicon/Exhibitions.php#aaa"><?php echo($lang("aaa")); ?></a></li>
+                                <li><a href="/clicon/Exhibitions.php#indie"><?php echo($lang("indie")); ?></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -67,23 +67,23 @@
                     <ul class="nav navbar-nav navbar-right">
                         <?php
                         if (!(func::checkLogin())) {
-                            echo "<li><a href='/gamecon/Login_Register.php'><span class='glyphicon glyphicon-user'></span> " .$lang("signup_login") ."</a></li>";
+                            echo "<li><a href='/clicon/Login_Register.php'><span class='glyphicon glyphicon-user'></span> " .$lang("signup_login") ."</a></li>";
                         } else {
                             echo "<li class=\"dropdown\">
                             <a class=\"dropdown - toggle\" data-toggle=\"dropdown\" href=\"#\" id=\"navButtons\">
                             " .$lang('my_account') ."
                             <span class=\"caret\" ></span ></a>
                             <ul class=\"dropdown-menu\" >
-                            <li ><a href = \"/gamecon/Account/ModifyInfo.php\" > " .$lang('view_info') ."</a ></li >
-                            <li ><a href = \"/gamecon/Processes/Logout.php\" > " .$lang('logout') ."</a></li >
+                            <li ><a href = \"/clicon/Account/ModifyInfo.php\" > " .$lang('view_info') ."</a ></li >
+                            <li ><a href = \"/clicon/Processes/Logout.php\" > " .$lang('logout') ."</a></li >
                             </ul >
                             </li >";
                         }
                         ?>
-                        <li><a style="margin-right: 30px" href="/gamecon/Purchase/SetTickets.php"><?php echo($lang("header_buy_ticket")); ?></a></li>
+                        <li><a style="margin-right: 30px" href="/clicon/Purchase/SetTickets.php"><?php echo($lang("header_buy_ticket")); ?></a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <script src="/gamecon/Scripts/ScriptStickyNavBar.js"></script>
+        <script src="/clicon/Scripts/ScriptStickyNavBar.js"></script>
     </header>

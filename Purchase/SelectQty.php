@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
 <?php
 
 if (!func::checkLogin()) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /clicon/Login_Register.php");
 }
 session_start();
 ?>
@@ -11,7 +11,7 @@ session_start();
 <html lang="en">
 <head>
     <title>Payment_TicketSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php"; ?>
     <style>
     label {
         width: 100px;
@@ -22,7 +22,7 @@ session_start();
 </style>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php"; ?>
     <main>
         <div class="row">
             <div class="col-md-4"></div>
@@ -54,6 +54,6 @@ session_start();
                 </div>
             </div>
         </main>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html"; ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html"; ?>
     </body>
     </html>

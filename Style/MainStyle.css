@@ -24,12 +24,12 @@ header {
 }
 
 .flag.flag-us {
-  background: url("/gamecon/Resources/flags-us.png") no-repeat;
+  background: url("/clicon/Resources/flags-us.png") no-repeat;
   background-position: 0 0;
 }
 
 .flag.flag-fr {
-  background: url("/gamecon/Resources/flags-fr.png") no-repeat;
+  background: url("/clicon/Resources/flags-fr.png") no-repeat;
   background-position: 0 0;
 }
 

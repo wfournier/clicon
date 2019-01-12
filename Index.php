@@ -1,10 +1,10 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="google-site-verification" content="l_UW61Co1uCu1Brc8jG0VTIRyQuWzrRXKua85Zw_-fk" />
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php"; ?>
-    <link rel="stylesheet" href="/gamecon/Style/IndexStyle.css">
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php"; ?>
+    <link rel="stylesheet" href="/clicon/Style/IndexStyle.css">
     <title>Clicon_Home</title>
     <style>
         .row {
@@ -12,10 +12,10 @@
             margin-left: 0;
         }
     </style>
-    <script src="/gamecon/Scripts/Countdown.js"></script>
+    <script src="/clicon/Scripts/Countdown.js"></script>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php"; ?>
 
 <main>
     <!-- CAROUSEL -->
@@ -117,6 +117,6 @@
 
 </main>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html"; ?>
 </body>
 </html>

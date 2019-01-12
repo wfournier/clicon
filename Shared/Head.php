@@ -1,12 +1,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="img/ico" href="/gamecon/Resources/icon.ico">
+<link rel="icon" type="img/ico" href="/clicon/Resources/icon.ico">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="/gamecon/Scripts/MainScript.js"></script>
-<link rel="stylesheet" href="/gamecon/Style/MainStyle.css">
-<?php include($_SERVER['DOCUMENT_ROOT'] . "/gamecon" ."/langquery/langquery.php");
+<script src="/clicon/Scripts/MainScript.js"></script>
+<link rel="stylesheet" href="/clicon/Style/MainStyle.css">
+<?php include($_SERVER['DOCUMENT_ROOT'] . "/clicon" ."/langquery/langquery.php");
 	$lang = new LangQuery();
 
 	if(!isset($_COOKIE["current_language"])){

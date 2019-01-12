@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Functions/FilterData.php"; ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/RegisterProcess.php" ?>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/LoginProcess.php" ?>
-    <title>GameCon_Login</title>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/connection.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Functions/FilterData.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/RegisterProcess.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/LoginProcess.php" ?>
+    <title>clicon_Login</title>
 
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php" ?>
     <style type="text/css">
     .row {
         margin-left: 0px;
@@ -236,8 +236,8 @@
             </div>
             <div class="col-sm-2"></div>
         </div>
-        <script src="/gamecon/Scripts/StateScript.js"></script>
+        <script src="/clicon/Scripts/StateScript.js"></script>
     </main>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html" ?>
 </body>
 </html>

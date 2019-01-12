@@ -1,15 +1,15 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/connection.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/connection.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
 <?php
 
 if (!func::checkLogin()) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /clicon/Login_Register.php");
 }
 session_start();
 
 if ($_GET["id"] == null) {
     $_SESSION["Error_Edit"] = "An error occurred while processing extra. Please try again.";
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /clicon/Purchase/SetTickets.php");
 } else
     $id = $_GET["id"];
     if (!isset($_SESSION["concert$id"]))
@@ -24,8 +24,8 @@ $_SESSION["Error_Ticket$id"] = null;
 <html lang="en">
 <head>
     <title>Payment_ExtraSelection</title>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Head.php"; ?>
-    <script src="/gamecon/Scripts/PriceScriptExtra.js"></script>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Head.php"; ?>
+    <script src="/clicon/Scripts/PriceScriptExtra.js"></script>
     <style>
         label {
             width: 100px;
@@ -34,16 +34,16 @@ $_SESSION["Error_Ticket$id"] = null;
     </style>
 </head>
 <body>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Header.php"; ?>
 <main>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
             <form method="post" action="ProcessingSelectExtra.php">
                 <div class="row" style="min-height: 500px">
-                    <div class="breadcrumbs"><a href="/gamecon/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
-                    <div class="lowerbreadcrumbs"><a href="/gamecon/Purchase/SelectTicket.php?id=<?php echo $id?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
-                        <a href="/gamecon/Purchase/SelectExtra.php?id=<?php echo $id?>"><?php echo($lang("bread_select_extra")); ?> </a>></div>
+                    <div class="breadcrumbs"><a href="/clicon/Purchase/SetTickets.php"><?php echo($lang("bread_set_ticket")); ?> </a>></div>
+                    <div class="lowerbreadcrumbs"><a href="/clicon/Purchase/SelectTicket.php?id=<?php echo $id?>"><?php echo($lang("bread_select_ticket")); ?> </a>>
+                        <a href="/clicon/Purchase/SelectExtra.php?id=<?php echo $id?>"><?php echo($lang("bread_select_extra")); ?> </a>></div>
                     <h1 style="margin-top: 0"><?php echo($lang("select_extras")); ?>:</h1>
                     <table id="priceChart" align="center" style="color: white; margin: 0 0 20px 0;">
                         <tr>
@@ -99,6 +99,6 @@ $_SESSION["Error_Ticket$id"] = null;
         </div>
     </div>
 </main>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Shared/Footer.html"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Shared/Footer.html"; ?>
 </body>
 </html>

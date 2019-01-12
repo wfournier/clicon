@@ -28,7 +28,7 @@ class func
         $host = "localhost";
         $user = "root";
         $password = "";
-        $dbname = "gamecon";
+        $dbname = "clicon";
 
         $con = new mysqli($host, $user, $password, $dbname)
         or die ('Could not connect to the database server' . mysqli_connect_error());
@@ -45,7 +45,7 @@ class func
         $set_sess = "INSERT INTO sessions (session_id, account_id, session_token) VALUES (NULL, " .
             self::getConnection()->real_escape_string($accountId) . ", '" . self::getConnection()->real_escape_string($token) . "');";
         self::getConnection()->query($set_sess) or die("set session failed " . self::getConnection()->error);
-        header("Location: /gamecon/Account/ModifyInfo.php");
+        header("Location: /clicon/Account/ModifyInfo.php");
     }
 
 //    log outs the user
@@ -154,7 +154,7 @@ class func
 
 //    public static function insertIntoAccount(Account $AccountObj)
 //    {
-//        include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Classes/Account.php";
+//        include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Classes/Account.php";
 //        $query = "INSERT INTO account (LAST_NAME, FIRST_NAME, EMAIL, PASS_HASH, DATE_OF_BIRTH, PHONE, ADDRESS, CITY, ZIP, COUNTRY_ID, STATE_ID, IS_ADULT) VALUES
 //        ('" . self::getConnection()->real_escape_string($AccountObj->last_name) . "', '" . self::getConnection()->real_escape_string($AccountObj->first_name) . "', '" . self::getConnection()->real_escape_string($AccountObj->email) . "', '" . self::getConnection()->real_escape_string($AccountObj->password) .
 //            "', '" . self::getConnection()->real_escape_string($AccountObj->dob) . "', '" . self::getConnection()->real_escape_string($AccountObj->phone) . "', '" . self::getConnection()->real_escape_string($AccountObj->address) . "', '" . self::getConnection()->real_escape_string($AccountObj->city) . "', '" .

@@ -1,12 +1,12 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Processes/Functions.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/Classes/Ticket.php" ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . "/gamecon" . "/langquery/langquery.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Processes/Functions.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/Classes/Ticket.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . "/clicon" . "/langquery/langquery.php" ?>
 <?php
 
 $lang = new LangQuery();
 
 if (!func::checkLogin()) {
-    header("Location: /gamecon/Login_Register.php");
+    header("Location: /clicon/Login_Register.php");
 }
 session_start();
 if ($_POST["id"] != null) {
@@ -23,9 +23,9 @@ if ($_POST["id"] != null) {
 
     //ADD METHOD VALIDATE BADGE NAME WITH DATABASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /clicon/Purchase/SetTickets.php");
 } else {
     $_SESSION["Error_Extra"] = $lang("err_extra");
-    header("Location: /gamecon/Purchase/SetTickets.php");
+    header("Location: /clicon/Purchase/SetTickets.php");
 }
 ?>
